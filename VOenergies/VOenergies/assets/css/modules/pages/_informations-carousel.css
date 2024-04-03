@@ -1,0 +1,33 @@
+.carousel-container--informations {
+	padding-top: {{ theme.layout.spacing_base * 4 ~ "px" }};
+	padding-bottom: {{ theme.layout.spacing_base * 4 ~ "px" }};
+}
+
+.carousel-container--informations .swiper {
+	overflow: visible;
+}
+
+.carousel-container--informations .swiper-wrapper {
+	transition-timing-function: linear;
+}
+
+.carousel-container--informations .swiper-slide {
+	width: auto;
+}
+
+.carousel-container--informations .swiper-slide .swiper-slide__description * {
+	font-weight: bold;
+	user-select: none;
+}
+
+.carousel-container--informations .swiper-slide:after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: {{ theme.layout.spacing_base * -5.5 ~ "px" }};
+	width: {{ theme.layout.spacing_base ~ "px" }};
+	height: {{ theme.layout.spacing_base ~ "px" }};
+	background-color: {{ theme.colors.white.color }};
+	border-radius: 50%;
+	transform: translateY(-50%);
+}

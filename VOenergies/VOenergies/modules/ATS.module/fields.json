@@ -1,0 +1,15 @@
+[ {
+  "id" : "98d21cbf-bbfe-353e-c141-311ef1f450b3",
+  "name" : "iframe_url",
+  "display_width" : null,
+  "label" : "Iframe URL",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL" ],
+  "type" : "url",
+  "default" : {
+    "content_id" : null,
+    "href" : "",
+    "type" : "EXTERNAL"
+  }
+} ]

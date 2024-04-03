@@ -1,0 +1,72 @@
+{
+  "name": {
+    "message": "Тема на офертите в CMS",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.banner_bg_color.label": {
+    "message": "Цвят на фон на банер",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.button_background_color.label": {
+    "message": "Цвят на фон на бутон",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.button_font_color.label": {
+    "message": "Цвят на шрифта на бутона",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.label": {
+    "message": "Глобални цветове",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.primary_color.label": {
+    "message": "Основен цвят",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.secondary_color.label": {
+    "message": "Вторичен цвят",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.tertiary_color.label": {
+    "message": "Третичен цвят",
+    "description": "",
+    "placeholders": null
+  },
+  "global_fonts.label": {
+    "message": "Глобални шрифтове",
+    "description": "",
+    "placeholders": null
+  },
+  "global_fonts.primary_font.label": {
+    "message": "Първичен шрифт",
+    "description": "",
+    "placeholders": null
+  },
+  "global_fonts.secondary_font.label": {
+    "message": "Вторичен шрифт",
+    "description": "",
+    "placeholders": null
+  },
+  "modern_settings.button_background_color.label": {
+    "message": "Цвят на фон на бутон",
+    "description": "",
+    "placeholders": null
+  },
+  "modern_settings.button_font_color.label": {
+    "message": "Цвят на шрифта на бутона",
+    "description": "",
+    "placeholders": null
+  },
+  "modern_settings.label": {
+    "message": "Модерни настройки",
+    "description": "",
+    "placeholders": null
+  }
+}

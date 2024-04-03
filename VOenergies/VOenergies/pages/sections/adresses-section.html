@@ -1,0 +1,379 @@
+<!--
+templateType: section
+isAvailableForNewContent: true
+label: Addresses section
+description: A section displaying adresses for contact page.
+-->
+
+{% dnd_section
+  vertical_alignment="MIDDLE"
+  background_color={{ context.section.background_color }}
+  background_linear_gradient={{ context.section.background_linear_gradient }}
+  background_image={{ context.section.background_image }}
+  padding={{ context.section.padding }}
+  class={{ context.section.class }}
+%}
+{% dnd_column width=12 %}
+{% dnd_row %}
+  {% dnd_column width="12" %}
+    {% dnd_row %}
+      {% dnd_module 
+        path='../../modules/custom-rich-text' 
+        style={{ context.text.style ? context.text.style : {
+              'xs': {
+                'spacing': {
+                  'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                  'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                },
+                'text_alignment': 'center'
+              },
+              'md': {
+                'spacing': {
+                  'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                  'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                },
+                'text_alignment': 'left'
+              },
+              'xl': {
+                'spacing': {
+                  'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                  'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                },
+                'text_alignment': 'left'
+              }
+            }
+          }}
+      %}
+      {% module_attribute "html" %}
+      {{ context.text.content ? context.text.content : "<h2 style='color: {{ theme.colors.first.color }};'>VOé, l'énergie en commun</h2>" }}
+      {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_row %}
+  {% dnd_row %}
+    {% dnd_column width="4" %}
+      {% dnd_row %}
+        {% dnd_module 
+          path='../../modules/custom-rich-text' 
+          style={{ context.first_text.style ? context.first_text.style : {
+                'xs': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'center'
+                },
+                'md': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'left'
+                },
+                'xl': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'left'
+                }
+              }
+            }}
+        %}
+        {% module_attribute "html" %}
+        {{ context.first_text.content ? context.first_text.content : '<h3>VOé</h3><h4 style="color: {{ theme.colors.first.color }};"><b>058 234 20 00</b></h4>' }}
+        {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+
+    {% end_dnd_column %}
+    {% dnd_column width="4" offset=4 %}
+      {% dnd_row %}
+        {% dnd_module 
+          path='../../modules/custom-rich-text' 
+          style={{ context.second_text.style ? context.second_text.style : {
+                'xs': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'center'
+                },
+                'md': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'left'
+                },
+                'xl': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'left'
+                }
+              }
+            }}
+        %}
+        {% module_attribute "html" %}
+        {{ context.second_text.content ? context.second_text.content : '<h3>Agence Orbe</h3><p>Rue des Eterpaz 26, 1337 Vallorbe</p><p><b>Lundi-mardi-jeudi</b> 8h-12h / 13h30-17h<br><b>Mercredi</b> fermé<br><b>Vendredi</b> 8h-12h / 13h30-16h</p>' }}
+        {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+    {% dnd_column width="4" offset=8 %}
+      {% dnd_row %}
+        {% dnd_module 
+          path='../../modules/custom-rich-text' 
+          style={{ context.third_text.style ? context.third_text.style : {
+                'xs': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'center'
+                },
+                'md': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'left'
+                },
+                'xl': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'left'
+                }
+              }
+            }}
+        %}
+        {% module_attribute "html" %}
+        {{ context.third_text.content ? context.third_text.content : '<h3>Agence Vallorbe</h3><p>Rue des Eterpaz 26, 1337 Vallorbe</p><p><b>Lundi-mardi-jeudi</b> 8h-12h / 13h30-17h<br><b>Mercredi</b> fermé<br><b>Vendredi</b> 8h-12h / 13h30-16h</p>' }}
+        {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+{% end_dnd_row %}
+{% dnd_row %}
+    {% dnd_column width="4" %}
+      {% dnd_row %}
+        {% dnd_module 
+          path='../../modules/custom-rich-text' 
+          style={{ context.fourth_text.style ? context.fourth_text.style : {
+                'xs': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'center'
+                },
+                'md': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'left'
+                },
+                'xl': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'left'
+                }
+              }
+            }}
+        %}
+        {% module_attribute "html" %}
+        {{ context.fourth_text.content ? context.fourth_text.content : '<h3>VOé Electroval</h3><h4 style="color: {{ theme.colors.first.color }};"><b>024 442 84 50</b></h4>' }}
+        {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+
+    {% end_dnd_column %}
+    {% dnd_column width="4" offset=4 %}
+      {% dnd_row %}
+        {% dnd_module 
+          path='../../modules/custom-rich-text' 
+          style={{ context.fifth_text.style ? context.fifth_text.style : {
+                'xs': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'center'
+                },
+                'md': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'left'
+                },
+                'xl': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'left'
+                }
+              }
+            }}
+        %}
+        {% module_attribute "html" %}
+        {{ context.fifth_text.content ? context.fifth_text.content : '<h3>Agence Valleyre-sous-Rances</h3><p>Rue des Eterpaz 26, 1337 Vallorbe</p><p><b>Lundi-mardi-jeudi</b> 8h-12h / 13h30-17h<br><b>Mercredi</b> fermé<br><b>Vendredi</b> 8h-12h / 13h30-16h</p>' }}
+        {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+    {% dnd_column width="4" offset=8 %}
+      {% dnd_row %}
+        {% dnd_module 
+          path='../../modules/custom-rich-text' 
+          style={{ context.sixth_text.style ? context.sixth_text.style : {
+                'xs': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'center'
+                },
+                'md': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'left'
+                },
+                'xl': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'left'
+                }
+              }
+            }}
+        %}
+        {% module_attribute "html" %}
+        {{ context.sixth_text.content ? context.sixth_text.content : '<h3>Agence Vallorbe</h3><p>Rue des Eterpaz 26, 1337 Vallorbe</p><p><b>Lundi-mardi-jeudi</b> 8h-12h / 13h30-17h<br><b>Mercredi</b> fermé<br><b>Vendredi</b> 8h-12h / 13h30-16h</p>' }}
+        {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+{% end_dnd_row %}
+{% dnd_row %}
+    {% dnd_column width="4" %}
+      {% dnd_row %}
+        {% dnd_module 
+          path='../../modules/custom-rich-text' 
+          style={{ context.seven_text.style ? context.seven_text.style : {
+                'xs': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'center'
+                },
+                'md': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'left'
+                },
+                'xl': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'left'
+                }
+              }
+            }}
+        %}
+        {% module_attribute "html" %}
+        {{ context.seven_text.content ? context.seven_text.content : '<h3>VOé Gasser</h3><h4 style="color: {{ theme.colors.first.color }};"><b>024 447 26 26</b></h4>' }}
+        {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+
+    {% end_dnd_column %}
+    {% dnd_column width="4" offset=4 %}
+      {% dnd_row %}
+        {% dnd_module 
+          path='../../modules/custom-rich-text' 
+          style={{ context.eight_text.style ? context.eight_text.style : {
+                'xs': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'center'
+                },
+                'md': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'left'
+                },
+                'xl': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'left'
+                }
+              }
+            }}
+        %}
+        {% module_attribute "html" %}
+        {{ context.eight_text.content ? context.eight_text.content : '<h3>Agence Yverdon-les-Bains</h3><p>Rue des Eterpaz 26, 1337 Vallorbe</p><p><b>Lundi-mardi-jeudi</b> 8h-12h / 13h30-17h<br><b>Mercredi</b> fermé<br><b>Vendredi</b> 8h-12h / 13h30-16h</p>' }}
+        {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+    {% dnd_column width="4" offset=8 %}
+      {% dnd_row %}
+        {% dnd_module 
+          path='../../modules/custom-rich-text' 
+          style={{ context.nine_text.style ? context.nine_text.style : {
+                'xs': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'center'
+                },
+                'md': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'left'
+                },
+                'xl': {
+                  'spacing': {
+                    'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                    'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+                  },
+                  'text_alignment': 'left'
+                }
+              }
+            }}
+        %}
+        {% module_attribute "html" %}
+        {{ context.nine_text.content ? context.nine_text.content : '' }}
+        {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}

@@ -1,0 +1,45 @@
+{% import '../sample_blog_data.html' as blog_data %}       
+{% import '../../../assets/macros/_blog.html' %}
+{% import '../../../assets/macros/_style.html' %}
+
+{% set i = 0 %}
+
+{% if request.path is containing "preview/template" || request.postDict.preview_theme == true %}
+{% set contents = blog_data.blog_posts %}
+{% endif %}
+
+{% if group.id %}
+{% set contents = blog_recent_posts(group.id, (module.posts_to_show + 2) ) %}
+{% if module.filter_by_blog_post_tag == true %}
+{% set contents = blog_recent_tag_posts(group.id, content.tag_list, (module.posts_to_show + 2) ) %}
+{% endif %}
+{% endif %}
+
+<div class="dnd-section related-blog-posts {{ generateModuleClasses(module.style) }} {{ module.style.background_color|replace("_", "-") ~ '-bg' }}{% if module.style.animate_module %} animation{% endif %}"
+     {{ getModuleAnimations(module.style) }}>
+  <div class="dnd-row">
+    <div class="row-fluid">
+      <div class="dnd-column">
+        <div class="dnd-row row-fluid">
+          <div class="span12 columns description">
+            {{ module.description }}
+          </div>
+        </div>
+        <div class="dnd-row row-fluid posts__content">
+          {% for post in contents %}
+          {% if loop.first || loop.index % module.blog_posts_per_row == 1 %}
+          <div class="row-fluid d-flex flex-flow-row-wrap justify-content-flex-start{% if not loop.first && loop.index % module.blog_posts_per_row == 1 %} mt-6{% endif %}">
+            {% endif %}
+            {% if ((post.absolute_url != content.absolute_url) || request.path is containing "preview/template" || request.postDict.preview_theme == true) && i < module.posts_to_show %}
+            {{ createBlogPost(post, module, '') }}
+            {% set i = i + 1 %}
+            {% endif %}
+            {% if loop.last || loop.index % module.blog_posts_per_row == 0 %}
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

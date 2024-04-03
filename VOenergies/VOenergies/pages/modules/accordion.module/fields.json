@@ -1,0 +1,1558 @@
+[ {
+  "id" : "18074179-7f02-a737-2d65-cb581bcde7f5",
+  "name" : "global_settings",
+  "display_width" : null,
+  "label" : "Global settings",
+  "inline_help_text" : "Set the global settings of the module here.",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "5afc86b9-28ca-7753-7784-d9bd4f5be8d6",
+    "name" : "icons_width",
+    "display_width" : null,
+    "label" : "Icons width",
+    "inline_help_text" : "Set the icons width here (Icons width are calculated in pixels).",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 100,
+    "step" : 5,
+    "type" : "number",
+    "default" : 16
+  }, {
+    "id" : "49c443ff-3d78-9d10-e150-fbe5e4cf7910",
+    "name" : "icons_spacing",
+    "display_width" : null,
+    "label" : "Icons spacing",
+    "inline_help_text" : "Set the icons spacings here (Icons spacings are calculated in pixels).",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 100,
+    "step" : 5,
+    "type" : "number",
+    "default" : 0
+  }, {
+    "id" : "7d87bd28-782b-22e8-195c-50b342ada947",
+    "name" : "icons_shape",
+    "display_width" : null,
+    "label" : "Icons shape",
+    "help_text" : "",
+    "inline_help_text" : "Select one of the options to add some corner radius to the icons.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "none", "Square" ], [ "rounded", "Rounded" ], [ "rounded-full", "Circle" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "none"
+  }, {
+    "id" : "a8950cf7-9375-5a37-b63b-ffeb30eecd88",
+    "name" : "border",
+    "display_width" : null,
+    "label" : "Border",
+    "inline_help_text" : "Select one of the options to add a border on the outside of the accordion.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "no", "None" ], [ "border-thin", "Thin" ], [ "border-large", "Large" ], [ "border-thick", "Thick" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "no"
+  }, {
+    "id" : "5d972e46-5c9a-a9ae-9220-a3d99d1ddc9f",
+    "name" : "border_radius",
+    "display_width" : null,
+    "label" : "Border radius",
+    "inline_help_text" : "Select one of the options to add some border radius.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "no", "None" ], [ "rounded", "Small" ], [ "rounded-large", "Large" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "no"
+  }, {
+    "id" : "d7ba554a-5ace-b253-00bf-4265ed9637dd",
+    "name" : "border_color",
+    "display_width" : null,
+    "label" : "Border color",
+    "inline_help_text" : "Select one of the options to set the border color.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "a8950cf7-9375-5a37-b63b-ffeb30eecd88",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "none",
+      "property" : null,
+      "operator" : "NOT_EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "gray"
+  }, {
+    "id" : "2ae1076c-0c42-a7ab-9523-c48fe8efb135",
+    "name" : "add_border_below_each_item",
+    "display_width" : null,
+    "label" : "Add border below each item",
+    "inline_help_text" : "Set this option to true if you want to add a border below each item of the accordion.",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "cbee3fa2-5d1e-f433-7637-7945ba29fd84",
+    "name" : "make_first_item_open_by_default",
+    "display_width" : null,
+    "label" : "Make first item open by default",
+    "inline_help_text" : "Set this option to true if you want to view the first accordion item opened by default.",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "adbfe37e-ed94-325e-f3b6-e8e141c993c9",
+    "name" : "items_top_spacing",
+    "display_width" : null,
+    "label" : "Items top spacing",
+    "inline_help_text" : "Set the items spacings here (Icons spacings are calculated in pixels).",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 100,
+    "step" : 10,
+    "type" : "number",
+    "default" : 20
+  }, {
+    "id" : "ed4c56d3-cd28-94e7-43c6-a566cbef385f",
+    "name" : "items_bottom_spacing",
+    "display_width" : null,
+    "label" : "Items bottom spacing",
+    "inline_help_text" : "Set the items spacings here (Icons spacings are calculated in pixels).",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 100,
+    "step" : 10,
+    "type" : "number",
+    "default" : 20
+  }, {
+    "id" : "5b7b1e0d-b300-6990-0dc6-3a342cfd7ea7",
+    "name" : "items_left_spacing",
+    "display_width" : null,
+    "label" : "Items left spacing",
+    "inline_help_text" : "Set the items spacings here (Icons spacings are calculated in pixels).",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 100,
+    "step" : 10,
+    "type" : "number",
+    "default" : 0
+  }, {
+    "id" : "9ba9dae3-9ca2-5523-345a-7f194f70d388",
+    "name" : "items_right_spacing",
+    "display_width" : null,
+    "label" : "Items right spacing",
+    "inline_help_text" : "Set the items spacings here (Icons spacings are calculated in pixels).",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 100,
+    "step" : 10,
+    "type" : "number",
+    "default" : 0
+  }, {
+    "id" : "8fbf895e-a33d-21bc-7de1-c76f38c63a97",
+    "name" : "items_border",
+    "display_width" : null,
+    "label" : "Items border",
+    "inline_help_text" : "Select one of the options to set the border thickness below each accordion item.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "2ae1076c-0c42-a7ab-9523-c48fe8efb135",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "no", "None" ], [ "border-bottom-thin", "Thin" ], [ "border-bottom-medium", "Medium" ], [ "border-bottom-large", "Large" ], [ "border-bottom-thick", "Thick" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "border-bottom-thin"
+  }, {
+    "id" : "4d2c8ab9-04e5-732f-2de8-361ef9ca587a",
+    "name" : "titles_color",
+    "display_width" : null,
+    "label" : "Titles color",
+    "inline_help_text" : "Select one of the options to set the accordion items titles color.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "black"
+  }, {
+    "id" : "0bb43348-b058-5b21-1e42-88e8b0273845",
+    "name" : "background_color",
+    "display_width" : null,
+    "label" : "Background color",
+    "inline_help_text" : "Select one of the options to set the background color.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "no"
+  }, {
+    "id" : "2b62b592-c478-356a-085d-9280931561b3",
+    "name" : "icon",
+    "display_width" : null,
+    "label" : "Icon",
+    "inline_help_text" : "Set the icon settings here.",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "icon",
+      "name" : "icon",
+      "display_width" : null,
+      "label" : "Icon",
+      "inline_help_text" : "Select an icon to display here.",
+      "required" : true,
+      "locked" : false,
+      "icon_set" : "fontawesome-5.0.10",
+      "type" : "icon",
+      "default" : {
+        "name" : "plus",
+        "unicode" : "f067",
+        "type" : "SOLID"
+      }
+    }, {
+      "id" : "accessibility_options",
+      "name" : "accessibility_options",
+      "display_width" : null,
+      "label" : "Accessibility options",
+      "inline_help_text" : "Set accessibility options here.",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "accessibility_options.purpose",
+        "name" : "purpose",
+        "display_width" : null,
+        "label" : "Purpose",
+        "help_text" : "",
+        "inline_help_text" : "Categorize the purpose of this icon for screen readers. <a href='https://www.w3.org/WAI/tutorials/images/' target='blank' rel='noopener noreferrer'>Learn More</a>",
+        "required" : true,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "decorative", "Decorative - Ignored by screen reader" ], [ "semantic", "Informative - Read by screen reader" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "default" : "decorative"
+      }, {
+        "id" : "accessibility_options.title",
+        "name" : "title",
+        "display_width" : null,
+        "label" : "Description",
+        "help_text" : "",
+        "inline_help_text" : "This text will be read by screen readers to describe the icon.",
+        "required" : true,
+        "locked" : false,
+        "validation_regex" : "",
+        "visibility" : {
+          "controlling_field" : "accessibility_options.purpose",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "semantic",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Icon"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "purpose" : "decorative",
+        "title" : "Icon"
+      }
+    }, {
+      "id" : "b185dd61-be98-f6e9-5c2a-f6c8154f3fde",
+      "name" : "color",
+      "display_width" : null,
+      "label" : "Color",
+      "inline_help_text" : "Select one of the options to set the color.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "first"
+    }, {
+      "id" : "e6658674-5786-e8da-8b64-0664b59aea27",
+      "name" : "hover_color",
+      "display_width" : null,
+      "label" : "Hover color",
+      "inline_help_text" : "Select one of the options to set the color.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "second"
+    }, {
+      "id" : "8210a041-648e-c943-0d19-eb5b12ccf912",
+      "name" : "background_color",
+      "display_width" : null,
+      "label" : "Background color",
+      "inline_help_text" : "Select one of the options to set the background color.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "no"
+    }, {
+      "id" : "ca9daeeb-faf6-8a58-aeea-c8f9d7831139",
+      "name" : "hover_background_color",
+      "display_width" : null,
+      "label" : "Hover background color",
+      "inline_help_text" : "Select one of the options to set the background color.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "no"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "icon" : {
+        "name" : "plus",
+        "unicode" : "f067",
+        "type" : "SOLID"
+      },
+      "accessibility_options" : {
+        "purpose" : "decorative",
+        "title" : "Icon"
+      },
+      "color" : "first",
+      "hover_color" : "second",
+      "background_color" : "no",
+      "hover_background_color" : "no"
+    }
+  }, {
+    "id" : "9d6708db-1743-a5b4-7b20-82288583d81e",
+    "name" : "icon_active",
+    "display_width" : null,
+    "label" : "Icon Active",
+    "inline_help_text" : "Set the icon settings here.",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "1f85e58c-58f8-c9dc-da08-5594010c0e46",
+      "name" : "icon",
+      "display_width" : null,
+      "label" : "Icon",
+      "inline_help_text" : "Select an icon to display here.",
+      "required" : true,
+      "locked" : false,
+      "icon_set" : "fontawesome-5.0.10",
+      "type" : "icon",
+      "default" : {
+        "name" : "minus",
+        "unicode" : "f068",
+        "type" : "SOLID"
+      }
+    }, {
+      "id" : "d886adb3-7a86-1702-68d6-4e6abd98c30b",
+      "name" : "accessibility_options",
+      "display_width" : null,
+      "label" : "Accessibility options",
+      "inline_help_text" : "Set accessibility options here.",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "0997e443-cd96-ae09-65d3-b7e46b08f2f9",
+        "name" : "purpose",
+        "display_width" : null,
+        "label" : "Purpose",
+        "help_text" : "",
+        "inline_help_text" : "Categorize the purpose of this icon for screen readers. <a href='https://www.w3.org/WAI/tutorials/images/' target='blank' rel='noopener noreferrer'>Learn More</a>",
+        "required" : true,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "decorative", "Decorative - Ignored by screen reader" ], [ "semantic", "Informative - Read by screen reader" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "default" : "decorative"
+      }, {
+        "id" : "ac7f98c8-cb7d-9572-27e7-b734d3e9c8b2",
+        "name" : "title",
+        "display_width" : null,
+        "label" : "Description",
+        "help_text" : "",
+        "inline_help_text" : "This text will be read by screen readers to describe the icon.",
+        "required" : true,
+        "locked" : false,
+        "validation_regex" : "",
+        "visibility" : {
+          "controlling_field" : "0997e443-cd96-ae09-65d3-b7e46b08f2f9",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "semantic",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Icon when active"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "purpose" : "decorative",
+        "title" : "Icon when active"
+      }
+    }, {
+      "id" : "103cbb0f-a056-e4d3-f04c-b8db0ba80bab",
+      "name" : "color",
+      "display_width" : null,
+      "label" : "Color",
+      "inline_help_text" : "Select one of the options to set the color.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "first"
+    }, {
+      "id" : "7fd6a8e3-5131-7025-3f80-3308e3d47e4f",
+      "name" : "hover_color",
+      "display_width" : null,
+      "label" : "Hover color",
+      "inline_help_text" : "Select one of the options to set the color.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "second"
+    }, {
+      "id" : "2a59f60d-127e-cfdc-1623-761b364b9dd2",
+      "name" : "background_color",
+      "display_width" : null,
+      "label" : "Background color",
+      "inline_help_text" : "Select one of the options to set the background color.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "no"
+    }, {
+      "id" : "6660fd54-a1a8-e591-6329-2bac13f16b37",
+      "name" : "hover_background_color",
+      "display_width" : null,
+      "label" : "Hover background color",
+      "inline_help_text" : "Select one of the options to set the background color.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "no"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "icon" : {
+        "name" : "minus",
+        "unicode" : "f068",
+        "type" : "SOLID"
+      },
+      "accessibility_options" : {
+        "purpose" : "decorative",
+        "title" : "Icon when active"
+      },
+      "color" : "first",
+      "hover_color" : "second",
+      "background_color" : "no",
+      "hover_background_color" : "no"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "icons_width" : 16,
+    "icons_spacing" : 0,
+    "icons_shape" : "none",
+    "border" : "no",
+    "border_radius" : "no",
+    "border_color" : "gray",
+    "add_border_below_each_item" : true,
+    "make_first_item_open_by_default" : true,
+    "items_top_spacing" : 20,
+    "items_bottom_spacing" : 20,
+    "items_left_spacing" : 0,
+    "items_right_spacing" : 0,
+    "items_border" : "border-bottom-thin",
+    "titles_color" : "black",
+    "background_color" : "no",
+    "icon" : {
+      "icon" : {
+        "name" : "plus",
+        "unicode" : "f067",
+        "type" : "SOLID"
+      },
+      "accessibility_options" : {
+        "purpose" : "decorative",
+        "title" : "Icon"
+      },
+      "color" : "first",
+      "hover_color" : "second",
+      "background_color" : "no",
+      "hover_background_color" : "no"
+    },
+    "icon_active" : {
+      "icon" : {
+        "name" : "minus",
+        "unicode" : "f068",
+        "type" : "SOLID"
+      },
+      "accessibility_options" : {
+        "purpose" : "decorative",
+        "title" : "Icon when active"
+      },
+      "color" : "first",
+      "hover_color" : "second",
+      "background_color" : "no",
+      "hover_background_color" : "no"
+    }
+  }
+}, {
+  "id" : "6aec53f3-f329-1561-1f20-cdf13a6b734b",
+  "name" : "accordion",
+  "display_width" : null,
+  "label" : "Accordion",
+  "inline_help_text" : "Set the accordion items here.",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : "9a184a69-810a-cad7-7aff-c3603bf72615",
+    "default" : 6
+  },
+  "children" : [ {
+    "id" : "9a184a69-810a-cad7-7aff-c3603bf72615",
+    "name" : "accordion_title",
+    "display_width" : null,
+    "label" : "Title",
+    "inline_help_text" : "Set the accordion item title here (The title will always be visible).",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Lorem ipsum dolor sit amet?"
+  }, {
+    "id" : "1d135fe2-39ac-28c9-7c30-c4c953d668ba",
+    "name" : "accordion_text",
+    "display_width" : null,
+    "label" : "Description",
+    "inline_help_text" : "Set the accordion item description here (The description will be visible on click).",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p>Vivamus suscipit tortor eget felis porttitor volutpat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Proin eget tortor risus. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus.</p>\n<p>Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>"
+  }, {
+    "id" : "b927521e-d062-dee9-0085-2e9364b3a69d",
+    "name" : "accordion_image",
+    "display_width" : null,
+    "label" : "Image",
+    "inline_help_text" : "Set the accordion item image here (Leave blank if you don't want to showcase anything).",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "48925d80-94e3-3c18-dddb-92573a3817b4",
+    "name" : "accordion_image_format",
+    "display_width" : null,
+    "label" : "Accordion image format",
+    "inline_help_text" : "Set the accordion item image format here.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "sixteen-nine", "16:9" ], [ "four-three", "4:3" ], [ "square", "1:1" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "four-three"
+  }, {
+    "id" : "7b088d02-c576-8332-0685-1c327630c5e3",
+    "name" : "button",
+    "display_width" : null,
+    "label" : "Button",
+    "inline_help_text" : "Set the accordion item button here.",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "004ab691-a83b-1614-bd2b-bb01c2d26b99",
+      "name" : "type",
+      "display_width" : null,
+      "label" : "Button type",
+      "inline_help_text" : "Select one of the options to set the button type.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "no", "None" ], [ "button", "Button" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "no"
+    }, {
+      "id" : "62165077-52dc-e0d0-bd7d-9ca4b820a87c",
+      "name" : "text",
+      "display_width" : null,
+      "label" : "Text",
+      "inline_help_text" : "Set the button text here.",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : "004ab691-a83b-1614-bd2b-bb01c2d26b99",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "button",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Lorem ipsum"
+    }, {
+      "id" : "7483ae31-0ada-d067-3d15-42974fca63ae",
+      "name" : "url",
+      "display_width" : null,
+      "label" : "URL",
+      "inline_help_text" : "Set the button link here.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "004ab691-a83b-1614-bd2b-bb01c2d26b99",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "button",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "",
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "8d2764b2-cffb-3f43-5c71-c68126992933",
+      "name" : "color",
+      "display_width" : null,
+      "label" : "Color",
+      "inline_help_text" : "Select one of the options to set the color.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "004ab691-a83b-1614-bd2b-bb01c2d26b99",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "button",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "default"
+    }, {
+      "id" : "9e8384ba-afc6-79d0-ae89-6e0aa2d69675",
+      "name" : "hover_color",
+      "display_width" : null,
+      "label" : "Hover color",
+      "inline_help_text" : "Select one of the options to set the color on hover state.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "004ab691-a83b-1614-bd2b-bb01c2d26b99",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "button",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "default"
+    }, {
+      "id" : "9f5192c2-090b-3c3e-1524-9c104cf0a24a",
+      "name" : "background_color",
+      "display_width" : null,
+      "label" : "Background color",
+      "inline_help_text" : "Select one of the options to set the background color.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "004ab691-a83b-1614-bd2b-bb01c2d26b99",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "button",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "default"
+    }, {
+      "id" : "19aba43b-ca23-b63f-6f3d-6de9278f3cba",
+      "name" : "hover_background_color",
+      "display_width" : null,
+      "label" : "Hover background color",
+      "inline_help_text" : "Select one of the options to set the background color on hover state.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "004ab691-a83b-1614-bd2b-bb01c2d26b99",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "button",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "default"
+    }, {
+      "id" : "91259c93-97ad-be67-fb88-2d5d683fbfcb",
+      "name" : "border_color",
+      "display_width" : null,
+      "label" : "Border color",
+      "inline_help_text" : "Select one of the options to set the border color.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "004ab691-a83b-1614-bd2b-bb01c2d26b99",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "button",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "default"
+    }, {
+      "id" : "e1cbe25c-1ab5-0f96-5a30-77dfb8765a24",
+      "name" : "hover_border_color",
+      "display_width" : null,
+      "label" : "Hover border color",
+      "inline_help_text" : "Select one of the options to set the border color on hover state.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "004ab691-a83b-1614-bd2b-bb01c2d26b99",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "button",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "default"
+    }, {
+      "id" : "858679a8-7ead-ab18-f35a-5e31cc313e8f",
+      "name" : "show_arrow",
+      "display_width" : null,
+      "label" : "Show arrow",
+      "inline_help_text" : "Set this option to true if you would like to show an arrow in the button.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "004ab691-a83b-1614-bd2b-bb01c2d26b99",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "button",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "toggle",
+      "type" : "boolean",
+      "default" : true
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "type" : "no",
+      "text" : "Lorem ipsum",
+      "url" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "",
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "color" : "default",
+      "hover_color" : "default",
+      "background_color" : "default",
+      "hover_background_color" : "default",
+      "border_color" : "default",
+      "hover_border_color" : "default",
+      "show_arrow" : true
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "accordion_title" : "Lorem ipsum dolor sit amet?",
+    "accordion_text" : "<p>Vivamus suscipit tortor eget felis porttitor volutpat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Proin eget tortor risus. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus.</p>\n<p>Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>",
+    "accordion_image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "accordion_image_format" : "four-three",
+    "button" : {
+      "type" : "no",
+      "text" : "Lorem ipsum",
+      "url" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "",
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "color" : "default",
+      "hover_color" : "default",
+      "background_color" : "default",
+      "hover_background_color" : "default",
+      "border_color" : "default",
+      "hover_border_color" : "default",
+      "show_arrow" : true
+    }
+  }, {
+    "accordion_title" : "Lorem ipsum dolor sit amet?",
+    "accordion_text" : "<p>Vivamus suscipit tortor eget felis porttitor volutpat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Proin eget tortor risus. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus.</p>\n<p>Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>",
+    "accordion_image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "accordion_image_format" : "four-three",
+    "button" : {
+      "type" : "no",
+      "text" : "Lorem ipsum",
+      "url" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "",
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "color" : "default",
+      "hover_color" : "default",
+      "background_color" : "default",
+      "hover_background_color" : "default",
+      "border_color" : "default",
+      "hover_border_color" : "default",
+      "show_arrow" : true
+    }
+  }, {
+    "accordion_title" : "Lorem ipsum dolor sit amet?",
+    "accordion_text" : "<p>Vivamus suscipit tortor eget felis porttitor volutpat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Proin eget tortor risus. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus.</p>\n<p>Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>",
+    "accordion_image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "accordion_image_format" : "four-three",
+    "button" : {
+      "type" : "no",
+      "text" : "Lorem ipsum",
+      "url" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "",
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "color" : "default",
+      "hover_color" : "default",
+      "background_color" : "default",
+      "hover_background_color" : "default",
+      "border_color" : "default",
+      "hover_border_color" : "default",
+      "show_arrow" : true
+    }
+  }, {
+    "accordion_title" : "Lorem ipsum dolor sit amet?",
+    "accordion_text" : "<p>Vivamus suscipit tortor eget felis porttitor volutpat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Proin eget tortor risus. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus.</p>\n<p>Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>",
+    "accordion_image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "accordion_image_format" : "four-three",
+    "button" : {
+      "type" : "no",
+      "text" : "Lorem ipsum",
+      "url" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "",
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "color" : "default",
+      "hover_color" : "default",
+      "background_color" : "default",
+      "hover_background_color" : "default",
+      "border_color" : "default",
+      "hover_border_color" : "default",
+      "show_arrow" : true
+    }
+  }, {
+    "accordion_title" : "Lorem ipsum dolor sit amet?",
+    "accordion_text" : "<p>Vivamus suscipit tortor eget felis porttitor volutpat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Proin eget tortor risus. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus.</p>\n<p>Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>",
+    "accordion_image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "accordion_image_format" : "four-three",
+    "button" : {
+      "type" : "no",
+      "text" : "Lorem ipsum",
+      "url" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "",
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "color" : "default",
+      "hover_color" : "default",
+      "background_color" : "default",
+      "hover_background_color" : "default",
+      "border_color" : "default",
+      "hover_border_color" : "default",
+      "show_arrow" : true
+    }
+  }, {
+    "accordion_title" : "Lorem ipsum dolor sit amet?",
+    "accordion_text" : "<p>Vivamus suscipit tortor eget felis porttitor volutpat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Proin eget tortor risus. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus.</p>\n<p>Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada. Nulla porttitor accumsan tincidunt. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.</p>",
+    "accordion_image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    },
+    "accordion_image_format" : "four-three",
+    "button" : {
+      "type" : "no",
+      "text" : "Lorem ipsum",
+      "url" : {
+        "url" : {
+          "content_id" : null,
+          "href" : "",
+          "type" : "CONTENT"
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "color" : "default",
+      "hover_color" : "default",
+      "background_color" : "default",
+      "hover_background_color" : "default",
+      "border_color" : "default",
+      "hover_border_color" : "default",
+      "show_arrow" : true
+    }
+  } ]
+}, {
+  "id" : "b7ac77ab-1601-958b-b8a8-d89ee1f54a98",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "0cd014cf-a84a-6f3d-2c75-88eb93806d33",
+    "name" : "animate_module",
+    "display_width" : null,
+    "label" : "Animate module",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "1bb77308-bf65-8e6c-402a-0ff7457b0983",
+    "name" : "animation_settings",
+    "display_width" : null,
+    "label" : "Animation settings",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "style.animate_module",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "8c597cb6-1666-69de-cb5c-b5c806f166d3",
+      "name" : "animation_duration",
+      "display_width" : null,
+      "label" : "Animation duration",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "min" : 0,
+      "max" : 10000,
+      "step" : 1,
+      "type" : "number",
+      "default" : 1000
+    }, {
+      "id" : "style.animation_settings.animation_delay",
+      "name" : "animation_delay",
+      "display_width" : null,
+      "label" : "Animation delay",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "min" : 0,
+      "max" : 10000,
+      "step" : 1,
+      "type" : "number",
+      "default" : 0
+    }, {
+      "id" : "c36b27e6-ced7-9c70-0d94-1f141b01583f",
+      "name" : "animation_easing",
+      "display_width" : null,
+      "label" : "Animation easing",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "linear", "Linear" ], [ "easeInOutSine", "easeInOutSine" ], [ "easeInOutExpo", "easeInOutExpo" ], [ "easeInOutQuart", "easeInOutQuart" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "linear"
+    }, {
+      "id" : "a4b1e997-241c-1253-3a6e-87fc0c210303",
+      "name" : "animation_direction",
+      "display_width" : null,
+      "label" : "Animation direction",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "normal", "Normal" ], [ "reverse", "Reverse" ], [ "alternate", "Alternate" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "normal"
+    }, {
+      "id" : "5ef32b13-9534-4c7a-4455-c40f3a3446a4",
+      "name" : "animation_delta",
+      "display_width" : null,
+      "label" : "Animation delta",
+      "inline_help_text" : "Animation delta is an option helping you trigger the animation sooner or later that it would be originally.",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "min" : -10000,
+      "max" : 10000,
+      "step" : 10,
+      "type" : "number",
+      "default" : 50
+    }, {
+      "id" : "91d08f83-2217-cf33-aa8b-c41bd257d423",
+      "name" : "loop_animation",
+      "display_width" : null,
+      "label" : "Loop animation",
+      "required" : false,
+      "locked" : false,
+      "display" : "toggle",
+      "type" : "boolean",
+      "default" : false
+    }, {
+      "id" : "5da5c954-1520-dbbe-00f2-e1b5d95cbd1d",
+      "name" : "bind_animation_to_scroll",
+      "display_width" : null,
+      "label" : "Bind animation to scroll",
+      "required" : false,
+      "locked" : false,
+      "display" : "toggle",
+      "type" : "boolean",
+      "default" : true
+    }, {
+      "id" : "f7b8b63b-40c2-6be8-b97f-db5cd198fbfb",
+      "name" : "animation_properties",
+      "display_width" : null,
+      "label" : "Animation properties",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "choices" : [ [ "opacity", "Opacity" ], [ "translate-y", "TranslateY" ], [ "translate-x", "TranslateX" ], [ "scale", "Scale" ], [ "rotate", "Rotate" ] ],
+      "multiple" : true,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : [ "opacity", "translate-y" ]
+    }, {
+      "id" : "b05aaa7c-f76b-203e-2415-dd949dbee896",
+      "name" : "opacity_settings",
+      "display_width" : null,
+      "label" : "Opacity settings",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "style.animation_settings.animation_properties",
+        "controlling_value_regex" : "(opacity)",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "d5704f26-a294-5932-4569-7cf19e6bc11c",
+        "name" : "start_value",
+        "display_width" : null,
+        "label" : "Start value",
+        "required" : false,
+        "locked" : false,
+        "display" : "slider",
+        "min" : 0,
+        "max" : 1,
+        "step" : 0.01,
+        "type" : "number",
+        "default" : 0
+      }, {
+        "id" : "2aea5038-090c-42c6-2434-a651161d7dee",
+        "name" : "end_value",
+        "display_width" : null,
+        "label" : "End value",
+        "required" : false,
+        "locked" : false,
+        "display" : "slider",
+        "min" : 0,
+        "max" : 1,
+        "step" : 0.01,
+        "type" : "number",
+        "default" : 1
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "start_value" : 0,
+        "end_value" : 1
+      }
+    }, {
+      "id" : "4afbed04-e948-f8f8-6fe9-8517d0aaa77c",
+      "name" : "translatey_settings",
+      "display_width" : null,
+      "label" : "TranslateY settings",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "style.animation_settings.animation_properties",
+        "controlling_value_regex" : "(translate-y)",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "2993d987-51e2-b290-4df7-a77336bb657f",
+        "name" : "start_value",
+        "display_width" : null,
+        "label" : "Start value",
+        "required" : false,
+        "locked" : false,
+        "display" : "slider",
+        "min" : -1000,
+        "max" : 1000,
+        "step" : 1,
+        "type" : "number",
+        "default" : 50
+      }, {
+        "id" : "23d1914c-e764-ab15-4f6e-28965723eb51",
+        "name" : "end_value",
+        "display_width" : null,
+        "label" : "End value",
+        "required" : false,
+        "locked" : false,
+        "display" : "slider",
+        "min" : -1000,
+        "max" : 1000,
+        "step" : 1,
+        "type" : "number",
+        "default" : 0
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "start_value" : 50,
+        "end_value" : 0
+      }
+    }, {
+      "id" : "b5a3d171-c473-67d3-3b1f-6c78f39a074d",
+      "name" : "translatex_settings",
+      "display_width" : null,
+      "label" : "TranslateX settings",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "style.animation_settings.animation_properties",
+        "controlling_value_regex" : "(translate-x)",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "812721d1-f23a-e771-d81e-f05e9ea8458c",
+        "name" : "start_value",
+        "display_width" : null,
+        "label" : "Start value",
+        "required" : false,
+        "locked" : false,
+        "display" : "slider",
+        "min" : -1000,
+        "max" : 1000,
+        "step" : 1,
+        "type" : "number",
+        "default" : 50
+      }, {
+        "id" : "c86ec660-3856-9a7c-37b5-0bac54fcdd97",
+        "name" : "end_value",
+        "display_width" : null,
+        "label" : "End value",
+        "required" : false,
+        "locked" : false,
+        "display" : "slider",
+        "min" : -1000,
+        "max" : 1000,
+        "step" : 1,
+        "type" : "number",
+        "default" : 0
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "start_value" : 50,
+        "end_value" : 0
+      }
+    }, {
+      "id" : "6ba2d4f8-277f-c7b0-564c-16c25dd63fef",
+      "name" : "scale_settings",
+      "display_width" : null,
+      "label" : "Scale settings",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "style.animation_settings.animation_properties",
+        "controlling_value_regex" : "(scale)",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "e0a90232-d683-3561-92d8-18279e5b2078",
+        "name" : "start_value",
+        "display_width" : null,
+        "label" : "Start value",
+        "required" : false,
+        "locked" : false,
+        "display" : "slider",
+        "min" : -10,
+        "max" : 10,
+        "step" : 0.1,
+        "type" : "number",
+        "default" : 0.8
+      }, {
+        "id" : "228c0e9f-cff1-d780-0402-4ad153a69345",
+        "name" : "end_value",
+        "display_width" : null,
+        "label" : "End value",
+        "required" : false,
+        "locked" : false,
+        "display" : "slider",
+        "min" : -10,
+        "max" : 10,
+        "step" : 0.1,
+        "type" : "number",
+        "default" : 1
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "start_value" : 0.8,
+        "end_value" : 1
+      }
+    }, {
+      "id" : "f951f455-35b2-33b3-e090-efea89089968",
+      "name" : "rotate_settings",
+      "display_width" : null,
+      "label" : "Rotate settings",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "style.animation_settings.animation_properties",
+        "controlling_value_regex" : "(rotate)",
+        "property" : null,
+        "operator" : "MATCHES_REGEX",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "370d7931-61f3-e68f-4a4f-93b3cfb1447b",
+        "name" : "start_value",
+        "display_width" : null,
+        "label" : "Start value",
+        "required" : false,
+        "locked" : false,
+        "display" : "slider",
+        "min" : -360,
+        "max" : 360,
+        "step" : 1,
+        "type" : "number",
+        "default" : 0
+      }, {
+        "id" : "13636d6a-ce96-9e38-c7c4-cf7e1978bcbc",
+        "name" : "end_value",
+        "display_width" : null,
+        "label" : "End value",
+        "required" : false,
+        "locked" : false,
+        "display" : "slider",
+        "min" : -360,
+        "max" : 360,
+        "step" : 1,
+        "type" : "number",
+        "default" : 360
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "start_value" : 0,
+        "end_value" : 360
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "animation_duration" : 1000,
+      "animation_delay" : 0,
+      "animation_easing" : "linear",
+      "animation_direction" : "normal",
+      "animation_delta" : 50,
+      "loop_animation" : false,
+      "bind_animation_to_scroll" : true,
+      "animation_properties" : [ "opacity", "translate-y" ],
+      "opacity_settings" : {
+        "start_value" : 0,
+        "end_value" : 1
+      },
+      "translatey_settings" : {
+        "start_value" : 50,
+        "end_value" : 0
+      },
+      "translatex_settings" : {
+        "start_value" : 50,
+        "end_value" : 0
+      },
+      "scale_settings" : {
+        "start_value" : 0.8,
+        "end_value" : 1
+      },
+      "rotate_settings" : {
+        "start_value" : 0,
+        "end_value" : 360
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "animate_module" : false,
+    "animation_settings" : {
+      "animation_duration" : 1000,
+      "animation_delay" : 0,
+      "animation_easing" : "linear",
+      "animation_direction" : "normal",
+      "animation_delta" : 50,
+      "loop_animation" : false,
+      "bind_animation_to_scroll" : true,
+      "animation_properties" : [ "opacity", "translate-y" ],
+      "opacity_settings" : {
+        "start_value" : 0,
+        "end_value" : 1
+      },
+      "translatey_settings" : {
+        "start_value" : 50,
+        "end_value" : 0
+      },
+      "translatex_settings" : {
+        "start_value" : 50,
+        "end_value" : 0
+      },
+      "scale_settings" : {
+        "start_value" : 0.8,
+        "end_value" : 1
+      },
+      "rotate_settings" : {
+        "start_value" : 0,
+        "end_value" : 360
+      }
+    }
+  }
+} ]

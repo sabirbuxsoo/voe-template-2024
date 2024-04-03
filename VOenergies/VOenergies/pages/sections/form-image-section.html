@@ -1,0 +1,105 @@
+<!--
+templateType: section
+isAvailableForNewContent: true
+label: Form and image section
+description: A section displaying a text, a form and an image on the right.
+-->
+
+{% dnd_section
+  vertical_alignment="MIDDLE"
+  background_color={{ context.section.background_color }}
+  background_linear_gradient={{ context.section.background_linear_gradient }}
+  background_image={{ context.section.background_image }}
+  padding={{ context.section.padding }}
+  class={{ context.section.class }}
+%}
+{% dnd_column width={{ context.text_block_width ? context.text_block_width : 5 }} offset={{ context.text_block_offset ? context.text_block_offset : 0 }} %}
+{% dnd_row %}
+{% dnd_module 
+  path='../../modules/custom-rich-text'
+  style={{ context.text.style ? context.text.style : {
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        }
+      }
+    }}
+%}
+{% module_attribute "html" %}
+{{ context.text.content ? context.text.content : '<h1>Something powerful</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>' }}
+{% end_module_attribute %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% dnd_row %}
+{% dnd_module 
+  path="@hubspot/form" 
+  form='{{ context.form }}',
+  title='{{ context.form.title }}',
+  follow_up_type_simple='{{ context.form.follow_up_type_simple }}',
+  simple_email_for_live_id='{{ context.form.simple_email_for_live_id }}',
+  follow_up_type_automation='{{ context.form.follow_up_type_automation }}',
+  form_follow_ups_workflow_id='{{ context.form.form_follow_ups_workflow_id }}',
+  response_response_type='{{ context.form.response_response_type }}',
+  response_redirect_id='{{ context.form.response_redirect_id }}',
+  response_redirect_url='{{ context.form.response_redirect_url }}',
+  response_message='{{ context.form.response_message }}',
+  notifications_are_overridden='{{ context.form.notifications_are_overridden }}',
+  notifications_override_email_addresses='{{ context.form.notifications_override_email_addresses }}'
+  gotowebinar_webinar_key='{{ context.form.gotowebinar_webinar_key }}'
+  sfdc_campaign='{{ context.form.sfdc_campaign }}'
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% dnd_column width={{ context.text_block_width ? 12 - context.text_block_width : 6 }} offset={{ context.text_block_offset ? 0 : 6 }} %}
+{% dnd_row %}
+{% dnd_module 
+    path='../../modules/custom-image' 
+    make_image_first_on_mobile={{ context.image.make_image_first_on_mobile }}
+    make_image_take_full_height_of_its_container={{ context.image.make_image_take_full_height_of_its_container }}
+    image_field={{ context.image.image_field ?
+      context.image.image_field : { 
+        'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg')
+      }
+    }}
+    style= {{ context.image.style ?
+      context.image.style : {
+        'xs': {
+          'image_format': 'three-four',
+          'image_border_radius': 'rounded-large',
+          'number_of_visible_items': 1,
+        },
+        'md': {
+          'image_format': 'nine-sixteen',
+          'image_border_radius': 'rounded-large',
+          'number_of_visible_items': 3,
+        },
+        'xl': {
+          'image_format': 'nine-sixteen',
+          'image_border_radius': 'rounded-large',
+          'number_of_visible_items': 3,
+        }
+      }
+    }}
+    %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}

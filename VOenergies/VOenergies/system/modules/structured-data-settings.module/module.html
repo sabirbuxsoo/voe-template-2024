@@ -1,0 +1,109 @@
+{% if module.use_structured_data %}
+{% require_head %}
+{% if module.structured_data.type == "website" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "WebSite",
+  "name": "{{ module.structured_data.website.website_name }}",
+  "url": "{{ module.structured_data.website.website_url.href }}",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ module.structured_data.website.search_url.href }}{search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{% endif %}
+{% if module.structured_data.type == "breadcrumbs" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/", 
+  "@type": "BreadcrumbList", 
+  "itemListElement": [
+  {%- for listItem in module.structured_data.breadcrumbs.page -%}
+    {
+      "@type": "ListItem", 
+      "position": {{ loop.index }}, 
+      "name": "{{ listItem.page_name }}",
+      "item": "{{ listItem.page_url.href }}"  
+    }{% if not loop.last %}, {% endif %}
+    {%- endfor -%}
+  ]
+}
+</script>
+{% endif %}
+{% if module.structured_data.type == "event" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "{{ module.structured_data.event.event_name }}",
+  "description": "{{ module.structured_data.event.event_description }}",
+  "image": "{{ module.structured_data.event.event_image.src }}",
+  "startDate": "{{ module.structured_data.event.event_start_date_and_time|datetimeformat('YYYY-MM-dd') ~ "T" ~ module.structured_data.event.event_start_date_and_time|datetimeformat('hh:mm') }}",
+  "endDate": "{{ module.structured_data.event.event_end_date_and_time|datetimeformat('YYYY-MM-dd') ~ "T" ~ module.structured_data.event.event_end_date_and_time|datetimeformat('hh:mm') }}",
+  "eventStatus": "https://schema.org/{{ module.structured_data.event.event_status }}",
+  "eventAttendanceMode": "https://schema.org/{{ module.structured_data.event.event_attendance_mode }}",
+  {%- if module.structured_data.event.event_attendance_mode == "MixedEventAttendanceMode" -%}
+  "location": [
+    {
+      "@type": "VirtualLocation",
+      "url": "{{ module.structured_data.event.event_stream_url.href }}"
+    },
+    {
+      "@type": "Place",
+      "name": "{{ module.structured_data.event.event_place_name }}",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "{{ module.structured_data.event.event_place_street }}",
+        "addressLocality": "{{ module.structured_data.event.event_place_city }}",
+        "postalCode": "{{ module.structured_data.event.event_place_zipcode }}",
+        "addressCountry": "{{ module.structured_data.event.event_place_country|truncate(2, true, '') }}"
+      }
+    }
+  ]
+  {%- endif -%}
+  {%- if module.structured_data.event.event_attendance_mode == "OnlineEventAttendanceMode" -%}
+  "location": {
+    "@type": "VirtualLocation",
+    "url": "{{ module.structured_data.event.event_stream_url.href }}"
+  }
+  {%- endif -%}
+  {%- if module.structured_data.event.event_attendance_mode == "OfflineEventAttendanceMode" -%}
+  "location": {
+    "@type": "Place",
+    "name": "{{ module.structured_data.event.event_place_name }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ module.structured_data.event.event_place_street }}",
+      "addressLocality": "{{ module.structured_data.event.event_place_city }}",
+      "postalCode": "{{ module.structured_data.event.event_place_zipcode }}",
+      "addressCountry": "{{ module.structured_data.event.event_place_country|truncate(2, true, '')|upper }}"
+    }
+  }{% endif %}
+}
+</script>
+{% endif %}
+{% if module.structured_data.type == "faq" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+  {%- for item in module.structured_data.faq.faq_item -%}
+  {
+    "@type": "Question",
+    "name": "{{ item.faq_item_question }}",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "{{ item.faq_item_answer }}"
+    }
+  }{% if not loop.last %}, {% endif %}
+  {%- endfor -%}
+  ]
+}
+</script>
+{% endif %}
+{% end_require_head %}
+{% endif %}

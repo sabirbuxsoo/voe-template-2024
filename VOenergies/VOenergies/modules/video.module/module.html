@@ -1,0 +1,29 @@
+<div class="image-container image-container--video p-relative {{ module.video_display }}{{ module.border_radius != "no" ? ' ' ~ module.border_radius : '' }} o-hidden">
+  {% if module.video_type == "hubspot" && module.videoplayer_field.player_id %}
+  <div class="video fw fh p-absolute t-0 s-0">
+    {% set max_width = module.videoplayer_field.size_type == 'auto_custom_max' ? module.videoplayer_field.max_width : module.videoplayer_field.width %}
+    {% set max_height = module.videoplayer_field.size_type == 'auto_custom_max' ? module.videoplayer_field.max_height : module.videoplayer_field.height %}
+    {% video_player "embed_player"
+      player_id={{ module.videoplayer_field.player_id }}
+      type={{ module.videoplayer_field.player_type || 'scriptV4' }}
+      full_width={{ module.videoplayer_field.size_type == 'auto_full_width' }},
+      conversion_asset={{ module.videoplayer_field.conversion_asset|tojson|safe }},
+      autoplay={{ module.enable_autoplay }},
+      hidden_controls={{ module.show_controls == true ? False : True }},
+    %}
+  </div>
+  {% endif %} 
+
+  {% if module.video_type == 'other' %}
+  <div class="video fw fh p-absolute t-0 s-0">
+    <iframe class="custom lazy fw fh" 
+            data-src="{{ module.video_url.href|replace('watch?v=', 'embed/') }}" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            {{ module.enable_autoplay == true ? ' autoplay muted playsinline' : ''}}
+            {{ module.show_controls == true ? ' controls' : ''}}
+            allowfullscreen>
+    </iframe>
+  </div>
+  {% endif %}
+</div>

@@ -1,0 +1,12 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 156115077218,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../../assets/css/modules/pages/_multistep.css",
+    "name" : "_multistep.css"
+  } ],
+  "is_available_for_new_content" : true
+}

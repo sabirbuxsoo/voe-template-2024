@@ -1,0 +1,17 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "inline_help_text" : "Use this module to showcase a carousel with shapes around it.",
+  "js_render_options" : {
+    "position" : "footer",
+    "async" : true
+  },
+  "css_render_options" : {
+    "async" : true
+  },
+  "icon" : "fontawesome-5.14.0:Images",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 75412993469,
+  "label" : "Cards carousel",
+  "is_available_for_new_content" : true
+}

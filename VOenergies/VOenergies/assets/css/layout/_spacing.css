@@ -1,0 +1,95 @@
+.mt-auto { margin-top: auto; }  
+.mb-auto { margin-bottom: auto; }  
+.ms-auto { margin-left: auto; }  
+.me-auto { margin-right: auto; } 
+
+{% for number in range(0, 51) %}
+.m-{{ number }} { margin: {{ theme.layout.spacing_base * number ~ "px" }}; }
+.mv-{{ number }} { margin-top: {{ theme.layout.spacing_base * number ~ "px" }}; margin-bottom: {{ theme.layout.spacing_base * number ~ "px" }}; }
+.mh-{{ number }} { margin-left: {{ theme.layout.spacing_base * number ~ "px" }}; margin-right: {{ theme.layout.spacing_base * number ~ "px" }}; }
+
+.mt-{{ number }} { margin-top: {{ theme.layout.spacing_base * number ~ "px" }}; }
+.mb-{{ number }} { margin-bottom: {{ theme.layout.spacing_base * number ~ "px" }}; }
+.ms-{{ number }} { margin-left: {{ theme.layout.spacing_base * number ~ "px" }}; }
+.me-{{ number }} { margin-right: {{ theme.layout.spacing_base * number ~ "px" }}; }
+
+.m-n-{{ number }} { margin: -{{ theme.layout.spacing_base * number ~ "px" }}; }
+.mv-n-{{ number }} { margin-top: -{{ theme.layout.spacing_base * number ~ "px" }}; margin-bottom: -{{ theme.layout.spacing_base * number ~ "px" }}; }
+.mh-n-{{ number }} { margin-left: -{{ theme.layout.spacing_base * number ~ "px" }}; margin-right: -{{ theme.layout.spacing_base * number ~ "px" }}; }
+
+.mt-n-{{ number }} { margin-top: -{{ theme.layout.spacing_base * number ~ "px" }}; }
+.mb-n-{{ number }} { margin-bottom: -{{ theme.layout.spacing_base * number ~ "px" }}; }
+.ms-n-{{ number }} { margin-left: -{{ theme.layout.spacing_base * number ~ "px" }}; }
+.me-n-{{ number }} { margin-right: -{{ theme.layout.spacing_base * number ~ "px" }}; }
+
+.p-{{ number }} { padding: {{ theme.layout.spacing_base * number ~ "px" }}; }
+.pv-{{ number }} { padding-top: {{ theme.layout.spacing_base * number ~ "px" }}; padding-bottom: {{ theme.layout.spacing_base * number ~ "px" }}; }
+.ph-{{ number }} { padding-left: {{ theme.layout.spacing_base * number ~ "px" }}; padding-right: {{ theme.layout.spacing_base * number ~ "px" }}; }
+
+.pt-{{ number }} { padding-top: {{ theme.layout.spacing_base * number ~ "px" }}; }
+.pb-{{ number }} { padding-bottom: {{ theme.layout.spacing_base * number ~ "px" }}; }
+.ps-{{ number }} { padding-left: {{ theme.layout.spacing_base * number ~ "px" }}; }
+.pe-{{ number }} { padding-right: {{ theme.layout.spacing_base * number ~ "px" }}; }
+
+.w-{{ number }} { width: {{ theme.layout.spacing_base * number ~ "px" }}; }
+.h-{{ number }} { height: {{ theme.layout.spacing_base * number ~ "px" }}; }
+
+.max-w-{{ number }} { max-width: {{ theme.layout.spacing_base * number ~ "px" }}; }
+.max-h-{{ number }} { max-height: {{ theme.layout.spacing_base * number ~ "px" }}; }
+
+.gap-{{ number }} { gap: {{ theme.layout.spacing_base * number ~ "px" }}; }
+.column-gap-{{ number }} { column-gap: {{ theme.layout.spacing_base * number ~ "px" }}; }
+.row-gap-{{ number }} { row-gap: {{ theme.layout.spacing_base * number ~ "px" }}; }
+{% endfor %}
+
+{% for breakpoint in breakpoints|sort(False, False, 'value') %}
+{% if breakpoint.name != "xs" %}
+@media (min-width: {{ "{{ theme.layout." ~ breakpoint.name ~ ".breakpoint ~ 'px' }}" }}) {
+  {% endif %}
+  .mt-{{ breakpoint.name }}-auto { margin-top: auto; }  
+  .mb-{{ breakpoint.name }}-auto { margin-bottom: auto; }  
+  .ms-{{ breakpoint.name }}-auto { margin-left: auto; }  
+  .me-{{ breakpoint.name }}-auto { margin-right: auto; } 
+
+  {% for number in range(0, 51) %}
+  .m-{{ breakpoint.name ~ '-' ~ number }} { margin: {{ theme.layout.spacing_base * number ~ "px" }}; }
+  .mv-{{ breakpoint.name ~ '-' ~ number }} { margin-top: {{ theme.layout.spacing_base * number ~ "px" }}; margin-bottom: {{ theme.layout.spacing_base * number ~ "px" }}; }
+  .mh-{{ breakpoint.name ~ '-' ~ number }} { margin-left: {{ theme.layout.spacing_base * number ~ "px" }}; margin-right: {{ theme.layout.spacing_base * number ~ "px" }}; }
+
+  .mt-{{ breakpoint.name ~ '-' ~ number }} { margin-top: {{ theme.layout.spacing_base * number ~ "px" }}; }
+  .mb-{{ breakpoint.name ~ '-' ~ number }} { margin-bottom: {{ theme.layout.spacing_base * number ~ "px" }}; }
+  .ms-{{ breakpoint.name ~ '-' ~ number }} { margin-left: {{ theme.layout.spacing_base * number ~ "px" }}; }
+  .me-{{ breakpoint.name ~ '-' ~ number }} { margin-right: {{ theme.layout.spacing_base * number ~ "px" }}; }
+
+  .m-n-{{ breakpoint.name ~ '-' ~ number }} { margin: -{{ theme.layout.spacing_base * number ~ "px" }}; }
+  .mv-n-{{ breakpoint.name ~ '-' ~ number }} { margin-top: -{{ theme.layout.spacing_base * number ~ "px" }}; margin-bottom: -{{ theme.layout.spacing_base * number ~ "px" }}; }
+  .mh-n-{{ breakpoint.name ~ '-' ~ number }} { margin-left: -{{ theme.layout.spacing_base * number ~ "px" }}; margin-right: -{{ theme.layout.spacing_base * number ~ "px" }}; }
+
+  .mt-n-{{ breakpoint.name ~ '-' ~ number }} { margin-top: -{{ theme.layout.spacing_base * number ~ "px" }}; }
+  .mb-n-{{ breakpoint.name ~ '-' ~ number }} { margin-bottom: -{{ theme.layout.spacing_base * number ~ "px" }}; }
+  .ms-n-{{ breakpoint.name ~ '-' ~ number }} { margin-left: -{{ theme.layout.spacing_base * number ~ "px" }}; }
+  .me-n-{{ breakpoint.name ~ '-' ~ number }} { margin-right: -{{ theme.layout.spacing_base * number ~ "px" }}; }
+
+  .p-{{ breakpoint.name ~ '-' ~ number }} { padding: {{ theme.layout.spacing_base * number ~ "px" }}; }
+  .pv-{{ breakpoint.name ~ '-' ~ number }} { padding-top: {{ theme.layout.spacing_base * number ~ "px" }}; padding-bottom: {{ theme.layout.spacing_base * number ~ "px" }}; }
+  .ph-{{ breakpoint.name ~ '-' ~ number }} { padding-left: {{ theme.layout.spacing_base * number ~ "px" }}; padding-right: {{ theme.layout.spacing_base * number ~ "px" }}; }
+
+  .pt-{{ breakpoint.name ~ '-' ~ number }} { padding-top: {{ theme.layout.spacing_base * number ~ "px" }}; }
+  .pb-{{ breakpoint.name ~ '-' ~ number }} { padding-bottom: {{ theme.layout.spacing_base * number ~ "px" }}; }
+  .ps-{{ breakpoint.name ~ '-' ~ number }} { padding-left: {{ theme.layout.spacing_base * number ~ "px" }}; }
+  .pe-{{ breakpoint.name ~ '-' ~ number }} { padding-right: {{ theme.layout.spacing_base * number ~ "px" }}; }
+
+  .w-{{ breakpoint.name ~ '-' ~ number }} { width: {{ theme.layout.spacing_base * number ~ "px" }}; }
+  .h-{{ breakpoint.name ~ '-' ~ number }} { height: {{ theme.layout.spacing_base * number ~ "px" }}; }
+
+  .max-w-{{ breakpoint.name ~ '-' ~ number }} { max-width: {{ theme.layout.spacing_base * number ~ "px" }}; }
+  .max-h-{{ breakpoint.name ~ '-' ~ number }} { max-height: {{ theme.layout.spacing_base * number ~ "px" }}; }
+
+  .gap-{{ breakpoint.name ~ '-' ~ number }} { gap: {{ theme.layout.spacing_base * number ~ "px" }}; }
+  .column-gap-{{ breakpoint.name ~ '-' ~ number }} { column-gap: {{ theme.layout.spacing_base * number ~ "px" }}; }
+  .row-gap-{{ breakpoint.name ~ '-' ~ number }} { row-gap: {{ theme.layout.spacing_base * number ~ "px" }}; }
+  {% endfor %}
+  {% if breakpoint.name != "xs" %}
+}
+{% endif %}
+{% endfor %}

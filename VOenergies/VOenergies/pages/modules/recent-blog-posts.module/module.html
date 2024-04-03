@@ -1,0 +1,66 @@
+{% import '../../../blog/modules/sample_blog_data.html' as blog_data %}       
+{% import '../../../assets/macros/_blog.html' %}
+{% import '../../../assets/macros/_buttons.html' %}
+{% import '../../../assets/macros/_style.html' %}
+
+{% set i = 0 %}
+
+{% if request.path is containing "preview/template" || request.postDict.preview_theme == true %}
+{% set contents = blog_data.blog_posts %}
+{% else %}
+{% set contents = blog_recent_posts(module.blog_field, (module.posts_to_show + 2) ) %}
+{% endif %}
+
+{% if module.filter_by_blog_post_tag == true %}
+{% set contents = blog_recent_tag_posts(module.blog_field, content.tag_list, (module.posts_to_show + 2) ) %}
+{% endif %}
+
+<div class="related-blog-posts dnd-row {{ generateModuleClasses(module.style) }} {{ module.style.background_color|replace("_", "-") ~ '-bg' }}{% if module.style.animate_module %} animation{% endif %}"
+     {{ getModuleAnimations(module.style) }}>
+  <div class="row-fluid">
+    <div class="span12 columns dnd-column">
+      <div class="dnd-row">
+        <div class="row-fluid">
+          <div class="span12 columns d-flex flex-flow-row-wrap align-items-center justify-content-center justify-content-md-space-between gap-2">
+            <div class="description">
+              <h2 class="first-color">
+                {{ module.title }}
+              </h2>
+            </div>
+            {% if module.show_view_more %}
+            <div class="buttons-container m-n-2">
+              {% if module.view_more.type == "cta" %}
+              {% cta guid="{{ item.cta_field }}" %}
+              {% endif %}
+
+              {% if module.view_more.type == "button" %}
+              {% set style = {
+                'color': module.view_more.color|replace("_", "-"),
+                'hover_color': module.view_more.hover_color|replace("_", "-"),
+                'background_color': module.view_more.background_color|replace("_", "-"),
+                'hover_background_color': module.view_more.hover_background_color|replace("_", "-"),
+                'border_color': module.view_more.border_color|replace("_", "-"),
+                'hover_border_color': module.view_more.hover_border_color|replace("_", "-"),
+                'make_button_small': module.view_more.make_button_small
+              } %}
+
+              {{ createButtonHTML(module.view_more, style) }}
+              {% endif %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="dnd-row posts__content">
+        <div class="row-fluid d-flex flex-flow-xs-column o-auto no-scrollbar flex-flow-md-row-wrap justify-content-flex-start">
+          {% for post in contents %}
+          {% if ((post.absolute_url != content.absolute_url) || request.path is containing "preview/template" || request.postDict.preview_theme == true) && i < module.posts_to_show %}
+          {{ createBlogPost(post, module) }}
+          {% set i = i + 1 %}
+          {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

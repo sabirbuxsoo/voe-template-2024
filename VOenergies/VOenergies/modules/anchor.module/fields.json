@@ -1,0 +1,12 @@
+[ {
+  "id" : "1a7c5424-c2cd-b0b3-e9da-7abde2063b1c",
+  "name" : "name_in_menu",
+  "display_width" : null,
+  "label" : "Text",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+} ]

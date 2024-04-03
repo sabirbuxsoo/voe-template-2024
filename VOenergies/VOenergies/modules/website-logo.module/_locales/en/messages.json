@@ -1,0 +1,197 @@
+{
+  "add_link.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "add_link.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "add_link.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "add_link.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "add_link.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "img.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "img.default.alt" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "img.default.loading" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "img.default.override_inherited_src" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "img.default.src" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "img.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "img.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "img.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "img.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "link.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "link.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "link.inline_help_text" : {
+    "message" : "Set the URL your visitor should be redirected to by clicking on the logo (If no url is specified, your logo will link to your primary domain).",
+    "description" : null,
+    "placeholders" : null
+  },
+  "link.label" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "link.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "website-logo",
+    "description" : "",
+    "placeholders" : null
+  },
+  "open_in_new_tab.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "open_in_new_tab.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "open_in_new_tab.inline_help_text" : {
+    "message" : "Set this option to true if you want the link to be opened in a new tab on click.",
+    "description" : null,
+    "placeholders" : null
+  },
+  "open_in_new_tab.label" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "open_in_new_tab.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "transparent_logo.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "transparent_logo.default.alt" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "transparent_logo.default.loading" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "transparent_logo.default.override_inherited_src" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "transparent_logo.default.src" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "transparent_logo.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "transparent_logo.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "transparent_logo.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "transparent_logo.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "use_transparent_logo.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "use_transparent_logo.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "use_transparent_logo.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "use_transparent_logo.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "use_transparent_logo.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  }
+}

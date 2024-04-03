@@ -1,0 +1,397 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Carrières
+-->
+
+{% extends "../../assets/layouts/base.html" %}
+
+{% set widget_data = {
+  "page_settings": {
+      'transparent_header': True,
+      'use_lead_capture_header': False,
+      'use_lead_capture_footer': False,
+      'force_full_height': False,
+  }
+} %}
+
+{% block body %}
+{% dnd_area "carrieres" label="Carrière" class="carrieres" %}
+
+<!-- Begin hero section -->
+{% include_dnd_partial 
+  path='../sections/hero-faq-section.html'
+  context={
+    'section': {
+      'class': 'splashscreen-md splashscreen-lg splashscreen-xl',
+      'background_image': {
+        'backgroundSize': 'COVER',
+        'backgroundPosition': 'MIDDLE_CENTER',
+        'imageUrl': get_asset_url('../../assets/images/visuals/hero-carrieres.jpg')
+      },
+      'padding': { 'bottom': 0 }
+    },
+     'faq': {
+      'title': 'Les questions fréquentes',
+      'links': [
+        {
+          'link_type' : 'link',
+          'link_text': "Bien comprendre ma facture",
+          'link_field': {
+             "url": { "href": "https://voenergies.com" }
+          }         
+        },
+        {
+          'link_type' : 'link',
+          'link_text': "Je déménage, les démarches ?",
+          'link_field': {
+             "url": { "href": "https://voenergies.com" }
+          }       
+        },
+        {
+          'link_type' : 'link',
+          'link_text': "Réduire ma consommation, les bons gestes ?",
+          'link_field': {
+             "url": { "href": "https://voenergies.com" }
+          }       
+        },
+        {
+          'link_type' : 'link',
+          'link_text': "Raccorder mon logement à la fibre",
+          'link_field': {
+             "url": { "href": "https://voenergies.com" }
+          }  
+       }
+      ]
+    },
+    'text': {
+      'content': "<p style='color: {{ theme.colors.white.color }};'>Nous n'attendons plus que vous !<span style='color: {{ theme.colors.third.color }};'> Rejoignez VOé</span></p>",
+      'style': {
+        'animate_module': False,
+        'animation_settings': {
+          'bind_animation_to_scroll': false,
+          'trigger_animation_by_character': true,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 250,
+          'animation_delay': 25,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': -50, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center',
+          'body_display': 'title-hero-2'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'body_display': 'title-hero-2'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'body_display': 'title-hero-2'
+        }
+      }
+    },
+     "buttons": {
+      'button' : [
+        {
+          "type": 'button',
+          "text": "en savoir plus", 
+          "color": "white",
+          "hover_color": "black",
+          "background_color": "no",
+          "hover_background_color": "white",
+          "border_color": "white",
+          "hover_border_color": "white",
+          "show_arrow": False
+        }
+      ],
+      'style': {
+        'animate_module': False,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+            },
+          'text_alignment': 'center',
+          'horizontal_alignment': 'justify-content-xs-center'        
+          },
+          'md': {
+            'spacing': {
+              'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+              'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+            },
+            'text_alignment': 'center',
+            'horizontal_alignment': 'justify-content-md-flex-start'        
+          },
+          'xl': {
+            'spacing': {
+              'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+              'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+            },
+          'text_alignment': 'center',
+          'horizontal_alignment': 'justify-content-xl-flex-start'
+        }
+      }
+    }
+  }
+%}
+<!-- End hero section -->
+
+
+{% include_dnd_partial 
+  path='../sections/text-3-columns-section.html'
+  context={
+    'background_items': {
+      'background_item' : [
+        {
+          'image_field': { "src": get_asset_url('../../assets/images/visuals/bg-items/rosace-carrieres.svg') },
+          "background_item_position": [
+            {
+              "resolution": "xs",
+              "width": 100,
+              "width_unit": "%",
+              "height": 20,
+              "height_unit": "%",
+              "vertical_position": 2,
+              "set_vertical_position_from_bottom": False,
+              "horizontal_position": 40,
+              "object_fit": "contain",
+              "object_position": "top_center",
+              "horizontal_translation": 0,
+              "vertical_translation": 0
+            },
+            {
+              "resolution": "md",
+              "width": 100,
+              "width_unit": "%",
+              "height": 80,
+              "height_unit": "%",
+              "vertical_position": 5,
+              "set_vertical_position_from_bottom": False,
+              "horizontal_position": 35,
+              "object_fit": "contain",
+              "object_position": "center_center",
+              "horizontal_translation": 0,
+              "vertical_translation": 0
+            },
+            {
+              "resolution": "xl",
+              "width": 100,
+              "width_unit": "%",
+              "height": 80,
+              "height_unit": "%",
+              "vertical_position": 5,
+              "set_vertical_position_from_bottom": False,
+              "horizontal_position": 30,
+              "object_fit": "contain",
+              "object_position": "center_center",
+              "horizontal_translation": 0,
+              "vertical_translation": 0
+            }
+          ]
+        }
+      ], 
+    }
+  }
+%}
+
+{% include_dnd_partial 
+  path='../sections/key-numbers-section.html'
+  context={ 
+    'numbers_column_width': 10
+  }
+%}
+
+{% include_dnd_partial 
+  path='../sections/ats-section.html'
+  context={
+    'ats' : {
+      'iframe_url' : {
+        "href": 'https://app.hubspot.com/pages/4454988/editor/6342344390/content?utm_source=sprocket-[…]7032883.111&__hssc=248996760.3.1697017032883&__hsfp=376693809'
+      }
+    }
+  }
+%}
+
+
+
+<!-- Begin text/image section -->
+{% include_dnd_partial 
+  path='../sections/text-image-right-cta-section.html'
+  context={
+    'text_block_width' : 4,
+    'image_block_width' : 5,
+    'image_block_offset' : 6,
+    'text': {
+      'content': '<h2 style="color: {{ theme.colors.first.color }};">Candidature spontanée</h2><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>',
+      'style': {
+        'animate_module': False,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        }
+      }
+    },
+    'image': {
+      'image_field' : { 
+        'src' : get_asset_url('../../assets/images/visuals/besoins-1.png')
+      },
+      'add_background_shape' : True, 
+      'background_shape' : {
+        'src' : get_asset_url('../../assets/images/visuals/bg-items/besoins-animation-1.svg')
+      },
+      'make_image_first_on_mobile': True,
+      'make_image_take_full_height_of_its_container': False, 
+      'style': {
+        'animate_module': False,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 0.5,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'background_shape': {
+          'animate_module': True,
+          'animation_settings': {
+            'bind_animation_to_scroll': True,
+            'animation_properties': ['rotate'],
+            'animation_easing': 'easeInOutSine',
+            'animation_duration': 500,
+            'animation_delta': 0.5,
+            'rotate_settings': {'start_value': 0, 'end_value': 360 },
+          }
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'image_format': 'square',
+          'image_border_radius': 'no-rounded'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'image_format': 'square',
+          'image_border_radius': 'no-rounded'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'image_format': 'square',
+          'image_border_radius': 'no-rounded'
+        }
+      }
+    },
+    "buttons": {
+      'button' : [
+        {
+          "type": 'button',
+          "text": "envoyez votre dossier", 
+          "color": "first",
+          "hover_color": "white",
+          "background_color": "no",
+          "hover_background_color": "first",
+          "border_color": "first",
+          "hover_border_color": "first",
+          "show_arrow": False
+        }
+      ],
+      'style': {
+        'animate_module': False,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+            },
+          'text_alignment': 'center',
+          'horizontal_alignment': 'justify-content-xs-center'        
+          },
+          'md': {
+            'spacing': {
+              'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+              'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+            },
+            'text_alignment': 'center',
+            'horizontal_alignment': 'justify-content-md-flex-start'        
+          },
+          'xl': {
+            'spacing': {
+              'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+              'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+            },
+          'text_alignment': 'center',
+          'horizontal_alignment': 'justify-content-xl-flex-start'
+        }
+      }
+    }
+  }
+%}
+<!-- End text/image section -->
+
+{% end_dnd_area %}
+{% endblock body %}

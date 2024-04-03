@@ -1,0 +1,36 @@
+.blog-pagination .blog-pagination__link {
+	color: {{ theme.colors.black.color }};
+}
+
+.blog-pagination .blog-pagination__link:not([class*="prev"]):not([class*="next"]) {
+	width: calc({{ theme.layout.spacing_base ~ "px" }} * 4);
+	height: calc({{ theme.layout.spacing_base ~ "px" }} * 4);
+}
+
+.blog-pagination .blog-pagination__link--active {
+	pointer-events: none;
+	background-color: {{ theme.colors.black.color }};
+	color: {{ theme.colors.white.color }};
+	border-radius: 50%;
+}
+
+.blog-pagination .blog-pagination__link:not([class*="disabled"]):not([class*="active"]):hover {
+	pointer-events: initial;
+	cursor: pointer;
+	opacity: 0.75;
+} 
+
+.blog-pagination .blog-pagination__link[class*="disabled"] {
+	opacity: 0.5;
+}
+
+.blog-pagination .blog-pagination__link.blog-pagination__link--active:not(.no-color):not(.hs-breadcrumb-label):not([class*=-color]):not(.button):not(.hs-button):not([class*=prev]):not([class*=next]) {
+	width: {{ theme.layout.spacing_base * 8 ~ "px" }};
+	height: {{ theme.layout.spacing_base * 8 ~ "px" }};
+	color: {{ theme.colors.white.color }};
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
+}

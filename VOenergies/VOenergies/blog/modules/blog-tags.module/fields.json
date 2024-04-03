@@ -1,0 +1,63 @@
+[ {
+  "id" : "b7950400-a7e9-11e6-e1db-f2b2f8816a77",
+  "name" : "blog_field",
+  "display_width" : null,
+  "label" : "Blog",
+  "required" : false,
+  "locked" : true,
+  "type" : "blog",
+  "default" : 146238884633
+}, {
+  "id" : "4217de06-c6eb-ea26-c247-79ed4468a21c",
+  "name" : "number_of_topics_to_show_when_not_open",
+  "display_width" : null,
+  "label" : "Number of topics to show when not open",
+  "required" : false,
+  "locked" : true,
+  "display" : "slider",
+  "min" : 1,
+  "max" : 5,
+  "step" : 1,
+  "type" : "number",
+  "default" : 5
+}, {
+  "id" : "a2dca43d-b7a8-b740-d07b-120d67810c4f",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : true,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Catégories"
+}, {
+  "id" : "62a02b56-fc91-9f7d-1fec-cb46ee26b6fe",
+  "name" : "icon",
+  "display_width" : null,
+  "label" : "Icône",
+  "required" : false,
+  "locked" : true,
+  "icon_set" : "fontawesome-5.14.0",
+  "type" : "icon",
+  "default" : {
+    "name" : "plus",
+    "unicode" : "f067",
+    "type" : "SOLID"
+  }
+}, {
+  "id" : "565b7947-2f7c-a341-7783-9a190b4cc69d",
+  "name" : "icon_active",
+  "display_width" : null,
+  "label" : "Icône Active",
+  "required" : false,
+  "locked" : true,
+  "icon_set" : "fontawesome-5.14.0",
+  "type" : "icon",
+  "default" : {
+    "name" : "minus",
+    "unicode" : "f068",
+    "type" : "SOLID"
+  }
+} ]

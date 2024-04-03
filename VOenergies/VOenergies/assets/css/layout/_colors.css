@@ -1,0 +1,88 @@
+{%- for item, rules in theme.colors.items() -%}
+.{{ item|replace("_", "-") }}-color,
+.{{ item|replace("_", "-") }}-hover-color:hover,
+button.{{ item|replace("_", "-") }}-color,
+button.{{ item|replace("_", "-") }}-hover-color:hover,
+.button.{{ item|replace("_", "-") }}-color,
+.button.{{ item|replace("_", "-") }}-hover-color:hover,
+form input[type="submit"].{{ item|replace("_", "-") }}-color,
+form input[type="submit"].{{ item|replace("_", "-") }}-hover-color:hover,
+form .hs-button.{{ item|replace("_", "-") }}-color,
+form .hs-button.{{ item|replace("_", "-") }}-hover-color:hover { color: {{ rules.color }}; }
+
+.{{ item|replace("_", "-") }}-bg,
+.{{ item|replace("_", "-") }}-hover-bg:hover,
+button.{{ item|replace("_", "-") }}-bg,
+button.{{ item|replace("_", "-") }}-hover-bg:hover,
+.button.{{ item|replace("_", "-") }}-bg,
+.button.{{ item|replace("_", "-") }}-hover-bg:hover,
+form input[type="submit"].{{ item|replace("_", "-") }}-bg,
+form input[type="submit"].{{ item|replace("_", "-") }}-hover-bg:hover,
+form .hs-button.{{ item|replace("_", "-") }}-bg,
+form .hs-button.{{ item|replace("_", "-") }}-hover-bg:hover { background-color: {{ rules.color }}; }
+
+.{{ item|replace("_", "-") }}-border-color,
+.{{ item|replace("_", "-") }}-hover-border-color:hover,
+button.{{ item|replace("_", "-") }}-border-color,
+button.{{ item|replace("_", "-") }}-hover-border-color:hover,
+.button.{{ item|replace("_", "-") }}-border-color,
+.button.{{ item|replace("_", "-") }}-hover-border-color:hover,
+form input[type="submit"].{{ item|replace("_", "-") }}-border-color,
+form input[type="submit"].{{ item|replace("_", "-") }}-hover-border-color:hover,
+form .hs-button.{{ item|replace("_", "-") }}-border-color,
+form .hs-button.{{ item|replace("_", "-") }}-hover-border-color:hover { border-color: {{ rules.color }}; }
+
+.{{ item|replace("_", "-") }}-fill svg path,
+.{{ item|replace("_", "-") }}-hover-fill:hover svg path,
+.{{ item|replace("_", "-") }}-fill svg circle,
+.{{ item|replace("_", "-") }}-hover-fill:hover svg circle,
+button.{{ item|replace("_", "-") }}-fill svg path,
+button.{{ item|replace("_", "-") }}-hover-fill:hover svg path,
+.button.{{ item|replace("_", "-") }}-fill svg path,
+.button.{{ item|replace("_", "-") }}-hover-fill:hover svg path,
+form input[type="submit"].{{ item|replace("_", "-") }}-fill svg path,
+form input[type="submit"].{{ item|replace("_", "-") }}-hover-fill:hover svg path,
+form .hs-button.{{ item|replace("_", "-") }}-fill svg path,
+form .hs-button.{{ item|replace("_", "-") }}-hover-fill:hover svg path { fill: {{ rules.color }}; }
+
+.{{ item|replace("_", "-") }}-stroke svg path,
+.{{ item|replace("_", "-") }}-hover-stroke:hover svg path,
+button.{{ item|replace("_", "-") }}-stroke svg path,
+button.{{ item|replace("_", "-") }}-hover-stroke:hover svg path,
+.button.{{ item|replace("_", "-") }}-stroke svg path,
+.button.{{ item|replace("_", "-") }}-hover-stroke:hover svg path,
+form input[type="submit"].{{ item|replace("_", "-") }}-stroke svg path,
+form input[type="submit"].{{ item|replace("_", "-") }}-hover-stroke:hover svg path,
+form .hs-button.{{ item|replace("_", "-") }}-stroke svg path,
+form .hs-button.{{ item|replace("_", "-") }}-hover-stroke:hover svg path { stroke: {{ rules.color }}; }
+{%- endfor -%}
+
+.no-color, .no-hover-color:hover,
+button.no-color, button.no-hover-color:hover,
+.button.no-color, .button.no-hover-color:hover,
+form input[type="submit"].no-color, form input[type="submit"].no-hover-color:hover,
+form .hs-button.no-color, form .hs-button.no-hover-color:hover { color: transparent; }
+
+.no-bg, .no-hover-bg:hover,
+button.no-bg, button.no-hover-bg:hover,
+.button.no-bg, .button.no-hover-bg:hover,
+form input[type="submit"].no-bg, form input[type="submit"].no-hover-bg:hover,
+form .hs-button.no-bg, form .hs-button.no-hover-bg:hover { background-color: transparent; }
+
+.no-border-color, .no-hover-border-color:hover,
+button.no-border-color, button.no-hover-border-color:hover,
+.button.no-border-color, .button.no-hover-border-color:hover,
+form input[type="submit"].no-border-color, form input[type="submit"].no-hover-border-color:hover,
+form .hs-button.no-border-color, form .hs-button.no-hover-border-color:hover { border-color: transparent; }
+
+.no-fill svg path, .no-hover-fill:hover svg path,
+button.no-fill svg path, button.no-hover-fill:hover svg path,
+.button.no-fill svg path, .button.no-hover-fill:hover svg path,
+form input[type="submit"].no-fill svg path, form input[type="submit"].no-hover-fill:hover svg path,
+form .hs-button.no-fill svg path, form .hs-button.no-hover-fill:hover svg path { fill: transparent; }
+
+.no-stroke svg path, .no-hover-stroke:hover svg path,
+button.no-stroke svg path, button.no-hover-stroke:hover svg path,
+.button.no-stroke svg path, .button.no-hover-stroke:hover svg path,
+form input[type="submit"].no-stroke svg path, form input[type="submit"].no-hover-stroke:hover svg path,
+form .hs-button.no-stroke svg path, form .hs-button.no-hover-stroke:hover svg path { stroke: transparent; }

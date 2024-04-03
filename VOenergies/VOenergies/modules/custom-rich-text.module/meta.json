@@ -1,0 +1,10 @@
+{
+  "global" : false,
+  "content_types" : [ "QUOTE_TEMPLATE", "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "inline_help_text" : "Use this module to put some text and manage its display across the website resolutions.",
+  "icon" : "fontawesome-5.14.0:Envelope%20Open-text:SOLID",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING", "QUOTE" ],
+  "module_id" : 70237617629,
+  "label" : "Custom rich text",
+  "is_available_for_new_content" : true
+}

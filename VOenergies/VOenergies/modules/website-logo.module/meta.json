@@ -1,0 +1,18 @@
+{
+  "content_tags" : [ {
+    "name" : "OTHER_INDUSTRY",
+    "source" : "MARKETPLACE"
+  }, {
+    "name" : "COMPATIBLE_ANY",
+    "source" : "MARKETPLACE"
+  } ],
+  "extra_classes" : "widget-type-logo",
+  "global" : false,
+  "content_types" : [ "ANY" ],
+  "master_language" : "en",
+  "icon" : "fontawesome-5.14.0:Atom:SOLID",
+  "host_template_types" : [ "ANY" ],
+  "module_id" : 141575527478,
+  "label" : "Logo",
+  "is_available_for_new_content" : true
+}

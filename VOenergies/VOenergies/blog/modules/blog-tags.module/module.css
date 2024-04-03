@@ -1,0 +1,6 @@
+.blog-tags .blog-tags__topic-container:not(.active) {
+  opacity: 0;
+  max-height: 0;
+  max-width: 0;
+  overflow: hidden;
+}

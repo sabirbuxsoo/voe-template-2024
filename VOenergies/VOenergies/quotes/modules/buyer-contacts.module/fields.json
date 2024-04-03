@@ -1,0 +1,79 @@
+[ {
+  "id" : "show_contact_name",
+  "name" : "show_contact_name",
+  "display_width" : null,
+  "label" : "Show buyer contacts name",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "show_contact_job_title",
+  "name" : "show_contact_job_title",
+  "display_width" : null,
+  "label" : "Show buyer contacts job title",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "show_contact_email",
+  "name" : "show_contact_email",
+  "display_width" : null,
+  "label" : "Show buyer contacts email",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "show_contact_phone",
+  "name" : "show_contact_phone",
+  "display_width" : null,
+  "label" : "Show buyer contacts phone",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "17729f76-53fd-2e9e-fc91-39db54e382ef",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "30a0b5ad-3c13-a8ca-660e-d3f1f15e8480",
+    "name" : "text_color",
+    "display_width" : null,
+    "label" : "Text color",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "white"
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "text_color" : "white"
+  }
+}, {
+  "id" : "e95dbdfa-721f-9ec7-498b-34944e349d7e",
+  "name" : "show_only_first_contact",
+  "display_width" : null,
+  "label" : "Show only first contact",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : true
+} ]

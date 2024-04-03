@@ -1,0 +1,242 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Landing page Ebook
+-->
+
+{% extends "../../assets/layouts/base.html" %}
+
+{% set widget_data = {
+  "page_settings": {
+      'transparent_header': True,
+      'use_lead_capture_header': True,
+      'use_lead_capture_footer': True,
+      'force_full_height': False,
+  }
+} %}
+
+{% block body %}
+
+{% dnd_area "landing-page" label="Landing page" class="landing-page" %}
+
+<!-- Begin hero section -->
+{% include_dnd_partial 
+  path='../sections/hero-lp-section.html'
+  context={
+    'section': {
+      'class': 'splashscreen-md splashscreen-lg splashscreen-xl',
+      'background_image': {
+        'backgroundSize': 'COVER',
+        'backgroundPosition': 'TOP_CENTER',
+        'imageUrl': get_asset_url('../../assets/images/visuals/hero-lp.jpg')
+      },
+      'padding': { 'top': 0 },
+    },
+    'text': {
+      'content': '<h1 style="color: {{ theme.colors.white.color }};">Lorem Ipsum</h1><h2 style="color: {{ theme.colors.white.color }};">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2>',
+      'style': {
+        'animate_module': False,
+        'animation_settings': {
+          'bind_animation_to_scroll': false,
+          'trigger_animation_by_character': true,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 250,
+          'animation_delay': 25,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': -50, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center',
+          'h1_display': 'title-hero-2'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'h1_display': 'title-hero-2'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'h1_display': 'title-hero-2'
+        }
+      }
+    },
+  }
+%}
+<!-- End hero section -->
+
+<!--  Begin text section -->
+{% include_dnd_partial 
+  path='../sections/text-form-image-sticky-section.html'
+  context={
+    'text': {
+      'content': '<h2 style="color: {{ theme.colors.first.color }};">Titre</h2><h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h4><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p><p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>',
+      'style': {
+        'animate_module': False,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center',
+          'horizontal_alignment': 'justify-content-xs-center'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment': 'justify-content-md-flex-start'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment': 'justify-content-xl-flex-start'
+        }
+      }
+    },
+    'image': {
+      "add_background_shape": false,
+      'image_field': { 'src': get_asset_url('../../assets/images/visuals/lp-1.png') },
+      'style': {
+        'xs': {
+          'image_format': 'three-four',
+          'image_border_radius': 'no-rounded'
+        },
+        'md': {
+          'image_format': 'three-four',
+          'image_border_radius': 'no-rounded'
+        },
+        'xl': {
+          'image_format': 'three-four',
+          'image_border_radius': 'no-rounded'
+        }
+      }
+    }
+  }
+%}
+
+{% include_dnd_partial 
+  path='../sections/text-only-left-section.html'
+  context={
+    'section': {
+      'background_color': '#D0D0CE40',
+      'class' : '' 
+    },
+    'text': {
+      'content': '<h3 style="color: {{ theme.colors.first.color }};">Téléchargez notre ebook et découvrez :</h3><ul><li>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur</li><li>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur</li><li>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium</li></ul>',
+			"style": {
+        'animate_module': False,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        }
+			}
+		},
+    'background_items': {
+      'background_item' : [
+        {
+					'image_field': { "src": get_asset_url('../../assets/images/visuals/bg-items/corporate-animation-2.svg') },
+					"background_item_position": [
+						{
+							"resolution": "xs",
+							"width": 0,
+							"width_unit": "%",
+							"height": 0,
+							"height_unit": "%",
+							"vertical_position": 50,
+							"set_vertical_position_from_bottom": False,
+							"horizontal_position": 50,
+							"object_fit": "contain",
+							"object_position": "top_center",
+							"horizontal_translation": 0,
+							"vertical_translation": 0
+						},
+						{
+							"resolution": "md",
+							"width": 50,
+							"width_unit": "%",
+							"height": 100,
+							"height_unit": "%",
+							"vertical_position": 15,
+							"set_vertical_position_from_bottom": False,
+							"horizontal_position": -10,
+							"object_fit": "contain",
+							"object_position": "bottom_center",
+							"horizontal_translation": 0,
+							"vertical_translation": 0
+						},
+						{
+								"resolution": "xl",
+								"width": 50,
+								"width_unit": "%",
+								"height": 100,
+								"height_unit": "%",
+								"vertical_position": 30,
+								"set_vertical_position_from_bottom": False,
+								"horizontal_position": -10,
+								"object_fit": "contain",
+								"object_position": "bottom_center",
+								"horizontal_translation": 0,
+								"vertical_translation": 0
+							}
+					]
+				}
+      ], 
+    }
+  }
+%}
+<!-- End text section -->
+{% end_dnd_area %}
+
+{% endblock body %}

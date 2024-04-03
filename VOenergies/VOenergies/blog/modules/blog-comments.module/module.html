@@ -1,0 +1,9 @@
+{% import '../../../assets/macros/_style.html' %}
+
+<div class="blog-comments {{ generateModuleClasses(module.style) }}{% if module.style.animate_module %} animation{% endif %}"
+     {{ getModuleAnimations(module.style) }}>
+  <div class="{{ module.style.title_font_size }} {{ module.style.title_color|replace("_", "-") ~ '-color' }}">
+    {{ module.comments_title }}
+  </div>
+  {% blog_comments "blog_comments" limit=10000 %}
+</div> 

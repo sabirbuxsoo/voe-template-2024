@@ -1,0 +1,38 @@
+{% import '../../../assets/macros/_style.html' %}
+{% import '../../../assets/macros/_buttons.html' %}
+
+{% set contents = hubdb_table_rows(module.hubdbtable_field) %}
+{% set posts_to_show = module.hubdb_posts_per_page %}
+{% set total_page_count = (contents|length / posts_to_show)|round(0, "ceil") %}
+{% set current_page_num = (request.query_dict.page ? request.query_dict.page : 1)|round(0, "floor") %}
+{% set posts_start = current_page_num == 1 ? 0 : ((current_page_num * posts_to_show) + 1) - posts_to_show %}
+{% set posts_end = current_page_num == 1 ? current_page_num * (posts_to_show + 1) : current_page_num < total_page_count ? (current_page_num * posts_to_show) + 1 : total_page_count * posts_to_show %}
+
+<div id="{{ name }}" class="hubdb-listing-body hubdb-listing-body-realisations dnd-row {% if module.style.animate_module %} animation{% endif %} fw fh"
+     {{ getModuleAnimations(module.style) }} 
+     data-posts-per-row="{{ module.hubdb_posts_per_row }}" 
+     data-tid="{{ module.hubdbtable_field }}" 
+     data-pid="{{ portal_id }}"
+     data-max-items="{{ contents|length }}"
+     data-offset="{{ module.hubdb_posts_offset }}"
+     data-one-page="{{ module.one_page_only }}"
+     data-posts-per-page="{{ posts_to_show }}">
+  <div class="row-fluid d-flex flex-flow-row-wrap justify-content-flex-start row-gap-8 fw fh">
+  </div>
+</div>
+
+{% require_css %}
+<style>
+.filter-default-bg,
+button.filter-default-bg,
+.button.filter-default-bg,
+form input[type="submit"].filter-default-bg,
+form .hs-button.filter-default-bg { background-color: {{ module.style.filter_color.css }}; }
+  
+.filter-default-hover-bg:hover,
+button.filter-default-hover-bg:hover,
+.button.filter-default-hover-bg:hover,
+form input[type="submit"].filter-default-hover-bg:hover,
+form .hs-button.filter-default-hover-bg:hover { background-color: {{ module.style.hover_filter_color.css }}; }
+</style>
+{% end_require_css %}

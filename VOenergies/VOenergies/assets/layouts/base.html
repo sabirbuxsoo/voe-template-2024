@@ -1,0 +1,73 @@
+<!--
+templateType: none
+-->
+<!doctype html>
+<html lang="{{ content.language ? content.language : request.geoip_country != html_lang ? request.geoip_country : html_lang }}" {{ html_lang_dir }}>
+	<head>
+		<meta charset="utf-8">
+		<title>{{ page_meta.html_title }}</title>
+		<link rel="shortcut icon" href="{% if site_settings.favicon_src || brandSettings.primaryFavicon.src %}{{ site_settings.favicon_src ? site_settings.favicon_src : brandSettings.primaryFavicon.src }}{% else %}{{ get_asset_url('../images/branding/favicon.svg') }}{% endif %}" />
+		<meta name="description" content="{{ page_meta.meta_description }}">
+		{{ standard_header_includes }}
+		<link rel="preload" 
+					href="{{ get_asset_url("../css/main.css") }}" 
+					as="style" 
+					onload="this.onload=null;this.rel='stylesheet'"/>
+		<link rel="preload" 
+					href="{{ get_asset_url("../css/fonts/aventa.css") }}" 
+					as="style" 
+					onload="this.onload=null;this.rel='stylesheet'"/>
+		{% if template_meta.path is not containing "blog" %}
+		{% module "structured_data" label="Structured data settings" path='../../system/modules/structured-data-settings', no_wrapper=True %}
+		{% endif %}
+		{% if template_meta.path is containing "thank-you" %}
+		<meta name="robots" content="noindex, nofollow, noodp">
+		{% endif %}
+	</head>
+	<body class="lazy{% if request.postDict.preview_theme == true || request.postDict.inpageEditorUI %} hs-editor{% endif %}" data-xs="{{ theme.layout.xs.breakpoint }}" data-md="{{ theme.layout.md.breakpoint }}" data-xl="{{ theme.layout.xl.breakpoint }}">
+		<div class="body-container-outer">
+			{% module "system_settings" label="System settings" path='../../system/modules/system-settings', export_to_template_context=True %}
+			{% module "page_settings" label="Page settings" path='../../pages/modules/page-settings', transparent_header={{ widget_data.page_settings.transparent_header }}, use_lead_capture_header={{ widget_data.page_settings.use_lead_capture_header }}, use_lead_capture_footer={{ widget_data.page_settings.use_lead_capture_footer }}, force_full_height={{ widget_data.page_settings.force_full_height }}, change_header_background={{ widget_data.page_settings.change_header_background }}, header_background_color={{ widget_data.page_settings.header_background_color }}, make_header_always_visible={{ widget_data.page_settings.make_header_always_visible }}, change_footer_background={{ widget_data.page_settings.change_footer_background }}, footer_links_color={{ widget_data.page_settings.footer_links_color }}, footer_links_hover_color={{ widget_data.page_settings.footer_links_hover_color }}, make_footer_small={{ widget_data.page_settings.make_footer_small }}, show_alert_banner={{ widget_data.page_settings.show_alert_banner }}, export_to_template_context=True %}
+			<div class="body-wrapper d-flex flex-flow-column {{ 'body-wrapper--full-height' if widget_data.page_settings.force_full_height }} {{ templateClasses }} {{ builtin_body_classes }}">
+				<header id="header" class="{{ theme.header.header_full_width ? "header header--full-width" : "header" }}{{ " header--transparent" if widget_data.page_settings.transparent_header }}{{ " header--fixed" if widget_data.page_settings.make_header_always_visible }}{{ " header--alert" if widget_data.page_settings.show_alert_banner }}{{ " " ~ widget_data.page_settings.header_background_color|replace("_", "-") ~ "-bg" if widget_data.page_settings.change_header_background }} no-scrollbar p-fixed t-0 s-0 fw z-xl {{ widget_data.page_settings.show_alert_banner }}"{% if widget_data.page_settings.change_header_background %} data-bg="{{ widget_data.page_settings.header_background_color|replace("_", "-") }}"{% endif %}>
+					{% block header %}
+					{% if widget_data.page_settings.show_alert_banner %}
+					{% global_partial path='../../partials/informations-banner.html' no_wrapper=True %}
+					{% endif %}
+					{% if widget_data.page_settings.use_lead_capture_header %}
+					{% global_partial path='../../partials/header-no-navigation.html' no_wrapper=True %}
+					{% else %}
+					{% global_partial path='../../partials/header.html' no_wrapper=True %}
+					{% endif %}
+					{% endblock header %}
+				</header>
+
+				<main id="main-content" class="body-container-wrapper {{ mainClasses }} p-relative">
+					{% block body %}
+					{% endblock body %}
+				</main>
+
+				<footer id="footer" class="{{ theme.footer.footer_full_width ? "footer footer--full-width" : "footer" }}">  
+					{% block footer %}
+					{% if widget_data.page_settings.use_lead_capture_footer %}
+					{% global_partial path="../../partials/footer-no-navigation.html" no_wrapper=True %}
+					{% else %}
+					{% global_partial path="../../partials/footer.html" no_wrapper=True %}
+					{% endif %}
+					{% if not widget_data.page_settings.use_lead_capture_footer %}
+					{% global_partial path="../../partials/copyright.html" no_wrapper=True %}
+					{% endif %}
+					{% endblock footer %}
+				</footer>
+
+			</div>
+
+			{% if template_css %}
+			{{ require_css(get_asset_url(template_css)) }}
+			{% endif %}
+
+			{{ require_js(get_asset_url("../js/main.js")) }}
+			{{ standard_footer_includes }}
+		</div>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "include_hubspot_avatar.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "include_hubspot_avatar.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "include_hubspot_avatar.label" : {
+    "message" : "Include sender's HubSpot avatar",
+    "description" : "",
+    "placeholders" : null
+  },
+  "include_hubspot_avatar.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "sender-contact",
+    "description" : "",
+    "placeholders" : null
+  }
+}

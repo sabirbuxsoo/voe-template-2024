@@ -1,0 +1,147 @@
+{
+  "name" : {
+    "message" : "buyer-company",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_company_address.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_company_address.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_company_address.label" : {
+    "message" : "Buyer company main address",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_company_address.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_company_city_state_zip.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_company_city_state_zip.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_company_city_state_zip.label" : {
+    "message" : "Buyer company city, state, and zip",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_company_city_state_zip.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_company_country.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_company_country.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_company_country.label" : {
+    "message" : "Buyer company country",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_company_country.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_company_name.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_company_name.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_company_name.label" : {
+    "message" : "Buyer company name",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_company_name.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.label" : {
+    "message" : "Style",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.name" : {
+    "message" : "buyer-company",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_color.choices.value 1" : {
+    "message" : "Label 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_color.choices.value 2" : {
+    "message" : "Label 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_color.default" : {
+    "message" : "white",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_color.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_color.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_color.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_color.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  }
+}

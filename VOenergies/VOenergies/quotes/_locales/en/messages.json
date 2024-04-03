@@ -1,0 +1,77 @@
+{
+  "billing_frequency": {
+    "message": "Billing Frequency",
+    "description": "",
+    "placeholders": null
+  },
+  "comments": {
+    "message": "Comments",
+    "description": "",
+    "placeholders": null
+  },
+  "comments_from": {
+    "message": "Comments from",
+    "description": "",
+    "placeholders": null
+  },
+  "item_and_description": {
+    "message": "Item & Description",
+    "description": "",
+    "placeholders": null
+  },
+  "other_fees": {
+    "message": "Other Fees",
+    "description": "",
+    "placeholders": null
+  },
+  "prepared_by": {
+    "message": "Prepared by:",
+    "description": "",
+    "placeholders": null
+  },
+  "price": {
+    "message": "Price",
+    "description": "",
+    "placeholders": null
+  },
+  "products_and_services": {
+    "message": "Products & Services",
+    "description": "",
+    "placeholders": null
+  },
+  "purchase_terms": {
+    "message": "Purchase terms",
+    "description": "",
+    "placeholders": null
+  },
+  "quantity": {
+    "message": "Quantity",
+    "description": "",
+    "placeholders": null
+  },
+  "quote_created_by": {
+    "message": "Quote created by:",
+    "description": "",
+    "placeholders": null
+  },
+  "sku": {
+    "message": "SKU",
+    "description": "",
+    "placeholders": null
+  },
+  "subtotals": {
+    "message": "Subtotals",
+    "description": "",
+    "placeholders": null
+  },
+  "total": {
+    "message": "Total",
+    "description": "",
+    "placeholders": null
+  },
+  "unit_price": {
+    "message": "Unit Price",
+    "description": "",
+    "placeholders": null
+  }
+}

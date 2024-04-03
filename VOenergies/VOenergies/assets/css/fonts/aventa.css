@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Aventa';
+  src: url({{ get_asset_url('./Aventa-Light.ttf') }}) format('truetype');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Aventa';
+  src: url({{ get_asset_url('./Aventa-Regular.ttf') }}) format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Aventa';
+  src: url({{ get_asset_url('./Aventa-Medium.ttf') }}) format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Aventa';
+  src: url({{ get_asset_url('./Aventa-Bold.ttf') }}) format('truetype');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Aventa';
+  src: url({{ get_asset_url('./Aventa-Black.ttf') }}) format('truetype');
+  font-weight: 900;
+}

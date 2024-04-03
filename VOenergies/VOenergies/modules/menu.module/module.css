@@ -1,0 +1,11 @@
+.menu .menu__icons a:not(.button):not([class*="caius"]) {
+	display: flex;
+	padding: 0 12px;
+}
+
+.menu .menu__icons a:not(.button):not([class*="caius"]) svg {
+	height: 24px;
+	max-height: 24px;
+	max-width: 24px;
+	width: auto;
+}

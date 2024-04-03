@@ -1,0 +1,40 @@
+{% import '../../../assets/macros/_buttons.html' %}
+{% import '../../../assets/macros/_style.html' %}
+
+{% if module.rows|length > 0 %}
+<div class="table {{ generateModuleClasses(module.style) }} display-xs-body display-md-h4 h4-bold-font-weight{% if module.style.animate_module %} animation{% endif %}" {{ getModuleAnimations(module.style) }}>
+  <table class="d-xs-flex flex-grow flex-flow-xs-column d-md-table ">
+    <tbody class="d-xs-flex flex-grow flex-flow-xs-column d-md-table-row-group">
+      {% for row in module.rows %}
+      <tr class="d-xs-flex flex-grow flex-flow-xs-row-wrap d-md-table-row">
+        {% for cell in row.cells %}
+        <td class="{{ "d-xs-flex" if cell.cell_type != 'empty' }} flex-grow{{ " d-xs-none" if cell.cell_type == 'empty' }} d-md-table-cell {{ cell.background_color|replace("_", "-") ~ '-bg' }} {{ cell.color|replace("_", "-") ~ '-color' }}{{ " text-align-center justify-content-center" if not loop.first }}{{ " small fw-xs iw-md text-align-xs-center text-align-md-left justify-content-center border-xs-hidden border-md-solid" if loop.first && cell.small_text }}{{ " fw-xs iw-md text-align-xs-center justify-content-xs-center text-align-md-left" if loop.first && not cell.small_text && cell.cell_type != 'empty' }}">
+          {% if cell.cell_type == 'text' %}
+          {{ cell.text }} {% if cell.unit %}<br>{{ cell.unit }} {% endif %}
+          {% else if cell.cell_type == 'button' %}
+          {% if cell.button.type == "cta" %}
+          {% cta guid="{{ cell.button.cta_field }}" %}
+          {% endif %}
+
+          {% if cell.button.type == "button" %}
+          {% set style = {
+                  'color': cell.button.color|replace("_", "-"),
+                  'hover_color': cell.button.hover_color|replace("_", "-"),
+                  'background_color': cell.button.background_color|replace("_", "-"),
+                  'hover_background_color': cell.button.hover_background_color|replace("_", "-"),
+                  'border_color': cell.button.border_color|replace("_", "-"),
+                  'hover_border_color': cell.button.hover_border_color|replace("_", "-"),
+                  'make_button_small': cell.button.make_button_small
+                } %}
+
+          {{ createButtonHTML(cell.button, style) }}
+          {% endif %}
+          {% endif %}
+        </td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}

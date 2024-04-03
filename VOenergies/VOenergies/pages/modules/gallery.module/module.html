@@ -1,0 +1,65 @@
+{% import '../../../assets/macros/_style.html' %}
+
+{% if module.gallery_item|length > 0 %}
+<div id="{{ name }}" class="gallery{{ module.show_item_texts ? " gallery--with-texts" : '' }} p-relative {{ generateModuleClasses(module.style) }}{% if module.style.animate_module %} animation{% endif %}"
+     {{ getModuleAnimations(module.style) }}>
+  <div class="gallery__container">
+    <div class="dnd-row">
+      <div class="row-fluid flex-flow-row-wrap o-auto no-scrollbar justify-content-xs-flex-end justify-content-md-flex-start mt-n-4 mb-n-4">
+        {% for item in module.gallery_item %}
+        <div class="span{{ (12 / module.items_per_row)|round }} columns mt-4 mb-4">
+          <div class="gallery__item p-relative no-rounded o-hidden">
+            <picture class="image-container three-four d-flex p-relative no-rounded o-hidden fw">
+              {% set href = item.link_field.url.href %}
+              {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+              {% endif %}
+              {% if href %}
+              <a href="{{ href }}" 
+                 class="p-absolute t-0 s-0 fw fh"
+                 {%- if item.link_field.open_in_new_tab %} target="_blank"{% endif %}
+                 {%- if item.link_field.rel %} rel="{{ item.link_field.rel }}"{% endif %}>
+                {% endif %}
+                {% if item.image_field.src %}
+                {% if item.srcset|length > 0 %}
+                {% for srcset in item.srcset %}
+                <source media="(min-width: {{ "{{ theme.layout." ~ srcset.resolution ~ ".breakpoint ~ 'px' }}" }})" {% if not request.postDict.preview_theme == true && not request.postDict.inpageEditorUI && not request.postDict.hsPreviewerApp == "module" %}data-{% endif %}srcset="{{ srcset.image_field.src }}">
+                {% endfor %}
+                {% endif %}
+                <img class="lazy d-flex p-absolute t-0 s-0 fw fh object-fit-cover"
+                     {% if not request.postDict.preview_theme == true && not request.postDict.inpageEditorUI && not request.postDict.hsPreviewerApp == "module" %}data-{% endif %}src="{{ item.image_field.src }}" 
+                     alt="{{ item.image_field.alt }}">
+                {% endif %}
+                {% if module.show_item_texts %}
+                <div class="gallery__infos fw fh p-absolute t-0 s-0 p-8{{ ' filter-default-bg filter-default-hover-bg' if item.show_filter }}">
+                  <div class="gallery__text display-xs-h4"><b>{{ item.text }}</b></div>
+                </div>
+                {% endif %}
+                {% if href %}
+              </a>
+              {% endif %}
+            </picture>
+          </div>
+        </div>
+        {% endfor %}  
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% require_css %}
+<style>
+.filter-default-bg,
+button.filter-default-bg,
+.button.filter-default-bg,
+form input[type="submit"].filter-default-bg,
+form .hs-button.filter-default-bg { background-color: {{ module.style.filter_color.css }}; }
+  
+.filter-default-hover-bg:hover,
+button.filter-default-hover-bg:hover,
+.button.filter-default-hover-bg:hover,
+form input[type="submit"].filter-default-hover-bg:hover,
+form .hs-button.filter-default-hover-bg:hover { background-color: {{ module.style.hover_filter_color.css }}; }
+</style>
+{% end_require_css %}

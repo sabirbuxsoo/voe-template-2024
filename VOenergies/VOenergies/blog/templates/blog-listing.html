@@ -1,0 +1,101 @@
+<!--
+templateType: blog_listing
+isAvailableForNewContent: true
+screenshotPath: ../../assets/images/covers/cover-blog-listing.jpg
+label: Blog - Listing
+-->
+{% extends "../../assets/layouts/base.html" %}
+
+{% block body %}
+{% dnd_area "blog-listing-area" label="Blog listing area" class="blog-listing" %}
+
+{% include_dnd_partial 
+  path='../sections/blog-listing-tags-section.html'
+    context={
+    'section' : {
+      'padding': { 'top': '12px', 'bottom': '12px' }
+    }  
+  }
+  %}
+
+{% include_dnd_partial 
+  path='../sections/blog-listing-hero-section.html'
+
+%}
+
+{% include_dnd_partial 
+  path='../sections/blog-listing-section.html'
+  context={
+		"section": {
+			"background_color": "#D0D0CE40",
+			"full_width": True,
+      "padding": { "top": 0, "bottom": 0 },
+		},
+		"filter_by_tag_name": True,
+		"tag_filter": [
+			{ 
+				"tag_field": { "name": "energie", "slug": 'energie' },
+				"section_title": "énergie",
+        "section_description": "<p>Des articles passionnants abordant les dernières avancées dans le domaine des énergies, de la production d'électricité et de gaz aux innovations dans les sources d'énergie renouvelable, vous offrant une perspective complète sur le paysage énergétique sur le Nord vaudois et au-delà.</p>",
+				"display_topics_filter": False,
+				"default_topic_text": "Topics",
+				"topics_filter": [
+					{ "name": "energie", "slug": 'energie' }
+				]
+			},
+			{ 
+				"tag_field": { "name": "Installations", "slug": 'installations' },
+				"section_title": "installations",
+        "section_description": "<p>Retrouvez une sélection informative d'articles sur les solutions énergétiques durables, couvrant les dernières avancées en matière d'installations pour la transition énergétique, les options de financement pour les technologies telles que les PAC, les panneaux photovoltaïques, et les systèmes de chauffage respectueux de l'environnement.</p>",
+				"display_topics_filter": False,
+				"default_topic_text": "Topics",
+				"topics_filter": [
+					{ "name": "Our services", "slug": 'our-services' }
+				]
+			},
+			{ 
+				"tag_field": { "name": "Multimédia", "slug": 'multimédia' },
+				"section_title": "multimédia",
+        "section_description": "<p>Explorez un éventail d'articles traitant des dernières tendances en matière de multimédia, de l'évolution des technologies Internet, téléphoniques et télévisuelles, ainsi que des bonnes pratiques en ligne et des conseils essentiels en cybersécurité.</p>",
+				"display_topics_filter": False,
+				"default_topic_text": "Topics",
+				"topics_filter": [
+					{ "name": "Our services", "slug": 'our-services' }
+				]
+			}
+		],
+    "display_posts_date": True, 
+    "display_posts_author": false,
+    "blog_posts_per_row": 2,
+    "posts_to_show": 2,
+    "truncate_blog_posts_summaries": 120,
+    "fallback_image":  { 'src': get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+    "button": {
+      "type": "button", 
+      "text": "voir tous les articles", 
+      "show_arrow": true,
+      'color': 'first',
+      'hover_color': 'first',
+      'background_color': 'no',
+      'hover_background_color': 'no',
+      'border_color': 'no',
+      'hover_border_color': 'no',
+      'make_button_small': False,
+    },
+    'style': {
+      "add_posts_box_shadow": false,
+      "posts_border_color": "gray",
+      "posts_title_color": "first",
+      "posts_background_color": "white",
+      "posts_border_radius": "no",
+      "posts_image_format": "sixteen-nine",
+      "posts_image_border_radius": "no",
+      "image_background_color": "no",
+    }
+  }
+  %}
+{% end_dnd_area %}
+
+{% global_partial path="../../partials/newsletter.html" no_wrapper=True %}
+
+{% endblock body %}

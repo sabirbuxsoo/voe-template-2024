@@ -1,0 +1,66 @@
+<!--
+templateType: section
+isAvailableForNewContent: true
+label: Publications listing section
+description: A section listing publications elements.
+-->
+
+{% dnd_section
+  vertical_alignment="MIDDLE"
+  background_color={{ context.section.background_color }}
+  background_linear_gradient={{ context.section.background_linear_gradient }}
+  background_image={{ context.section.background_image }}
+  padding={{ context.section.padding }}
+  class={{ context.section.class }}
+%}
+{% dnd_column width=12 %}
+{% dnd_row %}
+{% dnd_column width=3 %}
+{% dnd_row %}
+{% dnd_module
+  path='../../modules/search-input'
+  search_input_placeholder={{ context.search.search_input_placeholder ? context.search.search_input_placeholder : 'Que cherchez-vous ?'}}
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% dnd_row %}
+{% dnd_module
+  path='../modules/hubdb-tags'
+  hubdb_tags_title={{ context.hubdb_first_tags.hubdb_tags_title ? context.hubdb_first_tags.hubdb_tags_title : "Type de ressources" }}
+  default_option_text={{ context.hubdb_first_tags.default_option_text ? context.hubdb_first_tags.default_option_text : "toutes" }}
+  hubdbtable_field={{ context.hubdb_first_tags.hubdbtable_field }}
+  hubdb_column={{ context.hubdb_first_tags.hubdb_column ? context.hubdb_first_tags.hubdb_column : "type" }}
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% dnd_row %}
+{% dnd_module
+  path='../modules/hubdb-tags'
+  hubdb_tags_title={{ context.hubdb_second_tags.hubdb_tags_title ? context.hubdb_second_tags.hubdb_tags_title : "Sujets" }}
+  default_option_text={{ context.hubdb_second_tags.default_option_text ? context.hubdb_second_tags.default_option_text : "tous" }}
+  hubdbtable_field={{ context.hubdb_second_tags.hubdbtable_field }}
+  hubdb_column={{ context.hubdb_second_tags.hubdb_column ? context.hubdb_second_tags.hubdb_column : "subjects" }}
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% dnd_column width=9, offset=3 %}
+{% dnd_row %}
+{% dnd_module
+  path='../modules/hubdb-listing'
+  hubdbtable_field={{ context.hubdb_listing.hubdbtable_field }}
+  display_posts_date={{ context.hubdb_listing.display_posts_date }}, 
+  date_text={{ context.hubdb_listing.date_text }}, 
+  hubdb_posts_per_row={{ context.hubdb_listing.hubdb_posts_per_row ? context.hubdb_listing.hubdb_posts_per_row : 3 }},
+  add_posts_box_shadow={{ context.hubdb_listing.add_posts_box_shadow ? context.hubdb_listing.add_posts_box_shadow : '' }},
+  fallback_image={{ context.hubdb_listing.fallback_image }},
+  button={{ context.hubdb_listing.button }},
+  truncate_blog_posts_summaries={{ context.hubdb_listing.truncate_blog_posts_summaries ? context.hubdb_listing.truncate_blog_posts_summaries : 120 }}
+  style={{ context.hubdb_listing.style }}
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}

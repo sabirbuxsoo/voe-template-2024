@@ -1,0 +1,189 @@
+{% include '../../libraries/_swiper.css' %}
+
+.carousel-container {
+	overflow: visible;
+}
+
+.carousel-container .swiper-slide {
+	height: auto;
+}
+
+.carousel-container.carousel-container--dots .swiper-controls {
+	height: {{ theme.layout.spacing_base * 10 ~ 'px' }};
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.carousel-container.carousel-container--logos img {
+	max-height: 35%;
+}
+
+.carousel-container.carousel-container--infinite .carousel {
+	overflow: hidden;
+	max-width: calc(100vw - 15px);
+	width: 100vw;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+.carousel-container.carousel-container--arrows .carousel {
+	padding-left: {{ theme.layout.spacing_base * 12 ~ 'px' }};
+	padding-right: {{ theme.layout.spacing_base * 12 ~ 'px' }};
+	margin-left: -{{ theme.layout.spacing_base * 12 ~ 'px' }};
+	margin-right: -{{ theme.layout.spacing_base * 12 ~ 'px' }};
+}
+
+.carousel-container.carousel-container--arrows:not(.carousel-container--infinite) .swiper-slide:not(.swiper-slide-visible) {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.carousel-container .swiper-pagination {
+	position: static;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+	z-index: 2;
+	margin-top: 0;
+	margin-left: 0;
+	max-width: 100%;
+}
+
+.carousel-container .swiper-pagination .swiper-pagination-bullet {
+	width: {{ theme.layout.spacing_base * 3 ~ 'px' }};
+	height: {{ theme.layout.spacing_base * 3 ~ 'px' }};
+	background-color: {{ theme.colors.black.color }};
+	opacity: 1;
+	transform: scale(1);
+	transition: 
+		margin 0.25s ease-in-out, 
+		transform 0.25s ease-in-out;
+}
+
+.carousel-container .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+	transform-origin: center center;
+	background-color: {{ theme.colors.third.color }};
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	width: {{ theme.layout.spacing_base * 5 ~ 'px' }};
+	height: {{ theme.layout.spacing_base * 5 ~ 'px' }};
+}
+
+.carousel-container .swiper-pagination .swiper-pagination-bullet .line {
+	width: {{ theme.layout.spacing_base ~ 'px' }};
+	height: {{ theme.layout.spacing_base ~ 'px' }};
+	display: block;
+	background: {{ theme.colors.white.color }};
+	border-radius: 50%;
+	opacity: 0;
+}
+
+.carousel-container .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active .line {
+	opacity: 1;
+	transition: 
+		opacity 0.25s ease-in-out;
+}
+
+.carousel-container .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active + .swiper-pagination-bullet {
+	margin-left: {{ theme.layout.spacing_base * 2 ~ 'px' }};
+}
+
+.carousel-container .swiper-pagination .swiper-pagination-bullet + .swiper-pagination-bullet.swiper-pagination-bullet-active {
+	margin-left: {{ theme.layout.spacing_base * 2 ~ 'px' }};
+}
+
+.carousel-container .swiper-navigation .swiper-button-prev, 
+.carousel-container .swiper-navigation .swiper-button-next {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	top: 50%;
+	left: 0;
+	right: initial;
+	bottom: initial;
+	width: {{ theme.layout.spacing_base * 7 ~ 'px' }};
+	height: {{ theme.layout.spacing_base * 6 ~ 'px' }};
+	position: absolute;
+	margin-top: 0;
+}
+
+.carousel-container .swiper-navigation .swiper-button-next {
+	right: 0;
+	left: initial;
+	transform: translateY(-50%);
+}
+
+.carousel-container .swiper-navigation .swiper-button-prev {
+	transform: translateY(-50%) scaleX(-1);
+}
+
+.carousel-container.carousel-container--dots.carousel-container--arrows .swiper-navigation .swiper-button-prev,
+.carousel-container.carousel-container--dots.carousel-container--arrows .swiper-navigation .swiper-button-next {
+	top: calc(50% - {{ theme.layout.spacing_base * 5 ~ 'px' }});
+}
+
+.carousel-container.carousel-container--infinite.carousel-container--arrows .swiper-navigation .swiper-button-prev,
+.carousel-container.carousel-container--infinite.carousel-container--arrows .swiper-navigation .swiper-button-next {
+	bottom: {{ theme.layout.spacing_base * 2 ~ 'px' }};
+	top: auto;
+	transform: initial;
+}
+
+.carousel-container.carousel-container--infinite.carousel-container--arrows .swiper-navigation .swiper-button-prev {
+	transform: scaleX(-1);
+}
+
+.carousel-container .swiper-navigation .swiper-button-prev:after, 
+.carousel-container .swiper-navigation .swiper-button-next:after {
+	display: none;
+}
+
+.carousel-container .carousel-container__infos {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: flex-end;
+	padding: {{ theme.layout.spacing_base * 5 ~ 'px' }};
+	z-index: 3;
+	color: {{ theme.colors.white.color }};
+}
+
+.carousel-container.carousel-container--full-width {
+	width: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.carousel-container.carousel-container--full-width .swiper {
+	overflow: visible;
+}
+
+.carousel-container.carousel-container--full-width .carousel-container__inner {
+	max-width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media (min-width: {{ theme.layout.md.breakpoint ~ 'px' }}) {
+	.carousel-container.carousel-container--full-width .carousel-container__inner {
+		max-width: {{ theme.layout.md.max_width ~ 'px' }}
+	}
+}
+
+@media (min-width: {{ theme.layout.xl.breakpoint ~ 'px' }}) {
+	.carousel-container.carousel-container--full-width .carousel-container__inner {
+		max-width: {{ theme.layout.xl.max_width ~ 'px' }}
+	}
+}

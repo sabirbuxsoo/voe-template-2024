@@ -1,0 +1,11 @@
+{% import '../../../assets/macros/_style.html' %}
+
+<div id="{{ name }}" class="anchor-nav lazy {{ generateModuleClasses(module.style) }}">
+  <ul class="d-inline-flex flex-flow-xs-column-wrap flex-flow-md-row-wrap align-items-center justify-content-space-evenly fw h-13">
+    {% for item in module.anchors %}
+      <li class="fh">
+        <a class="anchor-link d-flex align-items-center white-color white-hover-color no-border-color second-hover-border-color border-solid border-bottom-large fh" data-target="{{ '#' ~ item.section_to_reach }}">{{ item.anchor_text }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

@@ -1,0 +1,35 @@
+{% import '../../imports/quote_variables.html' %}
+{% set IMAGE_ID = "sender-user-avatar" %}
+
+<div class="dnd-row sender-contact">
+  <div class="row-fluid">
+    <div class="span12 columns">
+      <div class="d-flex flex-flow-row-wrap align-items-xs-center justify-content-flex-start">
+        {% if module.include_hubspot_avatar %}
+        <div class="image-container p-relative square rounded-full o-hidden w-30">
+          <img class="p-absolute t-0 l-0 object-fit-cover fw fh" src="https://static.hsappstatic.net/salesImages/static-1.362/avatars/default-avatar.png" alt="Sender avatar" id="{{ IMAGE_ID }}" />
+        </div>
+        {% endif %}
+        <div class="infos small{% if module.include_hubspot_avatar %} ps-md-4{% endif %}">
+          {% if personalization_token('template_data.quote.hs_sender_firstname', '') || personalization_token('template_data.quote.hs_sender_lastname', '') %}<div class="name black-color"><b>{{ personalization_token('template_data.quote.hs_sender_firstname', '') }} {{ personalization_token('template_data.quote.hs_sender_lastname', '') }}</b></div>{% endif %}
+          {% if personalization_token('template_data.quote.hs_sender_jobtitle', '') %}{{ personalization_token('template_data.quote.hs_sender_jobtitle', '') }}{% if personalization_token('template_data.quote.hs_sender_company_name', '') %}, {{ personalization_token('template_data.quote.hs_sender_company_name', '') }}{% endif %}<br>{% endif %}
+          {% if personalization_token('template_data.quote.hs_sender_phone', '') %}{{ personalization_token('template_data.quote.hs_sender_phone', '') }}<br>{% endif %}
+          {% if personalization_token('template_data.quote.hs_sender_email', '') %}{{ personalization_token('template_data.quote.hs_sender_email', '') }}<br>{% endif %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# DO NOT EDIT - used for sender's HubSpot user avatar #}
+{% require_js position="head" %}
+<script type="application/json" data-module-instance="user-avatar">
+    {
+      "include_hubspot_avatar": {{ module.include_hubspot_avatar }},
+      "hubspot_user_email": "{{ QUOTE.hs_sender_email }}",
+      "hubspot_base_url": "{{ HUBSPOT_BASE_URL }}",
+      "image_id": "{{ IMAGE_ID }}"
+    }
+</script>
+{% end_require_js %}

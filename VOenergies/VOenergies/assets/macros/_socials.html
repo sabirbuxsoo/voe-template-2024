@@ -1,0 +1,52 @@
+<!--
+templateType: page
+isAvailableForNewContent: false
+-->
+
+{% macro createSocialHTML(social, extraClasses, customUrl, openInNewWindow) %}
+{% set href = social.url.url.href || customUrl %}
+{% if social.url.url.type is equalto "EMAIL_ADDRESS" %}
+{% set href = "mailto:" + href %}
+{% endif %}
+{% if openInNewWindow %}
+<span data-url="{{ href }}"
+      onclick="initWindowOpener(this)"
+      class="social-follow__icon social-follow__icon--window fw iw-md
+             {%- if social.color %} {{ social.color|replace("_", "-") ~ '-fill' }}{% endif %}
+             {%- if social.hover_color %} {{ social.hover_color|replace("_", "-") ~ '-hover-fill' }}{% endif %}
+             {%- if social.background_color %} {{ social.background_color|replace("_", "-") ~ '-bg' }}{% endif %}
+             {%- if social.border_color %} border-thin border-solid {{ social.border_color|replace("_", "-") ~ '-border-color' }}{% endif %}
+             {%- if social.hover_background_color %} {{ social.hover_background_color|replace("_", "-") ~ '-hover-bg' }}{% endif %}
+             {%- if social.hover_border_color %}{%- if social.border_color == "no" %} border-thin border-solid{% endif %} {{ social.hover_border_color|replace("_", "-") ~ '-hover-border-color' }}{% endif %}
+             {%- if social.border_radius %} rounded-{{ social.border_radius }}{% endif %} {{ extraClasses }}">
+  {% icon
+		name="{{ item.social_icon.name }}"
+		style="{{ item.social_icon.type }}"
+		unicode="{{ item.social_icon.unicode }}"
+		icon_set="{{ item.social_icon.icon_set }}"
+    no_wrapper=True
+	%}
+</span>
+{% else %}
+<a href="{% if href %}{{ href }}{% else %}javascript:;{% endif%}"
+   {%- if social.url.open_in_new_tab %} target="_blank"{% endif -%}
+   {%- if social.url.rel %} rel="{{ social.url.rel }}"{% endif %}
+   class="social-follow__icon fw iw-md
+          {%- if social.color %} {{ social.color|replace("_", "-") ~ '-fill' }}{% endif %}
+          {%- if social.hover_color %} {{ social.hover_color|replace("_", "-") ~ '-hover-fill' }}{% endif %}
+          {%- if social.background_color %} {{ social.background_color|replace("_", "-") ~ '-bg' }}{% endif %}
+          {%- if social.border_color %} border-thin border-solid {{ social.border_color|replace("_", "-") ~ '-border-color' }}{% endif %}
+          {%- if social.hover_background_color %} {{ social.hover_background_color|replace("_", "-") ~ '-hover-bg' }}{% endif %}
+          {%- if social.hover_border_color %}{%- if social.border_color == "no" %} border-thin border-solid{% endif %} {{ social.hover_border_color|replace("_", "-") ~ '-hover-border-color' }}{% endif %}
+          {%- if social.border_radius %} rounded-{{ social.border_radius }}{% endif %} {{ extraClasses }}">
+  {% icon
+		name="{{ item.social_icon.name }}"
+		style="{{ item.social_icon.type }}"
+		unicode="{{ item.social_icon.unicode }}"
+		icon_set="{{ item.social_icon.icon_set }}"
+    no_wrapper=True
+	%}
+</a>
+{% endif %}
+{% endmacro %}
+

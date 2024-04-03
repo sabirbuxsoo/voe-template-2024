@@ -1,0 +1,33 @@
+.language-switcher > ul > .hs-item-has-children > a:after {
+  content: '';
+  display: inline-block;
+  height: 0;
+  width: 0;
+  border-top: {{ theme.layout.spacing_base ~ "px" }} solid {{ theme.header.menu.text.color }};
+  border-right: {{ theme.layout.spacing_base ~ "px" }} solid transparent;
+  border-left: {{ theme.layout.spacing_base ~ "px" }} solid transparent;
+  margin-left: {{ theme.layout.spacing_base ~ "px" }};
+  transition: border 0.25s ease-in-out;
+}
+
+.language-switcher > ul > .hs-item-has-children > a:hover:after {
+  border-top: {{ theme.layout.spacing_base ~ "px" }} solid {{ theme.header.menu.text.hover_color }};
+}
+
+@media (min-width: {{ theme.layout.md.breakpoint ~ 'px' }}) {
+  .language-switcher > ul > li > a {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: {{ (theme.layout.md.breakpoint - 1) ~ 'px' }}) {
+  .language-switcher {
+    order: 1;
+  }
+}
+
+@media (min-width: {{ theme.layout.md.breakpoint ~ 'px' }}) {
+  .language-switcher > ul > li > a {
+    margin-left: {{ theme.layout.spacing_base * 3 ~ "px" }};
+  }
+}

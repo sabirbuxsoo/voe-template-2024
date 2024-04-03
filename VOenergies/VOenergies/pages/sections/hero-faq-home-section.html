@@ -1,0 +1,170 @@
+<!--
+templateType: section
+isAvailableForNewContent: true
+label: Hero FAQ home section
+description: A section displaying a variable text with a spacer on the right and a faq table - Used for the homepage hero faq section.
+-->
+
+{% dnd_section
+  vertical_alignment="MIDDLE"
+  background_color={{ context.section.background_color }}
+  background_linear_gradient={{ context.section.background_linear_gradient }}
+  background_image={{ context.section.background_image }}
+  padding={{ context.section.padding }}
+  class={{ context.section.class }}
+%}
+{% dnd_column width="12" %}
+{% dnd_row %}
+{% dnd_module 
+  path='../../modules/background-items' 
+  background_item={{ context.background_items.background_item }}
+  style={{ context.background_items.style ? 
+    context.background_items.style : {
+      'animate_module': False,
+      'module_animation': {
+        'animate_module_scale': False,
+        'animate_module_vertical_translation': False,
+        'animate_module_skew': True,
+        'animate_module_opacity': True
+      }
+    }
+  }}
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% dnd_row vertical_alignment="MIDDLE" %}
+{% dnd_column width="2" %}
+  {% dnd_row %}
+    {% dnd_module 
+        path='@hubspot/horizontal_spacer' %}
+    {% end_dnd_module %}
+  {% end_dnd_row %}
+{% end_dnd_column %}
+{% dnd_column width="4" offset="2" %}
+  {% dnd_row %}
+    {% dnd_module 
+      path='../../modules/custom-rich-text' 
+      style={{ context.text.style ? context.text.style : {
+          'xs': {
+            'spacing': {
+              'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+              'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+            },
+            'text_alignment': 'center'
+          },
+          'md': {
+            'spacing': {
+              'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+              'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+            },
+            'text_alignment': 'center'
+            },
+          'xl': {
+            'spacing': {
+              'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+              'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+            },
+            'text_alignment': 'center'
+          }
+        }
+      }}
+    %}
+    {% module_attribute "html" %}
+    {{ context.text.content ? context.text.content : '<h2>Nos tarifs</h2>' }}
+    {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% dnd_row %}
+    {% dnd_module 
+  path='../../modules/buttons' 
+  button={{ context.buttons.button ? 
+    context.buttons.button : [
+      {
+        "type": "button",
+        "text": "découvrez notre programme", 
+        "color": "white",
+        "hover_color": "black",
+        "background_color": "no",
+        "hover_background_color": "white",
+        "border_color": "white",
+        "hover_border_color": "white",
+      }
+    ]
+  }},
+  style={{ context.buttons.style ? 
+    context.buttons.style : {
+      'xs': {
+        'spacing': {
+          'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+          'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+        },
+        'text_alignment': 'center',
+        'horizontal_alignment': 'justify-content-xs-center'        
+      },
+      'md': {
+        'spacing': {
+          'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+          'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+        },
+        'text_alignment': 'center',
+        'horizontal_alignment': 'justify-content-md-flex-start'        
+      },
+      'xl': {
+        'spacing': {
+          'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+          'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+        },
+        'text_alignment': 'center',
+        'horizontal_alignment': 'justify-content-xl-flex-start'
+      }
+    }
+  }}
+%}
+{% end_dnd_module %}
+  {% end_dnd_row %}
+{% end_dnd_column %}
+{% dnd_column width="1" offset="7" %}
+  {% dnd_row %}
+    {% dnd_module 
+        path='@hubspot/horizontal_spacer' %}
+    {% end_dnd_module %}
+  {% end_dnd_row %}
+{% end_dnd_column %}
+{% dnd_column width="4" offset="8" %}
+  {% dnd_row %}
+    {% dnd_module 
+        path='../modules/faq-table' 
+        title={{ context.faq.title ? context.faq.title : 'Les questions fréquentes' }}   
+        links={{ context.faq.links }}   
+        style={{ context.faq.style ? 
+          context.faq.style : {
+            'xs': {
+              'spacing': {
+                'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+              },
+              'text_alignment': 'left'   
+            },
+            'md': {
+              'spacing': {
+                'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+              },
+              'text_alignment': 'left'        
+            },
+            'xl': {
+              'spacing': {
+                'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+              },
+              'text_alignment': 'left'
+            }
+          }
+        }}
+     %}
+    {% end_dnd_module %}
+  {% end_dnd_row %}
+{% end_dnd_column %}
+  {% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}

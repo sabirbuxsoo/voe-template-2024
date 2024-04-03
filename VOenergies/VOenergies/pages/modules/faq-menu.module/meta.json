@@ -1,0 +1,10 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "inline_help_text" : "Use this module to display an anchor navigation. Refer to \"section settings module\" of the section you want to reach to display the right ID to each anchor link.",
+  "icon" : "fontawesome-5.14.0:Anchor:SOLID",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 141565638581,
+  "label" : "FAQ Menu",
+  "is_available_for_new_content" : true
+}

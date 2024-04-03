@@ -1,0 +1,18 @@
+<!--
+templateType: section
+isAvailableForNewContent: true
+label: Anchor for menu item
+description: A section to add an in-page link.
+-->
+
+{% dnd_section %}
+{% dnd_column width="12" %}
+{% dnd_row %}
+{% dnd_module 
+  path='../../modules/anchor'
+  name_in_menu= {{ context.section.name_in_menu }}
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}

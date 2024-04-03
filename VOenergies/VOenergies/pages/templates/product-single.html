@@ -1,0 +1,356 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Product - single
+-->
+
+{% extends "../../assets/layouts/base.html" %}
+
+{% set widget_data = {
+  "page_settings": {
+      'transparent_header': False,
+      'use_lead_capture_header': False,
+      'use_lead_capture_footer': False,
+      'force_full_height': True,
+  }
+} %}
+
+{% block body %}
+
+{% dnd_area "product-single" label="Product - Single" class="product-single" %}
+
+<!-- Begin hero section -->
+{% include_dnd_partial 
+  path='../sections/text-image-section.html' 
+  context={
+    'text_block_width': 5,
+    'text_block_offset': 6,
+    'text': {
+      'content': '<h1>artist name</h1><p>Born in 1994, Pouriya Kafei is a photographer based in Istanbul. He is an only child and is interested in art and sports. He studied software engineering for 4 years after he moved to moscow for two years. Recently, he travels to most countries to do my projects!</p>',
+      'style': {
+        'animate_module': True,
+        'animation_settings': {
+          'bind_animation_to_scroll': False,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        }
+      }
+    },
+    'image': {
+      'image_field' : { 
+        'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg')
+      },
+      'make_image_first_on_mobile': True,
+      'make_image_take_full_height_of_its_container': True, 
+      'style': {
+        'animate_module': True,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+      }
+    }
+  }
+%}
+<!-- End hero section -->
+
+<!-- Begin gallery section -->
+{% include_dnd_partial 
+  path='../sections/gallery-section.html'
+  context={
+    'text': {
+      'content': '<h2>latest artworks</h2>',
+      'style': {
+        'animate_module': True,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        }
+      }
+    },
+    'gallery': {
+      'show_item_pictures_popup': True,
+      'items_per_row': 3,
+      'carousel_settings': {
+        'show_arrows': True, 
+        'show_dots': True, 
+      },
+      'item': [
+        {
+          'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+          'title': "summer series",
+          'category': "starting from 1780€",
+          'pictures_popup': {
+            'pictures_popup_item': [
+              {
+                'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+                'title': "work",
+                'category': "2590€",
+                'srcset': [
+                  {
+                  "resolution": 'md',
+                  'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+                  }
+                ]
+              },
+              {
+                'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+                'title': "mirror",
+                'category': "3250€",
+                'srcset': [
+                  {
+                  "resolution": 'md',
+                  'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+                  }
+                ]
+              },
+              {
+                'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+                'title': "shadows",
+                'category': "1780€",
+                'srcset': [
+                  {
+                  "resolution": 'md',
+                  'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+                  }
+                ]
+              },
+              {
+                'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+                'title': "fall",
+                'category': "4990€",
+                'srcset': [
+                  {
+                  "resolution": 'md',
+                  'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+          'title': "fall series",
+          'category': "starting from 590€",
+          'pictures_popup': {
+            'pictures_popup_item': [
+              { 
+                'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+                'title': "nature",
+                'category': "1550€"
+              },
+              { 
+                'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+                'title': "downtown",
+                'category': "1490€"
+              },
+              { 
+                'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+                'title': "untitled",
+                'category': "590€"
+              },
+              { 
+                'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+                'title': "souvenir",
+                'category': "6240€"
+              }
+            ]
+          }
+        },
+        {
+          'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+          'title': "winter series",
+          'category': "starting from 1780€",
+          'pictures_popup': {
+            'pictures_popup_item': [
+              {
+                'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+                'title': "lights",
+                'category': "2590€"
+              },
+              { 
+                'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+                'title': "hiding",
+                'category': "1780€"
+              },
+              { 
+                'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+                'title': "mirror 2",
+                'category': "3250€"
+              },
+              {
+                'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+                'title': "origins",
+                'category': "4990€"
+              }
+            ]
+          }
+        }
+      ],
+      'style': {
+        'animate_module': True,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+      }
+    }
+  }
+%}
+<!-- End gallery section -->
+
+<!-- Begin CTA section -->
+{% include_dnd_partial 
+  path='../sections/cta-section.html'
+  context={
+    'text': {
+      'content': '<h2>want a sneak peak?</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>',
+      'style': {
+        'animate_module': True,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        }
+      }
+    },
+    'buttons': {
+      "button": [
+        {
+          'type': 'button',
+          'text': 'contact us',
+          'color': 'default',
+          'hover_color': 'default',
+          'background_color': 'first',
+          'hover_background_color': 'black',
+          'border_color': 'first',
+          'hover_border_color': 'black'
+        }
+      ],
+      'style': {
+        'animate_module': True,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        }
+      }
+    }
+  }
+%}
+<!-- End CTA section -->
+{% end_dnd_area %}
+
+{% endblock body %}

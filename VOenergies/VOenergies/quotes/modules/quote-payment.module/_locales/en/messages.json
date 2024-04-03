@@ -1,0 +1,262 @@
+{
+  "button_alignment.choices.justify-content-flex-end" : {
+    "message" : "Right",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button_alignment.choices.justify-content-flex-start" : {
+    "message" : "Left",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button_alignment.choices.justify-content-xs-center" : {
+    "message" : "Center",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button_alignment.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button_alignment.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button_alignment.label" : {
+    "message" : "Button alignment",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button_alignment.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "checkout.default" : {
+    "message" : "Go to checkout",
+    "description" : "",
+    "placeholders" : null
+  },
+  "checkout.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "checkout.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "checkout.label" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "checkout.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "checkout.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "checkout_error.default" : {
+    "message" : "Un problème est survenu lors de la configuration du paiement. Veuillez contacter la personne qui vous a envoyé ce devis.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "checkout_error.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "checkout_error.inline_help_text" : {
+    "message" : "Tell your customer what to do when there's a problem starting checkout.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "checkout_error.label" : {
+    "message" : "Checkout error message",
+    "description" : "",
+    "placeholders" : null
+  },
+  "checkout_error.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "quote-payment",
+    "description" : "",
+    "placeholders" : null
+  },
+  "need_signature.default" : {
+    "message" : "Le paiement ne peut pas être effectué car le devis n'est pas entièrement signé.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "need_signature.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "need_signature.inline_help_text" : {
+    "message" : "Your customer will see this message until all required signatures are completed.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "need_signature.label" : {
+    "message" : "Button text when signatures are needed",
+    "description" : "",
+    "placeholders" : null
+  },
+  "need_signature.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "need_signature.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "paid.default" : {
+    "message" : "Payé",
+    "description" : "",
+    "placeholders" : null
+  },
+  "paid.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "paid.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "paid.label" : {
+    "message" : "Paid text",
+    "description" : "",
+    "placeholders" : null
+  },
+  "paid.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "paid.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "payment_processing.default" : {
+    "message" : "Paiement en cours",
+    "description" : "",
+    "placeholders" : null
+  },
+  "payment_processing.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "payment_processing.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "payment_processing.label" : {
+    "message" : "Payment processing text",
+    "description" : "",
+    "placeholders" : null
+  },
+  "payment_processing.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "payment_processing.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "payment_status_error.default" : {
+    "message" : "Un problème est survenu lors du chargement de l'état du paiement pour ce devis. Veuillez essayer de rafraîchir la page.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "payment_status_error.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "payment_status_error.inline_help_text" : {
+    "message" : "Tell your customer to refresh the page when fetching payment status fails.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "payment_status_error.label" : {
+    "message" : "Payment status error message",
+    "description" : "",
+    "placeholders" : null
+  },
+  "payment_status_error.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_payment_icon.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_payment_icon.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_payment_icon.label" : {
+    "message" : "Show payment icon",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_payment_icon.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "test_mode.default" : {
+    "message" : "Il s'agit d'un devis test, le paiement est donc désactivé.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "test_mode.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "test_mode.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "test_mode.label" : {
+    "message" : "Test mode",
+    "description" : "",
+    "placeholders" : null
+  },
+  "test_mode.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "test_mode.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  }
+}

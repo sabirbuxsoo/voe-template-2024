@@ -1,0 +1,43 @@
+{% import '../../../assets/macros/_style.html' %}
+{% set no_title = True %}
+
+<div class="custom-form{% if module.make_form_sticky %} custom-form--sticky{% if module.style.xs.sticky_top_spacing < 0 %}{{ " mt-n" ~ (module.style.xs.sticky_top_spacing / theme.layout.spacing_base)|round }}{% endif %}{% if module.style.md.sticky_top_spacing < 0 %}{{ " mt-md-n" ~ (module.style.md.sticky_top_spacing / theme.layout.spacing_base)|round }}{% endif %}{% if module.style.xl.sticky_top_spacing < 0 %}{{ " mt-xl-n" ~ (module.style.xl.sticky_top_spacing / theme.layout.spacing_base)|round }}{% endif %}{% endif %}{{ ' custom-form--legal-below' if module.show_legal_texts_below_form_button }} dnd-row{% if not module.make_form_sticky %} {{ module.style.xs.border_radius }} {{ module.style.md.border_radius ~ "-md" }} {{ module.style.xl.border_radius ~ "-xl" }} {{ " border-thin border-solid" if module.style.border_color != "no" }} {{ module.style.border_color ~ "-border-color" if module.style.border_color != "no" }} {{ module.style.background_color|replace("_", "-") ~ '-bg' }}{% endif %}{%- if module.style.animate_module %} animation{% endif -%}" {{ getModuleAnimations(module.style) }}>
+  {% if module.make_form_sticky %}
+  <div class='custom-form__inner {{ module.style.xs.border_radius }} {{ module.style.md.border_radius ~ "-md" }} {{ module.style.xl.border_radius ~ "-xl" }} {{ " border-thin border-solid" if module.style.border_color != "no" }} {{ module.style.border_color ~ "-border-color" if module.style.border_color != "no" }} {{ module.style.background_color|replace("_", "-") ~ '-bg' }} {{- generateModuleClasses(module.style)|render|replace("\n", " ") -}}'>
+    {% endif %}
+    <div class='row-fluid'>
+      <div class='span12 columns'>
+        {% if module.add_form_description %}
+        <div class='form-description'>
+          {{ module.form_description }}
+        </div>
+        {% endif %}
+        {% if module.form.form_id %} 
+        {% 
+        form form_key='{{ name }}',
+        form_to_use='{{ module.form.form_id }}',
+        no_title='{{no_title}}',
+        follow_up_type_simple='{{ module.follow_up_type_simple }}',
+        simple_email_for_live_id='{{ module.simple_email_for_live_id }}',
+        follow_up_type_automation='{{ module.follow_up_type_automation }}',
+        form_follow_ups_workflow_id='{{ module.form_follow_ups_workflow_id }}',
+        response_response_type='{{ module.form.response_type }}',
+        response_redirect_id='{{ module.form.redirect_id }}', 
+        response_redirect_url='{{ module.form.redirect_url }}', 
+        response_message='{{ module.form.message }}', 
+        notifications_are_overridden='{{ module.notifications_are_overridden }}', 
+        notifications_override_email_addresses='{{ module.notifications_override_email_addresses }}' 
+        gotowebinar_webinar_key='{{ module.form.gotowebinar_webinar_key }}' sfdc_campaign='{{ module.sfdc_campaign }}'
+      %}
+        {% else %} 
+        {% 
+        form title='{{ module.title }}', 
+        no_title='{{ no_title }}' 
+      %}
+        {% endif %} 
+      </div>
+    </div>
+    {% if module.make_form_sticky %}
+  </div>     
+  {% endif %} 
+</div>      

@@ -1,0 +1,11 @@
+{% import '../../imports/quote_variables.html' %}
+
+<div class="quote-infos {{ module.style.text_color|replace("_", "-") ~ '-color' }}">
+  <div><b>{{ module.quote_created_text }}</b></div>
+  <div>Created on: {{ QUOTE.hs_createdate|int|format_date('long', QUOTE.hs_timezone, QUOTE.hs_locale) }}</div>
+  <div>Expires on: {{ QUOTE.hs_expiration_date|int|format_date('long', QUOTE.hs_timezone, QUOTE.hs_locale) }}</div>
+  <div>Created by: {{ QUOTE.hs_sender_firstname }} {{ QUOTE.hs_sender_lastname }}</div>
+  <div>{{ QUOTE.hs_sender_email }}</div>
+  <div>{{ QUOTE.hs_sender_phone }}</div>
+</div>
+

@@ -1,0 +1,49 @@
+{% import '../../../assets/macros/_buttons.html' %}
+{% import '../../../assets/macros/_style.html' %}
+
+{% if module.service|length > 0 %}
+<div class="services {{ generateModuleClasses(module.style) }}{% if module.style.animate_module %} animation{% endif %}"
+     {{ getModuleAnimations(module.style) }}>
+  <div class="dnd-row">
+    <div class="row-fluid d-flex flex-flow-row-wrap o-hidden justify-content-flex-start flex-flow-md-row-wrap justify-content-md-center mt-n-4 mb-n-4">
+      {% for service in module.service %}
+      <div class="span{{ (12 / module.services_per_row)|round }} columns mt-4 mb-4">
+        <div class="service d-flex{{ ' mt-md-4' if loop.index > module.services_per_row }}{% if service.visual_type == 'color' %} {{ service.background_color|replace('_', '-') ~ '-bg' }}{% endif %} p-relative fw fh {{ service.hover_background_color|replace('_', '-') ~ '-hover-bg' }}">
+          {% set href = service.link_field.url.href %}
+          {% if service.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          {% if href %}
+          <a href="{{ href }}" 
+             class="p-relative fw fh"
+             {%- if service.link_field.open_in_new_tab %} target="_blank"{% endif %}
+             {%- if service.link_field.rel %} rel="{{ service.link_field.rel }}"{% endif %}>
+            {% endif %}
+            {% if service.visual_type == 'image' && service.image_field.src %}
+            <picture class="image-container o-hidden d-flex sixteen-nine p-relative">
+              {% set sizeAttrs = 'width="{{ service.image_field.width }}" height="{{ service.image_field.height }}" style="max-width: 100%; max-height: 100%;"' %}
+              {% if service.image_field.size_type == 'auto' %}
+              {% set sizeAttrs = 'style="max-width: 100%; max-height: 100%;"' %}
+              {% elif service.image_field.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ service.image_field.max_width }}" height="{{ service.image_field.max_height }}" style="max-width: 100%; max-height: 100%;"' %}
+              {% endif %}
+              <img class="lazy t-0 s-0 fh fw object-fit-cover d-flex p-absolute" data-src="{{ service.image_field.src }}" alt="{{ service.image_field.alt }}" {{ sizeAttrs }}>
+              {% if service.add_shape %}
+              <img class="t-0 s-0 object-fit-contain service-shape d-flex p-absolute translate-s-s" src="{{ service.shape.src }}" alt="{{ service.shape.alt }}">
+              {% endif %}
+            </picture>
+            {% endif %}
+            <div class="text-container p-absolute t-45 s-15 fw fh d-block">
+              <div class="large white-color display-xs-h1"><b>{{ service.service_title }}</b></div>
+              <div class="white-color mt-n-4 service-description"><b>{{ service.service_description }}</b></div>
+            </div>
+             {% if href %}
+            </a>
+            {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% endif %}

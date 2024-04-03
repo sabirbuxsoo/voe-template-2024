@@ -1,0 +1,41 @@
+[ {
+  "id" : "812d5916-7497-c01a-f61d-96768a92a396",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "5abf52d5-81b3-82f5-843c-1f486acc012c",
+    "name" : "text_color",
+    "display_width" : null,
+    "label" : "Text color",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "white"
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "text_color" : "white"
+  }
+}, {
+  "id" : "quote_created_text",
+  "name" : "quote_created_text",
+  "display_width" : null,
+  "label" : "Quote created text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Quote informations"
+} ]

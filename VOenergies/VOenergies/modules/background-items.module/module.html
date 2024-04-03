@@ -1,0 +1,50 @@
+{% import '../../assets/macros/_style.html' %}
+
+{% if module.background_item|length > 0 %}
+<div id="{{ name }}" class="background-items z-n p-absolute t-0 s-0 fw fh {{ generateModuleClasses(module.style) }}{% if module.style.animate_module %} animation{% endif %}"
+{{ getModuleAnimations(module.style) }}>
+  {% for background_item in module.background_item %}
+  {% if background_item.image_field.src %}
+  <div id="{{ name }}-{{ loop.index }}" class="image__container p-absolute t-0 s-0 fw fh">
+    <picture class="p-relative t-0 s-0 fw fh d-flex p-relative o-hidden">
+      {% if background_item.srcset|length > 0 %}
+      {% for srcset in background_item.srcset %}
+      <source media="(min-width: {{ "{{ theme.layout." ~ srcset.resolution ~ ".breakpoint ~ 'px' }}" }})" data-srcset="{{ srcset.image_field.src }}">
+      {% endfor %}
+      {% endif %}
+      <img class="lazy d-flex p-absolute"
+           data-src="{{ background_item.image_field.src }}" 
+           alt="{{ background_item.image_field.alt }}">
+    </picture>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+
+{% require_css %}
+<style>
+  {% for item in module.background_item %}
+  {% set index = loop.index %}
+  {% for background_position in item.background_item_position %}
+  {% if background_position.resolution != "xs" %}
+  @media (min-width: {{ "{{ theme.layout." ~ background_position.resolution ~ ".breakpoint ~ 'px' }}" }}) {
+    {% endif %}
+    #{{ name }}-{{ index }} img {
+      position: absolute;
+      width: {{ background_position.width ~ background_position.width_unit }};
+      max-width: {{ background_position.width ~ background_position.width_unit }};
+      height: {{ background_position.height ~ background_position.height_unit }};
+      {{ background_position.set_vertical_position_from_bottom ? "bottom" : "top" }}: {{ background_position.vertical_position ~ "%" }};
+      {{ background_position.set_horizontal_position_from_right ? "right" : "left" }}: {{ background_position.horizontal_position ~ "%" }};
+      object-fit: {{ background_position.object_fit }};
+      object-position: {{ background_position.object_position|replace("_", " ") }};
+      transform: translate({{ background_position.horizontal_translation ~ "%" }}, {{ background_position.vertical_translation ~ "%" }});
+    }
+    {% if background_position.resolution != "xs" %}
+  }
+  {% endif %}
+  {% endfor %}
+  {% endfor %}
+</style>
+{% end_require_css %}
+{% endif %}

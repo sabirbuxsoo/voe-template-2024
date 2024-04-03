@@ -1,0 +1,7 @@
+{% import '../../assets/macros/_style.html' %}
+
+<div id="{{ name }}" 
+     class="custom-rich-text {{ generateModuleClasses(module.style) }}{% if module.style.animate_module %} animation{% endif %}"
+     {{ getModuleAnimations(module.style) }}>
+  {{ getModuleTextDisplay(module.style, module.html) }}
+</div>

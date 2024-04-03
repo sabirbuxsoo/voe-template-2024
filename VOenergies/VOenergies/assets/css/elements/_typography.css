@@ -1,0 +1,166 @@
+html {
+	font-size: 62.5%;
+}
+
+body { color: {{ theme.typography.xs.body_font.color }}; }
+.display-{{ breakpoint.name }}-body, body, blockquote, p, ul, li, a, input:not([type='radio']):not([type='checkbox']):not([type='submit']), select, textarea { font-size: {{ theme.typography.xs.body_font.font_size ~ 'px' }}; line-height:  {{ theme.typography.xs.body_font.line_height ~ 'px' }}; font-weight:  {{ theme.typography.xs.body_font.font_weight.variant }}; text-transform:  {{ theme.typography.xs.body_font.text_transform }}; {{ theme.typography.xs.body_font.spacing.css  }}; }
+.display-{{ breakpoint.name }}-body b, body b, .display-{{ breakpoint.name }}-body strong, body strong, blockquote b, blockquote strong, p b, p strong, ul b, ul strong, li b, li strong, a b, a strong, input:not([type='radio']):not([type='checkbox']):not([type='submit']) b, input:not([type='radio']):not([type='checkbox']):not([type='submit']) strong, select b, select strong, textarea b, textarea strong { font-weight:  {{ theme.typography.xs.body_font.bold_variation.variant }}; }
+
+.small, .button.button--small, button.button--small { font-size: {{ theme.typography.xs.body_font.font_size * 0.875 ~ 'px' }}; line-height:  {{ theme.typography.xs.body_font.line_height * 0.875 ~ 'px' }}; }
+.extra-small { font-size: {{ theme.typography.xs.body_font.font_size * 0.75 ~ 'px' }}; line-height:  {{ theme.typography.xs.body_font.line_height * 0.75 ~ 'px' }}; }
+
+.display-{{ breakpoint.name }}-title-hero-1 { font-size: {{ theme.typography.xs.title_hero_1.font_size ~ 'px' }}; line-height:  {{ theme.typography.xs.title_hero_1.line_height ~ 'px' }}; text-transform:  {{ theme.typography.xs.title_hero_1.text_transform }}; {{ theme.typography.xs.title_hero_1.spacing.css  }}; }
+.title-hero-1-bold-font-weight { font-weight:  {{ theme.typography.xs.title_hero_1.bold_variation.variant }} }
+
+.display-{{ breakpoint.name }}-title-hero-2 { font-size: {{ theme.typography.xs.title_hero_2.font_size ~ 'px' }}; line-height:  {{ theme.typography.xs.title_hero_2.line_height ~ 'px' }}; text-transform:  {{ theme.typography.xs.title_hero_2.text_transform }}; {{ theme.typography.xs.title_hero_2.spacing.css  }}; }
+.title-hero-2-bold-font-weight { font-weight:  {{ theme.typography.xs.title_hero_2.bold_variation.variant }} }
+
+h1 { color: {{ theme.typography.xs.h1.color }}; font-size: {{ theme.typography.xs.h1.font_size ~ 'px' }}; line-height:  {{ theme.typography.xs.h1.line_height ~ 'px' }}; text-transform:  {{ theme.typography.xs.h1.text_transform }}; {{ theme.typography.xs.h1.spacing.css  }}; font-weight:  {{ theme.typography.xs.h1.font_weight.variant }}; }
+.display-{{ breakpoint.name }}-h1 { font-size: {{ theme.typography.xs.h1.font_size ~ 'px' }}; line-height:  {{ theme.typography.xs.h1.line_height ~ 'px' }}; text-transform:  {{ theme.typography.xs.h1.text_transform }}; {{ theme.typography.xs.h1.spacing.css  }}; }
+.h1-bold-font-weight, h1 b, h1 strong { font-weight:  {{ theme.typography.xs.h1.bold_variation.variant }} }
+.display-{{ breakpoint.name }}-h1.title-font b, h1.title-font b, .display-{{ breakpoint.name }}-h1.title-font strong, h1.title-font strong { font-weight:  {{ theme.typography.xs.h1.bold_variation.variant }}; }
+
+h2 { color: {{ theme.typography.xs.h2.color }}; font-size: {{ theme.typography.xs.h2.font_size ~ 'px' }}; line-height:  {{ theme.typography.xs.h2.line_height ~ 'px' }}; text-transform:  {{ theme.typography.xs.h2.text_transform }}; {{ theme.typography.xs.h2.spacing.css  }}; font-weight:  {{ theme.typography.xs.h2.font_weight.variant }}; }
+.display-{{ breakpoint.name }}-h2 { font-size: {{ theme.typography.xs.h2.font_size ~ 'px' }}; line-height:  {{ theme.typography.xs.h2.line_height ~ 'px' }}; text-transform:  {{ theme.typography.xs.h2.text_transform }}; {{ theme.typography.xs.h2.spacing.css  }}; }
+.h2-bold-font-weight, h2 b, h2 strong {font-weight:  {{ theme.typography.xs.h2.bold_variation.variant }} }
+.display-{{ breakpoint.name }}-h2.title-font b, h2.title-font b, .display-{{ breakpoint.name }}-h2.title-font strong, h2.title-font strong { font-weight:  {{ theme.typography.xs.h2.bold_variation.variant }}; }
+
+h3 { color: {{ theme.typography.xs.h3.color }}; font-size: {{ theme.typography.xs.h3.font_size ~ 'px' }}; line-height:  {{ theme.typography.xs.h3.line_height ~ 'px' }}; text-transform:  {{ theme.typography.xs.h3.text_transform }}; {{ theme.typography.xs.h3.spacing.css  }}; font-weight:  {{ theme.typography.xs.h3.font_weight.variant }}; }
+.display-{{ breakpoint.name }}-h3 { font-size: {{ theme.typography.xs.h3.font_size ~ 'px' }}; line-height:  {{ theme.typography.xs.h3.line_height ~ 'px' }}; text-transform:  {{ theme.typography.xs.h3.text_transform }}; {{ theme.typography.xs.h3.spacing.css  }}; }
+.h3-bold-font-weight, h3 b, h3 strong {font-weight:  {{ theme.typography.xs.h3.bold_variation.variant }} }
+.display-{{ breakpoint.name }}-h3.title-font b, h3.title-font b, .display-{{ breakpoint.name }}-h3.title-font strong, h3.title-font strong { font-weight:  {{ theme.typography.xs.h3.bold_variation.variant }}; }
+
+h4 { color: {{ theme.typography.xs.h4.color }}; font-size: {{ theme.typography.xs.h4.font_size ~ 'px' }}; line-height:  {{ theme.typography.xs.h4.line_height ~ 'px' }}; text-transform:  {{ theme.typography.xs.h4.text_transform }}; {{ theme.typography.xs.h4.spacing.css  }}; font-weight:  {{ theme.typography.xs.h4.font_weight.variant }}; }
+.display-{{ breakpoint.name }}-h4, .blog-post .hs_cos_wrapper_type_rich_text blockquote p { font-size: {{ theme.typography.xs.h4.font_size ~ 'px' }}; line-height:  {{ theme.typography.xs.h4.line_height ~ 'px' }}; text-transform:  {{ theme.typography.xs.h4.text_transform }}; {{ theme.typography.xs.h4.spacing.css  }}; }
+.h4-bold-font-weight, h4 b, h4 strong {font-weight:  {{ theme.typography.xs.h4.bold_variation.variant }} }
+.display-{{ breakpoint.name }}-h4.title-font b, h4.title-font b, .display-{{ breakpoint.name }}-h4.title-font strong, h4.title-font strong { font-weight:  {{ theme.typography.xs.h4.bold_variation.variant }}; }
+
+h5 { color: {{ theme.typography.xs.h5.color }}; font-size: {{ theme.typography.xs.h5.font_size ~ 'px' }}; line-height:  {{ theme.typography.xs.h5.line_height ~ 'px' }}; text-transform:  {{ theme.typography.xs.h5.text_transform }}; {{ theme.typography.xs.h5.spacing.css  }}; font-weight:  {{ theme.typography.xs.h5.font_weight.variant }}; }
+.display-{{ breakpoint.name }}-h5 { font-size: {{ theme.typography.xs.h5.font_size ~ 'px' }}; line-height:  {{ theme.typography.xs.h5.line_height ~ 'px' }}; text-transform:  {{ theme.typography.xs.h5.text_transform }}; {{ theme.typography.xs.h5.spacing.css  }}; }
+.h5-bold-font-weight, h5 b, h5 strong {font-weight:  {{ theme.typography.xs.h5.bold_variation.variant }} }
+.display-{{ breakpoint.name }}-h5.title-font b, h5.title-font b, .display-{{ breakpoint.name }}-h5.title-font strong, h5.title-font strong { font-weight:  {{ theme.typography.xs.h5.bold_variation.variant }}; }
+
+h6 { color: {{ theme.typography.xs.h6.color }}; font-size: {{ theme.typography.xs.h6.font_size ~ 'px' }}; line-height:  {{ theme.typography.xs.h6.line_height ~ 'px' }}; text-transform:  {{ theme.typography.xs.h6.text_transform }}; {{ theme.typography.xs.h6.spacing.css  }}; font-weight:  {{ theme.typography.xs.h6.font_weight.variant }}; }
+.display-{{ breakpoint.name }}-h6 { font-size: {{ theme.typography.xs.h6.font_size ~ 'px' }}; line-height:  {{ theme.typography.xs.h6.line_height ~ 'px' }}; text-transform:  {{ theme.typography.xs.h6.text_transform }}; {{ theme.typography.xs.h6.spacing.css  }}; }
+.h6-bold-font-weight, h6 b, h6 strong {font-weight:  {{ theme.typography.xs.h6.bold_variation.variant }} }
+.display-{{ breakpoint.name }}-h6.title-font b, h6.title-font b, .display-{{ breakpoint.name }}-h6.title-font strong, h6.title-font strong { font-weight:  {{ theme.typography.xs.h6.bold_variation.variant }}; }
+
+.hs_cos_wrapper_type_rich_text > *:not(:first-child) {
+	margin-top: {{ theme.typography.xs.rows_gap ~ 'px' }};
+}
+
+b.font-black {
+	font-weight: 900;
+}
+
+.custom-rich-text.text-align{{ breakpoint.name }}-center .hs_cos_wrapper_type_rich_text ul,
+.custom-rich-text.text-align{{ breakpoint.name }}-center .hs_cos_wrapper_type_rich_text ol {
+	text-align: left;
+	width: auto;
+	display: inline-block;
+}
+
+{% for breakpoint in breakpoints|sort(False, False, 'value') %}
+{% if breakpoint.name != "xs" %}
+@media (min-width: {{ '{{ theme.layout.' ~ breakpoint.name ~  '.breakpoint ~ "px" }}' }}) {
+	{% endif %}
+	body { color: {{ "{{ theme.typography." ~ breakpoint.name ~ ".body_font.color }}" }}; }
+	.display-{{ breakpoint.name }}-body, body, blockquote, p, ul, li, a, input:not([type='radio']):not([type='checkbox']):not([type='submit']), select, textarea { font-size: {{ "{{ theme.typography." ~ breakpoint.name ~ ".body_font.font_size ~ 'px' }}" }}; line-height:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".body_font.line_height ~ 'px' }}" }}; font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".body_font.font_weight.variant }}" }}; text-transform:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".body_font.text_transform }}" }}; {{ "{{ theme.typography." ~ breakpoint.name ~ ".body_font.spacing.css  }}" }}; }
+	.display-{{ breakpoint.name }}-body b, body b, .display-{{ breakpoint.name }}-body strong, body strong, blockquote b, blockquote strong, p b, p strong, ul b, ul strong, li b, li strong, a b, a strong, input:not([type='radio']):not([type='checkbox']):not([type='submit']) b, input:not([type='radio']):not([type='checkbox']):not([type='submit']) strong, select b, select strong, textarea b, textarea strong { font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".body_font.bold_variation.variant }}" }}; }
+
+	.small, .button.button--small, button.button--small { font-size: {{ "{{ theme.typography." ~ breakpoint.name ~ ".body_font.font_size * 0.875 ~ 'px' }}" }}; line-height:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".body_font.line_height * 0.875 ~ 'px' }}" }}; }
+	.extra-small { font-size: {{ "{{ theme.typography." ~ breakpoint.name ~ ".body_font.font_size * 0.75 ~ 'px' }}" }}; line-height:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".body_font.line_height * 0.75 ~ 'px' }}" }}; }
+
+	.display-{{ breakpoint.name }}-title-hero-1 { font-size: {{ "{{ theme.typography." ~ breakpoint.name ~ ".title_hero_1.font_size ~ 'px' }}" }}; line-height:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".title_hero_1.line_height ~ 'px' }}" }}; text-transform:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".title_hero_1.text_transform }}" }}; {{ "{{ theme.typography." ~ breakpoint.name ~ ".title_hero_1.spacing.css  }}" }}; }
+	.title-hero-1-bold-font-weight { font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".title_hero_1.bold_variation.variant }}" }} }
+
+	.display-{{ breakpoint.name }}-title-hero-2 { font-size: {{ "{{ theme.typography." ~ breakpoint.name ~ ".title_hero_2.font_size ~ 'px' }}" }}; line-height:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".title_hero_2.line_height ~ 'px' }}" }}; text-transform:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".title_hero_2.text_transform }}" }}; {{ "{{ theme.typography." ~ breakpoint.name ~ ".title_hero_2.spacing.css  }}" }}; }
+	.title-hero-2-bold-font-weight { font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".title_hero_2.bold_variation.variant }}" }} }
+
+	h1 { color: {{ "{{ theme.typography." ~ breakpoint.name ~ ".h1.color }}" }}; font-size: {{ "{{ theme.typography." ~ breakpoint.name ~ ".h1.font_size ~ 'px' }}" }}; line-height:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h1.line_height ~ 'px' }}" }}; text-transform:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h1.text_transform }}" }}; {{ "{{ theme.typography." ~ breakpoint.name ~ ".h1.spacing.css  }}" }}; font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h1.font_weight.variant }}" }}; }
+	.display-{{ breakpoint.name }}-h1 { font-size: {{ "{{ theme.typography." ~ breakpoint.name ~ ".h1.font_size ~ 'px' }}" }}; line-height:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h1.line_height ~ 'px' }}" }}; text-transform:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h1.text_transform }}" }}; {{ "{{ theme.typography." ~ breakpoint.name ~ ".h1.spacing.css  }}" }}; }
+	.h1-bold-font-weight, h1 b, h1 strong { font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h1.bold_variation.variant }}" }} }
+	.display-{{ breakpoint.name }}-h1.title-font b, h1.title-font b, .display-{{ breakpoint.name }}-h1.title-font strong, h1.title-font strong { font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h1.bold_variation.variant }}" }}; }
+
+	h2 { color: {{ "{{ theme.typography." ~ breakpoint.name ~ ".h2.color }}" }}; font-size: {{ "{{ theme.typography." ~ breakpoint.name ~ ".h2.font_size ~ 'px' }}" }}; line-height:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h2.line_height ~ 'px' }}" }}; text-transform:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h2.text_transform }}" }}; {{ "{{ theme.typography." ~ breakpoint.name ~ ".h2.spacing.css  }}" }}; font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h2.font_weight.variant }}" }}; }
+	.display-{{ breakpoint.name }}-h2 { font-size: {{ "{{ theme.typography." ~ breakpoint.name ~ ".h2.font_size ~ 'px' }}" }}; line-height:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h2.line_height ~ 'px' }}" }}; text-transform:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h2.text_transform }}" }}; {{ "{{ theme.typography." ~ breakpoint.name ~ ".h2.spacing.css  }}" }}; }
+	.h2-bold-font-weight, h2 b, h2 strong {font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h2.bold_variation.variant }}" }} }
+	.display-{{ breakpoint.name }}-h2.title-font b, h2.title-font b, .display-{{ breakpoint.name }}-h2.title-font strong, h2.title-font strong { font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h2.bold_variation.variant }}" }}; }
+
+	h3 { color: {{ "{{ theme.typography." ~ breakpoint.name ~ ".h3.color }}" }}; font-size: {{ "{{ theme.typography." ~ breakpoint.name ~ ".h3.font_size ~ 'px' }}" }}; line-height:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h3.line_height ~ 'px' }}" }}; text-transform:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h3.text_transform }}" }}; {{ "{{ theme.typography." ~ breakpoint.name ~ ".h3.spacing.css  }}" }}; font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h3.font_weight.variant }}" }}; }
+	.display-{{ breakpoint.name }}-h3 { font-size: {{ "{{ theme.typography." ~ breakpoint.name ~ ".h3.font_size ~ 'px' }}" }}; line-height:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h3.line_height ~ 'px' }}" }}; text-transform:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h3.text_transform }}" }}; {{ "{{ theme.typography." ~ breakpoint.name ~ ".h3.spacing.css  }}" }}; }
+	.h3-bold-font-weight, h3 b, h3 strong {font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h3.bold_variation.variant }}" }} }
+	.display-{{ breakpoint.name }}-h3.title-font b, h3.title-font b, .display-{{ breakpoint.name }}-h3.title-font strong, h3.title-font strong { font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h3.bold_variation.variant }}" }}; }
+
+	h4 { color: {{ "{{ theme.typography." ~ breakpoint.name ~ ".h4.color }}" }}; font-size: {{ "{{ theme.typography." ~ breakpoint.name ~ ".h4.font_size ~ 'px' }}" }}; line-height:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h4.line_height ~ 'px' }}" }}; text-transform:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h4.text_transform }}" }}; {{ "{{ theme.typography." ~ breakpoint.name ~ ".h4.spacing.css  }}" }}; font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h4.font_weight.variant }}" }}; }
+	.display-{{ breakpoint.name }}-h4, .blog-post .hs_cos_wrapper_type_rich_text blockquote p { font-size: {{ "{{ theme.typography." ~ breakpoint.name ~ ".h4.font_size ~ 'px' }}" }}; line-height:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h4.line_height ~ 'px' }}" }}; text-transform:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h4.text_transform }}" }}; {{ "{{ theme.typography." ~ breakpoint.name ~ ".h4.spacing.css  }}" }}; }
+	.h4-bold-font-weight, h4 b, h4 strong {font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h4.bold_variation.variant }}" }} }
+	.display-{{ breakpoint.name }}-h4.title-font b, h4.title-font b, .display-{{ breakpoint.name }}-h4.title-font strong, h4.title-font strong { font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h4.bold_variation.variant }}" }}; }
+
+	h5 { color: {{ "{{ theme.typography." ~ breakpoint.name ~ ".h5.color }}" }}; font-size: {{ "{{ theme.typography." ~ breakpoint.name ~ ".h5.font_size ~ 'px' }}" }}; line-height:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h5.line_height ~ 'px' }}" }}; text-transform:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h5.text_transform }}" }}; {{ "{{ theme.typography." ~ breakpoint.name ~ ".h5.spacing.css  }}" }}; font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h5.font_weight.variant }}" }}; }
+	.display-{{ breakpoint.name }}-h5 { font-size: {{ "{{ theme.typography." ~ breakpoint.name ~ ".h5.font_size ~ 'px' }}" }}; line-height:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h5.line_height ~ 'px' }}" }}; text-transform:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h5.text_transform }}" }}; {{ "{{ theme.typography." ~ breakpoint.name ~ ".h5.spacing.css  }}" }}; }
+	.h5-bold-font-weight, h5 b, h5 strong {font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h5.bold_variation.variant }}" }} }
+	.display-{{ breakpoint.name }}-h5.title-font b, h5.title-font b, .display-{{ breakpoint.name }}-h5.title-font strong, h5.title-font strong { font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h5.bold_variation.variant }}" }}; }
+
+	h6 { color: {{ "{{ theme.typography." ~ breakpoint.name ~ ".h6.color }}" }}; font-size: {{ "{{ theme.typography." ~ breakpoint.name ~ ".h6.font_size ~ 'px' }}" }}; line-height:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h6.line_height ~ 'px' }}" }}; text-transform:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h6.text_transform }}" }}; {{ "{{ theme.typography." ~ breakpoint.name ~ ".h6.spacing.css  }}" }}; font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h6.font_weight.variant }}" }}; }
+	.display-{{ breakpoint.name }}-h6 { font-size: {{ "{{ theme.typography." ~ breakpoint.name ~ ".h6.font_size ~ 'px' }}" }}; line-height:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h6.line_height ~ 'px' }}" }}; text-transform:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h6.text_transform }}" }}; {{ "{{ theme.typography." ~ breakpoint.name ~ ".h6.spacing.css  }}" }}; }
+	.h6-bold-font-weight, h6 b, h6 strong {font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h6.bold_variation.variant }}" }} }
+	.display-{{ breakpoint.name }}-h6.title-font b, h6.title-font b, .display-{{ breakpoint.name }}-h6.title-font strong, h6.title-font strong { font-weight:  {{ "{{ theme.typography." ~ breakpoint.name ~ ".h6.bold_variation.variant }}" }}; }
+
+	.hs_cos_wrapper_type_rich_text > *:not(:first-child) {
+		margin-top: {{ "{{ theme.layout." ~ breakpoint.name ~ ".rows_gap ~ 'px' }}" }};
+	}
+
+	.custom-rich-text.text-align-{{ breakpoint.name }}-center .hs_cos_wrapper_type_rich_text ul,
+	.custom-rich-text.text-align-{{ breakpoint.name }}-center .hs_cos_wrapper_type_rich_text ol {
+		text-align: left;
+		width: auto;
+		display: inline-block;
+	}
+
+	{% if breakpoint.name != "xs" %}
+}
+{% endif %}
+{%- endfor -%}
+
+@media (max-width: {{ theme.layout.xs.breakpoint ~ "px" }}) {
+	br {
+		content: "";
+	}
+
+	br:after {
+		content: " ";
+	}
+}
+
+pre {
+	white-space: normal;
+	padding: {{ theme.layout.spacing_base ~ 'px' }} {{ theme.layout.spacing_base * 6 ~ 'px' }};
+	color: {{ theme.colors.first.color }};
+	background-color: {{ theme.colors.white.color }};
+	display: inline-block;
+	border-radius: {{ theme.layout.spacing_base * 12 ~ 'px' }};
+	text-transform: uppercase;
+	border: 1px solid {{ theme.colors.first.color }};
+	box-shadow: 1px 3px 0 0 {{ theme.colors.first.color }};
+	font-size: {{ theme.layout.spacing_base * 3 ~ 'px' }};
+	line-height: {{ theme.layout.spacing_base * 7 ~ 'px' }};
+}
+
+em {
+	font-style: italic;
+}
+
+.animation__word {
+	white-space: nowrap;
+}
+
+.hs_cos_wrapper_type_rich_text ul li {
+	list-style: disc;
+	list-style-position: inside;
+}
+
+.hs_cos_wrapper_type_rich_text ol li {
+	list-style: decimal;
+	list-style-position: inside;
+}

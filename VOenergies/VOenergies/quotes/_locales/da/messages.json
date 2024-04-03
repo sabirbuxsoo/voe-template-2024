@@ -1,0 +1,72 @@
+{
+  "name": {
+    "message": "Tilbudstema i CMS",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.banner_bg_color.label": {
+    "message": "Baggrundsfarve for banner",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.button_background_color.label": {
+    "message": "Baggrundsfarve for knap",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.button_font_color.label": {
+    "message": "Farve på knapskifttype",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.label": {
+    "message": "Globale farver",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.primary_color.label": {
+    "message": "Primær farve",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.secondary_color.label": {
+    "message": "Sekundær farve",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.tertiary_color.label": {
+    "message": "Tertiær farve",
+    "description": "",
+    "placeholders": null
+  },
+  "global_fonts.label": {
+    "message": "Globale skrifttyper",
+    "description": "",
+    "placeholders": null
+  },
+  "global_fonts.primary_font.label": {
+    "message": "Primær skrifttype",
+    "description": "",
+    "placeholders": null
+  },
+  "global_fonts.secondary_font.label": {
+    "message": "Sekundær skrifttype",
+    "description": "",
+    "placeholders": null
+  },
+  "modern_settings.button_background_color.label": {
+    "message": "Baggrundsfarve for knap",
+    "description": "",
+    "placeholders": null
+  },
+  "modern_settings.button_font_color.label": {
+    "message": "Farve på knapskifttype",
+    "description": "",
+    "placeholders": null
+  },
+  "modern_settings.label": {
+    "message": "Moderne indstillinger",
+    "description": "",
+    "placeholders": null
+  }
+}

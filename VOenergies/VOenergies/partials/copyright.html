@@ -1,0 +1,81 @@
+<!--
+templateType: global_partial
+label: Website copyright
+-->
+{% dnd_area "copyright-section" label="Copyright section" class="copyright-section" %}
+{% dnd_section vertical_alignment="TOP" %}
+{% dnd_column width="12" %}
+{% dnd_row %}
+{% dnd_column width="4" %}
+{% dnd_row %}
+{% dnd_module 
+  path='../modules/custom-rich-text' 
+  style={
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        }
+      }
+%}
+{% module_attribute "html" %}
+<p>©{{ year }} voé - tous droits réservés</p>
+{% end_module_attribute %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% dnd_column width="8", offset="4" %}
+{% dnd_row %}
+{% dnd_module 
+    path='../modules/footer-menu'
+    menu={ "menu": 83927650295, 'flow': 'horizontal' }
+    style={
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment' : 'justify-content-xs-flex-start'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'right',
+          'horizontal_alignment' : 'justify-content-md-flex-end'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'right',
+          'horizontal_alignment' : 'justify-content-xl-flex-end'
+        }
+    }
+  %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}
+{% end_dnd_area %}

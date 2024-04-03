@@ -1,0 +1,186 @@
+[ {
+  "id" : "e5578af4-36d5-2214-1fd6-73739a390764",
+  "name" : "show_menu",
+  "display_width" : null,
+  "label" : "Show menu",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "cbd8611d-2ece-1cc7-9466-ed07a02c81f2",
+  "name" : "menu",
+  "display_width" : null,
+  "label" : "Menu",
+  "inline_help_text" : "Set the menu you want to display here.",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_menu",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "menu",
+  "default" : ""
+}, {
+  "id" : "0ecc7cd1-ecec-f1c7-9585-8813c5b6b03e",
+  "name" : "max_levels",
+  "display_width" : null,
+  "label" : "Max levels",
+  "inline_help_text" : "Set the menu max levels of sub items here.",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_menu",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "slider",
+  "min" : 1,
+  "max" : 10,
+  "step" : 1,
+  "type" : "number"
+}, {
+  "id" : "0232ad09-5606-a86a-a8a6-c5df17a11dff",
+  "name" : "flow",
+  "display_width" : null,
+  "label" : "Menu orientation",
+  "inline_help_text" : "Set the menu orientation here.",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_menu",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "select",
+  "choices" : [ [ "horizontal", "Horizontal" ], [ "vertical", "Vertical" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "horizontal"
+}, {
+  "id" : "3d56b747-3c49-c165-7c6c-22dde33980c3",
+  "name" : "small_menu",
+  "display_width" : null,
+  "label" : "Small menu",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_menu",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "b3f366ab-396b-7d39-d7f8-d45f6e24a1bb",
+  "name" : "show_icon_links",
+  "display_width" : null,
+  "label" : "Show icon links",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "9da7f28a-5100-986b-3cab-52fece94478d",
+  "name" : "icon_link",
+  "display_width" : null,
+  "label" : "Icon link",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 0,
+    "max" : null,
+    "sorting_label_field" : "58385839-18fc-1a84-ca91-b8faff05dbd2",
+    "default" : 1
+  },
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "show_icon_links",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "58385839-18fc-1a84-ca91-b8faff05dbd2",
+    "name" : "social_icon",
+    "display_width" : null,
+    "label" : "Social icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.14.0",
+    "type" : "icon",
+    "default" : {
+      "name" : "Facebook F",
+      "unicode" : "f39e",
+      "type" : "REGULAR"
+    }
+  }, {
+    "id" : "e2af070b-8d11-4e5c-eb58-6f19ed23cdac",
+    "name" : "social_link",
+    "display_width" : null,
+    "label" : "Social link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "2f001e89-3410-0671-08d9-87a03e62212d",
+    "name" : "use_secondary_color",
+    "display_width" : null,
+    "label" : "Use secondary color",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : false
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "social_icon" : {
+      "name" : "Facebook F",
+      "unicode" : "f39e",
+      "type" : "REGULAR"
+    },
+    "social_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "boolean_field" : false
+  } ]
+} ]

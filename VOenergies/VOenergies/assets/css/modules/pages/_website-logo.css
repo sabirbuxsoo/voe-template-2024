@@ -1,0 +1,15 @@
+body:not(.menu-open) .header.header--transparent:not(.scrolled) .website-logo--transparent img {
+	display: none;
+}
+
+.header.header--transparent.scrolled .website-logo--transparent:before,
+body.menu-open .header.header--transparent .website-logo--transparent:before {
+	display: none;
+}
+
+@media (min-width: {{ theme.layout.md.breakpoint + 1 ~ "px" }}) and (max-width: {{ theme.layout.xl.breakpoint ~ "px" }}) {
+	.header.header--transparent .website-logo img, .header.header--transparent .website-logo:before {
+		max-height: 60px;
+		max-width: 150px;
+	}
+}

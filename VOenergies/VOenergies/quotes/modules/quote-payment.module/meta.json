@@ -1,0 +1,12 @@
+{
+  "external_js" : [ "https://static.hsappstatic.com/quote-payment-js/ex/quote-payment.js" ],
+  "global" : false,
+  "content_types" : [ "QUOTE_TEMPLATE" ],
+  "master_language" : "en",
+  "inline_help_text" : "You can decide if you want to collect payment when you create a quote with this template.",
+  "icon" : "../../../mV0_hubspot/img/icon/credit-card.svg",
+  "host_template_types" : [ "QUOTE" ],
+  "module_id" : 141566204433,
+  "label" : "Payment",
+  "is_available_for_new_content" : true
+}

@@ -1,0 +1,16 @@
+{%- macro getTransitionsForElement(element) -%}
+{%- set transitionElements = [] -%}
+
+{%- for element, rule in element.items() -%}
+{%- if element is containing "hover" -%}
+{%- do transitionElements.append(element|cut('hover_')|replace("_", "-")) -%}
+{%- endif -%}
+{%- endfor -%}
+
+{%- if transitionElements|length > 0 -%}
+transition: 
+{%- for transitionElement in transitionElements -%}
+{{ transitionElement }} 250ms ease-in-out{%- if loop.last -%};{%- else -%}, {%- endif -%}
+{%- endfor -%}
+{%- endif -%}
+{%- endmacro -%}

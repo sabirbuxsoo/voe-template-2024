@@ -1,0 +1,295 @@
+<!--
+templateType: global_partial
+label: Website footer
+-->
+{% dnd_area "footer-section" label="Footer section" class="footer-section p-relative z-sm" %}
+{% dnd_section vertical_alignment="TOP" %}
+{% dnd_column width="12" %}
+{% dnd_row %}
+{% dnd_column width="4" %}
+{% dnd_row %}
+{% dnd_module 
+    path='../modules/website-logo' 
+    img={
+      'override_inherited_src': True,
+      'src': get_asset_url('../assets/images/branding/logo.png'),
+      'width': 155,
+      'height': 43
+    },
+    use_transparent_logo=False
+  %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% dnd_row %}
+{% dnd_module 
+  path='../modules/custom-rich-text' 
+  style={
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': '  px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        }
+      }
+%}
+{% module_attribute "html" %}
+<p style="color: {{theme.colors.white.color }}; font-size: 14px; line-height: 22px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod ad minim veniam, tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ...</p>
+{% end_module_attribute %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% dnd_row %}
+{% dnd_module 
+  path='../modules/social-follow' 
+  style={
+    'xs': {
+      'spacing': {
+        'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+        'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+      },
+      'text_alignment': 'left',
+      'horizontal_alignment': 'justify-content-xs-flex-start'
+    },
+    'md': {
+      'spacing': {
+        'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+        'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+      },
+      'text_alignment': 'left',
+      'horizontal_alignment': 'justify-content-md-center'
+    },
+    'xl': {
+      'spacing': {
+        'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+        'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+      },
+      'text_alignment': 'left',
+      'horizontal_alignment': 'justify-content-xl-center'
+    }
+  },
+  social=[
+    {
+      'social_icon': {
+        'name': 'Facebook F'
+      },
+      'color': 'black',
+      'hover_color': 'black',
+      'background_color': 'white',
+      'hover_background_color': 'first',
+      'border_color': 'white',
+      'hover_border_color': 'first',
+      'border_radius': 'full'
+    },
+    {
+      'social_icon': {
+        'name': 'Linkedin In'
+      },
+      'color': 'black',
+      'hover_color': 'black',
+      'background_color': 'white',
+      'hover_background_color': 'first',
+      'border_color': 'white',
+      'hover_border_color': 'first',
+      'border_radius': 'full'
+    },
+    {
+      'social_icon': {
+        'name': 'Youtube'
+      },
+      'color': 'black',
+      'hover_color': 'black',
+      'background_color': 'white',
+      'hover_background_color': 'first',
+      'border_color': 'white',
+      'hover_border_color': 'first',
+      'border_radius': 'full'
+    },
+    {
+      'social_icon': {
+        'name': 'Instagram'
+      },
+      'color': 'black',
+      'hover_color': 'black',
+      'background_color': 'white',
+      'hover_background_color': 'first',
+      'border_color': 'white',
+      'hover_border_color': 'first',
+      'border_radius': 'full'
+    },
+    {
+      'social_icon': {
+        'name': 'X Twitter'
+      },
+      'color': 'black',
+      'hover_color': 'black',
+      'background_color': 'white',
+      'hover_background_color': 'first',
+      'border_color': 'white',
+      'hover_border_color': 'first',
+      'border_radius': 'full'
+    }
+  ]
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% dnd_column width="2" offset="4" %}
+{% dnd_row %}
+{% dnd_module 
+    path='../modules/footer-menu'
+    menu={ "menu": 82919136726,  'flow': 'vertical'}
+    style={
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment' : 'justify-content-xs-flex-start'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment' : 'justify-content-md-flex-start'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment' : 'justify-content-xl-flex-start'
+        }
+    }
+  %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% dnd_column width="2", offset="6" %}
+{% dnd_row %}
+{% dnd_module 
+    path='../modules/footer-menu'
+    menu={ "menu": 82919850454,  'flow': 'vertical'}
+    style={
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment' : 'justify-content-xs-flex-start'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment' : 'justify-content-md-flex-start'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment' : 'justify-content-xl-flex-start'
+        }
+    }
+  %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+
+{% dnd_column width="2", offset="8" %}
+{% dnd_row %}
+{% dnd_module 
+    path='../modules/footer-menu'
+    menu={ "menu": 82919649255,  'flow': 'vertical'}
+    style={
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment' : 'justify-content-xs-flex-start'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment' : 'justify-content-md-flex-start'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment' : 'justify-content-xl-flex-start'
+        }
+    }
+  %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+
+{% dnd_column width="2", offset="10" %}
+{% dnd_row %}
+{% dnd_module 
+    path='../modules/footer-menu'
+    menu={ "menu": 82919649477,  'flow': 'vertical'}
+    style={
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment' : 'justify-content-xs-flex-start'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment' : 'justify-content-md-flex-start'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment' : 'justify-content-xl-flex-start'
+        }
+    }
+  %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}
+{% end_dnd_area %}

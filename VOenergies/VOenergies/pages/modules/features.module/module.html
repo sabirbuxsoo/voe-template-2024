@@ -1,0 +1,50 @@
+{% import '../../../assets/macros/_buttons.html' %}
+{% import '../../../assets/macros/_style.html' %}
+
+{% if module.feature|length > 0 %}
+<div class="features {{ generateModuleClasses(module.style) }}{% if module.style.animate_module %} animation{% endif %}"
+     {{ getModuleAnimations(module.style) }}>
+  <div class="dnd-row">
+    <div class="row-fluid d-flex flex-flow-row-wrap justify-content-flex-start justify-content-md-center mt-n-4 mb-n-4">
+      {% for feature in module.feature %}
+      <div class="span{{ (12 / module.features_per_row)|round }} columns mt-4 mb-4">
+        <div class="feature{{ ' mt-md-4' if loop.index > module.features_per_row }} d-flex {{ feature.visual_on_top == true ? ' flex-flow-column' : ' flex-flow-row' }} {{ feature.visual_on_top == true ? getModuleHorizontalAlignmentStyling(module.style)|replace("justify-content", "align-items") : getModuleHorizontalAlignmentStyling(module.style) }} p-4">
+          {% if feature.visual_type == 'image' && feature.image_field.src %}
+          <div class="image-container d-flex {{ feature.image_format }} p-relative {{ feature.visual_on_top == true ? 'mb-4' : ' me-4' }}">
+            {% set sizeAttrs = 'width="{{ feature.image_field.width }}" height="{{ feature.image_field.height }}" style="max-width: 100%; max-height: 100%;"' %}
+            {% if feature.image_field.size_type == 'auto' %}
+            {% set sizeAttrs = 'style="max-width: 100%; max-height: 100%;"' %}
+            {% elif feature.image_field.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ feature.image_field.max_width }}" height="{{ feature.image_field.max_height }}" style="max-width: 100%; max-height: 100%;"' %}
+            {% endif %}
+            <img class="lazy t-0 s-0 fh fw {{ feature.image_border_radius }} object-fit-{{ feature.image_position }} d-flex p-absolute" data-src="{{ feature.image_field.src }}" alt="{{ feature.image_field.alt }}" {{ sizeAttrs }}>
+          </div>
+          {% endif %}
+          {% if feature.visual_type == 'icon' %}
+          <div class="icon-container d-flex flex-flow-column align-items-xs-center justify-content-xs-center{{ feature.visual_on_top == true ? ' mb-4' : ' me-4' }} {{ feature.icon.color|replace("_", "-") ~ '-fill' }} {{ feature.icon.background_color != 'none' ? feature.icon.background_color|replace("_", "-") ~ '-bg' : '' }} {{ feature.icon.shape }}" style="flex: 0 0 {{ feature.icon.width }}px; width: {{ feature.icon.width }}px; height: {{ feature.icon.width }}px; padding: {{ feature.icon.spacing }}px;">
+            {% icon
+              name='{{ feature.icon.icon.name }}'
+              purpose='{{ feature.icon.accessibility_options.purpose }}'
+              style='{{ feature.icon.icon.type }}'
+              title='{{ feature.icon.accessibility_options.title }}'
+              unicode='{{ feature.icon.icon.unicode }}'
+              no_wrapper=True
+            %}
+          </div>
+          {% endif %}
+          <div class="text-container {{- getModuleTextAlignmentStyling(module.style) -}}">
+            <div class="display-xs-h3 display-md-h3 display-xl-h3 {{ module.features_title_color|replace("_", "-") }}-color mb-2"><b>{{ feature.feature_title }}</b></div>
+            <div class="small hs_cos_wrapper_type_rich_text">{{ feature.feature_text }}</div>
+          </div>
+          {% if feature.show_button == true && feature.button.url.url.href %}
+          <div class="button-container">
+            {{ createButtonHTML(feature.button) }}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}

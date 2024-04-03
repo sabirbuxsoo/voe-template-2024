@@ -1,0 +1,49 @@
+{% import '../../../assets/macros/_style.html' %}
+{% import '../../../assets/macros/_buttons.html' %}
+
+
+{% import '../../../assets/macros/_buttons.html' %}
+
+<div class="accordion {{ module.global_settings.background_color != 'none' ? module.global_settings.background_color|replace("_", "-") ~ '-bg' : '' }} mt-n-md-{{ (module.global_settings.items_top_spacing/ 5)|round }} {{ module.global_settings.border_radius != 'none' ? module.global_settings.border_radius : '' }} {% if module.global_settings.border != 'none' %} {{ module.global_settings.border }} border-solid {{ module.global_settings.border_color|replace("_", "-") ~ '-border-color' }}{% endif %}{% if module.style.animate_module %} animation{% endif %}"
+     {{ getModuleAnimations(module.style) }}>
+  <div class="accordion-links no-scrollbar p-relative d-flex flex-flow-column">
+    {% for accordion in module.accordion %}
+    <div class="accordion-item p-relative d-flex flex-flow-column{{ loop.first && module.global_settings.make_first_item_open_by_default == true ? ' active' : '' }}{% if not loop.last && module.global_settings.add_border_below_each_item == true %} {{ module.global_settings.items_border }} border-solid {{ module.global_settings.border_color|replace("_", "-") ~ '-border-color' }}{% endif %}" id='{{ name }}-{{ loop.index }}-accordion'>
+      <div class="accordion-title p-relative d-flex flex-flow-row align-items-xs-center justify-content-flex-start pt-5 pb-5 pt-md-{{ (module.global_settings.items_top_spacing/ 5)|round }} pb-md-{{ (module.global_settings.items_bottom_spacing/ 5)|round }} ps-{{ (module.global_settings.items_left_spacing/ 5)|round }} pe-{{ (module.global_settings.items_right_spacing/ 5)|round }}">
+        <div class="accordion_title__inner {{ module.global_settings.titles_color|replace("_", "-") ~ '-color' }} me-20 display-xs-h4 display-md-h4 display-xl-h4 mb-0"><b>{{ accordion.accordion_title }}</b></div>
+        <div class="icon-container d-flex flex-flow-column align-items-xs-center justify-content-xs-center ms-auto {{ module.global_settings.icon.color|replace("_", "-") ~ '-fill' }} {{ module.global_settings.icon.hover_color|replace("_", "-") ~ '-hover-fill' }} {{ module.global_settings.icon.background_color|replace("_", "-") ~ '-bg' }} {{ module.global_settings.icon.hover_background_color|replace("_", "-") ~ '-hover-bg' }} {{ module.global_settings.icons_shape }}" style="flex: 0 0 {{ module.global_settings.icons_width }}px; width: {{ module.global_settings.icons_width }}px; height: {{ module.global_settings.icons_width }}px; padding: {{ module.global_settings.icons_spacing }}px;">
+          {% icon
+            name='{{ module.global_settings.icon.icon.name }}'
+            purpose='{{ module.global_settings.icon.accessibility_options.purpose }}'
+            style='{{ module.global_settings.icon.icon.type }}'
+            title='{{ module.global_settings.icon.accessibility_options.title }}'
+            unicode='{{ module.global_settings.icon.icon.unicode }}'
+            no_wrapper=True
+          %}
+        </div>
+        <div class="icon-container icon-container-active flex-flow-column align-items-xs-center justify-content-xs-center ms-auto {{ module.global_settings.icon_active.color|replace("_", "-") ~ '-fill' }} {{ module.global_settings.icon_active.hover_color|replace("_", "-") ~ '-hover-fill' }} {{ module.global_settings.icon_active.background_color|replace("_", "-") ~ '-bg' }} {{ module.global_settings.icon_active.hover_background_color|replace("_", "-") ~ '-hover-bg' }} {{ module.global_settings.icons_shape }}" style="flex: 0 0 {{ module.global_settings.icons_width }}px; width: {{ module.global_settings.icons_width }}px; height: {{ module.global_settings.icons_width }}px; padding: {{ module.global_settings.icons_spacing }}px;">
+          {% icon
+            name='{{ module.global_settings.icon_active.icon.name }}'
+            purpose='{{ module.global_settings.icon_active.accessibility_options.purpose }}'
+            style='{{ module.global_settings.icon_active.icon.type }}'
+            title='{{ module.global_settings.icon_active.accessibility_options.title }}'
+            unicode='{{ module.global_settings.icon_active.icon.unicode }}'
+            no_wrapper=True
+          %}
+        </div>
+      </div>
+      <div class="accordion-content{{ loop.first ? ' active' : '' }} d-flex flex-flow-column flex-flow-md-row-wrap ps-{{ (module.global_settings.items_left_spacing/ 5)|round }} pe-{{ (module.global_settings.items_right_spacing/ 5)|round }} o-hidden" id="{{ name }}-{{loop.index}}-accordion-content">
+        <div class="dnd-row o-hidden pb-{{ (module.global_settings.items_bottom_spacing/ 5)|round }}">
+          <div class="row-fluid">
+            <div class="accordion-text{% if accordion.accordion_image.src %} span5{% else %} span12{% endif %} columns">
+              <div class="hs_cos_wrapper_type_rich_text {{ module.global_settings.text_color|replace("_", "-") }}-color">
+                {{ accordion.accordion_text }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

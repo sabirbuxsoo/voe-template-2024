@@ -1,0 +1,68 @@
+<!--
+templateType: global_partial
+label: Website footer - no copyright
+-->
+{% dnd_area "footer-section" label="Footer section" class="footer-section footer-section-no-navigation p-relative z-sm" %}
+{% dnd_section vertical_alignment="TOP" %}
+{% dnd_column width="12" %}
+{% dnd_row %}
+{% dnd_column width="2" %}
+{% dnd_row %}
+{% dnd_module 
+    path='../modules/website-logo' 
+    img={
+      'override_inherited_src': True,
+      'src': get_asset_url('../assets/images/branding/logo.png'),
+      'width': 117,
+      'height': 52
+    },
+    use_transparent_logo=False
+  %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% dnd_column width="7", offset="2" %}
+{% dnd_row %}
+{% dnd_module path='@hubspot/horizontal_spacer' %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% dnd_column width="3", offset="9" %}
+{% dnd_row %}
+{% dnd_module 
+    path='../modules/footer-menu'
+    menu={ "menu": 83927650295, 'flow': 'horizontal' }
+    style={
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center',
+          'horizontal_alignment' : 'justify-content-xs-center'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'right',
+          'horizontal_alignment' : 'justify-content-md-flex-end'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'right',
+          'horizontal_alignment' : 'justify-content-xl-flex-end'
+        }
+    }
+  %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}
+{% end_dnd_area %}

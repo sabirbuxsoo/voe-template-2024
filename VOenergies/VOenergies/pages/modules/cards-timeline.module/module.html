@@ -1,0 +1,73 @@
+{% import '../../../assets/macros/_style.html' %}
+
+{% if module.timeline_item|length > 0 %}
+<div id="{{ name }}" class="timeline-container timeline-container--cards timeline-container--full-width p-relative {{ generateModuleClasses(module.style) }}{% if module.style.animate_module %} animation{% endif %}"
+     {{ getModuleAnimations(module.style) }} data-delta="1">
+  <div class="{{ module.style.center_slides ? 'timeline-container__inner timeline-container__inner--centered' : 'timeline-container__inner' }} p-relative">
+    <hr class="timeline__event-line p-absolute first-bg">
+    <div class="carousel timeline o-hidden {{ module.style.show_arrows == true ? " timeline-container--arrows" : "" }}{{ module.style.show_dots == true ? " timeline-container--dots" : "" }} swiper"
+         data-items-xl="{{ module.style.xl.number_of_visible_items }}"
+         data-items-md="{{ module.style.md.number_of_visible_items }}" 
+         data-items-xs="{{ module.style.xs.number_of_visible_items }}"
+         data-centered-slides="{{ module.style.center_slides }}"
+         data-transition="{{ module.style.enable_fade_transition ? 'fade' : "slide" }}"
+         data-dots="{{ module.style.show_dots }}"
+         data-arrows="{{ module.style.show_arrows }}"
+         data-slides="{{ module.timeline_item|length }}"
+         data-loop="false"
+         data-infinite="false">
+      <div class="swiper-wrapper">
+        {% for item in module.timeline_item %}
+        <div class="swiper-slide text-align-xs-left text-align-md-left text-align-xl-left timeline-card">
+          <svg class="timeline-card__event mb-12" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+             <circle cx="26" cy="26" r="16" stroke="{{ theme.colors.first.color }}" fill="{{ theme.colors.white.color }}" stroke-width="3" />
+             <circle cx="26" cy="26" r="7" fill="{{ theme.colors.first.color }}" />
+          </svg>
+          <div class="timeline-card__content ph-6 pb-6 pt-7">
+            <time style="color: {{ theme.colors.first.color }};" ><b>{{ item.date }}</b></time>
+            <h3 class="display-xs-h3 display-md-h3 display-xl-h3">{{ item.title }}</h3>
+            <p class="small">{{ item.description }}</p>
+            {% if item.image_field %}
+            <picture class="image-container mt-2 {{ module.style.xs.images_format }} {{ module.style.md.images_format ~ '-md' }} {{ module.style.xl.images_format ~ '-xl' }} {{ module.style.xs.images_border_radius }} {{ module.style.md.images_border_radius ~ '-md' }} {{ module.style.xl.images_border_radius ~ '-xl' }} d-flex p-relative o-hidden">
+              {% if item.srcset|length > 0 %}
+              {% for srcset in item.srcset %}
+              <source media="(min-width: {{ "{{ theme.layout." ~ srcset.resolution ~ ".breakpoint ~ 'px' }}" }})" {% if not request.postDict.preview_theme == true && not request.postDict.inpageEditorUI && not request.postDict.hsPreviewerApp == "module" %}data-{% endif %}srcset="{{ srcset.image_field.src }}">
+              {% endfor %}
+              {% endif %}
+              <img class="lazy d-flex p-absolute t-0 s-0 fw fh object-fit-cover"
+                   {% if not request.postDict.preview_theme == true && not request.postDict.inpageEditorUI && not request.postDict.hsPreviewerApp == "module" %}data-{% endif %}src="{{ item.image_field.src }}" 
+                   alt="{{ item.image_field.alt }}">
+             </picture>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>  
+      {% if module.style.show_dots == true ||  module.style.show_arrows == true %}
+      <div class="swiper-controls">
+        {% if module.style.show_dots == true %}
+        <div class="swiper-pagination"></div>
+        {% endif %}
+
+        {% if module.style.show_arrows == true %}
+        <div class="swiper-navigation z-xl">
+          <div class="swiper-button-prev first-fill first-hover-fill ms-4">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="26" cy="26" r="26" fill="{{ theme.colors.first.color }}"/>
+              <path d="M22 17L32.3529 26.5L22 36" stroke="white" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="swiper-button-next first-fill first-hover-fill me-4">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="26" cy="26" r="26" fill="{{ theme.colors.first.color }}"/>
+              <path d="M22 17L32.3529 26.5L22 36" stroke="white" stroke-width="3"/>
+            </svg>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endif %}

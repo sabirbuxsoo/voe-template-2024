@@ -1,0 +1,168 @@
+<!--
+templateType: blog_post
+isAvailableForNewContent: true
+screenshotPath: ../../assets/images/covers/cover-blog-post.jpg
+label: Blog - Post
+-->
+{% extends "../../assets/layouts/base.html" %}
+
+{% set templateClasses = "blog-post" %}
+
+{% if ((request.path is containing "preview/template") && (!content.post_body)) || (request.postDict.preview_theme == true && !request.postDict.inpageEditorUI) %}
+{% set content= { 
+    'title': 'Something powerful',
+    'post_summary': '<p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta.</p>',
+    'featured_image': get_asset_url('../../assets/images/visuals/placeholder.jpg'),
+    'post_body': '<p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta.</p><!--more--><h2>Nulla porttitor accumsan tincidunt.</h2><p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta.</p><blockquote>Curabitur aliquet quam id dui posuere blandit. Curabitur aliquet quam id dui posuere blandit. Pellentesque in ipsum id orci porta dapibus. Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta.</blockquote><h3>Vivamus suscipit tortor eget felis porttitor volutpat.</h3><p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Sed porttitor lectus nibh. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Nulla porttitor accumsan tincidunt.</p><ul><li>Curabitur aliquet quam id dui posuere blandit.</li><li>Proin eget tortor risus.</li><li>Vestibulum ante ipsum primis in faucibus orci luctus</li><li>Donec velit neque, auctor sit amet aliquam vel</li></ul><h4>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.</h4><p>Donec sollicitudin molestie malesuada. Proin eget tortor risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p><ol><li>Curabitur aliquet quam id dui posuere blandit.</li><li>Proin eget tortor risus.</li><li>Vestibulum ante ipsum primis in faucibus orci luctus</li><li>Donec velit neque, auctor sit amet aliquam vel</li></ol> <h5>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</h5><pre>{"variable": his is some code sample,"another_variable": his is some code sample}</pre><p>Proin eget tortor risus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p><h6>Cras ultricies ligula sed magna dictum porta. </h6><p>Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Donec sollicitudin molestie malesuada. Cras ultricies ligula sed magna dictum porta.</p>' 
+  }
+%}
+{% endif %}
+
+{% block body %}
+<div class="container-fluid blog-post">
+	<div class="row-fluid-wrapper">
+		<div class="row-fluid">
+			<div class="widget-span">
+				<div class="dnd-section row-depth-1 first-bg pv-3">
+					<div class="row-fluid d-flex flex-flow-row-wrap justify-content-space-between">
+						<div class="span12 columns dnd-column">
+							<div class="dnd-row">
+								<div class="row-fluid">
+									{% module 'blog-tags' 
+                    label="Blog tags" 
+                    path='../modules/blog-tags' 
+                  %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>  
+				<div class="dnd-section row-depth-1">
+					<div class="row-fluid d-flex flex-flow-row-wrap justify-content-space-between">
+						<div class="span7 columns dnd-column">
+							<div class="dnd-row">
+								<div class="row-fluid">
+									<div class="span12 columns dnd-column">
+										{% module 'blog-post-hero' 
+                            label="Blog post hero" 
+                            path='../modules/blog-post-hero' 
+                          %}
+									</div>
+								</div>
+							</div>
+							<div class="dnd-row">
+								<div class="row-fluid">
+									<div class="span12 columns hs_cos_wrapper_type_rich_text">
+										{{ content.post_body|cut(content.post_summary) }}
+									</div>
+								</div>
+							</div>
+							{% if content.blog_author %}
+							<div class="dnd-row mt-8 pt-8 border-top-thin border-solid gray-border-color">
+								<div class="row-fluid d-flex flex-flow-row-wrap align-items-xs-center justify-content-xs-center">
+									{% if content.blog_author.avatar || content.blog_author.gravatar_url %}
+									<div class="span3 columns">
+										<div class="image-container square o-hidden p-relative rounded-full">
+											<img class="p-absolute t-0 s-0 fw fh object-fit-cover lazy" data-src="{{ content.blog_author.avatar ? content.blog_author.avatar : content.blog_author.gravatar_url }}" alt="{{ content.blog_author.display_name }}">
+										</div>
+									</div>
+									{% endif %}
+									{% if content.blog_author.display_name || content.blog_author.bio %}
+									<div class="span9 columns">
+										<a href="{{ group.absolute_url }}/author/{{ content.blog_author.slug }}">
+											<div class="name large">
+												<b>{{ content.blog_author.display_name }}</b>
+											</div>
+											<div class="description small">
+												{{ content.blog_author.bio }}
+											</div>
+										</a>
+									</div>
+									{% endif %}
+								</div>
+							</div>
+							{% endif %}
+							{% if content_group.allow_comments %}
+							<div class="dnd-row">
+								<div class="row-fluid">
+									<div class="span12 columns hs_cos_wrapper_type_rich_text">
+										{% module 'Blog comments'
+                      path='../modules/blog-comments'
+                      style={
+                        'animate_module': True,
+                        'animation_settings': {
+                          'bind_animation_to_scroll': True,
+                          'animation_properties': ['opacity', 'translate-y'],
+                          'animation_easing': 'easeInOutSine',
+                          'animation_duration': 500,
+                          'animation_delta': 500,
+                          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+                          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+                        }
+                      } %}
+									</div>
+								</div>
+							</div>
+							{% endif %}
+						</div>
+						<div class="span1 columns dnd-column">
+							<div class="dnd-row">
+								<div class="row-fluid">
+									<div class="span12 columns dnd-column">
+										{% module 'blog-spacer' 
+                            label="Spacer" 
+                            path='@hubspot/horizontal_spacer' 
+                          %}
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="span4 columns dnd-column">
+							<div class="dnd-row">
+								<div class="row-fluid">
+									<div class="span12 columns">
+										{% module 'Blog sidebar'
+                      path='../modules/blog-sidebar'
+                      widgets=[
+                        {
+                          'widget_type': 'blog-posts',
+                          'description': "<h3>Vous aimerez aussi...</h3>",
+                          'blog_posts': {
+                            'posts_to_show': 3
+                          }
+                        },
+                        {
+                          'widget_type': 'blog-newsletter',
+                          'newsletter': {
+                            'add_form_title_and_description': True,
+                            'form_title_description': "<h3 style='color: {{ theme.colors.first.color }};'>Tous les mois, recevez notre neswletter</h3>",
+                            'background_color': 'gray'
+                          }
+                        }
+                      ]
+                      style={
+                      'sidebar_spacing': 0,
+                      'background_color': 'white',
+                        'animate_module': True,
+                        'animation_settings': {
+                          'bind_animation_to_scroll': True,
+                          'animation_properties': ['opacity', 'translate-y'],
+                          'animation_easing': 'easeInOutSine',
+                          'animation_duration': 500,
+                          'animation_delta': 500,
+                          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+                          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+                        }
+                      }
+                    no_wrapper=True %}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock body %}

@@ -1,0 +1,7 @@
+.service .service-description {
+  display: none; 
+}
+
+.service:hover .service-description {
+  display: block; 
+}

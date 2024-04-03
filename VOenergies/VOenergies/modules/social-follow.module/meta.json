@@ -1,0 +1,15 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "inline_help_text" : "Use this module to showcase you social media links and invite the user to follow you.",
+  "icon" : "fontawesome-5.14.0:Wired%20Network:SOLID",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 141566864459,
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../assets/js/functions/initWindowOpeners.js",
+    "name" : "initWindowOpener.js"
+  } ],
+  "label" : "Social follow",
+  "is_available_for_new_content" : true
+}

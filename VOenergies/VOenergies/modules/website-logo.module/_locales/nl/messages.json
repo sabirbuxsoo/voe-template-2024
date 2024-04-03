@@ -1,0 +1,97 @@
+{
+  "add_link.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "add_link.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "add_link.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "add_link.label" : {
+    "message" : "Booléen",
+    "description" : null,
+    "placeholders" : null
+  },
+  "add_link.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "link.help_text" : {
+    "message" : "Als er geen url is gespecificeerd, is je logo gekoppeld naar je primaire domein",
+    "description" : "",
+    "placeholders" : null
+  },
+  "link.label" : {
+    "message" : "Koppelings-URL",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "website-logo",
+    "description" : null,
+    "placeholders" : null
+  },
+  "open_in_new_tab.label" : {
+    "message" : "Koppeling in een nieuw tabblad openen wanneer gebruikers klikken op",
+    "description" : "",
+    "placeholders" : null
+  },
+  "transparent_logo.default.alt" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "transparent_logo.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "transparent_logo.inline_help_text" : {
+    "message" : "Set the logo you would like to use here.",
+    "description" : null,
+    "placeholders" : null
+  },
+  "transparent_logo.label" : {
+    "message" : "Logo copy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "transparent_logo.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "use_transparent_logo.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "use_transparent_logo.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "use_transparent_logo.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "use_transparent_logo.label" : {
+    "message" : "Boolean",
+    "description" : null,
+    "placeholders" : null
+  },
+  "use_transparent_logo.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  }
+}

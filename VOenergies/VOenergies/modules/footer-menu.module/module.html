@@ -1,0 +1,19 @@
+{% import '../../assets/macros/_style.html' %}
+
+<div class="footer-menu d-flex flex-flow-row-wrap align-items-xs-center fw {{ generateModuleClasses(module.style) }}{% if module.style.animate_module %} animation{% endif %}"
+     {{ getModuleAnimations(module.style) }}>
+  <div class="footer-menu__container dnd-section fw fh">
+    <div class="row-fluid fw fh">
+      <div class="d-flex flex-flow-column flex-flow-md-row-wrap align-items-md-center fw fh">
+        <div class="footer-menu__menu fw">
+          {% set menu_id = module.id || module.menu.menu %}
+          {% menu 
+            id="{{ menu_id }}", 
+            max_levels="{{ module.menu.max_levels }}", 
+            flow="{{ module.menu.flow }}"
+          %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

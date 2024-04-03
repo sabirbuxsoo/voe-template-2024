@@ -1,0 +1,25 @@
+<!--
+templateType: page
+isAvailableForNewContent: false
+-->
+
+{% macro createLinkHTML(content, style, extraClasses, customUrl) %}
+{% set href = content.url.url.href || customUrl %}
+{% if content.url.url.type is equalto "EMAIL_ADDRESS" %}
+{% set href = "mailto:" + href %}
+{% endif %}
+
+<a href="{% if href %}{{ href }}{% else %}javascript:;{% endif%}"
+   {%- if content.url.open_in_new_tab %} target="_blank"{% endif -%}
+   {%- if content.url.rel %} rel="{{ content.url.rel }}"{% endif %}
+   class="link{{ style.make_button_small ? ' link--small' : '' }} {{ extraClasses ? ' ' ~ extraClasses : '' }} d-inline-flex align-items-xs-center justify-content-xs-center
+          {%- if style.color && style.color != "default" %} {{ style.color|replace("_", "-") ~ "-color" }} {%- if content.show_arrow == 'true' %} {{ style.color|replace("_", "-") ~ "-fill" }}{% endif %}{% endif %}
+          {%- if style.hover_color && style.hover_color != "default"  %} {{ style.hover_color|replace("_", "-") ~ "-hover-color" }} {%- if content.show_arrow == 'true' %} {{ style.hover_color|replace("_", "-") ~ "-hover-fill" }}{% endif %}{% endif %}
+          {%- if style.background_color && style.background_color != "default"  %} {{ style.background_color|replace("_", "-") ~ "-bg" }}{% endif %}
+          {%- if style.border_color && style.border_color != "default"  %} border-thin border-solid {{ style.border_color|replace("_", "-") ~ "-border-color" }}{% endif %}
+          {%- if style.hover_background_color && style.hover_background_color != "default"  %} {{ style.hover_background_color|replace("_", "-") ~ "-hover-bg" }}{% endif %}
+          {%- if style.hover_border_color && style.hover_border_color != "default"  %}{%- if style.border_color == "no" %} border-thin border-solid{% endif %} {{ style.hover_border_color|replace("_", "-") ~ "-hover-border-color" }}{% endif %}
+          {%- if style.background_color == "no" && style.hover_background_color == "no" && style.border_color == "no" && style.hover_border_color == "no" %} ps-0 pe-0{% endif %}">
+  {{ content.text }} {% if content.show_arrow == 'true' %}<svg class="{{ extraClasses is containing "link--arrow-left" ? 'me-1' : 'ms-1' }} w-5 h-5" viewBox="0 0 16 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M1 5.25a.75.75 0 000 1.5v-1.5zm14.53 1.28a.75.75 0 000-1.06L10.757.697a.75.75 0 00-1.06 1.06L13.939 6l-4.242 4.243a.75.75 0 001.06 1.06L15.53 6.53zM1 6.75h14v-1.5H1v1.5z"></path></svg>{% endif %}
+</a>
+{% endmacro %}

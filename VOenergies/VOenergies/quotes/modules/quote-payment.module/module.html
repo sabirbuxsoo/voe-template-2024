@@ -1,0 +1,40 @@
+{% import '../../imports/quote_variables.html' %}
+
+{% if QUOTE.hs_payment_enabled == 'true' %}
+<div id="payment-button-container" class="d-flex flex-flow-row-wrap {{ module.button_alignment }}"></div>
+<template id="payment__template">
+  <div id="payment__loading-spinner"></div>
+
+  <div class="payment__tag payment__tag--processing"><span>{{ module.payment_processing }}</span></div>
+  <div class="payment__tag payment__tag--paid"><span>{{ module.paid }}</span></div>
+  <span class="payment__alert--checkout-failed">{{ module.checkout_error }}</span>
+  <span class="payment__alert--payment-status-failed">{{ module.payment_status_error }}</span>
+  <button class="payment__button--checkout button text-align-xs-center button--icon border-thin border-solid" disabled="true">
+    <span class="payment__button-text"></span>
+  </button>
+  <div class="payment__warning--test-mode">{{ module.test_mode }}</div>
+  <span class="payment__text--checkout">{{ module.checkout }}</span>
+  <span class="payment__text--need-signature">{{ module.need_signature }}</span>
+</template>
+{% endif %} 
+
+{# DO NOT EDIT - used for payment #} 
+{% require_js position="head" %}
+<script type="application/json" data-module-instance="payment">
+  {
+    "esign_enabled": {{ QUOTE.hs_esign_enabled || "false" }},
+    "payment_enabled": {{ QUOTE.hs_payment_enabled || "false" }},
+    "url_key": "{{ QUOTE.hs_public_url_key }}",
+    "api_base_url": "{{ template_data.hubspot_base_url || mock_data.hubspot_base_url }}",
+    "hubspot_app_url": "{{ template_data.hubspot_app_url }}",
+    "is_preview": {{ template_data.is_preview }},
+    "payment_type": "{{ QUOTE.hs_payment_type }}",
+    "test_mode_enabled": {{ QUOTE.hs_test_mode || "false" }}
+  }
+</script>
+{% end_require_js %}
+
+{% require_js position="head" %}
+<script type="text/javascript" src="https://js.stripe.com/v3">
+</script>
+{% end_require_js %}

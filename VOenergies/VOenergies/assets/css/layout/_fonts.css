@@ -1,0 +1,35 @@
+{% set titleTags = 'h1, h2, h3, h4, h5, h6, [class*="display"]' %}
+
+{%- for element, rules in theme.fonts.items() -%}
+{% if element is containing 'titles' %}{{ titleTags }}{% else %}{{ element|cut('_font') }}{% endif %} {
+  {%- for name, value in rules.items() -%}
+  {%- if name is containing "styles" -%}
+  {% for ruleName, ruleValue in value.items() %}
+  {% if (element is containing 'titles' && ruleName == "font-family") || element is not containing 'titles' %}
+  {{ ruleName }}: {{ ruleValue }};
+  {% endif %}
+  {%- endfor -%}
+  {%- endif -%}
+  {%- endfor -%}
+}
+{%- endfor -%}
+
+body {
+  font-family: {{ theme.fonts.body_font.font_family.font }}, {{ theme.fonts.body_font.font_family.fallback }};
+  font-weight: {{ theme.fonts.body_font.font_weight.variant }};
+}
+
+body b,
+body strong {
+  font-weight: {{ theme.fonts.body_font.bold_variation.variant }};
+}
+
+h1, h2, h3, h4, h5, h6, [class*="display"]:not([class*="default"]) {
+  font-family: {{ theme.fonts.titles_font.font_family.font }}, {{ theme.fonts.titles_font.font_family.fallback }};
+  font-weight: {{ theme.fonts.titles_font.font_weight.variant }};
+}
+
+h1 b, h2 b, h3 b, h4 b, h5 b, h6 b, [class*="display"]:not([class*="default"]) b,
+h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong, [class*="display"]:not([class*="default"]) strong {
+  font-weight: {{ theme.fonts.titles_font.bold_variation.variant }};
+}

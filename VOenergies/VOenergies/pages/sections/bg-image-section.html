@@ -1,0 +1,23 @@
+<!--
+templateType: section
+isAvailableForNewContent: true
+label: Image only section
+description: A section displaying an image only.
+-->
+
+{% dnd_section
+  vertical_alignment="MIDDLE"
+  background_color={{ context.section.background_color }}
+  background_linear_gradient={{ context.section.background_linear_gradient }}
+  background_image={{ context.section.background_image }}
+  padding={{ context.section.padding }}
+  class={{ context.section.class }}
+%}
+{% dnd_column
+  width={{ context.image_block_width ? context.image_block_width : 12 }}
+  offset={{ context.image_block_offset ? context.image_block_offset : 0 }}
+%}
+{% dnd_row %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}

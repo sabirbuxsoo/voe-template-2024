@@ -1,0 +1,200 @@
+{% import '../../imports/quote_variables.html' %}
+
+{# Module macros #}
+{% macro subtotal_section (frequency, frequency_text) %}
+{% set subtotal_frequency = SUB_TOTALS|attr(frequency) %}
+{% if subtotal_frequency %}
+<div class="totals__row row-fluid d-flex flex-flow-row align-items-xs-center justify-content-flex-start small">
+  <div>{{ module.default_text.frequency_subtotal }}</div>
+  <div class="dotted__row"></div>
+  <div>{{ subtotal_frequency.subtotal|format_currency(LOCALE, CURRENCY, true) }}<br /></div>
+</div>
+<div class="totals-row__discount">
+  <span class="discount-notice small">
+    {% for line_item in LINE_ITEMS %}
+    {% if line_item.recurringbillingfrequency == frequency %}
+    {% set frequency_discount_total = frequency_discount_total + line_item.hs_total_discount %}
+    {% elif line_item.recurringbillingfrequency == null and frequency == "one_time" %}
+    {% set frequency_discount_total = frequency_discount_total + line_item.hs_total_discount %}
+    {% endif %}
+    {% if loop.last && frequency_discount_total %}
+    {% set discount_amount = frequency_discount_total|format_currency(LOCALE, CURRENCY, true) %}
+    {{ module.default_text.after_discount }}
+    {% endif %}
+    {% endfor %}
+  </span>
+</div>
+{% endif %}
+{% endmacro %}
+
+{% macro recurring_frequency_text(frequency) %}
+{% if frequency == 'monthly' %}
+{{ module.default_text.every_month }}
+{% elif frequency == 'quarterly' %}
+{{ module.default_text.every_quarter }}
+{% elif frequency == 'per_six_months' %}
+{{ module.default_text.every_six_months }}
+{% elif frequency == 'annually' %}
+{{ module.default_text.every_year }}
+{% elif frequency == 'per_two_years' %}
+{{ module.default_text.every_two_years }}
+{% elif frequency == 'per_three_years' %}
+{{ module.default_text.every_three_years }}
+{% endif %}
+{% endmacro %}
+
+{# Module content #}
+
+{% if module.display_heading %}
+<h2>{{ module.heading }}</h2>
+{% endif %}
+
+<table class="line-items__table">
+  <thead class="line-items__table-header--main">
+    <tr>
+      {% for title in module.line_item_column %}
+      <th scope="col"><b>{{ title.column_title }}</b></th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody id="line-items__table-body">
+    {% for unit in LINE_ITEMS|sort(False, False, 'hs_position_on_quote') %}
+    <tr class="border-solid border-bottom-thin gray-border-color">
+      {% for item in module.line_item_column %}
+      {% if item.column_property == 'hs_images' %}
+      <td><img class="line-items__image" style="max-width: 150px; height: auto;" src="{{ unit[item.column_property] }}" /></td>
+      {% elif item.column_property == 'item_description' %}
+      <td>
+        <div class="item-name small"><b>{{ unit.name }}</b></div>
+        <div class="line-item-description small">{{ unit.description }}</div>
+      </td>
+      {% elif item.column_property == 'description' %}
+      <td>
+        <span class="line-item-description small">{{ unit.description }}</span>
+      </td>
+      {% elif item.column_property == 'amount' %}
+      <td class="small">
+        <div class="pricing">
+          <b>
+            {{ unit[item.column_property]|format_currency(LOCALE, CURRENCY, true) }}
+            {{ recurring_frequency_text(unit.recurringbillingfrequency) }}
+          </b>
+        </div>
+        <div class="discount-notice highlighted">
+          {% if unit.hs_total_discount > '0' or unit.hs_discount_percentage > '0' %}
+          {% set discount_amount = unit.hs_discount_percentage > '0' ? '{{ unit.hs_discount_percentage }}%' : unit.hs_total_discount|format_currency(LOCALE, CURRENCY, true) %}
+          {{ module.default_text.after_discount }}{% if unit.hs_term_in_months %}, {% endif %}
+          {% endif %}
+          {% if unit.hs_term_in_months %}
+          <span class="discount-notice small">
+            {% if unit.hs_term_in_months|divisible(12) %}
+            {% set year = unit.hs_term_in_months / 12|round(0, 'floor') %}
+            {% set year_text = year > 1 ? module.default_text.years : module.default_text.year %}
+            {{ module.default_text.for_years }}
+            {% else %}
+            {{ module.default_text.for_months }}
+            {% endif %}
+          </span>
+          {% endif %}
+        </div>   
+      </td>
+      {% elif item.column_property == 'hs_cost_of_goods_sold' %}
+      <td class="small">
+        {{ unit[item.column_property]|format_currency(LOCALE, CURRENCY, true, true) }}
+      </td>
+      {% elif item.column_property == 'hs_recurring_billing_start_date' %}
+      <td class="small">
+        {% if unit[item.column_property] != null %}
+        {{ unit[item.column_property]|int|datetimeformat('%B %e, %Y', 'UTC', LANGUAGE) }}
+        {% endif %}
+      </td>
+      {% elif item.column_property == 'recurringbillingfrequency' %}
+      <td class="small">
+        {% if unit.recurringbillingfrequency == 'monthly' %}
+        {{ module.default_text.monthly }}
+        {% elif unit.recurringbillingfrequency == 'quarterly' %}
+        {{ module.default_text.quarterly }}
+        {% elif unit.recurringbillingfrequency == 'annually' %}
+        {{ module.default_text.annually }}
+        {% elif unit.recurringbillingfrequency == 'per_six_months' %}
+        {{ module.default_text.per_six_months }}
+        {% elif unit.recurringbillingfrequency == 'per_two_years' %}
+        {{ module.default_text.per_two_years }}
+        {% elif unit.recurringbillingfrequency == 'per_three_years' %}
+        {{ module.default_text.per_three_years }}
+        {% endif %}
+      </td>
+      {% elif item.column_property == 'price' %}
+      <td class="small">
+        {{ unit[item.column_property]|format_currency(LOCALE, CURRENCY, true) }}
+        {{ recurring_frequency_text(unit.recurringbillingfrequency) }}
+      </td>
+      {% elif item.column_property == 'discount' %}
+      {% if unit[item.column_property] != null %}
+      <td class="small">{{ unit[item.column_property]|format_currency(LOCALE, CURRENCY, true) }}</td>
+      {% elif unit.hs_discount_percentage != null %}
+      <td class="small">{{ unit.hs_discount_percentage ~ '%' }}</td>
+      {% else %}
+      <td>0</td>
+      {% endif %}
+      {% else %}
+      <td class="small">{{ unit[item.column_property] }}</td>
+      {% endif %}
+      {% endfor %}
+    </tr>
+  </tbody>
+  {% endfor %}
+</table>
+
+<div class="line-items__totals mt-6">
+  {% if SUB_TOTALS|length > 0 && module.display_subtotals %}
+
+  {% if module.subtotal_title|length > 0 %}
+  <div class="totals__row title">
+    {{ module.subtotal_title }}
+  </div>
+  {% endif %}
+
+  {# Sets subtotals based on recurring billing frequency data using the subtotal_section macro set at the top of this file #}
+  {{ subtotal_section ("monthly",  module.default_text.monthly) }}
+  {{ subtotal_section ("quarterly", module.default_text.quarterly) }}
+  {{ subtotal_section ("per_six_months", module.default_text.per_six_months) }}
+  {{ subtotal_section ("annually", module.default_text.annual) }}
+  {{ subtotal_section ("per_two_years", module.default_text.per_two_years) }}
+  {{ subtotal_section ("per_three_years", module.default_text.per_three_years) }}
+  {% endif %}
+
+  {%- if ADDITIONAL_FEES|length > 0 && module.display_other_fees -%}
+
+  {% if module.other_fees_title|length > 0 %}
+  <div class="totals__row title">
+    {{ module.other_fees_title }}
+  </div>
+  {% endif %}
+
+  {%- for fee in ADDITIONAL_FEES -%}
+  <div class="totals__row bordered row-fluid d-flex flex-flow-row align-items-xs-center justify-content-flex-start small">
+    <div>{{ fee.name }}</div>
+    <div class="dotted__row"></div>
+    <div>
+      {{ fee.category == "DISCOUNT" ? "-" : null }}
+      {% if fee.is_percentage == true %}
+      {{ fee.amount }}%
+      {% else %}
+      {{ fee.amount|format_currency(LOCALE, CURRENCY, true)}}
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+
+  {%- endif -%}
+
+  {% if module.display_totals %}
+  <div class="totals__row total-cost large row-fluid d-flex flex-flow-row align-items-xs-center justify-content-flex-start">
+    <div  class="line-items__total-name" style="white-space: pre;"><b>{{ module.total_title }}</b></div>
+    <div class="dotted__row"></div>
+    <div class="line-items__total-value"><b>{{ QUOTE.associated_objects.totals.total|format_currency(LOCALE, CURRENCY, true) }}</b></div>
+  </div>
+  {% endif %}
+</div>
+

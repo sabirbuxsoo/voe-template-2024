@@ -1,0 +1,231 @@
+[ {
+  "id" : "68e367bd-03b3-2f28-2afd-506d97834afe",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "9fb46873-06be-ecd1-1dc7-a023324316cb",
+  "name" : "links",
+  "display_width" : null,
+  "label" : "Links",
+  "inline_help_text" : "Set as many links as needed.",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "e980456a-4c12-1b61-a51d-a798badd56a9",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "288069d5-e45f-a06a-dd21-b79da9bf7779",
+    "name" : "link_type",
+    "display_width" : null,
+    "label" : "Link type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "link", "Link" ], [ "anchor", "Anchor" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "link"
+  }, {
+    "id" : "452da896-74fd-dd33-debc-f41b59ae01e7",
+    "name" : "link_text",
+    "display_width" : null,
+    "label" : "Link text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Link ?"
+  }, {
+    "id" : "e980456a-4c12-1b61-a51d-a798badd56a9",
+    "name" : "section_to_reach",
+    "display_width" : null,
+    "label" : "Section ID",
+    "inline_help_text" : "Set the ID of the section you want to reach for each link you create.",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "links.link_type",
+      "controlling_value_regex" : "anchor",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "de457769-305c-a4f8-ca8e-99c7add4229b",
+    "name" : "link_field",
+    "display_width" : null,
+    "label" : "Lien",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "links.link_type",
+      "controlling_value_regex" : "link",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ ]
+}, {
+  "id" : "style",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "style.large_desktop_display",
+    "name" : "xs",
+    "display_width" : null,
+    "label" : "Mobile display",
+    "inline_help_text" : "Use this group to change the custom rich text display only on large desktop devices.",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "6e99123c-62f9-c969-55b3-d25bf8d7504a",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : {
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : {
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }, {
+    "id" : "57f107f1-0b8c-131f-d04f-0d92182b1d88",
+    "name" : "md",
+    "display_width" : null,
+    "label" : "Large tablet display",
+    "inline_help_text" : "Use this group to change the custom rich text display only on large desktop devices.",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "943aeeb9-60c3-4637-f49a-2ddf4e6fa562",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : { }
+    }
+  }, {
+    "id" : "63781660-cb64-8084-1e01-af9da5392ec2",
+    "name" : "xl",
+    "display_width" : null,
+    "label" : "Large desktop display",
+    "inline_help_text" : "Use this group to change the custom rich text display only on large desktop devices.",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "28e38c86-0c3f-91f3-197e-a0b12e82f866",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : { }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "xs" : {
+      "spacing" : {
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    },
+    "md" : {
+      "spacing" : { }
+    },
+    "xl" : {
+      "spacing" : { }
+    }
+  }
+} ]

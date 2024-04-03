@@ -1,0 +1,111 @@
+[ {
+  "id" : "a3d168c6-b163-f28d-d50b-7b1ac5ed706f",
+  "name" : "video_type",
+  "display_width" : null,
+  "label" : "Video type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "hubspot", "HubSpot" ], [ "other", "Other (Vimeo, YouTube)" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "hubspot"
+}, {
+  "id" : "df52b0ed-3a0d-5238-c4fb-84c2e48d9fe0",
+  "name" : "video_display",
+  "display_width" : null,
+  "label" : "Video display",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "sixteen-nine", "16:9" ], [ "four-three", "4:3" ], [ "one-one", "1:1" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "sixteen-nine"
+}, {
+  "id" : "b2aaf7ec-bd33-7e33-31b5-8350b2e6f1ac",
+  "name" : "show_controls",
+  "display_width" : null,
+  "label" : "Show controls",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "3a78bf04-204d-705f-4035-e7e989753c2b",
+  "name" : "enable_autoplay",
+  "display_width" : null,
+  "label" : "Enable autoplay",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "95ca5db0-4761-a004-2c89-e042f8624060",
+  "name" : "border_radius",
+  "display_width" : null,
+  "label" : "Border radius",
+  "inline_help_text" : "Select one of the options to add some border radius.",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "no", "None" ], [ "rounded", "Small" ], [ "rounded-large", "Large" ], [ "rounded-full", "Full" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "rounded-large"
+}, {
+  "id" : "55e61694-b259-6e02-a34b-812ad8bb4011",
+  "name" : "videoplayer_field",
+  "display_width" : null,
+  "label" : "HubSpot Video",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "a3d168c6-b163-f28d-d50b-7b1ac5ed706f",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "hubspot",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "resizable" : true,
+  "show_preview" : true,
+  "show_advanced_options" : false,
+  "type" : "videoplayer",
+  "default" : {
+    "player_id" : 81409400039,
+    "height" : 1080,
+    "width" : 1920,
+    "player_type" : "hsvideo2"
+  }
+}, {
+  "id" : "a6adbb22-b835-5571-2cb8-fb3c8a0e1d2b",
+  "name" : "video_url",
+  "display_width" : null,
+  "label" : "Video URL",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "a3d168c6-b163-f28d-d50b-7b1ac5ed706f",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "other",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "supported_types" : [ "EXTERNAL" ],
+  "type" : "url",
+  "default" : {
+    "type" : "EXTERNAL",
+    "href" : "https://www.youtube.com/watch?v=9lPkNBD34hg",
+    "content_id" : null
+  }
+} ]

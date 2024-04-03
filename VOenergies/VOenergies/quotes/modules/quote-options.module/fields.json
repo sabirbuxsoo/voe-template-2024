@@ -1,0 +1,37 @@
+[ {
+  "id" : "button_text",
+  "name" : "download_text",
+  "display_width" : null,
+  "label" : "Download text",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Download"
+}, {
+  "id" : "dc45660e-e102-8c7a-fabb-5ca3ca9d6ecb",
+  "name" : "print_text",
+  "display_width" : null,
+  "label" : "Print text",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Print"
+}, {
+  "id" : "download_error",
+  "name" : "download_error",
+  "display_width" : null,
+  "label" : "Error message shown when download fails",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "There was a problem downloading the quote. Please try again."
+} ]

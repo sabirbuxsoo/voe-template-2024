@@ -1,0 +1,137 @@
+<!--
+templateType: section
+isAvailableForNewContent: true
+label: Text/form with image section
+description: A section displaying a text/form with an image.
+-->
+
+{% dnd_section
+  vertical_alignment="MIDDLE"
+  background_color={{ context.section.background_color }}
+  background_linear_gradient={{ context.section.background_linear_gradient }}
+  background_image={{ context.section.background_image }}
+  padding={{ context.section.padding }}
+  class={{ context.section.class }}
+%}
+{% dnd_column width="12" %}
+{% dnd_row %}
+{% dnd_module 
+  path='../../modules/background-items' 
+  background_item={{ context.background_items.background_item }}
+  style={{ context.background_item.style ? 
+    context.background_item.style : {
+      'animate_module': False,
+      'module_animation': {
+        'animate_module_scale': False,
+        'animate_module_vertical_translation': False,
+        'animate_module_skew': True,
+        'animate_module_opacity': True
+      }
+    }
+  }}
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% dnd_row vertical_alignment="TOP" %}
+{% dnd_column width={{ context.text_block_width ? context.text_block_width : 5 }} offset={{ context.text_block_offset ? context.text_block_offset : 0 }} %}
+{% dnd_row %}
+{% dnd_module 
+  path='../../modules/custom-rich-text' 
+  style={{ context.text.style ? context.text.style : {
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        }
+      }
+    }}
+%}
+{% module_attribute "html" %}
+{{ context.text.content ? context.text.content : '<h2 style="color: {{ theme.colors.first.color }};">Contactez-nous</h2><p>Vous souhaitez aller vite !<br>Des formulaires spécifiques existent pour ces demandes:</p><p><a href="">- Déclarer votre nouvelle adresse</a><br><a href="">- Changer de produit gaz</a><br><a href="">- Changer de produit électricité</a><p>Pour toutes autres demandes, remplissez le formulaire de contact.</p>' }}
+{% end_module_attribute %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% dnd_row %}
+{% dnd_module 
+    path='../../modules/custom-image' 
+    make_image_first_on_mobile={{ context.image.make_image_first_on_mobile }}
+    add_legend={{ context.image.add_legend }}
+    legend={{ context.image.legend }}    
+    add_background_shape={{ context.image.add_background_shape }}
+    background_shape={{ context.image.background_shape }}
+    shape_column_width={{ context.image.shape_column_width }}
+    make_image_take_full_height_of_its_container={{ context.image.make_image_take_full_height_of_its_container }}
+    image_field={{ context.image.image_field ?
+      context.image.image_field : { 
+        'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg')
+      }
+    }}
+    srcset={{ context.image.srcset }}
+    style={{ context.image.style }}
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% dnd_column width={{ context.form_block_width ? context.form_block_width : 5 }} offset={{ context.image_block_offset ? context.image_block_offset : 7 }} %}
+{% dnd_row %}
+{% dnd_module 
+    path='../modules/custom-form'
+    form={{ context.form.form ? context.form.form : { 'form_id': '0cd8325e-6573-4a74-a119-84372f2183b8' } }}
+    make_form_sticky={{ context.form.make_form_sticky ? context.form.make_form_sticky : True }}
+    show_legal_texts_below_form_button = {{ context.form.show_legal_texts_below_form_button ? context.form.show_legal_texts_below_form_button : False }}
+    add_form_description = {{ context.form.add_form_description ? context.form.add_form_description : True }}
+    style={{ context.form.style ? context.form.style : {
+        'background_color': 'white',
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 32, 'units': 'px' }, 'bottom': { 'value': 32, 'units': 'px' }, 'left': { 'value': 32,  'units': 'px' }, 'right': { 'value': 32, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'border_radius': 'no-rounded',
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 32, 'units': 'px' }, 'bottom': { 'value': 32, 'units': 'px' }, 'left': { 'value': 32,  'units': 'px' }, 'right': { 'value': 32, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'border_radius': 'no-rounded',
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 32, 'units': 'px' }, 'bottom': { 'value': 32, 'units': 'px' }, 'left': { 'value': 32,  'units': 'px' }, 'right': { 'value': 32, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'border_radius': 'no-rounded',
+        }
+      }
+    }}
+%}
+{% module_attribute "form_description" %}
+    {{ context.form.form_description ? context.form.form_description : '<h3 style="color: {{ theme.colors.first.color }};">Télécharger notre ebook</h3>' }}
+{% end_module_attribute %}
+{% end_dnd_module %}
+
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}

@@ -1,0 +1,168 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Landing page
+-->
+
+{% extends "../../assets/layouts/base.html" %}
+
+{% set widget_data = {
+  "page_settings": {
+      'transparent_header': True,
+      'use_lead_capture_header': True,
+      'use_lead_capture_footer': True,
+      'force_full_height': False,
+  }
+} %}
+
+{% block body %}
+
+{% dnd_area "landing-page" label="Landing page" class="landing-page" %}
+
+<!-- Begin hero section -->
+{% include_dnd_partial 
+  path='../sections/hero-lp-section.html'
+  context={
+    'section': {
+      'class': 'splashscreen-md splashscreen-lg splashscreen-xl',
+      'background_image': {
+        'backgroundSize': 'COVER',
+        'backgroundPosition': 'TOP_CENTER',
+        'imageUrl': get_asset_url('../../assets/images/visuals/hero-lp.jpg')
+      },
+      'padding': { 'top': 0 }
+    },
+    'text': {
+      'content': "<h1 style='color: {{ theme.colors.white.color }};'>Charg'immo</h1><h2 style='color: {{ theme.colors.white.color }};'>La solution de bornes de recharge en contracting</h2>",
+      'style': {
+        'animate_module': False,
+        'animation_settings': {
+          'bind_animation_to_scroll': false,
+          'trigger_animation_by_character': true,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 250,
+          'animation_delay': 25,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': -50, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center',
+          'h1_display': 'title-hero-2'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'h1_display': 'title-hero-2'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'h1_display': 'title-hero-2'
+        }
+      }
+    },
+  }
+%}
+<!-- End hero section -->
+
+
+<!--  Begin text section -->
+{% include_dnd_partial 
+  path='../sections/text-video-form-sticky-section.html'
+  context={
+    'text': {
+      'content': "<h2 style='color: {{ theme.colors.first.color }};'>50%</h2><h4>C'est le pourcentage de véhicules rechargeables parmi les nouvelles<br> immatriculations suisses d’ici à 2025 !</h4><p>L'électrification de la mobilité est en marche... Vous pensez acquérir un véhicule électrique mais<br> vous ne savez pas comment le charger au quotidien ? Ou vous êtes propriétaire d'un immeuble<br> disposant d'un parking souterrain et souhaitez faire profiter les habitants d'une borne de<br> recharge privée ?</p><br><br><p>CHARG'IMMO est la solution de recharge clé en main adaptée à vos besoins !</p>",
+      'style': {
+        'animate_module': False,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center',
+          'horizontal_alignment': 'justify-content-xs-center'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment': 'justify-content-md-flex-start'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment': 'justify-content-xl-flex-start'
+        }
+      }
+    },
+    'second_text' : {
+          'content': "<h3 style='color: {{ theme.colors.first.color }};'>Téléchargez les flyers CHARG'IMMO et découvrez :</h3><p><ul><li>les avantages de la solution pour les propriétaires de véhicules électriques et les propriétaires d'immeubles,</li><li>nos tarifs clairs et transparents,</li><li>les subventions disponibles pour l’installation de bornes de recharge privées.</li></ul></p>",
+          'style': {
+        'animate_module': False,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center',
+          'horizontal_alignment': 'justify-content-xs-center'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment': 'justify-content-md-flex-start'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment': 'justify-content-xl-flex-start'
+        }
+      }
+    }
+  }
+%}
+<!-- End text section -->
+
+{% end_dnd_area %}
+
+{% endblock body %}

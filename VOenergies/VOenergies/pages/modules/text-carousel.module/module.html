@@ -1,0 +1,116 @@
+{% import '../../../assets/macros/_style.html' %}
+
+{% if module.carousel_item|length > 0 %}
+<div id="{{ name }}" class="text-carousel carousel-container dnd-row carousel-container--cards carousel-container--full-width p-relative {{ generateModuleClasses(module.style) }}">
+  {% if module.style.add_module_background %}
+  <div class="carousel-container__background p-absolute t-md-50 s-50 fh z-n translate-xl-c-e translate-md-40-40 translate-xs-t-e o-hidden">
+    {% if module.style.module_background.background_image.src %}
+    <img class="lazy object-fit-contain fw" data-src="{{ module.style.module_background.background_image.src }}">
+    {% endif %}
+  </div>
+  {% endif %}
+  <div class="dnd-row{% if module.style.add_module_background %} pt-10 pb-10{% endif %}">   
+    <div class="row-fluid d-flex flex-flow-row-wrap justify-content-flex-start flex-flow-md-row-wrap justify-content-md-center pb-10">
+      <div class="span8 columns">
+        {{ getModuleTextDisplay(module.style, module.html) }}
+      </div>
+    </div>
+    <div class="row-fluid d-flex flex-flow-row-wrap justify-content-flex-start flex-flow-md-row-wrap justify-content-md-center">
+      <div class="span12 columns">
+        <div class="{{ module.style.center_slides ? 'carousel-container__inner carousel-container__inner--centered' : 'carousel-container__inner' }} p-relative s-50 translate-t-c">
+          <div class="carousel p-relative d-flex flex-flow-row-wrap dnd-section dnd-column {{ module.style.show_arrows == true ? " carousel-container--arrows" : "" }}{{ module.style.show_dots == true ? " carousel-container--dots" : "" }} swiper"
+               data-items-xl="{{ module.style.xl.number_of_visible_items }}"
+               data-items-md="{{ module.style.md.number_of_visible_items }}" 
+               data-items-xs="{{ module.style.xs.number_of_visible_items }}"
+               data-centered-slides="{{ module.style.center_slides }}"
+               data-transition="{{ module.style.enable_fade_transition ? 'fade' : "slide" }}"
+               data-dots="{{ module.style.show_dots }}"
+               data-arrows="{{ module.style.show_arrows }}"
+               data-slides="{{ module.carousel_item|length }}"
+               data-space-between="60"
+               {% if module.style.enable_autoplay == true %}data-autoplay="{{ module.style.autoplay_duration * 1000 }}"{% endif %} 
+               {% if module.style.enable_autoplay == true %}data-duration="{{ module.style.animation_duration }}"{% endif %}
+               data-loop="true"
+               data-infinite="true"
+               onload="initCarousel(this)">
+            {% if module.style.show_arrows == true %}
+            <div class="swiper-navigation z-sm">
+              <div class="swiper-button-prev first-fill second-hover-fill white-stroke white-hover-stroke justify-content-flex-start me-auto">
+                <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="26" cy="26" r="26"/>
+                  <path d="M30 35L19.6471 25.5L30 16" stroke-width="3"/>
+                </svg>
+              </div>
+              <div class="swiper-button-next first-fill second-hover-fill white-stroke white-hover-stroke justify-content-flex-end">
+                <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="26" cy="26" r="26"/>
+                  <path d="M22 17L32.3529 26.5L22 36" stroke-width="3"/>
+                </svg>
+              </div>
+            </div>
+            {% endif %}
+            <div class="swiper-wrapper">
+              {% for item in module.carousel_item %}
+              <div class="swiper-slide">
+                <div class="pv-10 ph-8 white-bg fh {{ getModuleTextAlignmentStyling(module.style) }}">
+                  <span class="p-absolute background-slide-text fourth-color opacity-50 s-0 translate-b-s">"</span>
+                  <div class="d-flex flex-flow-row-wrap align-items-center justify-content-space-between fw fh">
+                    <div class="span12 columns text-align-xs-left ">
+                      {% inline_rich_text field="description" value="{{ item.description }}" %}
+                    </div>
+                    <div class="span12 d-flex flex-flow-row-wrap justify-content-flex-start align-items-center text-align-md-left text-align-xs-center employee-infos mt-4">
+                      {% if item.image_field.src %}
+                      <div class="span3 d-flex justify-content-xs-center justify-content-xl-flex-start">
+                        {% set sizeAttrs = 'width="{{ item.image_field.width }}" height="{{ item.image_field.height }}"' %}
+                        {% if item.image_field.size_type == 'auto' %}
+                        {% set sizeAttrs = 'width="{{ item.image_field.width }}" height="{{ item.image_field.height }}" style="max-width: 100%; height: auto;"' %}
+                        {% elif item.image_field.size_type == 'auto_custom_max' %}
+                        {% set sizeAttrs = 'width="{{ item.image_field.max_width }}" height="{{ item.image_field.max_height }}" style="max-width: 100%; height: auto;"' %}
+                        {% endif %}
+                        {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading }}"' : '' %}
+                        <div class="image-container p-relative o-hidden square h-17 w-17">
+                          <img class="lazy p-absolute t-0 s-0 fh object-fit-contain" data-src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                        </div>
+                      </div>
+                      {% endif %}
+                      <div class="{% if item.image_field.src %}span8 ms-md-2 mt-xs-2 mt-xl-0{% else %}span12 {% endif %} columns d-flex flex-flow-column-wrap align-items-xs-center align-items-xl-flex-start">
+                        <p class="small">{{ item.person_name }}</p>
+                        <p class="small employee-infos-function">{{ item.function }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>  
+            {% if module.style.show_dots == true %}
+            <div class="swiper-pagination m-auto"></div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% require_css %}
+<style>
+  #{{ name }}.carousel-container .swiper-navigation {
+    width: 100%;
+  }
+
+  @media (min-width: {{ theme.layout.md.breakpoint ~ "px" }}) {
+    #{{ name }}.carousel-container .swiper-navigation {
+      width: calc(100% + 80px);
+    }
+  }
+
+  @media (min-width: {{ theme.layout.xl.breakpoint ~ "px" }}) {
+    #{{ name }}.carousel-container .swiper-navigation {
+      width: calc(100% + 80px);
+    }
+  }
+
+</style>
+{% end_require_css %}

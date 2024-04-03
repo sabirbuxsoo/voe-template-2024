@@ -1,0 +1,39 @@
+<!--
+templateType: section
+isAvailableForNewContent: true
+label: Anchors menu section
+description: A section displaying anchors navigation
+-->
+
+{% dnd_section
+  vertical_alignment="MIDDLE"
+  background_color={{ context.section.background_color ? context.section.background_color : theme.colors.first.color }}
+  background_linear_gradient={{ context.section.background_linear_gradient }}
+  background_image={{ context.section.background_image }}
+  padding={{ context.section.padding ? context.section.padding : { 'top': 0, 'bottom': 0 } }}
+  class={{ context.section.class }}
+%}
+{% dnd_column width="12" %}
+{% dnd_row %}
+{% dnd_module 
+    path='../modules/anchor-navigation' 
+    anchors={{ context.anchors.anchor ? context.anchors.anchor : [
+      {
+      'section_to_reach' : 'hs_cos_wrapper_corporate-dnd_partial-3-module-2',
+      'anchor_text' : 'Le groupe',
+      },
+      {
+      'section_to_reach' : 'hs_cos_wrapper_corporate-dnd_partial-6-module-4',
+      'anchor_text' : 'Nos valeurs',
+      },
+      {
+      'section_to_reach' : 'hs_cos_wrapper_corporate-dnd_partial-8-module-2',
+      'anchor_text' : 'Les hommes et les femmes',
+      }
+    ] 
+  }}
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}

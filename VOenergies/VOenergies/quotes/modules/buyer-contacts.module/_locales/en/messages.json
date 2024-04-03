@@ -1,0 +1,192 @@
+{
+  "name" : {
+    "message" : "buyer-contacts",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_contact_email.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "show_contact_email.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_contact_email.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_contact_email.label" : {
+    "message" : "Show buyer contacts email",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_contact_email.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_contact_job_title.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "show_contact_job_title.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_contact_job_title.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_contact_job_title.label" : {
+    "message" : "Show buyer contacts job title",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_contact_job_title.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_contact_name.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "show_contact_name.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_contact_name.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_contact_name.label" : {
+    "message" : "Show buyer contacts name",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_contact_name.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_contact_phone.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "show_contact_phone.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_contact_phone.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_contact_phone.label" : {
+    "message" : "Show buyer contacts phone",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_contact_phone.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "show_only_first_contact.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "show_only_first_contact.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "show_only_first_contact.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "show_only_first_contact.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "show_only_first_contact.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.label" : {
+    "message" : "Style",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.name" : {
+    "message" : "buyer-contacts",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_color.choices.value 1" : {
+    "message" : "Label 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_color.choices.value 2" : {
+    "message" : "Label 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_color.default" : {
+    "message" : "white",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_color.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_color.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_color.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_color.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  }
+}

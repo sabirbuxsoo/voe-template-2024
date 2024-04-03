@@ -1,0 +1,82 @@
+{% import '../../../assets/macros/_style.html' %}
+
+{% if module.carousel_item|length > 0 %}
+<div id="{{ name }}" class="carousel-container carousel-container--cards carousel-container--full-width p-relative {{ generateModuleClasses(module.style) }}{% if module.style.animate_module %} animation{% endif %}"
+     {{ getModuleAnimations(module.style) }} data-delta="1">
+  <div class="{{ module.style.center_slides ? 'carousel-container__inner carousel-container__inner--centered' : 'carousel-container__inner' }} p-relative">
+    <div class="carousel {{ module.style.show_arrows == true ? " carousel-container--arrows" : "" }}{{ module.style.show_dots == true ? " carousel-container--dots" : "" }} swiper"
+         data-items-xl="{{ module.style.xl.number_of_visible_items }}"
+         data-items-md="{{ module.style.md.number_of_visible_items }}" 
+         data-items-xs="{{ module.style.xs.number_of_visible_items }}"
+         data-centered-slides="{{ module.style.center_slides }}"
+         data-transition="{{ module.style.enable_fade_transition ? 'fade' : "slide" }}"
+         data-dots="{{ module.style.show_dots }}"
+         data-arrows="{{ module.style.show_arrows }}"
+         data-slides="{{ module.carousel_item|length }}"
+         {% if module.style.enable_autoplay == true %}data-autoplay="{{ module.style.autoplay_duration * 1000 }}"{% endif %} 
+         {% if module.style.enable_autoplay == true %}data-duration="{{ module.style.animation_duration }}"{% endif %}
+         data-loop="true"
+         data-infinite="true"
+         onload="initCarousel(this)">
+      <div class="swiper-wrapper">
+        {% for item in module.carousel_item %}
+        <div class="swiper-slide">
+          <picture class="image-container {{ module.style.xs.images_format }} {{ module.style.md.images_format ~ '-md' }} {{ module.style.xl.images_format ~ '-xl' }} {{ module.style.xs.images_border_radius }} {{ module.style.md.images_border_radius ~ '-md' }} {{ module.style.xl.images_border_radius ~ '-xl' }} d-flex p-relative o-hidden">
+            {% set href = item.link_field.url.href %}
+            {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+            {% endif %}
+            {% if href %}
+            <a href="{{ href }}" 
+               class="p-absolute t-0 s-0 fw fh"
+               {%- if item.link_field.open_in_new_tab %} target="_blank"{% endif %}
+               {%- if item.link_field.rel %} rel="{{ item.link_field.rel }}"{% endif %}>
+              {% endif %}
+              {% if item.srcset|length > 0 %}
+              {% for srcset in item.srcset %}
+              <source media="(min-width: {{ "{{ theme.layout." ~ srcset.resolution ~ ".breakpoint ~ 'px' }}" }})" {% if not request.postDict.preview_theme == true && not request.postDict.inpageEditorUI && not request.postDict.hsPreviewerApp == "module" %}data-{% endif %}srcset="{{ srcset.image_field.src }}">
+              {% endfor %}
+              {% endif %}
+              <img class="lazy d-flex p-absolute t-0 s-0 fw fh object-fit-cover"
+                   {% if not request.postDict.preview_theme == true && not request.postDict.inpageEditorUI && not request.postDict.hsPreviewerApp == "module" %}data-{% endif %}src="{{ item.image_field.src }}" 
+                   alt="{{ item.image_field.alt }}">
+              <div class="carousel-container__infos">
+                <div class="carousel-container__description {{ getModuleTextAlignmentStyling(module.style) }}">
+                  {{ getModuleTextDisplay(module.style, item.description) }}
+                </div>
+              </div>
+              {% if href %}
+            </a>
+            {% endif %}
+          </picture>
+        </div>
+        {% endfor %}
+      </div>  
+      {% if module.style.show_dots == true ||  module.style.show_arrows == true %}
+      <div class="swiper-controls">
+        {% if module.style.show_dots == true %}
+        <div class="swiper-pagination"></div>
+        {% endif %}
+
+        {% if module.style.show_arrows == true %}
+        <div class="swiper-navigation">
+          <div class="swiper-button-prev black-fill first-hover-fill">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="26" cy="26" r="26" fill="#1E22AA"/>
+              <path d="M30 35L19.6471 25.5L30 16" stroke="white" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="swiper-button-next black-fill first-hover-fill ms-4">
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="26" cy="26" r="26" fill="#1E22AA"/>
+              <path d="M22 17L32.3529 26.5L22 36" stroke="white" stroke-width="3"/>
+            </svg>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endif %}

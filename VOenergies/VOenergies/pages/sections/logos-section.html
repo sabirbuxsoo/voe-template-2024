@@ -1,0 +1,169 @@
+<!--
+templateType: section
+isAvailableForNewContent: true
+label: Logos carousel section
+description: A section displaying logos.
+-->
+
+{% dnd_section
+  vertical_alignment="MIDDLE"
+  background_color={{ context.section.background_color }}
+  background_linear_gradient={{ context.section.background_linear_gradient }}
+  background_image={{ context.section.background_image }}
+  padding={{ context.section.padding }}
+  class={{ context.section.class }}
+%}
+{% dnd_column width="12" %}
+{% dnd_row %}
+{% dnd_module 
+  path='../modules/logos-carousel'
+  title={{ context.images_carousel.title ? context.images_carousel.title : 'nos partenaires' }}
+  carousel_item={{ context.images_carousel.carousel_item ? 
+    context.images_carousel.carousel_item : [
+      {
+        'image_field': { "src" : get_asset_url("../../assets/images/branding/logo-VOé.svg") },
+        'link_field': {
+             "url": { "href": "https://voenergies.com" }
+         },  
+        'srcset': [
+          {
+            'resolution': 'md',
+        'image_field': { "src" : get_asset_url("../../assets/images/branding/logo-VOé.svg") },
+          }
+        ]
+      },
+      {
+        'image_field': { "src" : get_asset_url("../../assets/images/branding/logo-VOé.svg") },
+         'link_field': {
+             "url": { "href": "https://voenergies.com" }
+         }, 
+        'srcset': [
+          {
+            'resolution': 'md',
+        'image_field': { "src" : get_asset_url("../../assets/images/branding/logo-VOé.svg") },
+         'link_field': {
+             "url": { "href": "https://voenergies.com" }
+         }, 
+          }
+        ]
+      },
+      {
+        'image_field': { "src" : get_asset_url("../../assets/images/branding/logo-VOé.svg") },
+         'link_field': {
+             "url": { "href": "https://voenergies.com" }
+         }, 
+        'srcset': [
+          {
+            'resolution': 'md',
+        'image_field': { "src" : get_asset_url("../../assets/images/branding/logo-VOé.svg") },
+         'link_field': {
+             "url": { "href": "https://voenergies.com" }
+         }, 
+          }
+        ]
+      },
+      {
+        'image_field': { "src" : get_asset_url("../../assets/images/branding/logo-VOé.svg") },
+         'link_field': {
+             "url": { "href": "https://voenergies.com" }
+         }, 
+        'srcset': [
+          {
+            'resolution': 'md',
+        'image_field': { "src" : get_asset_url("../../assets/images/branding/logo-VOé.svg") },
+         'link_field': {
+             "url": { "href": "https://voenergies.com" }
+         }, 
+          }
+        ]
+      },
+      {
+        'image_field': { "src" : get_asset_url("../../assets/images/branding/logo-VOé.svg") },
+         'link_field': {
+             "url": { "href": "https://voenergies.com" }
+         }, 
+        'srcset': [
+          {
+            'resolution': 'md',
+        'image_field': { "src" : get_asset_url("../../assets/images/branding/logo-VOé.svg") },
+         'link_field': {
+             "url": { "href": "https://voenergies.com" }
+         }, 
+          }
+        ]
+      },
+      {
+        'image_field': { "src" : get_asset_url("../../assets/images/branding/logo-VOé.svg") },
+         'link_field': {
+             "url": { "href": "https://voenergies.com" }
+         }, 
+        'srcset': [
+          {
+            'resolution': 'md',
+        'image_field': { "src" : get_asset_url("../../assets/images/branding/logo-VOé.svg") },
+         'link_field': {
+             "url": { "href": "https://voenergies.com" }
+         }, 
+          }
+        ]
+      }
+    ]
+  }}
+  style={{ context.images_carousel.style ? 
+    context.images_carousel.style : {
+      "xs": {
+        "images_format": "four-three",
+        "images_border_radius": "no-rounded",
+        "number_of_visible_items": 3,
+        "spacing": {
+          "margin": { "top": { "value": 0, "units": "px" }, "bottom": { "value": 0, "units": "px" } },
+          "padding": { "top": { "value": 0, "units": "px" }, "bottom": { "value": 0, "units": "px" }, "left": { "value": 0, "units": "px" }, "right": { "value": 0, "units": "px" } }
+        }
+      },
+      "md": {
+        "images_format": "sixteen-nine",
+        "images_border_radius": "no-rounded",
+        "number_of_visible_items": 7,
+        "spacing": {
+          "margin": { "top": { "value": 0, "units": "px" }, "bottom": { "value": 0, "units": "px" } },
+          "padding": { "top": { "value": 0, "units": "px" }, "bottom": { "value": 0, "units": "px" }, "left": { "value": 0, "units": "px" }, "right": { "value": 0, "units": "px" } }
+        }
+      },
+      "xl": {
+        "images_format": "sixteen-nine",
+        "images_border_radius": "no-rounded",
+        "number_of_visible_items": 9,
+        "spacing": {
+          "margin": { "top": { "value": 0, "units": "px" }, "bottom": { "value": 0, "units": "px" } },
+          "padding": { "top": { "value": 0, "units": "px" }, "bottom": { "value": 0, "units": "px" }, "left": { "value": 0, "units": "px" }, "right": { "value": 0, "units": "px" } }
+        }
+      },
+      'enable_autoplay': True,
+      'autoplay_duration': 1,
+      'animation_duration': 10000,
+      'enable_infinite_effect': True,
+      'black_items_height_for_logos': True,
+      'center_slides': True,
+      'show_arrows': False,
+      'show_dots': False,
+      'animate_module': True,
+      'animation_settings': {
+        'loop_animation': False,
+        'bind_animation_to_scroll': True,
+        'trigger_animation_by_character': False,
+        'animation_properties': ['opacity', 'translate-y'],
+        'animation_easing': 'easeInOutSine',
+        'animation_direction': 'alternate',
+        'animation_duration': 1000,
+        'animation_delta': 0.85,
+        'animation_delay': 0,
+        'opacity_settings': {'start_value': 0, 'end_value': 1 },
+        'translatey_settings': {'start_value': 40, 'end_value': 0 }
+      }
+    }
+  }}
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}

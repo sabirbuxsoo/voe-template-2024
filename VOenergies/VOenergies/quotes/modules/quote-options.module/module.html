@@ -1,0 +1,23 @@
+{% import '../../imports/quote_variables.html' %}
+
+<div class="quote-options d-flex flex-flow-row-wrap align-items-xs-center justify-content-xs-center">
+  <div class="button-container mt-n-1 mb-n-1 ms-n-1 me-n-1 fw d-flex flex-flow-row-wrap align-items-xs-center justify-content-xs-center">
+    <button class="hs-download__button mt-1 mb-1 ms-1 me-1 button text-align-xs-center button--icon border-solid border-thin">{{ module.download_text }}</button>
+    <button class="print-button button mt-1 mb-1 ms-1 me-1 text-align-xs-center button--icon border-solid border-thin" onclick="window.print()">{{ module.print_text }}</button>
+  </div>
+  <div class="hs-download__alert--error fw d-flex flex-flow-row-wrap align-items-xs-center justify-content-xs-center mt-2 error-color small">{{ module.download_error ? "<div class='mt-4'>" ~  module.download_error ~ '</div class="mt-4">' : module.download_error }}</div>
+
+  <template id="hs-download__template">
+    <div class="hs-download__loading-spinner"></div>
+  </template>
+</div>
+
+{% require_js position="head" %}
+<script type="application/json" data-module-instance="download">
+  {
+    "url_key": "{{ QUOTE.hs_public_url_key }}",
+    "api_base_url": "{{ template_data.hubspot_base_url || mock_data.hubspot_base_url }}",
+    "is_preview": {{ template_data.is_preview }}
+  }
+</script>
+{% end_require_js %}

@@ -1,0 +1,9 @@
+{
+  "global" : false,
+  "content_types" : [ "QUOTE_TEMPLATE" ],
+  "icon" : "table",
+  "host_template_types" : [ "QUOTE" ],
+  "module_id" : 70237907138,
+  "label" : "Line items table",
+  "is_available_for_new_content" : true
+}

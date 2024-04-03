@@ -1,0 +1,2302 @@
+{
+  "add_form_description.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "add_form_description.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "add_form_description.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "add_form_description.label" : {
+    "message" : "Add form description",
+    "description" : null,
+    "placeholders" : null
+  },
+  "add_form_description.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "background_style.choices.valeur 1" : {
+    "message" : "Libellé 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "background_style.choices.valeur 2" : {
+    "message" : "Libellé 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "body_background_color.choices.valeur 1" : {
+    "message" : "Libellé 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "body_background_color.choices.valeur 2" : {
+    "message" : "Libellé 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "branding_background_image.default.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "branding_background_image.default.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/Anna-relation-client.jpg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "branding_settings.branding_background_color.choices.blue" : {
+    "message" : "Blue",
+    "description" : null,
+    "placeholders" : null
+  },
+  "branding_settings.branding_background_color.choices.green" : {
+    "message" : "Green",
+    "description" : null,
+    "placeholders" : null
+  },
+  "branding_settings.branding_background_color.choices.red" : {
+    "message" : "Red",
+    "description" : null,
+    "placeholders" : null
+  },
+  "branding_settings.branding_background_color.choices.yellow" : {
+    "message" : "Yellow",
+    "description" : null,
+    "placeholders" : null
+  },
+  "branding_settings.branding_background_image.default.alt" : {
+    "message" : "relation-client-hero",
+    "description" : null,
+    "placeholders" : null
+  },
+  "branding_settings.branding_background_image.default.src" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "branding_settings.default.branding_background_color" : {
+    "message" : "white",
+    "description" : null,
+    "placeholders" : null
+  },
+  "branding_settings.default.branding_background_image.src" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "branding_settings.default.branding_text_color" : {
+    "message" : "black",
+    "description" : null,
+    "placeholders" : null
+  },
+  "branding_settings.name" : {
+    "message" : "LP Model Final Module",
+    "description" : "",
+    "placeholders" : null
+  },
+  "branding_settings.ressource_image.default.alt" : {
+    "message" : "relation-client-hero",
+    "description" : null,
+    "placeholders" : null
+  },
+  "branding_settings.ressource_image.default.src" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.branding_background_image.default.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/relation-client-hero.jpg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.image_alignment.choices.order-1" : {
+    "message" : "Left",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.image_alignment.choices.order-2" : {
+    "message" : "Right",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.image_position.choices.value 1" : {
+    "message" : "Label 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.image_position.choices.value 2" : {
+    "message" : "Label 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.image_style.choices.order-1" : {
+    "message" : "Left",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.image_style.choices.order-2" : {
+    "message" : "Right",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.layout_size.choices.value 1" : {
+    "message" : "Label 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.layout_size.choices.value 2" : {
+    "message" : "Label 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.logo_field.default.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/logo-starter-new.svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.name" : {
+    "message" : "LP Model Final Module",
+    "description" : "",
+    "placeholders" : null
+  },
+  "content_settings.ressource_image.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.ressource_image.default.height" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.ressource_image.default.max_height" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.ressource_image.default.max_width" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.ressource_image.default.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/616-800-LP-TY-Checklist-1.jpg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.ressource_image.default.width" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.text_image.default.branding_title_description" : {
+    "message" : "<h1>Découvrez <strong>un nouveau monde</strong> rempli d'opportunités</h1>",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.text_image.default.image_alignment" : {
+    "message" : "text-align-center",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.text_image.default.image_position" : {
+    "message" : "order-1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.text_image.default.image_size" : {
+    "message" : "span5",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.text_image.default.image_style" : {
+    "message" : "style-rounded",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.text_image.default.lp_main_text" : {
+    "message" : "<p>Nulla porttitor accumsan tincidunt. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p>\n<p>Nulla porttitor accumsan tincidunt. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla porttitor accumsan tincidunt. Proin eget tortor risus. Donec sollicitudin molestie malesuada.</p>\n<h2>Alors n'hésitez-plus et rejoignez-nous dès maintenant.</h2>",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.text_image.default.main_content_size" : {
+    "message" : "span7",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.text_image.default.ressource_image.alt" : {
+    "message" : "616-800-LP-TY-Checklist-1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.text_image.default.ressource_image.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/616-800-LP-TY-Checklist-1.jpg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "content_settings.text_image.name" : {
+    "message" : "LP Model Final Module",
+    "description" : "",
+    "placeholders" : null
+  },
+  "customer_logos_settings.default.features_description" : {
+    "message" : "<h3>Les avantages <strong>de notre solution</strong></h3>",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_logos_settings.default.features_section_background" : {
+    "message" : "white",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_logos_settings.default.icons_color" : {
+    "message" : "black",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_logos_settings.default.information.feature_text" : {
+    "message" : "<p>Ceci est un paragraphe de description de la feature.</p>",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_logos_settings.default.information.icon_field.name" : {
+    "message" : "clock",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_logos_settings.default.information.icon_field.type" : {
+    "message" : "REGULAR",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_logos_settings.default.information.icon_field.unicode" : {
+    "message" : "f017",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_logos_settings.default.information.picto_image.alt" : {
+    "message" : "picto-expertise-intégration (2)",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_logos_settings.default.information.picto_image.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_logos_settings.default.information.picto_image.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/picto-expertise-inte%CC%81gration%20(2).svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_logos_settings.default.information.text_field" : {
+    "message" : "Feature Title",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_logos_settings.default.picto_icons_or_image" : {
+    "message" : "icons",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_logos_settings.logo.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_logos_settings.logo.default.alt" : {
+    "message" : "logo-starter-new",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_logos_settings.logo.default.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_logos_settings.logo.default.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/logo-starter-new.svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_logos_settings.name" : {
+    "message" : "LP Model Final Module",
+    "description" : "",
+    "placeholders" : null
+  },
+  "customer_logos_settings_copy.logo.default.alt" : {
+    "message" : "logo-starter-new",
+    "description" : "",
+    "placeholders" : null
+  },
+  "customer_logos_settings_copy.logo.default.size_type" : {
+    "message" : "auto",
+    "description" : "",
+    "placeholders" : null
+  },
+  "customer_logos_settings_copy.logo.default.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/logo-starter-new.svg",
+    "description" : "",
+    "placeholders" : null
+  },
+  "customer_reviews_settings.default.customer_logos_description" : {
+    "message" : "<h2>Ils nous font <strong>confiance</strong></h2>",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.default.customer_reviews_section_background" : {
+    "message" : "white",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.default.review.logo.0.alt" : {
+    "message" : "logo-starter-new",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.default.review.logo.0.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.default.review.logo.0.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/logo-starter-new.svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.default.review.logo.1.alt" : {
+    "message" : "logo-starter-new",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.default.review.logo.1.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.default.review.logo.1.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/logo-starter-new.svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.default.review.logo.2.alt" : {
+    "message" : "logo-starter-new",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.default.review.logo.2.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.default.review.logo.2.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/logo-starter-new.svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.default.review.logo.3.alt" : {
+    "message" : "logo-starter-new",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.default.review.logo.3.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.default.review.logo.3.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/logo-starter-new.svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.default.review.logo.4.alt" : {
+    "message" : "logo-starter-new",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.default.review.logo.4.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.default.review.logo.4.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/logo-starter-new.svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.field_group.logo.default.alt" : {
+    "message" : "logo-starter-new",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.field_group.logo.default.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.field_group.logo.default.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/logo-starter-new.svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.name" : {
+    "message" : "LP Model Final Module",
+    "description" : "",
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.default.logo.0.alt" : {
+    "message" : "logo-starter-new",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.default.logo.0.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.default.logo.0.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/logo-starter-new.svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.default.logo.1.alt" : {
+    "message" : "logo-starter-new",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.default.logo.1.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.default.logo.1.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/logo-starter-new.svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.default.logo.2.alt" : {
+    "message" : "logo-starter-new",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.default.logo.2.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.default.logo.2.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/logo-starter-new.svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.default.logo.3.alt" : {
+    "message" : "logo-starter-new",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.default.logo.3.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.default.logo.3.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/logo-starter-new.svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.default.logo.4.alt" : {
+    "message" : "logo-starter-new",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.default.logo.4.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.default.logo.4.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/logo-starter-new.svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.logo.default.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.logo.default.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/logo-starter-new.svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.name" : {
+    "message" : "LP Model Final Module",
+    "description" : "",
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.review_author.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.review_author.default.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "customer_reviews_settings.review.review_author.default.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/speaker-1.jpg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "event_settings.icon_field.default.name" : {
+    "message" : "clock",
+    "description" : null,
+    "placeholders" : null
+  },
+  "event_settings.icon_field.default.type" : {
+    "message" : "REGULAR",
+    "description" : null,
+    "placeholders" : null
+  },
+  "event_settings.icon_field.default.unicode" : {
+    "message" : "f017",
+    "description" : null,
+    "placeholders" : null
+  },
+  "event_settings.information.default.icon_field.name" : {
+    "message" : "clock",
+    "description" : null,
+    "placeholders" : null
+  },
+  "event_settings.information.default.icon_field.type" : {
+    "message" : "REGULAR",
+    "description" : null,
+    "placeholders" : null
+  },
+  "event_settings.information.default.icon_field.unicode" : {
+    "message" : "f017",
+    "description" : null,
+    "placeholders" : null
+  },
+  "event_settings.information.default.picto_image.alt" : {
+    "message" : "picto-expertise-intégration (2)",
+    "description" : null,
+    "placeholders" : null
+  },
+  "event_settings.information.default.picto_image.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "event_settings.information.default.picto_image.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/picto-expertise-inte%CC%81gration%20(2).svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "event_settings.information.default.text_field" : {
+    "message" : "9h30",
+    "description" : null,
+    "placeholders" : null
+  },
+  "event_settings.information.name" : {
+    "message" : "LP Model Final Module",
+    "description" : "",
+    "placeholders" : null
+  },
+  "event_settings.information.picto_image.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "event_settings.information.picto_image.default.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "event_settings.information.picto_image.default.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/picto-expertise-inte%CC%81gration%20(2).svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "event_settings.name" : {
+    "message" : "LP Model Final Module",
+    "description" : "",
+    "placeholders" : null
+  },
+  "event_settings.picto_icons_or_image.choices.value 1" : {
+    "message" : "Label 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "event_settings.picto_icons_or_image.choices.value 2" : {
+    "message" : "Label 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.default.event_description" : {
+    "message" : "<h3>Nous vous donnons <strong>rendez-vous</strong></h3>",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.default.event_infos_section_background" : {
+    "message" : "grey",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.default.icons_color" : {
+    "message" : "black",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.default.information.icon_field.name" : {
+    "message" : "clock",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.default.information.icon_field.type" : {
+    "message" : "REGULAR",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.default.information.icon_field.unicode" : {
+    "message" : "f017",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.default.information.picto_image.alt" : {
+    "message" : "picto-expertise-intégration (2)",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.default.information.picto_image.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.default.information.picto_image.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/picto-expertise-inte%CC%81gration%20(2).svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.default.information.text_field" : {
+    "message" : "9h30",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.default.picto_icons_or_image" : {
+    "message" : "icons",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.information.default.feature_text" : {
+    "message" : "<p>Ceci est un paragraphe de description de la feature.</p>",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.information.default.icon_field.name" : {
+    "message" : "clock",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.information.default.icon_field.type" : {
+    "message" : "REGULAR",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.information.default.icon_field.unicode" : {
+    "message" : "f017",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.information.default.picto_image.alt" : {
+    "message" : "picto-expertise-intégration (2)",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.information.default.picto_image.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.information.default.picto_image.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/picto-expertise-inte%CC%81gration%20(2).svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.information.default.text_field" : {
+    "message" : "Feature Title",
+    "description" : null,
+    "placeholders" : null
+  },
+  "features_settings.information.name" : {
+    "message" : "LP Model Final Module",
+    "description" : "",
+    "placeholders" : null
+  },
+  "features_settings.name" : {
+    "message" : "LP Model Final Module",
+    "description" : "",
+    "placeholders" : null
+  },
+  "follow_up_type_automation.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "follow_up_type_automation.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "follow_up_type_automation.label" : {
+    "message" : "Add to workflow",
+    "description" : null,
+    "placeholders" : null
+  },
+  "follow_up_type_simple.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "follow_up_type_simple.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "follow_up_type_simple.label" : {
+    "message" : "Send a follow-up email",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form.default.form_id" : {
+    "message" : "609533db-525b-4a56-b830-5915f37898cf",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form.default.form_type" : {
+    "message" : "HUBSPOT",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form.default.gotowebinar_webinar_key" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form.default.message" : {
+    "message" : "Thanks for submitting the form.",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form.default.redirect_id" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form.default.redirect_url" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form.default.response_type" : {
+    "message" : "inline",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_description.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_description.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_description.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_description.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_description.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_follow_ups_workflow_id.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "form_follow_ups_workflow_id.label" : {
+    "message" : "Workflow",
+    "description" : "",
+    "placeholders" : null
+  },
+  "form_inputs_style.choices.value 1" : {
+    "message" : "Label 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_inputs_style.choices.value 2" : {
+    "message" : "Label 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.body_background_color.choices.blue" : {
+    "message" : "Blue",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.body_background_color.choices.green" : {
+    "message" : "Green",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.body_background_color.choices.red" : {
+    "message" : "Red",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.body_background_color.choices.yellow" : {
+    "message" : "Yellow",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.cta_color.choices.blue" : {
+    "message" : "Blue",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.cta_color.choices.green" : {
+    "message" : "Green",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.cta_color.choices.red" : {
+    "message" : "Red",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.cta_color.choices.yellow" : {
+    "message" : "Yellow",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form.default.form_id" : {
+    "message" : "4d93fb75-502d-4237-a73e-8e73ccba04d0",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form.default.form_type" : {
+    "message" : "HUBSPOT",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form.default.gotowebinar_webinar_key" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form.default.response_type" : {
+    "message" : "inline",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_background_type.choices.black" : {
+    "message" : "Black",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_background_type.choices.grey" : {
+    "message" : "Grey",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_background_type.choices.primary" : {
+    "message" : "Primary",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_background_type.choices.secondary" : {
+    "message" : "Secondary",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_background_type.choices.tertiary" : {
+    "message" : "Tertiary",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_background_type.choices.white" : {
+    "message" : "White",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_button_alignment.choices.text-align-center" : {
+    "message" : "Center",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_button_alignment.choices.text-align-left" : {
+    "message" : "Left",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_button_alignment.choices.text-align-right" : {
+    "message" : "Right",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_position.choices.color" : {
+    "message" : "Color",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_position.choices.gradient" : {
+    "message" : "Gradient",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_size.choices.color" : {
+    "message" : "Color",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_size.choices.gradient" : {
+    "message" : "Gradient",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_size.choices.value 1" : {
+    "message" : "Label 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_size.choices.value 2" : {
+    "message" : "Label 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_text_alignment.choices.value 1" : {
+    "message" : "Label 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_text_alignment.choices.value 2" : {
+    "message" : "Label 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_text_color.choices.blue" : {
+    "message" : "Blue",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_text_color.choices.green" : {
+    "message" : "Green",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_text_color.choices.red" : {
+    "message" : "Red",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.form_text_color.choices.yellow" : {
+    "message" : "Yellow",
+    "description" : null,
+    "placeholders" : null
+  },
+  "form_settings.name" : {
+    "message" : "Form Final Module",
+    "description" : "",
+    "placeholders" : null
+  },
+  "global_settings.bullet_listing_color.choices.circled" : {
+    "message" : "Circled",
+    "description" : null,
+    "placeholders" : null
+  },
+  "global_settings.bullet_listing_color.choices.rounded" : {
+    "message" : "Rounded",
+    "description" : null,
+    "placeholders" : null
+  },
+  "global_settings.bullet_listing_color.choices.square" : {
+    "message" : "Squared",
+    "description" : null,
+    "placeholders" : null
+  },
+  "global_settings.font_family.choices.boxed" : {
+    "message" : "Boxed",
+    "description" : null,
+    "placeholders" : null
+  },
+  "global_settings.font_family.choices.full" : {
+    "message" : "Full width",
+    "description" : null,
+    "placeholders" : null
+  },
+  "global_settings.listing_style.choices.black" : {
+    "message" : "Black",
+    "description" : null,
+    "placeholders" : null
+  },
+  "global_settings.listing_style.choices.grey" : {
+    "message" : "Grey",
+    "description" : null,
+    "placeholders" : null
+  },
+  "global_settings.listing_style.choices.primary" : {
+    "message" : "Primary",
+    "description" : null,
+    "placeholders" : null
+  },
+  "global_settings.listing_style.choices.secondary" : {
+    "message" : "Secondary",
+    "description" : null,
+    "placeholders" : null
+  },
+  "global_settings.listing_style.choices.tertiary" : {
+    "message" : "Tertiary",
+    "description" : null,
+    "placeholders" : null
+  },
+  "global_settings.listing_style.choices.white" : {
+    "message" : "White",
+    "description" : null,
+    "placeholders" : null
+  },
+  "global_settings.name" : {
+    "message" : "LP Model Final Module",
+    "description" : "",
+    "placeholders" : null
+  },
+  "gradient_first_color.choices.black" : {
+    "message" : "Black",
+    "description" : null,
+    "placeholders" : null
+  },
+  "gradient_first_color.choices.grey" : {
+    "message" : "Grey",
+    "description" : null,
+    "placeholders" : null
+  },
+  "gradient_first_color.choices.white" : {
+    "message" : "White",
+    "description" : null,
+    "placeholders" : null
+  },
+  "gradient_second_color.choices.black" : {
+    "message" : "Black",
+    "description" : null,
+    "placeholders" : null
+  },
+  "gradient_second_color.choices.dark_black" : {
+    "message" : "Dark Black",
+    "description" : null,
+    "placeholders" : null
+  },
+  "gradient_second_color.choices.dark_blue" : {
+    "message" : "Dark Blue",
+    "description" : null,
+    "placeholders" : null
+  },
+  "gradient_second_color.choices.dark_green" : {
+    "message" : "Dark Green",
+    "description" : null,
+    "placeholders" : null
+  },
+  "gradient_second_color.choices.dark_grey" : {
+    "message" : "Dark Grey",
+    "description" : null,
+    "placeholders" : null
+  },
+  "gradient_second_color.choices.dark_red" : {
+    "message" : "Dark Red",
+    "description" : null,
+    "placeholders" : null
+  },
+  "gradient_second_color.choices.dark_yellow" : {
+    "message" : "Dark Yellow",
+    "description" : null,
+    "placeholders" : null
+  },
+  "gradient_second_color.choices.grey" : {
+    "message" : "Grey",
+    "description" : null,
+    "placeholders" : null
+  },
+  "gradient_second_color.choices.light_black" : {
+    "message" : "Light Black",
+    "description" : null,
+    "placeholders" : null
+  },
+  "gradient_second_color.choices.light_blue" : {
+    "message" : "Light Blue",
+    "description" : null,
+    "placeholders" : null
+  },
+  "gradient_second_color.choices.light_green" : {
+    "message" : "Light Green",
+    "description" : null,
+    "placeholders" : null
+  },
+  "gradient_second_color.choices.light_grey" : {
+    "message" : "Light Grey",
+    "description" : null,
+    "placeholders" : null
+  },
+  "gradient_second_color.choices.light_red" : {
+    "message" : "Light Red",
+    "description" : null,
+    "placeholders" : null
+  },
+  "gradient_second_color.choices.light_yellow" : {
+    "message" : "Light Yellow",
+    "description" : null,
+    "placeholders" : null
+  },
+  "gradient_second_color.choices.white" : {
+    "message" : "White",
+    "description" : null,
+    "placeholders" : null
+  },
+  "logo_field.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "logo_field.default.override_inherited_src" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "logo_field.default.src" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "make_form_sticky.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "make_form_sticky.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "make_form_sticky.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "make_form_sticky.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "make_form_sticky.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.default.google_map_iframe_url.content_id" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.default.google_map_iframe_url.href" : {
+    "message" : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.9623447205986!2d2.3386050156750784!3d48.877994379289326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e40cb99b237%3A0xfc9e2e6b49550634!2s11%20Rue%20Milton%2C%2075009%20Paris!5e0!3m2!1sfr!2sfr!4v1589895834258!5m2!1sfr!2sfr",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.default.google_map_iframe_url.type" : {
+    "message" : "EXTERNAL",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.default.google_map_size" : {
+    "message" : "span6",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.default.map_informations" : {
+    "message" : "<div style=\"text-align: center;\">11 Rue Milton, 75009 Paris</div>\n<div style=\"text-align: center;\">Métro 12 - Arrêt Notre-dame-de-Lorette</div>",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.default.metro.0.metro_rer" : {
+    "message" : "metro",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.default.metro.0.metro_station" : {
+    "message" : "Notre Dame de Lorette",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.default.metro.0.rer" : {
+    "message" : "a",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.default.section_background" : {
+    "message" : "white",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.default.text_color" : {
+    "message" : "black",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.default.text_size" : {
+    "message" : "span6",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.metro.default.metro_rer" : {
+    "message" : "metro",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.metro.default.metro_station" : {
+    "message" : "Notre Dame de Lorette",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.metro.default.rer" : {
+    "message" : "a",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.metro.metro_rer.choices.value 1" : {
+    "message" : "Label 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.metro.metro_rer.choices.value 2" : {
+    "message" : "Label 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.metro.name" : {
+    "message" : "LP Model Final Module",
+    "description" : "",
+    "placeholders" : null
+  },
+  "map_settings.metro.rer.choices.metro" : {
+    "message" : "Metro",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.metro.rer.choices.rer" : {
+    "message" : "RER",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.metros.name" : {
+    "message" : "LP Model Final Module",
+    "description" : "",
+    "placeholders" : null
+  },
+  "map_settings.name" : {
+    "message" : "LP Model Final Module",
+    "description" : "",
+    "placeholders" : null
+  },
+  "map_settings.url_field.default.content_id" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.url_field.default.href" : {
+    "message" : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.9623447205986!2d2.3386050156750784!3d48.877994379289326!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e40cb99b237%3A0xfc9e2e6b49550634!2s11%20Rue%20Milton%2C%2075009%20Paris!5e0!3m2!1sfr!2sfr!4v1589895834258!5m2!1sfr!2sfr",
+    "description" : null,
+    "placeholders" : null
+  },
+  "map_settings.url_field.default.type" : {
+    "message" : "EXTERNAL",
+    "description" : null,
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "custom-form",
+    "description" : "",
+    "placeholders" : null
+  },
+  "notifications_are_overridden.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "notifications_are_overridden.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "notifications_are_overridden.label" : {
+    "message" : "Send form notifications to specified email addresses instead of the form defaults",
+    "description" : null,
+    "placeholders" : null
+  },
+  "notifications_override_email_addresses.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "notifications_override_email_addresses.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "notifications_override_email_addresses.label" : {
+    "message" : "Email Addresses",
+    "description" : null,
+    "placeholders" : null
+  },
+  "sfdc_campaign.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "sfdc_campaign.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "sfdc_campaign.label" : {
+    "message" : "Salesforce campaign",
+    "description" : null,
+    "placeholders" : null
+  },
+  "show_legal_texts_below_form_button.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "show_legal_texts_below_form_button.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "show_legal_texts_below_form_button.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "show_legal_texts_below_form_button.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "show_legal_texts_below_form_button.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "simple_email_for_live_id.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "simple_email_for_live_id.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "simple_email_for_live_id.label" : {
+    "message" : "Email",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speaker.default.speaker_infos.icon_field.name" : {
+    "message" : "clock",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speaker.default.speaker_infos.icon_field.type" : {
+    "message" : "REGULAR",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speaker.default.speaker_infos.icon_field.unicode" : {
+    "message" : "f017",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speaker.default.speaker_infos.picto_image.alt" : {
+    "message" : "picto-expertise-intégration (2)",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speaker.default.speaker_infos.picto_image.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speaker.default.speaker_infos.picto_image.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/picto-expertise-inte%CC%81gration%20(2).svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speaker.default.speaker_infos.text_field" : {
+    "message" : "9h30",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speaker.name" : {
+    "message" : "LP Model Final Module",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.0.icon_field.name" : {
+    "message" : "clock",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.0.icon_field.type" : {
+    "message" : "REGULAR",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.0.icon_field.unicode" : {
+    "message" : "f017",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.0.picto_image.alt" : {
+    "message" : "picto-expertise-intégration (2)",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.0.picto_image.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.0.picto_image.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/picto-expertise-inte%CC%81gration%20(2).svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.0.text_field" : {
+    "message" : "Firstname Lastname",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.1.icon_field.name" : {
+    "message" : "clock",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.1.icon_field.type" : {
+    "message" : "REGULAR",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.1.icon_field.unicode" : {
+    "message" : "f017",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.1.picto_image.alt" : {
+    "message" : "picto-expertise-intégration (2)",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.1.picto_image.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.1.picto_image.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/picto-expertise-inte%CC%81gration%20(2).svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.1.text_field" : {
+    "message" : "Firstname Lastname",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.2.icon_field.name" : {
+    "message" : "clock",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.2.icon_field.type" : {
+    "message" : "REGULAR",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.2.icon_field.unicode" : {
+    "message" : "f017",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.2.picto_image.alt" : {
+    "message" : "picto-expertise-intégration (2)",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.2.picto_image.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.2.picto_image.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/picto-expertise-inte%CC%81gration%20(2).svg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.default.speaker_infos.2.text_field" : {
+    "message" : "Firstname Lastname",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.name" : {
+    "message" : "LP Model Final Module",
+    "description" : "",
+    "placeholders" : null
+  },
+  "speakers.speaker_infos.default.icon_field.name" : {
+    "message" : "clock",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.speaker_infos.default.icon_field.type" : {
+    "message" : "REGULAR",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.speaker_infos.default.icon_field.unicode" : {
+    "message" : "f017",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.speaker_infos.default.picto_image.alt" : {
+    "message" : "speaker-1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.speaker_infos.default.picto_image.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.speaker_infos.default.picto_image.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/speaker-1.jpg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.speaker_infos.default.text_field" : {
+    "message" : "Firstname Lastname",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.speaker_infos.name" : {
+    "message" : "LP Model Final Module",
+    "description" : "",
+    "placeholders" : null
+  },
+  "speakers.speaker_infos.picto_image.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.speaker_infos.picto_image.default.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "speakers.speaker_infos.picto_image.default.src" : {
+    "message" : "https://cdn2.hubspot.net/hubfs/7219788/speaker-1.jpg",
+    "description" : null,
+    "placeholders" : null
+  },
+  "step.default.add_step_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "step.default.add_step_title" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "step.default.step_text" : {
+    "message" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span></p>",
+    "description" : null,
+    "placeholders" : null
+  },
+  "step.name" : {
+    "message" : "custom-form",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.background_color.choices.valeur 1" : {
+    "message" : "Libellé 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.background_color.choices.valeur 2" : {
+    "message" : "Libellé 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.background_color.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.background_color.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.background_color.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.background_color.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.background_color.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.choices.black" : {
+    "message" : "Black",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.choices.default" : {
+    "message" : "Default",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.choices.first" : {
+    "message" : "First color",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.choices.gray" : {
+    "message" : "Gray",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.choices.no" : {
+    "message" : "None",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.choices.second" : {
+    "message" : "Second color",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.choices.white" : {
+    "message" : "White",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.label" : {
+    "message" : "Background Color copy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_color.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_radius.choices.black" : {
+    "message" : "Black",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_radius.choices.default" : {
+    "message" : "Default",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_radius.choices.first" : {
+    "message" : "First color",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_radius.choices.gray" : {
+    "message" : "Gray",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_radius.choices.no" : {
+    "message" : "None",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_radius.choices.second" : {
+    "message" : "Second color",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.border_radius.choices.white" : {
+    "message" : "White",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.label" : {
+    "message" : "Style",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.large_desktop_alignment.text_alignement.choices.text-align-center" : {
+    "message" : "Center",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.large_desktop_alignment.text_alignement.choices.text-align-left" : {
+    "message" : "Left",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.large_desktop_alignment.text_alignement.choices.text-align-right" : {
+    "message" : "Right",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.large_tablet_alignment.text_alignement.choices.text-align-center" : {
+    "message" : "Center",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.large_tablet_alignment.text_alignement.choices.text-align-left" : {
+    "message" : "Left",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.large_tablet_alignment.text_alignement.choices.text-align-right" : {
+    "message" : "Right",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.border_radius.choices.no-rounded" : {
+    "message" : "None",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.border_radius.choices.rounded-large" : {
+    "message" : "Large",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.border_radius.choices.rounded-medium" : {
+    "message" : "Medium",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.border_radius.choices.rounded-small" : {
+    "message" : "Small",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.border_radius.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.border_radius.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.border_radius.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.border_radius.label" : {
+    "message" : "Border radius copy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.border_radius.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.default.text_alignement" : {
+    "message" : "text-align-md-left",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.label" : {
+    "message" : "Tablet display",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.sticky_top_spacing.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.sticky_top_spacing.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.sticky_top_spacing.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.sticky_top_spacing.label" : {
+    "message" : "Sticky top spacing copy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.sticky_top_spacing.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.text_alignement.choices.text-align-md-center" : {
+    "message" : "Center",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.text_alignement.choices.text-align-md-left" : {
+    "message" : "Left",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.text_alignement.choices.text-align-md-right" : {
+    "message" : "Right",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.text_alignement.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.text_alignement.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.text_alignement.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.text_alignement.label" : {
+    "message" : "Text alignement",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.md.text_alignement.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.name" : {
+    "message" : "custom-form",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.small_desktop_alignment.text_alignement.choices.text-align-center" : {
+    "message" : "Center",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.small_desktop_alignment.text_alignement.choices.text-align-left" : {
+    "message" : "Left",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.small_desktop_alignment.text_alignement.choices.text-align-right" : {
+    "message" : "Right",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.small_desktop_alignment_copy.default.text_alignement" : {
+    "message" : "text-align-left",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.small_tablet_alignment.text_alignement.choices.text-align-center" : {
+    "message" : "Center",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.small_tablet_alignment.text_alignement.choices.text-align-left" : {
+    "message" : "Left",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.small_tablet_alignment.text_alignement.choices.text-align-right" : {
+    "message" : "Right",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_alignement.choices.value 1" : {
+    "message" : "Label 1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_alignement.choices.value 2" : {
+    "message" : "Label 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.border_radius.choices.no-rounded" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.border_radius.choices.rounded-large" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.border_radius.choices.rounded-medium" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.border_radius.choices.rounded-small" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.border_radius.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.border_radius.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.border_radius.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.border_radius.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.border_radius.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.default.text_alignement" : {
+    "message" : "text-align-xl-left",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.label" : {
+    "message" : "Desktop display",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.text_alignement.choices.text-align-xl-center" : {
+    "message" : "Center",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.text_alignement.choices.text-align-xl-left" : {
+    "message" : "Left",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.text_alignement.choices.text-align-xl-right" : {
+    "message" : "Right",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.text_alignement.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.text_alignement.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.text_alignement.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.text_alignement.label" : {
+    "message" : "Text alignement",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xl.text_alignement.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xs.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xs.default.text_alignement" : {
+    "message" : "text-align-left",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xs.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xs.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xs.label" : {
+    "message" : "Mobile display",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xs.name" : {
+    "message" : "custom-form",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.xs.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xs.spacing_copy.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.xs.spacing_copy.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.xs.spacing_copy.label" : {
+    "message" : "Spacing copy",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.xs.spacing_copy.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.xs.spacing_field.default" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.xs.spacing_field.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.xs.spacing_field.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.xs.spacing_field.label" : {
+    "message" : "Spacing",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.xs.spacing_field.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.xs.spacing_field_copy.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.xs.spacing_field_copy.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.xs.spacing_field_copy.label" : {
+    "message" : "Spacing copy",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.xs.spacing_field_copy.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.xs.text_alignement.choices.text-align-center" : {
+    "message" : "Center",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xs.text_alignement.choices.text-align-left" : {
+    "message" : "Left",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xs.text_alignement.choices.text-align-right" : {
+    "message" : "Right",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xs.text_alignement.default" : {
+    "message" : "text-align-left",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xs.text_alignement.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xs.text_alignement.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xs.text_alignement.label" : {
+    "message" : "Text alignement",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.xs.text_alignement.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  }
+}

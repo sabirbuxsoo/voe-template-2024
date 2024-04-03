@@ -1,0 +1,27 @@
+{% import '../../../assets/macros/_style.html' %}
+
+<div id="{{ name }}" class="faq-table {{ generateModuleClasses(module.style) }}">
+  <div class="white-bg rounded-top-left-medium rounded-top-right-medium p-8">
+    <h3 class="first-color">{{ module.title }}</h3>
+    <div class="faq-table--links">
+      <ul>
+        {% for item in module.links %}
+        <li class="pv-5 border-top-thin border-solid gray-border-color gray-hover-border-color{{ " border-bottom-thin" if loop.last }} first-faq-hover-bg black-color first-hover-color">
+          {% if item.link_type == 'link' %}
+          {% set href = item.link_field.url.href %}
+          {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          {% endif %}
+          <a class="black-color first-hover-color first-stroke first-fill d-flex fw align-items-center {{ " anchor-link" if item.link_type =='anchor' }}"  {% if item.link_type == 'anchor' && item.section_to_reach %} data-target="{{ '#' ~ item.section_to_reach }}" {% endif %} {% if item.link_type == 'link' %}href="{{ href }}"{% endif %}>
+            <span class="me-2">{{item.link_text}}</span>
+            <svg class="ms-auto h-5 w-5 o-visible" viewBox="0 0 19 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.30232 1L16.9999 10M16.9999 10L9.30232 19M16.9999 10H0.642578" stroke-width="2"/>
+            </svg>
+          </a>  
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>

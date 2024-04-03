@@ -1,0 +1,194 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Publications
+  -->
+
+{% extends "../../assets/layouts/base.html" %}
+
+{% set widget_data = {
+    "page_settings": {
+        'transparent_header': false,
+        'use_lead_capture_header': false,
+        'use_lead_capture_footer': false,
+        'force_full_height': false,
+    }
+  } %}
+
+{% block body %}
+{% if dynamic_page_hubdb_row %}      
+
+{% else %}
+{% dnd_area "publications-listing" label="Publications listing" class="publications-listing" %}
+
+<!-- Begin text/image section -->
+{% include_dnd_partial 
+  path='../sections/hero-image-text-section.html'
+  context={
+    'text': {
+    'content': '<h4 style="color: {{ theme.colors.second.color }};">LE GUIDE DU MOMENT</h4><h2 style="color: {{ theme.colors.first.color }};">Guide des chauffages propres</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>',
+      'style': {
+        'animate_module': False,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        }
+      }
+    },
+    'image': {
+      'image_field' : { 
+        'src' : get_asset_url('../../assets/images/visuals/guide-voe.png')
+      },
+      'add_background_shape' : False, 
+      'make_image_first_on_mobile': True,
+      'make_image_take_full_height_of_its_container': False, 
+      'style': {
+        'animate_module': False,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 0.5,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'image_format': 'three-four',
+          'image_border_radius': 'no-rounded'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'image_format': 'three-four',
+          'image_border_radius': 'no-rounded'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'image_format': 'three-four',
+          'image_border_radius': 'no-rounded'
+        }
+      }
+    },
+    "buttons": {
+      'button' : [
+        {
+          "type": 'button',
+          "text": "télécharger", 
+          "color": "first",
+          "hover_color": "white",
+          "background_color": "no",
+          "hover_background_color": "first",
+          "border_color": "first",
+          "hover_border_color": "first",
+          "show_arrow": False
+        }
+      ],
+      'style': {
+        'animate_module': False,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+            },
+          'text_alignment': 'center',
+          'horizontal_alignment': 'justify-content-xs-center'        
+          },
+          'md': {
+            'spacing': {
+              'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+              'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+            },
+            'text_alignment': 'center',
+            'horizontal_alignment': 'justify-content-md-flex-start'        
+          },
+          'xl': {
+            'spacing': {
+              'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+              'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+            },
+          'text_alignment': 'center',
+          'horizontal_alignment': 'justify-content-xl-flex-start'
+        }
+      }
+    }
+  }
+%}
+<!-- End text/image section -->
+
+{% include_dnd_partial 
+    path='../sections/publications-listing-section.html'
+    context={
+    'hubdb_first_tags' : {
+    },
+    'hubdb_second_tags' : {
+    },
+    'hubdb_listing' : {
+        'style': {
+          'button' : 
+          {
+            "type": 'button',
+            "text": "télécharger", 
+            "color": "white",
+            "hover_color": "black",
+            "background_color": "no",
+            "hover_background_color": "white",
+            "border_color": "white",
+            "hover_border_color": "white",
+            "show_arrow": False
+          }
+        }
+      }
+    }
+    
+  %}
+
+{% end_dnd_area %}
+
+{% global_partial path="../../partials/newsletter.html" no_wrapper=True %}
+{% endif %}
+{% endblock body %}

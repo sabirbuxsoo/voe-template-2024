@@ -1,0 +1,14 @@
+{% import '../../assets/macros/_menus.html' %}
+{% import '../../assets/macros/_style.html' %}
+
+<div class="menu menu--mega dnd-section">
+	<div class="row-fluid fh">
+		<div class="d-flex flex-flow-column flex-flow-md-row-wrap {{ generateModuleClasses(module.style) }} fh fw">
+			<div class="megamenu__menu">
+				<div id="megamenu-tabs" class="hs-menu-wrapper hs-menu-flow-horizontal">
+					{{ createMegaMenuItems(module.first_level_items) }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

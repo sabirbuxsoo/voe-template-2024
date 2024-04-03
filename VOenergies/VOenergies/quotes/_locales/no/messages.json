@@ -1,0 +1,72 @@
+{
+  "name": {
+    "message": "Tema for CMS-tilbud",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.banner_bg_color.label": {
+    "message": "Bakgrunnsfarge for logo",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.button_background_color.label": {
+    "message": "Bakgrunnsfarge for knapp",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.button_font_color.label": {
+    "message": "Fontfarge-knapp",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.label": {
+    "message": "Globale farger",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.primary_color.label": {
+    "message": "Primærfarge",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.secondary_color.label": {
+    "message": "Sekundærfarge",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.tertiary_color.label": {
+    "message": "Tertiærfarge",
+    "description": "",
+    "placeholders": null
+  },
+  "global_fonts.label": {
+    "message": "Globale skrifttyper",
+    "description": "",
+    "placeholders": null
+  },
+  "global_fonts.primary_font.label": {
+    "message": "Primær skrifttype",
+    "description": "",
+    "placeholders": null
+  },
+  "global_fonts.secondary_font.label": {
+    "message": "Sekundær skrifttype",
+    "description": "",
+    "placeholders": null
+  },
+  "modern_settings.button_background_color.label": {
+    "message": "Bakgrunnsfarge for knapp",
+    "description": "",
+    "placeholders": null
+  },
+  "modern_settings.button_font_color.label": {
+    "message": "Fontfarge-knapp",
+    "description": "",
+    "placeholders": null
+  },
+  "modern_settings.label": {
+    "message": "Moderne innstillinger",
+    "description": "",
+    "placeholders": null
+  }
+}

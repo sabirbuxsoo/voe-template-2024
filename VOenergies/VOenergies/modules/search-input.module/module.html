@@ -1,0 +1,41 @@
+<div class="search-input d-flex flex-flow-row-wrap align-items-center justify-content-flex-start">
+  <div class="search-input__search hs-search-field{{ " hs-search-field--visible" if not module.show_search_toggle }}">
+    <div class="hs-search-field__bar">
+      <form action="/{{ site_settings.content_search_results_page_path }}" class="d-flex flex-flow-row-wrap align-items-center justify-content-center">
+        <div class="hs-form-field">
+          <input type="text" class="hs-search-field__input" name="term" autocomplete="off" aria-label="{{ module.search_input_label || "Search" }}" placeholder="{{ module.search_input_placeholder }}">
+          {% if module.content_types.website_pages %}
+          <input type="hidden" name="type" value="SITE_PAGE">
+          {% endif %}
+          {% if module.content_types.landing_pages %}
+          <input type="hidden" name="type" value="LANDING_PAGE">
+          {% endif %}
+          {% if module.content_types.blog_posts %}
+          <input type="hidden" name="type" value="BLOG_POST">
+          <input type="hidden" name="type" value="LISTING_PAGE">
+          {% endif %}
+          {% if module.content_types.knowledge_articles %}
+          <input type="hidden" name="type" value="KNOWLEDGE_ARTICLE">
+          {% endif %}
+        </div>
+
+        {% if module.include_search_button %}
+        <div class="hs-submit">
+          <button aria-label="Search" class="button">{% icon name="search" style="solid" no_wrapper=True %}</button>
+        </div>
+        {% endif %}
+      </form>
+    </div>
+    <ul class="hs-search-field__suggestions"></ul>
+  </div>
+  {% if module.show_search_toggle %}
+  <div class="search-input__search-toggle d-flex flex-flow-column align-items-xs-center justify-content-xs-center {{ module.search_toggle.color|replace("_", "-") ~ '-fill' }} {{ module.search_toggle.hover_color|replace("_", "-") ~ '-hover-fill' }} w-{{ (module.search_toggle.width / theme.layout.spacing_base)|int }} h-{{ (module.search_toggle.height / theme.layout.spacing_base)|int }}">
+    <div class="search-input__search-toggle--open">
+      {% icon name="search" style="solid" no_wrapper=True %}
+    </div>    
+    <div class="search-input__search-toggle--close d-none">
+      {% icon name="plus" style="solid" no_wrapper=True %}
+    </div>
+  </div>
+  {% endif %}
+</div>

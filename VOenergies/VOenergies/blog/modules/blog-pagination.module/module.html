@@ -1,0 +1,32 @@
+{% import '../../../assets/macros/_style.html' %}
+
+{% if ((request.path is containing "preview/template") && (!contents.total_page_count)) || request.postDict.preview_theme == true %}
+{% set total_page_count = 12 %}
+{% else %}
+{% set total_page_count = contents.total_page_count %}
+{% endif %}
+
+{% if total_page_count > 1 %}
+<div class="blog-pagination {{ generateModuleClasses(module.style) }}{% if module.style.animate_module %} animation{% endif %}"
+     {{ getModuleAnimations(module.style) }}>
+  <nav aria-label="Pagination" role="navigation" class="d-flex flex-flow-row-wrap align-items-xs-center justify-content-xs-center">
+    {% set page_list = [-3, -2, -1, 0, 1, 2, 3] %}
+    {% if total_page_count - current_page_num == 1 %}{% set offset = -1 %}
+    {% elif total_page_count - current_page_num == 0 %}{% set offset = -2 %}
+    {% elif current_page_num == 2 %}{% set offset = 1 %}
+    {% elif current_page_num == 1 %}{% set offset = 2 %}
+    {% else %}{% set offset = 0 %}{% endif %}
+
+    <a class="mt-1 mb-1 ms-1 me-1 pt-1 pb-1 ps-1 pe-1 blog-pagination__link blog-pagination__prev-link {{ 'blog-pagination__prev-link--disabled' if !last_page_num }}"{% if last_page_num %} href="{{ group.absolute_url }}" rel="first"{% else %} aria-disabled="true" disabled {% endif %} role="button" aria-label="{{ module.accessibility_options.first_button_text }}">‹‹</a>
+    <a class="mt-1 mb-1 ms-1 me-1 pt-1 pb-1 ps-1 pe-1 blog-pagination__link blog-pagination__prev-link {{ 'blog-pagination__prev-link--disabled' if !last_page_num }}"{% if last_page_num %} href="{% if current_page_num == 2 %}{{ group.absolute_url }} {% else %}{{ blog_page_link(last_page_num) }}{% endif %}" rel="prev"{% else %} aria-disabled="true" disabled {% endif %} role="button" aria-label="{{ module.accessibility_options.prev_button_text }}">‹</a>
+    {% for page in page_list %}
+    {% set this_page = current_page_num + page + offset %}
+    {% if this_page > 0 and this_page <= total_page_count %}
+    <a class="mt-1 mb-1 ms-1 me-1 pt-1 pb-1 ps-1 pe-1 d-flex flex-flow-column align-items-xs-center justify-content-xs-center blog-pagination__link blog-pagination__number-link {{ 'blog-pagination__link--active' if this_page == current_page_num }}" aria-label="Go to Page {{ this_page }}" {% if this_page == current_page_num %}aria-current="true"{% endif %} href="{% if this_page == 1 %}{{ group.absolute_url }}{% else %}{{ blog_page_link(this_page) }}{% endif %}">{{ this_page }}</a>
+    {% endif %}
+    {% endfor %}
+    <a class="mt-1 mb-1 ms-1 me-1 pt-1 pb-1 ps-1 pe-1 blog-pagination__link blog-pagination__next-link {{ 'blog-pagination__next-link--disabled' if !next_page_num }}"{% if next_page_num %} href="{{ blog_page_link(current_page_num + 1) }}" rel="next" {% else %} aria-disabled="true" disabled {% endif %} role="button" aria-label="{{ module.accessibility_options.next_button_text }}">›</a>
+    <a class="mt-1 mb-1 ms-1 me-1 pt-1 pb-1 ps-1 pe-1 blog-pagination__link blog-pagination__next-link {{ 'blog-pagination__next-link--disabled' if !next_page_num }}"{% if next_page_num %} href="{{ blog_page_link(total_page_count) }}" rel="last" {% else %} aria-disabled="true" disabled {% endif %} role="button" aria-label="{{ module.accessibility_options.last_button_text }}">››</a>
+  </nav>
+</div>
+{% endif %}

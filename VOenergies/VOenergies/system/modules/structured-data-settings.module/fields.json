@@ -1,0 +1,599 @@
+[ {
+  "id" : "94ceb919-e342-acfc-3f35-8dd30c0e975f",
+  "name" : "use_structured_data",
+  "display_width" : null,
+  "label" : "Use structured data",
+  "inline_help_text" : "Set this option to true if you want to set structured data on your page (Don't use it if you don't know how structured data work because it has an impact on your SEO score).",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "c10fe69a-d9ef-a9da-8cf4-32128b56c099",
+  "name" : "structured_data",
+  "display_width" : null,
+  "label" : "Structured data",
+  "inline_help_text" : "Use the following options to set the structured data for this page.",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "94ceb919-e342-acfc-3f35-8dd30c0e975f",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "99bf06fc-6036-f99c-a9ec-7b2cc4ff914a",
+    "name" : "type",
+    "display_width" : null,
+    "label" : "Type",
+    "inline_help_text" : "Set the structured data type you want to display on search engines.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "website", "Website" ], [ "breadcrumbs", "Breadcrumbs" ], [ "event", "Event" ], [ "faq", "FAQ" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "website"
+  }, {
+    "id" : "742413de-6d34-28e4-cd76-6ee0baf2b696",
+    "name" : "website",
+    "display_width" : null,
+    "label" : "Website",
+    "inline_help_text" : "A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "99bf06fc-6036-f99c-a9ec-7b2cc4ff914a",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "website",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "51052c41-00e7-585f-0cdd-c8b61d1af6ea",
+      "name" : "website_name",
+      "display_width" : null,
+      "label" : "Company name",
+      "inline_help_text" : "Set the website company name here.",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Company"
+    }, {
+      "id" : "4823630f-4f31-cc36-3a23-bd03739686a6",
+      "name" : "website_url",
+      "display_width" : null,
+      "label" : "Website URL",
+      "inline_help_text" : "Set the website URL here.",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+      "type" : "url",
+      "default" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.example.com",
+        "content_id" : null
+      }
+    }, {
+      "id" : "e7ef1786-a98d-47a6-5598-1adc7615fd40",
+      "name" : "search_url",
+      "display_width" : null,
+      "label" : "Search URL",
+      "inline_help_text" : "Set the website search URL here (can be found in pages settings).",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+      "type" : "url",
+      "default" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.example.com/search?term=",
+        "content_id" : null
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "website_name" : "Company",
+      "website_url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.example.com",
+        "content_id" : null
+      },
+      "search_url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.example.com/search?term=",
+        "content_id" : null
+      }
+    }
+  }, {
+    "id" : "4e9a3f43-e8e5-0ee1-5eb4-3f0db1146cd7",
+    "name" : "breadcrumbs",
+    "display_width" : null,
+    "label" : "Breadcrumbs",
+    "inline_help_text" : "A BreadcrumbList is an ItemList consisting of a chain of linked Web pages, typically described using at least their URL and their name, and typically ending with the current page.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "99bf06fc-6036-f99c-a9ec-7b2cc4ff914a",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "breadcrumbs",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "a37dda8b-694c-db5d-47d3-e94cbe74767a",
+      "name" : "page",
+      "display_width" : null,
+      "label" : "Page",
+      "inline_help_text" : "Set the breadcrumbs page name and URL here.",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : 1,
+        "max" : null,
+        "sorting_label_field" : "49dbe8dd-82c9-1b42-27f9-caad8dd921fc",
+        "default" : 1
+      },
+      "children" : [ {
+        "id" : "49dbe8dd-82c9-1b42-27f9-caad8dd921fc",
+        "name" : "page_name",
+        "display_width" : null,
+        "label" : "Page name",
+        "inline_help_text" : "Set the breadcrumbs page name here.",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Homepage"
+      }, {
+        "id" : "09ad695d-c5aa-7bcb-32e6-9c237d289309",
+        "name" : "page_url",
+        "display_width" : null,
+        "label" : "Page URL",
+        "inline_help_text" : "Set the breadcrumbs page URL here.",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+        "type" : "url",
+        "default" : {
+          "type" : "EXTERNAL",
+          "href" : "https://www.example.com",
+          "content_id" : null
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "type" : "group",
+      "default" : [ {
+        "page_name" : "Homepage",
+        "page_url" : {
+          "type" : "EXTERNAL",
+          "href" : "https://www.example.com",
+          "content_id" : null
+        }
+      } ]
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "page" : [ {
+        "page_name" : "Homepage",
+        "page_url" : {
+          "type" : "EXTERNAL",
+          "href" : "https://www.example.com",
+          "content_id" : null
+        }
+      } ]
+    }
+  }, {
+    "id" : "919bf5a3-b02a-cab5-93e2-051ce7c5bb2c",
+    "name" : "event",
+    "display_width" : null,
+    "label" : "Event",
+    "inline_help_text" : "An event happening at a certain time and location, such as a concert, lecture, or festival.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "99bf06fc-6036-f99c-a9ec-7b2cc4ff914a",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "event",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "5e614e94-f60c-2475-f4c3-0ac27a42a0ca",
+      "name" : "event_name",
+      "display_width" : null,
+      "label" : "Event name",
+      "inline_help_text" : "Set the event name here.",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Event name"
+    }, {
+      "id" : "c8f02321-cb77-c697-119a-ea7fad662640",
+      "name" : "event_description",
+      "display_width" : null,
+      "label" : "Event description",
+      "inline_help_text" : "Set the event description here.",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Event description"
+    }, {
+      "id" : "b5a9442d-83e2-e818-cce0-c9b12b448e58",
+      "name" : "event_image",
+      "display_width" : null,
+      "label" : "Event image",
+      "inline_help_text" : "Set the event image here.",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    }, {
+      "id" : "dc8d18c5-f574-6901-2a4b-799ec7e2d45c",
+      "name" : "event_start_date_and_time",
+      "display_width" : null,
+      "label" : "Event start date and time",
+      "inline_help_text" : "Set the event start date and time here.",
+      "required" : false,
+      "locked" : false,
+      "step" : 15,
+      "type" : "datetime"
+    }, {
+      "id" : "1cbbf46d-1e60-4d52-ea0e-74ec36a1fd78",
+      "name" : "event_end_date_and_time",
+      "display_width" : null,
+      "label" : "Event end date and time",
+      "inline_help_text" : "Set the event end date and time here.",
+      "required" : false,
+      "locked" : false,
+      "step" : 15,
+      "type" : "datetime"
+    }, {
+      "id" : "9239c9d2-de88-5add-871d-aaf6704c27e0",
+      "name" : "event_status",
+      "display_width" : null,
+      "label" : "Event status",
+      "inline_help_text" : "Set the event status here.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "EventScheduled", "Scheduled" ], [ "EventPostponed", "Postponed" ], [ "EventCancelled", "Cancelled" ], [ "EventMovedOnline", "Moved Online" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "EventScheduled"
+    }, {
+      "id" : "b1b60330-4af2-8c07-12ea-7a432d14661c",
+      "name" : "event_attendance_mode",
+      "display_width" : null,
+      "label" : "Event attendance mode",
+      "inline_help_text" : "Set the event attendance mode here. The event can be online, offline, or a combinaison of both.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "OnlineEventAttendanceMode", "Online" ], [ "OfflineEventAttendanceMode", "Offline" ], [ "MixedEventAttendanceMode", "Mixed" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "OnlineEventAttendanceMode"
+    }, {
+      "id" : "6515350a-9989-5d7f-0a1d-27ecc436002f",
+      "name" : "event_place_name",
+      "display_width" : null,
+      "label" : "Event place name",
+      "inline_help_text" : "Set the event place name here.",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : "b1b60330-4af2-8c07-12ea-7a432d14661c",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "OnlineEventAttendanceMode",
+        "property" : null,
+        "operator" : "NOT_EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Event place name"
+    }, {
+      "id" : "3afd6ee9-db1b-ed8e-33f6-664e0b92959d",
+      "name" : "event_place_street",
+      "display_width" : null,
+      "label" : "Event place street",
+      "inline_help_text" : "Set the event place street here.",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : "b1b60330-4af2-8c07-12ea-7a432d14661c",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "OnlineEventAttendanceMode",
+        "property" : null,
+        "operator" : "NOT_EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Event place street"
+    }, {
+      "id" : "5e3a0e17-851f-f30e-c6bd-74cfb62e376b",
+      "name" : "event_place_zipcode",
+      "display_width" : null,
+      "label" : "Event place zipcode",
+      "inline_help_text" : "Set the event place zipcode here.",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : "b1b60330-4af2-8c07-12ea-7a432d14661c",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "OnlineEventAttendanceMode",
+        "property" : null,
+        "operator" : "NOT_EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "34059"
+    }, {
+      "id" : "1d94709c-eeed-5356-5dc0-34b0e57442a7",
+      "name" : "event_place_city",
+      "display_width" : null,
+      "label" : "Event place city",
+      "inline_help_text" : "Set the event place city here.",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : "b1b60330-4af2-8c07-12ea-7a432d14661c",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "OnlineEventAttendanceMode",
+        "property" : null,
+        "operator" : "NOT_EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Paris"
+    }, {
+      "id" : "26005cab-c77e-1d27-c4f8-a7cacc209704",
+      "name" : "event_place_country",
+      "display_width" : null,
+      "label" : "Event place country",
+      "inline_help_text" : "Set the event place country here.",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : "b1b60330-4af2-8c07-12ea-7a432d14661c",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "OnlineEventAttendanceMode",
+        "property" : null,
+        "operator" : "NOT_EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "France"
+    }, {
+      "id" : "b1cfbe94-0e2e-90b7-33ca-3068005c62fa",
+      "name" : "event_stream_url",
+      "display_width" : null,
+      "label" : "Event stream URL",
+      "inline_help_text" : "Set the event stream URL here.",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "b1b60330-4af2-8c07-12ea-7a432d14661c",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "OfflineEventAttendanceMode",
+        "property" : null,
+        "operator" : "NOT_EQUAL",
+        "access" : null
+      },
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+      "type" : "url",
+      "default" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "event_name" : "Event name",
+      "event_description" : "Event description",
+      "event_image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      },
+      "event_status" : "EventScheduled",
+      "event_attendance_mode" : "OnlineEventAttendanceMode",
+      "event_place_name" : "Event place name",
+      "event_place_street" : "Event place street",
+      "event_place_zipcode" : "34059",
+      "event_place_city" : "Paris",
+      "event_place_country" : "France",
+      "event_stream_url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      }
+    }
+  }, {
+    "id" : "d959f82e-4601-909f-9d4c-5311c59a1d84",
+    "name" : "faq",
+    "display_width" : null,
+    "label" : "FAQ",
+    "inline_help_text" : "A FAQPage is a.jpgage presenting one or more \"Frequently asked questions\".",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "99bf06fc-6036-f99c-a9ec-7b2cc4ff914a",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "faq",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "862128cc-981e-0b25-c253-4cd07c279cd0",
+      "name" : "faq_item",
+      "display_width" : null,
+      "label" : "FAQ Item",
+      "inline_help_text" : "Set the FAQ item question and answer here.",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : 1,
+        "max" : null,
+        "sorting_label_field" : "b3a2a580-ffdd-0557-9aa0-3277451580d3",
+        "default" : 1
+      },
+      "children" : [ {
+        "id" : "b3a2a580-ffdd-0557-9aa0-3277451580d3",
+        "name" : "faq_item_question",
+        "display_width" : null,
+        "label" : "FAQ item question",
+        "inline_help_text" : "Set the FAQ item question here.",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Is this a question?"
+      }, {
+        "id" : "11446646-4df4-2c85-23ea-5efdc8b3c42b",
+        "name" : "faq_item_answer",
+        "display_width" : null,
+        "label" : "FAQ item answer",
+        "inline_help_text" : "Set the FAQ item answer here.",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Yes, it is a question."
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "type" : "group",
+      "default" : [ {
+        "faq_item_question" : "Is this a question?",
+        "faq_item_answer" : "Yes, it is a question."
+      } ]
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "faq_item" : [ {
+        "faq_item_question" : "Is this a question?",
+        "faq_item_answer" : "Yes, it is a question."
+      } ]
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "type" : "website",
+    "website" : {
+      "website_name" : "Company",
+      "website_url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.example.com",
+        "content_id" : null
+      },
+      "search_url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.example.com/search?term=",
+        "content_id" : null
+      }
+    },
+    "breadcrumbs" : {
+      "page" : [ {
+        "page_name" : "Homepage",
+        "page_url" : {
+          "type" : "EXTERNAL",
+          "href" : "https://www.example.com",
+          "content_id" : null
+        }
+      } ]
+    },
+    "event" : {
+      "event_name" : "Event name",
+      "event_description" : "Event description",
+      "event_image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      },
+      "event_status" : "EventScheduled",
+      "event_attendance_mode" : "OnlineEventAttendanceMode",
+      "event_place_name" : "Event place name",
+      "event_place_street" : "Event place street",
+      "event_place_zipcode" : "34059",
+      "event_place_city" : "Paris",
+      "event_place_country" : "France",
+      "event_stream_url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      }
+    },
+    "faq" : {
+      "faq_item" : [ {
+        "faq_item_question" : "Is this a question?",
+        "faq_item_answer" : "Yes, it is a question."
+      } ]
+    }
+  }
+} ]

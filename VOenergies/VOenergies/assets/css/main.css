@@ -1,0 +1,30 @@
+{%- set breakpoints = [] -%}
+
+{%- for resolution, values in theme.layout.items() -%}
+{% if resolution != 'spacing_base' %}
+{%- do breakpoints.append({ "name": resolution, "value": values.breakpoint}) -%}
+{% endif %}
+{%- endfor -%}
+
+{% import './macros/_transitions.css' as transitions %}
+
+{%- include './layout/_reset.css' -%}
+{%- include './layout/_layout.css' -%}
+{%- include './layout/_colors.css' -%}
+{%- include './layout/_fonts.css' -%}
+{%- include './layout/_display.css' -%}
+{%- include './layout/_spacing.css' -%}
+
+{%- include './elements/_typography.css' -%}
+{%- include './elements/_links.css' -%}
+{%- include './elements/_forms.css' -%}
+{%- include './elements/_tables.css' -%}
+{%- include './elements/_menus.css' -%}
+{%- include './elements/_buttons.css' -%}
+
+{%- include './partials/_header.css' -%}
+{%- include './partials/_footer.css' -%}
+{%- include './partials/_copyright.css' -%}
+
+{% include "./modules/_pages.css" %}
+{% include "./modules/_blog.css" %}

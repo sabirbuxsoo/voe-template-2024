@@ -1,0 +1,12 @@
+{%- for item, rules in theme.colors.items() -%}
+
+.service.{{ item|replace("_", "-") }}-hover-bg:hover img:not(.service-shape) {
+  visibility:hidden;
+}  
+
+{%- endfor -%}
+
+img.service-shape{
+ left:-10%;
+  top:10%
+}

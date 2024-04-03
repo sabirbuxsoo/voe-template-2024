@@ -1,0 +1,129 @@
+<!--
+templateType: section
+isAvailableForNewContent: true
+label: FAQ section
+description: A section displaying faq
+-->
+
+{% dnd_section
+  vertical_alignment="TOP"
+  background_color={{ context.section.background_color }}
+  background_linear_gradient={{ context.section.background_linear_gradient }}
+  background_image={{ context.section.background_image }}
+  padding={{ context.section.padding }}
+  class={{ context.section.class }}
+%}
+{% dnd_column width="12" %}
+{% dnd_row %}
+{% dnd_module 
+  path='../../modules/background-items' 
+  background_item={{ context.background_items.background_item ? 
+    context.background_items.background_item : []
+  }}
+  style={{ context.background_item.style ? 
+    context.background_item.style : {
+      'animate_module': False,
+      'module_animation': {
+        'animate_module_scale': False,
+        'animate_module_vertical_translation': False,
+        'animate_module_skew': True,
+        'animate_module_opacity': True
+      }
+    }
+  }}
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% dnd_row vertical_alignment="TOP" %}
+{% dnd_column width={{ context.numbers_column_width ? context.numbers_column_width : 12 }} %}
+{% dnd_row %}
+{% dnd_module 
+    path='../modules/key-numbers'
+    extra_classes={{ context.numbers.extra_classes ? context.numbers.extra_classes : 'box-shadow rounded-large' }}
+    key_numbers_per_row={{ context.numbers.key_numbers_per_row ? context.numbers.key_numbers_per_row : 4 }}
+    add_button={{ context.numbers.add_button ? context.numbers.add_button : True }}
+    button={{ context.numbers.button ? context.numbers.button : {
+        "type": "button",
+        "text": "découvrir le groupe VOé", 
+        "color": "black",
+        "hover_color": "white",
+        "background_color": "no",
+        "hover_background_color": "black",
+        "border_color": "black",
+        "hover_border_color": "black",
+      }
+    }}
+    key_number={{ context.numbers.key_number ? context.numbers.key_number :  [
+        {
+          'number' : 15000,
+          'animation_duration' : 2000,  
+          'description' : '<h4>Lorem ipsum dolor sit amet adipiscing</h4>',
+          'show_symbol_first': True   
+        },
+        {
+          'number' : 32,
+          'animation_duration' : 2000,
+          'symbol_before': '+',
+          'symbol_after': '%',
+          'description' : '<h4>Lorem ipsum dolor sit amet adipiscing</h4>',
+          'show_symbol_first': True   
+        },
+        {
+          'number' : 3000,
+          'animation_duration' : 2000,
+          'description' : '<h4>Lorem ipsum dolor sit amet adipiscing</h4>',
+          'show_symbol_first': True   
+        },
+        {
+          'number' : 46,
+          'animation_duration' : 2000,
+          'description' : '<h4>Lorem ipsum dolor sit amet adipiscing</h4>',
+          'show_symbol_first': True   
+        }
+        
+      ]
+    }}
+    style={{ context.numbers.style ? context.numbers.style : {
+        'numbers_color': 'second',
+        'background_color': 'no',
+        'animate_module': False,
+        'module_animation': {
+          'animate_module_scale': False,
+          'animate_module_vertical_translation': False,
+          'animate_module_skew': True,
+          'animate_module_opacity': True
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        }
+      }
+     }}
+    }}
+    %}
+{% module_attribute "text" %}
+{{ context.numbers.text ? context.numbers.text : '<h2 style="color: {{ theme.colors.second.color }};">VOé en quelques chiffres</h2>' }}
+{% end_module_attribute %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}

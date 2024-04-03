@@ -1,0 +1,93 @@
+[ {
+  "id" : "12216f57-c9d2-9c7d-f634-68b45c16c4cf",
+  "name" : "img",
+  "display_width" : null,
+  "label" : "Logo",
+  "inline_help_text" : "Set the logo you would like to use here.",
+  "required" : false,
+  "locked" : false,
+  "show_loading" : false,
+  "type" : "logo",
+  "default" : {
+    "override_inherited_src" : false,
+    "suppress_company_name" : true,
+    "src" : null,
+    "alt" : null
+  }
+}, {
+  "id" : "84e38251-d9b5-d854-ef8b-45d2ee56a7c7",
+  "name" : "use_transparent_logo",
+  "display_width" : null,
+  "label" : "Use different logo when on top of the page",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "7848acde-6de8-6234-a51b-0eb9e056d411",
+  "name" : "transparent_logo",
+  "display_width" : null,
+  "label" : "Logo when on top of the page",
+  "inline_help_text" : "Set the logo you would like to use here.",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "84e38251-d9b5-d854-ef8b-45d2ee56a7c7",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "show_loading" : false,
+  "type" : "logo",
+  "default" : {
+    "override_inherited_src" : false,
+    "suppress_company_name" : true,
+    "src" : null,
+    "alt" : null
+  }
+}, {
+  "id" : "c9a2e678-7c48-f0c6-e65b-e885bd2c429b",
+  "name" : "link",
+  "display_width" : null,
+  "label" : "Link URL",
+  "help_text" : "",
+  "inline_help_text" : "Set the URL your visitor should be redirected to by clicking on the logo (If no url is specified, your logo will link to your primary domain).",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "0555927e-66cc-b51a-e43e-25e77ad6dd6d",
+  "name" : "open_in_new_tab",
+  "display_width" : null,
+  "label" : "Open link in new tab",
+  "inline_help_text" : "Set this option to true if you want the link to be opened in a new tab on click.",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "c9a2e678-7c48-f0c6-e65b-e885bd2c429b",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null
+  },
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
+}, {
+  "id" : "49e31d0d-4b78-bd3b-44c1-8c8cf7ddebda",
+  "name" : "add_link",
+  "display_width" : null,
+  "label" : "Add link",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : true
+} ]

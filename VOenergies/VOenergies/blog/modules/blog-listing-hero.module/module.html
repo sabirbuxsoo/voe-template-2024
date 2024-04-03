@@ -1,0 +1,52 @@
+{% import '../../../assets/macros/_style.html' %}
+{% import '../../../assets/macros/_blog.html' %}
+{% import '../sample_blog_data.html' %}
+
+<div id="{{ name }}" class="blog-listing-hero p-relative lazy {{ generateModuleClasses(module.style) }}{% if module.style.animate_module %} animation{% endif %}"
+		 {{ getModuleAnimations(module.style) }}>
+	{% if blog_author %}
+	<div class="dnd-row">
+		<div class="row-fluid d-flex flex-flow-row-wrap justify-content-space-between">
+			<div class="span12 columns">
+				<a class="back-to-blog text-transform-uppercase d-inline-flex flex-flow-row-wrap align-items-center justify-content-flex-start mb-4 {{ module.style.text_color|replace("_", "-") }}-color {{ module.style.text_color|replace("_", "-") }}-fill" href="{{ group.absolute_url }}">
+					<svg class="w-2 me-2" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#prefix__clip0_53_104)"><path d="M15 6.75a.75.75 0 100-1.5v1.5zM.47 5.47a.75.75 0 000 1.06l4.773 4.773a.75.75 0 001.06-1.06L2.061 6l4.242-4.243a.75.75 0 00-1.06-1.06L.47 5.47zM15 5.25H1v1.5h14v-1.5z" fill="#000"/></g><defs><clipPath id="prefix__clip0_53_104"><path fill="#fff" transform="rotate(180 8 6)" d="M0 0h16v12H0z"/></clipPath></defs></svg>
+					<span class="small">{{ module.back_to_blog_text }}</span>
+				</a>
+				<h1 class="{{ module.style.text_color|replace("_", "-") }}-color">{{ module.author_title|replace('[author]', blog_author.display_name) }}</h1>
+				{% if blog_author.bio %}
+				<div class="{{ module.style.text_color|replace("_", "-") }}-color description mt-4 text-align-left">
+					{{ blog_author.bio|striptags }}
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	{% endif %}
+
+	{% if tag %}
+	<div class="dnd-row">
+		<div class="row-fluid d-flex flex-flow-row-wrap justify-content-space-between">
+			<div class="span12 columns">
+				<a class="back-to-blog text-transform-uppercase d-inline-flex flex-flow-row-wrap align-items-center justify-content-flex-start mb-4 {{ module.style.text_color|replace("_", "-") }}-color {{ module.style.text_color|replace("_", "-") }}-fill" href="{{ group.absolute_url }}">
+					<svg class="w-2 me-2" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#prefix__clip0_53_104)"><path d="M15 6.75a.75.75 0 100-1.5v1.5zM.47 5.47a.75.75 0 000 1.06l4.773 4.773a.75.75 0 001.06-1.06L2.061 6l4.242-4.243a.75.75 0 00-1.06-1.06L.47 5.47zM15 5.25H1v1.5h14v-1.5z" fill="#000"/></g><defs><clipPath id="prefix__clip0_53_104"><path fill="#fff" transform="rotate(180 8 6)" d="M0 0h16v12H0z"/></clipPath></defs></svg>
+					<span class="small">{{ module.back_to_blog_text }}</span>
+				</a>
+				{% for topic in contents_topics %}
+				{% if topic.slug == tag %}
+				<h1 class="{{ module.style.text_color|replace("_", "-") }}-color">{{ module.tag_title|replace('[tag]', topic.name) }}</h1>
+				{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	{% endif %}
+
+	{% if not tag && not author %}  
+	{{ module.title }}
+	{% if (request.path is containing "preview/template") || request.postDict.preview_theme == true %}
+	{{ createFeaturedBlogPost(blog_posts) }}
+	{% else %}
+	{{ createFeaturedBlogPost(contents) }}
+	{% endif %}
+	{% endif %}
+</div>

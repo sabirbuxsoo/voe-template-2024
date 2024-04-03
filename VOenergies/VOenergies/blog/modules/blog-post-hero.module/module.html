@@ -1,0 +1,27 @@
+{% import '../../../assets/macros/_style.html' %}
+
+<div id="{{ name }}" class="blog-post-hero dnd-row {{ generateModuleClasses(module.style) }}{% if module.style.animate_module %} animation{% endif %}"
+     {{ getModuleAnimations(module.style) }}>
+  <div class="row-fluid">
+    <div class="dnd-column span12 columns">
+      <div class="dnd-row">
+        <div>
+          {% for tag in content.tag_list %}
+          <span class="second-color">
+           {{ ' • ' if not loop.first }}<a class="second-color small" href="/tag/{{ tag }}">{{ tag }}</a>
+          </span> 
+          {% endfor %}
+        </div>
+        {% set title = '<h2 class="first-color"><b>' ~ content.title ~ '</b></h2>' %}
+        {{ getModuleTextDisplay(module.style, title) }}
+        {% if module.display_author || module.display_date %}
+        <p class="gray-color small">
+          {% if module.display_date %}{{ content.publish_date_localized }}{% endif %}
+          {% if module.display_date && module.display_author  %} • {% endif %}
+          {% if module.display_author %}{{ content.blog_post_author.display_name }}{% endif %}
+        </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,348 @@
+[ {
+  "id" : "febfa390-7421-5d0c-dc14-32a99e83c1b3",
+  "name" : "menu",
+  "display_width" : null,
+  "label" : "Menu",
+  "inline_help_text" : "Set the footer menu options here.",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "cbd8611d-2ece-1cc7-9466-ed07a02c81f2",
+    "name" : "menu",
+    "display_width" : null,
+    "label" : "Menu",
+    "inline_help_text" : "Set the menu you want to display here.",
+    "required" : false,
+    "locked" : false,
+    "type" : "menu"
+  }, {
+    "id" : "0ecc7cd1-ecec-f1c7-9585-8813c5b6b03e",
+    "name" : "max_levels",
+    "display_width" : null,
+    "label" : "Max levels",
+    "inline_help_text" : "Set the menu max levels of sub items here.",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 1,
+    "max" : 10,
+    "step" : 1,
+    "type" : "number"
+  }, {
+    "id" : "0232ad09-5606-a86a-a8a6-c5df17a11dff",
+    "name" : "flow",
+    "display_width" : null,
+    "label" : "Menu orientation",
+    "inline_help_text" : "Set the menu orientation here.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "horizontal", "Horizontal" ], [ "vertical", "Vertical" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "horizontal"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "flow" : "horizontal"
+  }
+}, {
+  "id" : "style",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "style.large_desktop_display",
+    "name" : "xs",
+    "display_width" : null,
+    "label" : "Mobile display",
+    "inline_help_text" : "Use this group to change the custom rich text display only on large desktop devices.",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "style.xs.spacing",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : {
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "style.xs.text_alignment",
+      "name" : "text_alignment",
+      "display_width" : null,
+      "label" : "Text alignment",
+      "inline_help_text" : "Set the rich text text alignment for the resolution you chose here.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ], [ "justify", "Justify" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "left"
+    }, {
+      "id" : "619c75a3-c2f8-35e9-88d8-704fe70945f7",
+      "name" : "horizontal_alignment",
+      "display_width" : null,
+      "label" : "Horizontal alignment",
+      "inline_help_text" : "Set the rich text text alignment for the resolution you chose here.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "justify-content-xs-flex-start", "Left" ], [ "justify-content-xs-center", "Center" ], [ "justify-content-xs-flex-end", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "justify-content-xs-center"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : {
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "text_alignment" : "left",
+      "horizontal_alignment" : "justify-content-xs-center"
+    }
+  }, {
+    "id" : "57f107f1-0b8c-131f-d04f-0d92182b1d88",
+    "name" : "md",
+    "display_width" : null,
+    "label" : "Tablet display",
+    "inline_help_text" : "Use this group to change the custom rich text display only on large desktop devices.",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "style.md.spacing",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : {
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "style.md.text_alignment",
+      "name" : "text_alignment",
+      "display_width" : null,
+      "label" : "Text alignment",
+      "inline_help_text" : "Set the rich text text alignment for the resolution you chose here.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ], [ "justify", "Justify" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "left"
+    }, {
+      "id" : "e9e0dea4-b2fc-2755-9525-de4fb99e9b16",
+      "name" : "horizontal_alignment",
+      "display_width" : null,
+      "label" : "Horizontal alignment",
+      "inline_help_text" : "Set the rich text text alignment for the resolution you chose here.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "justify-content-md-flex-start", "Left" ], [ "justify-content-md-center", "Center" ], [ "justify-content-md-flex-end", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "justify-content-md-flex-end"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : {
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "text_alignment" : "left",
+      "horizontal_alignment" : "justify-content-md-flex-end"
+    }
+  }, {
+    "id" : "63781660-cb64-8084-1e01-af9da5392ec2",
+    "name" : "xl",
+    "display_width" : null,
+    "label" : "Desktop display",
+    "inline_help_text" : "Use this group to change the custom rich text display only on large desktop devices.",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "style.xl.spacing",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : {
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }, {
+      "id" : "style.xl.text_alignment",
+      "name" : "text_alignment",
+      "display_width" : null,
+      "label" : "Text alignment",
+      "inline_help_text" : "Set the rich text text alignment for the resolution you chose here.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ], [ "justify", "Justify" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "left"
+    }, {
+      "id" : "b9b24566-d990-78ac-12cb-dd67a4f9cae9",
+      "name" : "horizontal_alignment",
+      "display_width" : null,
+      "label" : "Horizontal alignment",
+      "inline_help_text" : "Set the rich text text alignment for the resolution you chose here.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "justify-content-xl-flex-start", "Left" ], [ "justify-content-xl-center", "Center" ], [ "justify-content-xl-flex-end", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "justify-content-xl-flex-end"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : {
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "text_alignment" : "left",
+      "horizontal_alignment" : "justify-content-xl-flex-end"
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "xs" : {
+      "spacing" : {
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "text_alignment" : "left",
+      "horizontal_alignment" : "justify-content-xs-center"
+    },
+    "md" : {
+      "spacing" : {
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "text_alignment" : "left",
+      "horizontal_alignment" : "justify-content-md-flex-end"
+    },
+    "xl" : {
+      "spacing" : {
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      },
+      "text_alignment" : "left",
+      "horizontal_alignment" : "justify-content-xl-flex-end"
+    }
+  }
+} ]

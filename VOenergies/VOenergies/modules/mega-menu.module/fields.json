@@ -1,0 +1,762 @@
+[ {
+  "id" : "dcbef081-aaef-19ad-61fc-95ea6933470a",
+  "name" : "first_level_items",
+  "display_width" : null,
+  "label" : "First level items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : "dc634ef9-ec9f-96ac-bedb-f3b2f3d1cf68",
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "dc634ef9-ec9f-96ac-bedb-f3b2f3d1cf68",
+    "name" : "level_item_name",
+    "display_width" : null,
+    "label" : "Level item name",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Link name"
+  }, {
+    "id" : "6e89c769-b361-a77c-a928-ddff817d789a",
+    "name" : "level_item_has_link",
+    "display_width" : null,
+    "label" : "Level item has link",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : true
+  }, {
+    "id" : "2df74457-06fc-de9c-4fc9-108ed550f861",
+    "name" : "level_item_url",
+    "display_width" : null,
+    "label" : "Level item URL",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "first_level_items.level_item_has_link",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "type" : "url",
+    "default" : {
+      "content_id" : null,
+      "href" : "https://www.vo-energie.ch/test",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "id" : "c2d4491c-c64e-95ff-8852-dde2a1035894",
+    "name" : "has_submenu",
+    "display_width" : null,
+    "label" : "Has submenu",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "ec7be608-7458-1d08-3ea6-c5d8f4738fab",
+    "name" : "is_mega_menu",
+    "display_width" : null,
+    "label" : "Is mega menu",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "aa104a82-e604-f987-d13b-536950c0d130",
+    "name" : "second_level_items",
+    "display_width" : null,
+    "label" : "Second level items",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : null,
+      "sorting_label_field" : "dc634ef9-ec9f-96ac-bedb-f3b2f3d1cf68",
+      "default" : 1
+    },
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "first_level_items.has_submenu",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "bc046781-126f-59c5-77f1-7a77290d6625",
+      "name" : "level_item_name",
+      "display_width" : null,
+      "label" : "Level item name",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Link name"
+    }, {
+      "id" : "7a4aa3f6-2e75-dd60-008c-c0e1be17e7b2",
+      "name" : "level_item_has_link",
+      "display_width" : null,
+      "label" : "Level item has link",
+      "required" : false,
+      "locked" : false,
+      "display" : "toggle",
+      "type" : "boolean",
+      "default" : false
+    }, {
+      "id" : "cb2442b3-4f1c-31a8-7971-e90f120bb4a9",
+      "name" : "level_item_url",
+      "display_width" : null,
+      "label" : "Level item URL",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "first_level_items.second_level_items.level_item_has_link",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+      "type" : "url",
+      "default" : {
+        "content_id" : null,
+        "href" : "https://www.vo-energie.ch/test",
+        "type" : "EXTERNAL"
+      }
+    }, {
+      "id" : "21e6e541-5d1a-17e3-7584-6e244bafefb7",
+      "name" : "has_submenu",
+      "display_width" : null,
+      "label" : "Has submenu",
+      "required" : false,
+      "locked" : false,
+      "display" : "toggle",
+      "type" : "boolean",
+      "default" : false
+    }, {
+      "id" : "2b043a5a-b40e-1ea6-81be-294174942374",
+      "name" : "third_level_items",
+      "display_width" : null,
+      "label" : "Third level items",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : 1,
+        "max" : null,
+        "sorting_label_field" : "dc634ef9-ec9f-96ac-bedb-f3b2f3d1cf68",
+        "default" : 1
+      },
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "first_level_items.second_level_items.has_submenu",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "54d94542-f773-db5f-b890-6ac0505f4000",
+        "name" : "level_item_name",
+        "display_width" : null,
+        "label" : "Level item name",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Link name"
+      }, {
+        "id" : "92bc8cd5-bfd1-0038-8bc0-88bfc18db77e",
+        "name" : "level_item_has_link",
+        "display_width" : null,
+        "label" : "Level item has link",
+        "required" : false,
+        "locked" : false,
+        "display" : "toggle",
+        "type" : "boolean",
+        "default" : true
+      }, {
+        "id" : "3ad1c2de-7777-11be-1f72-4b8b0ccab273",
+        "name" : "level_item_url",
+        "display_width" : null,
+        "label" : "Level item URL",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "first_level_items.second_level_items.third_level_items.level_item_has_link",
+          "controlling_value_regex" : "true",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+        "type" : "url",
+        "default" : {
+          "content_id" : null,
+          "href" : "https://www.vo-energie.ch/test",
+          "type" : "EXTERNAL"
+        }
+      }, {
+        "id" : "5efc9f61-d9a0-d56f-20ff-3f2ddb52f587",
+        "name" : "has_submenu",
+        "display_width" : null,
+        "label" : "Has submenu",
+        "required" : false,
+        "locked" : false,
+        "display" : "toggle",
+        "type" : "boolean",
+        "default" : false
+      }, {
+        "id" : "ca786dce-47c3-147a-2155-a77c596c10d7",
+        "name" : "fourth_level_items",
+        "display_width" : null,
+        "label" : "Fourth level items",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : 1,
+          "max" : null,
+          "sorting_label_field" : "dc634ef9-ec9f-96ac-bedb-f3b2f3d1cf68",
+          "default" : 1
+        },
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "first_level_items.second_level_items.third_level_items.has_submenu",
+          "controlling_value_regex" : "true",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "children" : [ {
+          "id" : "d06c855d-ec30-7b52-a57b-1205ce5ea1b5",
+          "name" : "level_item_name",
+          "display_width" : null,
+          "label" : "Level item name",
+          "required" : false,
+          "locked" : false,
+          "validation_regex" : "",
+          "allow_new_line" : false,
+          "show_emoji_picker" : false,
+          "type" : "text",
+          "default" : "Link name"
+        }, {
+          "id" : "7943d810-9fa1-b698-3dbb-6b6fee7a1bb1",
+          "name" : "level_item_has_link",
+          "display_width" : null,
+          "label" : "Level item has link",
+          "required" : false,
+          "locked" : false,
+          "display" : "toggle",
+          "type" : "boolean",
+          "default" : true
+        }, {
+          "id" : "dd287f28-10b4-d903-5b2a-93967b4ed1c2",
+          "name" : "level_item_url",
+          "display_width" : null,
+          "label" : "Level item URL",
+          "required" : false,
+          "locked" : false,
+          "visibility" : {
+            "controlling_field" : null,
+            "controlling_field_path" : "first_level_items.second_level_items.third_level_items.fourth_level_items.level_item_has_link",
+            "controlling_value_regex" : "true",
+            "property" : null,
+            "operator" : "EQUAL",
+            "access" : null
+          },
+          "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+          "type" : "url",
+          "default" : {
+            "content_id" : null,
+            "href" : "https://www.vo-energie.ch/test",
+            "type" : "EXTERNAL"
+          }
+        } ],
+        "tab" : "CONTENT",
+        "expanded" : false,
+        "type" : "group",
+        "default" : [ {
+          "level_item_name" : "Link name",
+          "level_item_has_link" : true,
+          "level_item_url" : {
+            "content_id" : null,
+            "href" : "https://www.vo-energie.ch/test",
+            "type" : "EXTERNAL"
+          }
+        } ]
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "type" : "group",
+      "default" : [ {
+        "level_item_name" : "Link name",
+        "level_item_has_link" : true,
+        "level_item_url" : {
+          "content_id" : null,
+          "href" : "https://www.vo-energie.ch/test",
+          "type" : "EXTERNAL"
+        },
+        "has_submenu" : false,
+        "fourth_level_items" : [ {
+          "level_item_name" : "Link name",
+          "level_item_has_link" : true,
+          "level_item_url" : {
+            "content_id" : null,
+            "href" : "https://www.vo-energie.ch/test",
+            "type" : "EXTERNAL"
+          }
+        } ]
+      } ]
+    }, {
+      "id" : "37a3c288-dc74-c76d-a854-b362d505d778",
+      "name" : "has_featured_resource",
+      "display_width" : null,
+      "label" : "Has featured resource",
+      "required" : false,
+      "locked" : false,
+      "display" : "toggle",
+      "type" : "boolean",
+      "default" : false
+    }, {
+      "id" : "cdb2c052-93a0-fb9d-24d2-830422d4a191",
+      "name" : "featured_resource",
+      "display_width" : null,
+      "label" : "Featured resource",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "first_level_items.second_level_items.has_featured_resource",
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "edb0b307-e119-04ec-9f7c-dab472ab51ea",
+        "name" : "featured_resource_has_link",
+        "display_width" : null,
+        "label" : "Featured resource has link",
+        "required" : false,
+        "locked" : false,
+        "display" : "toggle",
+        "type" : "boolean",
+        "default" : true
+      }, {
+        "id" : "21d4d255-d216-9ef5-589d-10aa8e7f7d3b",
+        "name" : "featured_resource_link",
+        "display_width" : null,
+        "label" : "Featured resource link",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "first_level_items.second_level_items.featured_resource.featured_resource_has_link",
+          "controlling_value_regex" : "true",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+        "type" : "url",
+        "default" : {
+          "content_id" : null,
+          "href" : "",
+          "type" : "CONTENT"
+        }
+      }, {
+        "id" : "27818a69-2a91-36da-3b00-2bc46153e7c6",
+        "name" : "featured_resource_image",
+        "display_width" : null,
+        "label" : "Featured resource image",
+        "required" : false,
+        "locked" : false,
+        "responsive" : true,
+        "resizable" : true,
+        "show_loading" : false,
+        "type" : "image",
+        "default" : {
+          "size_type" : "auto",
+          "src" : "",
+          "alt" : null,
+          "loading" : "lazy"
+        }
+      }, {
+        "id" : "a20641de-417a-95ed-4ebc-7461b3a859b5",
+        "name" : "featured_resource_category",
+        "display_width" : null,
+        "label" : "Featured resource category",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Category"
+      }, {
+        "id" : "8c68721b-7d0a-2aaf-6d8f-6a5473320a38",
+        "name" : "featured_resource_title",
+        "display_width" : null,
+        "label" : "Featured resource title",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Resource title"
+      }, {
+        "id" : "a80ad543-c022-73e7-3779-ebdd97c10186",
+        "name" : "featured_resource_description",
+        "display_width" : null,
+        "label" : "Featured resource description",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "This is the description of the resource. You can write 2 or 3 lines of description but not much more."
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "featured_resource_has_link" : true,
+        "featured_resource_link" : {
+          "content_id" : null,
+          "href" : "",
+          "type" : "CONTENT"
+        },
+        "featured_resource_image" : {
+          "size_type" : "auto",
+          "src" : "",
+          "alt" : null,
+          "loading" : "lazy"
+        },
+        "featured_resource_category" : "Category",
+        "featured_resource_title" : "Resource title",
+        "featured_resource_description" : "This is the description of the resource. You can write 2 or 3 lines of description but not much more."
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : [ {
+      "level_item_name" : "Link name",
+      "level_item_has_link" : false,
+      "level_item_url" : {
+        "content_id" : null,
+        "href" : "https://www.vo-energie.ch/test",
+        "type" : "EXTERNAL"
+      },
+      "has_submenu" : false,
+      "third_level_items" : [ {
+        "level_item_name" : "Link name",
+        "level_item_has_link" : true,
+        "level_item_url" : {
+          "content_id" : null,
+          "href" : "https://www.vo-energie.ch/test",
+          "type" : "EXTERNAL"
+        },
+        "has_submenu" : false,
+        "fourth_level_items" : [ {
+          "level_item_name" : "Link name",
+          "level_item_has_link" : true,
+          "level_item_url" : {
+            "content_id" : null,
+            "href" : "https://www.vo-energie.ch/test",
+            "type" : "EXTERNAL"
+          }
+        } ],
+        "has_featured_resource" : true
+      } ],
+      "has_featured_resource" : false,
+      "featured_resource" : {
+        "featured_resource_has_link" : true,
+        "featured_resource_link" : {
+          "content_id" : null,
+          "href" : "",
+          "type" : "CONTENT"
+        },
+        "featured_resource_image" : {
+          "size_type" : "auto",
+          "src" : "",
+          "alt" : null,
+          "loading" : "lazy"
+        },
+        "featured_resource_category" : "Category",
+        "featured_resource_title" : "Resource title",
+        "featured_resource_description" : "This is the description of the resource. You can write 2 or 3 lines of description but not much more."
+      }
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "level_item_name" : "Link name",
+    "level_item_has_link" : true,
+    "level_item_url" : {
+      "content_id" : null,
+      "href" : "https://www.vo-energie.ch/test",
+      "type" : "EXTERNAL"
+    },
+    "has_submenu" : false,
+    "is_mega_menu" : false,
+    "second_level_items" : [ {
+      "level_item_name" : "Link name",
+      "level_item_has_link" : false,
+      "level_item_url" : {
+        "content_id" : null,
+        "href" : "https://www.vo-energie.ch/test",
+        "type" : "EXTERNAL"
+      },
+      "has_submenu" : false,
+      "third_level_items" : [ {
+        "level_item_name" : "Link name",
+        "level_item_has_link" : true,
+        "level_item_url" : {
+          "content_id" : null,
+          "href" : "https://www.vo-energie.ch/test",
+          "type" : "EXTERNAL"
+        },
+        "has_submenu" : false,
+        "fourth_level_items" : [ {
+          "level_item_name" : "Link name",
+          "level_item_has_link" : true,
+          "level_item_url" : {
+            "content_id" : null,
+            "href" : "https://www.vo-energie.ch/test",
+            "type" : "EXTERNAL"
+          }
+        } ],
+        "has_featured_resource" : true
+      } ],
+      "has_featured_resource" : false,
+      "featured_resource" : {
+        "featured_resource_has_link" : true,
+        "featured_resource_link" : {
+          "content_id" : null,
+          "href" : "",
+          "type" : "CONTENT"
+        },
+        "featured_resource_image" : {
+          "size_type" : "auto",
+          "src" : "",
+          "alt" : null,
+          "loading" : "lazy"
+        },
+        "featured_resource_category" : "Category",
+        "featured_resource_title" : "Resource title",
+        "featured_resource_description" : "This is the description of the resource. You can write 2 or 3 lines of description but not much more."
+      }
+    } ]
+  } ]
+}, {
+  "id" : "24b5bc06-65a7-0b54-12ec-f3d7afad92b3",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "bb2c7e90-f131-32bf-5763-2f5cf5a9f576",
+    "name" : "xs",
+    "display_width" : null,
+    "label" : "Mobile display",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "03340e48-798d-20e9-9e57-4479a8ada5d9",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    }, {
+      "id" : "03bb97a7-9db5-fa6b-e9a5-fe825f513864",
+      "name" : "text_alignment",
+      "display_width" : null,
+      "label" : "Text alignment",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "left"
+    }, {
+      "id" : "98b05e3f-de8a-98fb-885b-428452cc477e",
+      "name" : "horizontal_alignment",
+      "display_width" : null,
+      "label" : "Horizontal alignment",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "justify-content-flex-start", "Left" ], [ "justify-content-center", "Center" ], [ "justify-content-flex-end", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "justify-content-flex-end"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : { },
+      "text_alignment" : "left",
+      "horizontal_alignment" : "justify-content-flex-end"
+    }
+  }, {
+    "id" : "c6d463d5-c194-9fe0-bcaf-5336c8d52275",
+    "name" : "md",
+    "display_width" : null,
+    "label" : "Tablet display",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "99e68639-620a-a46b-9203-141781b042ba",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    }, {
+      "id" : "86666ba6-3837-5cb5-f8e4-766f6c0eb17e",
+      "name" : "text_alignment",
+      "display_width" : null,
+      "label" : "Text alignment",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "left"
+    }, {
+      "id" : "114edb05-c627-3a70-11ab-387a1f63d56a",
+      "name" : "horizontal_alignment",
+      "display_width" : null,
+      "label" : "Horizontal alignment",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "justify-content-md-flex-start", "Left" ], [ "justify-content-md-center", "Center" ], [ "justify-content-md-flex-end", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "justify-content-md-flex-end"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : { },
+      "text_alignment" : "left",
+      "horizontal_alignment" : "justify-content-md-flex-end"
+    }
+  }, {
+    "id" : "ee2cf824-9023-56bb-481d-b135ae29cb64",
+    "name" : "xl",
+    "display_width" : null,
+    "label" : "Desktop display",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "8e3c00b6-1914-caa0-5b94-fe6aed173d61",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    }, {
+      "id" : "9102f4ea-eb05-a476-7cab-47f82688541f",
+      "name" : "text_alignment",
+      "display_width" : null,
+      "label" : "Text alignment",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "left"
+    }, {
+      "id" : "f80e0ed9-a9f3-de2f-e094-fd963d7e3132",
+      "name" : "horizontal_alignment",
+      "display_width" : null,
+      "label" : "Horizontal alignment",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "justify-content-md-flex-start", "Left" ], [ "justify-content-md-center", "Center" ], [ "justify-content-md-flex-end", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "justify-content-md-flex-end"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : { },
+      "text_alignment" : "left",
+      "horizontal_alignment" : "justify-content-md-flex-end"
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "xs" : {
+      "spacing" : { },
+      "text_alignment" : "left",
+      "horizontal_alignment" : "justify-content-flex-end"
+    },
+    "md" : {
+      "spacing" : { },
+      "text_alignment" : "left",
+      "horizontal_alignment" : "justify-content-md-flex-end"
+    },
+    "xl" : {
+      "spacing" : { },
+      "text_alignment" : "left",
+      "horizontal_alignment" : "justify-content-md-flex-end"
+    }
+  }
+} ]

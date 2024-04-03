@@ -1,0 +1,21 @@
+{% set currentLanguage = content.language ? content.language : content.resolved_language ? content.resolved_language : 'en' %}
+{% if content.translated_content|length > 0 || module.always_show_switcher == true %}
+<div class="language-switcher hs-menu-wrapper">
+  <ul>
+    <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children">
+      <a href="javascript:;">{{ locale_name(currentLanguage)|truncate(2, true, '')|upper }}</a>
+      {% if content.translated_content|length > 0 %}
+      <ul class="hs-menu-children-wrapper">
+        {% for country in content.translated_content %}
+        <li class="hs-menu-item hs-menu-depth-2">
+          <a href="{{ country.absolute_url }}" class="d-flex flex-flow-row align-items-xs-center justify-content-flex-start {% if not loop.first %} pt-xl-4{% endif %} pb-xl-4 ps-md-4 pe-md-4">
+            {{ locale_name(country.language)|truncate(2, true, '')|upper }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>  
+      {% endif %}
+    </li>
+  </ul>
+</div>
+{% endif %}

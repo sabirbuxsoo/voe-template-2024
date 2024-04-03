@@ -1,0 +1,23 @@
+{% import '../../imports/quote_variables.html' %}
+
+<div class="buyer-company {{ module.style.text_color|replace("_", "-") ~ '-color' }}">
+  {% if module.show_company_name && RECIPIENT_COMPANY.name %}
+  <div class="mb-2"><b>{{ RECIPIENT_COMPANY.name }}</b></div>
+  {% endif %}
+
+  {% if module.show_company_address && RECIPIENT_COMPANY.address %}
+  <div>{{ RECIPIENT_COMPANY.address }}</div>
+  {% endif %}
+
+  {% if module.show_company_address && RECIPIENT_COMPANY.address2 %}
+  <div>{{ RECIPIENT_COMPANY.address2 }}</div>
+  {% endif %}
+
+  {% if module.show_company_city_state_zip && (RECIPIENT_COMPANY.city || RECIPIENT_COMPANY.state || RECIPIENT_COMPANY.zip) %}
+  <div>{{ RECIPIENT_COMPANY.city ? RECIPIENT_COMPANY.city ~ ', ' : '' }}{{ RECIPIENT_COMPANY.state ? RECIPIENT_COMPANY.state ~ ' ' : '' }}{{ RECIPIENT_COMPANY.zip ? RECIPIENT_COMPANY.zip : '' }}</div>
+  {% endif %}
+
+  {% if module.show_company_country && RECIPIENT_COMPANY.country %}
+  <div>{{ RECIPIENT_COMPANY.country }}</div>
+  {% endif %}
+</div>

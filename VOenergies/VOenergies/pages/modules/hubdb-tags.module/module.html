@@ -1,0 +1,41 @@
+{% import '../../../assets/macros/_style.html' %}
+
+<div class="hubdb-tags-container d-flex flex-flow-column gap-6 {{ generateModuleClasses(module.style) }}{% if module.style.animate_module %} animation{% endif %}"{{ getModuleAnimations(module.style) }}>
+	{% for hubdb_tag in module.hubdb_tag %}
+	{% set column = hubdb_table_column(module.hubdbtable_field, hubdb_tag.hubdb_column) %}
+	<div class="hubdb-tags"
+			 data-type="checkbox"
+			 data-name="{{ hubdb_tag.hubdb_column }}"
+			 data-operator="__in=">
+		{% if hubdb_tag.filter_type == "search" %}
+		<div class="search-input">
+			<div class="dnd-row">
+				<div class="row-fluid">
+					<div class="span12 columns hs-search-field__bar">
+						<form class="d-flex flex-flow-row align-items-center justify-content-center p-relative">
+							<input type="text" class="hs-search-field__input" data-name="title__icontains" name="term" placeholder="{{ hubdb_tag.search_input_placeholder }}">
+							<button aria-label="Search" class="button ps-0 pt-0 pb-0 pe-0 black-fill first-hover-fill no-bg no-hover-bg no-border-color no-hover-border-color">{% icon name="search" style="solid" no_wrapper=True %}</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		{% if hubdb_tag.filter_type == "multi-select" %}
+		<h3 class="small">{{ hubdb_tag.hubdb_tags_title }}</h3>
+		<div class="hubdb-tags__container d-flex flex-flow-row-wrap gap-2">
+			<div class="p-relative">
+				<input type="checkbox" data-name="{{ hubdb_tag.hubdb_column }}__in" value="all" name="all" checked>
+				<label for="all">{{ hubdb_tag.default_option_text }}</label>
+			</div>
+			{% for option in column.options %}
+			<div class="p-relative">
+				<input type="checkbox" data-name="{{ hubdb_tag.hubdb_column }}__in" value="{{ option.label }}" name="{{ option.label }}">
+				<label for="{{ option.name }}">{{ option.label }}</label>
+			</div>
+			{% endfor %}
+		</div>
+		{% endif %}
+	</div> 
+	{% endfor %}
+</div> 

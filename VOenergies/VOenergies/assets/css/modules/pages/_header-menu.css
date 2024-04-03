@@ -1,0 +1,75 @@
+body.header-open .header .hs-menu-wrapper > ul > li > a:not(.no-color):not([class*=-"color"]),
+.header.scrolled .hs-menu-wrapper > ul > li > a:not(.no-color):not([class*=-"color"]) {
+  color: {{ theme.header.menu.scroll_text.color }};
+}
+
+body.header-open .header .hs-menu-wrapper > ul > li > a:not(.no-color):not([class*=-"color"]):hover,
+.header.scrolled .hs-menu-wrapper > ul > li > a:not(.no-color):not([class*=-"color"]):hover {
+  color: {{ theme.header.menu.scroll_text.hover_color }};
+}
+
+.header-menu .header-menu__toggle {
+  max-width: {{ theme.layout.spacing_base * 6 ~ "px" }};
+  width: {{ theme.layout.spacing_base * 6 ~ "px" }};
+  cursor: pointer;
+  transition: transform 0.25s ease-in-out;
+}
+
+.header-menu .header-menu__toggle svg {
+  display: block;
+  max-height: 100%;
+  margin: auto;
+}
+
+@media (max-width: {{ (theme.layout.md.breakpoint - 1) ~ 'px' }}) {
+  body.header-open {
+    overflow: hidden;
+  }
+  .header-menu .header-menu__container {
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    position: fixed;
+    top: 0;
+    right: 0%;
+    width: 100%;
+    height: 100vh;
+    background-color: {{ theme.colors.white.color }};
+    pointer-events: none;
+    z-index: -1;
+    transform: translateY(200%);
+    transition: transform 0.25s ease-in-out;
+  }
+
+  .header-menu .hs-menu-wrapper > ul > li.hs-menu-item.active-branch > a:after {
+    display: none;
+  }
+
+  .header-menu .hs-menu-wrapper ul li a {
+    width: 100%;
+  }
+
+  .header-menu .header-menu__menu {
+    margin-bottom: auto;
+  }
+
+  .header-menu.open .header-menu__container {
+    pointer-events: auto;
+    transform: translateY(0%);
+  }
+
+  .header-menu.open .header-menu__toggle {
+    transform: rotate(90deg);
+  }
+
+  .header-menu .hs-menu-wrapper > ul > li {
+    width: 100%;
+  }
+}
+
+@media (min-width: {{ theme.layout.md.breakpoint ~ 'px' }}) {
+  .header-menu .hs-menu-wrapper > ul > li:not(:first-child) > a {
+    margin-left: {{ theme.layout.spacing_base * 3 ~ "px" }};
+  }
+}

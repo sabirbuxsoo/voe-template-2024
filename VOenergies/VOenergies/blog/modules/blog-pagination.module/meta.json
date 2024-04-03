@@ -1,0 +1,18 @@
+{
+  "global" : true,
+  "content_types" : [ "BLOG_LISTING" ],
+  "smart_type" : "NOT_SMART",
+  "inline_help_text" : "Use this module on blog listing pages only, to display a pagination which will depend on the total number of blog posts available.",
+  "js_render_options" : {
+    "position" : "footer",
+    "async" : true
+  },
+  "css_render_options" : {
+    "async" : true
+  },
+  "icon" : "fontawesome-5.14.0:Sort%20Numeric%20Down:SOLID",
+  "host_template_types" : [ "BLOG_LISTING" ],
+  "module_id" : 81803655664,
+  "label" : "Blog pagination",
+  "is_available_for_new_content" : true
+}

@@ -1,0 +1,19 @@
+a:not(.button):not([class*="caius"]),
+.link:not(.button):not(.hs-button):not([class*="caius"]),
+.hs-menu-item-link:not(.button):not(.hs-button):not([class*="caius"]) {
+	font-size: inherit;
+	line-height: inherit;
+	cursor: pointer;
+	{{ theme.links.font.css is containing "decoration" ? theme.links.font.css : "text-decoration: none; " ~ theme.links.font.css }}
+	{{ transitions.getTransitionsForElement(theme.links) }}
+}
+
+main a:not(.no-color):not(.hs-breadcrumb-label):not([class*="-color"]):not(.button):not(.hs-button), 
+main .link:not(.no-color):not([class*="-color"]):not(.button):not(.hs-button) {
+	color: {{ theme.links.color }};
+}
+
+main a:not(.no-hover-color):not([class*="-hover-color"]):not(.button):not(.hs-button):hover, 
+main .link:not(.no-hover-color):not([class*="-hover-color"]):not(.button):not(.hs-button):hover {
+	color: {{ theme.links.hover_color }};
+}

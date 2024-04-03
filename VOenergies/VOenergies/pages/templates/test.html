@@ -1,0 +1,36 @@
+<!--
+templateType: page
+isAvailableForNewContent: False
+label: Test
+-->
+
+{% extends "../../assets/layouts/base.html" %}
+
+{% set widget_data = {
+  "page_settings": {
+      'transparent_header': True,
+      'use_lead_capture_header': False,
+      'use_lead_capture_footer': False,
+      'force_full_height': False,
+      'show_alert_banner': True
+  }
+} %}
+
+{% block header %}
+{% endblock header %}
+
+{% block body %}
+{% dnd_area "test" label="Test" class="test" %}
+{% dnd_section %}
+{% dnd_column %}
+{% dnd_row %}
+{% dnd_module path="../modules/multistep" %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}
+{% end_dnd_area %}
+{% endblock body %}
+
+{% block footer %}
+{% endblock footer %}

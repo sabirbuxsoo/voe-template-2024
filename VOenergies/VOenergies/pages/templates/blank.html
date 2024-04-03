@@ -1,0 +1,22 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Blank
+-->
+
+{% extends "../../assets/layouts/base.html" %}
+
+{% set widget_data = {
+  "page_settings": {
+      'transparent_header': True,
+      'use_lead_capture_header': False,
+      'use_lead_capture_footer': False,
+      'force_full_height': False,
+      'show_alert_banner': True
+  }
+} %}
+
+{% block body %}
+{% dnd_area "blank" label="Blank" class="blank" %}
+{% end_dnd_area %}
+{% endblock body %}

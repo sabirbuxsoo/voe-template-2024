@@ -1,0 +1,41 @@
+@media (max-width: {{ theme.layout.xs.breakpoint ~ "px" }}) {
+  .hs-search-results .hs-search-results__featured-image:before {
+    padding-bottom: 75%;
+  }
+}
+
+@media (max-width: {{ theme.layout.md.breakpoint ~ 'px' }}) {
+  .hs-search-results .hs-search-results__featured-image:before {
+    padding-bottom: 56.25%;
+  }
+}
+
+.hs-search-results .hs-search-highlight {
+  background-color: rgba({{ theme.colors.first.color|convert_rgb }}, 0.25);
+  padding-left: {{ theme.layout.spacing_base ~ "px" }};
+  padding-right: {{ theme.layout.spacing_base ~ "px" }};
+} 
+
+.hs-search-results .hs-search-results__prev-page,
+.hs-search-results .hs-search-results__next-page {
+  width: calc({{ theme.layout.spacing_base ~ "px" }} * 10);
+  height: calc({{ theme.layout.spacing_base ~ "px" }} * 10);
+  padding: calc({{ theme.layout.spacing_base ~ "px" }} * 3);
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background-color: {{ theme.buttons.background_color }};
+  fill: {{ theme.buttons.color }};
+  line-height: 2;
+  border-radius: 50%;
+  transition: 
+    background-color 0.25s ease-in-out, 
+    fill 0.25s ease-in-out;
+}
+
+.hs-search-results .hs-search-results__prev-page:hover,
+.hs-search-results .hs-search-results__next-page:hover {
+  fill: {{ theme.buttons.hover_color }};
+  background-color: {{ theme.buttons.hover_background_color }};
+}

@@ -1,0 +1,234 @@
+[ {
+  "id" : "style",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "2cf71ed7-9775-dc97-122c-022508b5f67b",
+    "name" : "animation",
+    "display_width" : null,
+    "label" : "Animation",
+    "inline_help_text" : "Set the rich text animation here.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "no", "None" ], [ "fade-in", "Fade in" ], [ "fade-in-top", "Fade in from top" ], [ "fade-in-bottom", "Fade in from bottom" ], [ "fade-in-left", "Fade in from left" ], [ "fade-in-right", "Fade in from right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "fade-in"
+  }, {
+    "id" : "style.large_desktop_display",
+    "name" : "xl",
+    "display_width" : null,
+    "label" : "Large desktop display",
+    "inline_help_text" : "Use this group to change the custom rich text display only on large desktop devices.",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "a6c6df50-cc58-06f4-86dc-8256a4698254",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    }, {
+      "id" : "style.large_desktop_display.text_alignment",
+      "name" : "text_alignment",
+      "display_width" : null,
+      "label" : "Text alignment",
+      "inline_help_text" : "Set the rich text text alignment for the resolution you chose here.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ], [ "justify", "Justify" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "left"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : { },
+      "text_alignment" : "left"
+    }
+  }, {
+    "id" : "eded43a4-6700-e77b-8ed2-b468303748b5",
+    "name" : "md",
+    "display_width" : null,
+    "label" : "Large tablet display",
+    "inline_help_text" : "Use this group to change the custom rich text display only on large desktop devices.",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d6bee099-4e31-c2bd-e678-71e3144c0767",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    }, {
+      "id" : "f9332639-61cc-cc28-1ba4-db3ef5e6ccf7",
+      "name" : "text_alignment",
+      "display_width" : null,
+      "label" : "Text alignment",
+      "inline_help_text" : "Set the rich text text alignment for the resolution you chose here.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ], [ "justify", "Justify" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "left"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : { },
+      "text_alignment" : "left"
+    }
+  }, {
+    "id" : "977b4a4f-1c46-bd33-0577-0e97fe7628a8",
+    "name" : "xs",
+    "display_width" : null,
+    "label" : "Mobile display",
+    "inline_help_text" : "Use this group to change the custom rich text display only on large desktop devices.",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "ad45f550-8753-5ac0-9225-d262bba0cf3a",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    }, {
+      "id" : "6b28366e-7558-1b30-6fe2-e2250ef2e1c9",
+      "name" : "text_alignment",
+      "display_width" : null,
+      "label" : "Text alignment",
+      "inline_help_text" : "Set the rich text text alignment for the resolution you chose here.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "left", "Left" ], [ "center", "Center" ], [ "right", "Right" ], [ "justify", "Justify" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "left"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "spacing" : { },
+      "text_alignment" : "left"
+    }
+  }, {
+    "id" : "e32f1015-44e9-d795-c338-a7a3c2e2b533",
+    "name" : "text_color",
+    "display_width" : null,
+    "label" : "Text color",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "default", "Default" ], [ "first", "First" ], [ "second", "Second" ], [ "third", "Third" ], [ "fourth", "Fourth" ], [ "first_accent", "First accent" ], [ "second_accent", "Second accent" ], [ "third_accent", "Third accent" ], [ "fourth_accent", "Fourth accent" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "first"
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "animation" : "fade-in",
+    "xl" : {
+      "spacing" : { },
+      "text_alignment" : "left"
+    },
+    "md" : {
+      "spacing" : { },
+      "text_alignment" : "left"
+    },
+    "xs" : {
+      "spacing" : { },
+      "text_alignment" : "left"
+    },
+    "text_color" : "first"
+  }
+}, {
+  "id" : "27f8a971-fd17-b665-9ef9-5580fbb991c7",
+  "name" : "read_more_text",
+  "display_width" : null,
+  "label" : "Read more text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Text link"
+}, {
+  "id" : "25e59c10-db00-a3fe-817b-041048ddfe09",
+  "name" : "author_title",
+  "display_width" : null,
+  "label" : "Author title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Posts by [author]"
+}, {
+  "id" : "ff21f021-fc36-73e0-0cc0-ece4f5589cd3",
+  "name" : "tag_title",
+  "display_width" : null,
+  "label" : "Tag title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Posts in \"[tag]\""
+}, {
+  "id" : "3b7a2b4c-8746-6022-1250-6f8261b8f7f2",
+  "name" : "back_to_blog_text",
+  "display_width" : null,
+  "label" : "Back to blog text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Retour au blog"
+}, {
+  "id" : "a7aeb7f8-e54f-4d93-832b-0c3d1226c915",
+  "name" : "title",
+  "display_width" : null,
+  "label" : "Texte enrichi",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<h1 style=\"color: {{ theme.colors.first.color }};\">Quoi de neuf chez VOé ?</h1>"
+} ]

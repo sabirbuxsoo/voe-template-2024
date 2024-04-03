@@ -1,0 +1,11 @@
+{
+  "global" : true,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "smart_type" : "NOT_SMART",
+  "inline_help_text" : "Use this module to showcase you social media links and invite the user to follow you.",
+  "icon" : "fontawesome-5.14.0:Share%20Square:SOLID",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 70239258861,
+  "label" : "Blog social sharing",
+  "is_available_for_new_content" : true
+}

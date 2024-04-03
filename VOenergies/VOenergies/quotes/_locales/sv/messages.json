@@ -1,0 +1,72 @@
+{
+  "name": {
+    "message": "CMS-offertteman",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.banner_bg_color.label": {
+    "message": "Bannerns bakgrundsfärg",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.button_background_color.label": {
+    "message": "Bakgrundsfärg på knappen",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.button_font_color.label": {
+    "message": "Färg på knappteckensnittet",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.label": {
+    "message": "Globala färger",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.primary_color.label": {
+    "message": "Primär färg",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.secondary_color.label": {
+    "message": "Sekundär färg",
+    "description": "",
+    "placeholders": null
+  },
+  "global_colors.tertiary_color.label": {
+    "message": "Tertiär färg",
+    "description": "",
+    "placeholders": null
+  },
+  "global_fonts.label": {
+    "message": "Globala teckensnitt",
+    "description": "",
+    "placeholders": null
+  },
+  "global_fonts.primary_font.label": {
+    "message": "Primärt teckensnitt",
+    "description": "",
+    "placeholders": null
+  },
+  "global_fonts.secondary_font.label": {
+    "message": "Sekundärt teckensnitt",
+    "description": "",
+    "placeholders": null
+  },
+  "modern_settings.button_background_color.label": {
+    "message": "Bakgrundsfärg på knappen",
+    "description": "",
+    "placeholders": null
+  },
+  "modern_settings.button_font_color.label": {
+    "message": "Färg på knappteckensnittet",
+    "description": "",
+    "placeholders": null
+  },
+  "modern_settings.label": {
+    "message": "Moderna inställningar",
+    "description": "",
+    "placeholders": null
+  }
+}

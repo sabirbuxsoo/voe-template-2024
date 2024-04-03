@@ -1,0 +1,36 @@
+<!--
+templateType: section
+isAvailableForNewContent: true
+label: Realisations listing section
+description: A section listing realisations elements.
+-->
+
+{% dnd_section
+  vertical_alignment="MIDDLE"
+  background_color={{ context.section.background_color }}
+  background_linear_gradient={{ context.section.background_linear_gradient }}
+  background_image={{ context.section.background_image }}
+  padding={{ context.section.padding }}
+  class={{ context.section.class }}
+%}
+{% dnd_column width=12 %}
+{% dnd_row %}
+{% dnd_module
+  path='../modules/realisations-listing'
+  one_page_only={{ context.hubdb_listing.one_page_only ? context.hubdb_listing.one_page_only : False }}
+  hubdb_posts_per_page={{ context.hubdb_listing.hubdb_posts_per_page ? context.hubdb_listing.hubdb_posts_per_page : 8 }}
+  hubdb_posts_offset={{ context.hubdb_listing.hubdb_posts_offset }}
+  hubdbtable_field={{ context.hubdb_listing.hubdbtable_field }}
+  display_posts_date={{ context.hubdb_listing.display_posts_date }}, 
+  date_text={{ context.hubdb_listing.date_text }}, 
+  hubdb_posts_per_row={{ context.hubdb_listing.hubdb_posts_per_row ? context.hubdb_listing.hubdb_posts_per_row : 4 }},
+  add_posts_box_shadow={{ context.hubdb_listing.add_posts_box_shadow ? context.hubdb_listing.add_posts_box_shadow : '' }},
+  fallback_image={{ context.hubdb_listing.fallback_image }},
+  button={{ context.hubdb_listing.button }},
+  truncate_blog_posts_summaries={{ context.hubdb_listing.truncate_blog_posts_summaries ? context.hubdb_listing.truncate_blog_posts_summaries : 120 }}
+  style={{ context.hubdb_listing.style }}
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}

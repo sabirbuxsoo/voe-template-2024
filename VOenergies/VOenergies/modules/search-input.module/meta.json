@@ -1,0 +1,10 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "inline_help_text" : "Use this module to manage the header menu of your website. It contains a menu, buttons and a language switcher if needed.",
+  "icon" : "fontawesome-5.14.0:Search:SOLID",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 141575527476,
+  "label" : "Search input",
+  "is_available_for_new_content" : true
+}

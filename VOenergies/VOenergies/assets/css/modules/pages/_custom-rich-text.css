@@ -1,0 +1,17 @@
+blockquote{
+	margin-left: {{ theme.layout.spacing_base * 6 ~ 'px' }}; 
+	padding-left: {{ theme.layout.spacing_base * 2 ~ 'px' }}; 
+	border: solid {{ theme.colors.second.color }}; 
+	color: {{ theme.colors.second.color }};
+	border-width: 0 0 0 3px;
+}
+
+.custom-rich-text ul {
+	padding-left: {{ theme.layout.spacing_base * 2 ~ 'px' }}; 
+	list-style: disc; 
+}
+
+.custom-rich-text ol {
+	padding-left: {{ theme.layout.spacing_base * 2 ~ 'px' }}; 
+	list-style: decimal; 
+}

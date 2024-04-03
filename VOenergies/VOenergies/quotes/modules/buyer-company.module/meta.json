@@ -1,0 +1,10 @@
+{
+  "global" : false,
+  "content_types" : [ "QUOTE_TEMPLATE" ],
+  "master_language" : "en",
+  "icon" : "building",
+  "host_template_types" : [ "QUOTE" ],
+  "module_id" : 81803655902,
+  "label" : "Buyer company",
+  "is_available_for_new_content" : true
+}

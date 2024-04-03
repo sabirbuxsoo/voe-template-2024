@@ -1,0 +1,11 @@
+{
+  "external_js" : [ "https://static.hsappstatic.com/quote-download-js/ex/quote-download.js" ],
+  "global" : false,
+  "content_types" : [ "QUOTE_TEMPLATE" ],
+  "master_language" : "en",
+  "icon" : "../../../mV0_hubspot/img/icon/download.svg",
+  "host_template_types" : [ "QUOTE" ],
+  "module_id" : 141565638664,
+  "label" : "Download",
+  "is_available_for_new_content" : true
+}

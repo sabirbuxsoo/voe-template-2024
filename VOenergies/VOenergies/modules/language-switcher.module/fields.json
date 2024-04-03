@@ -1,0 +1,12 @@
+[ {
+  "id" : "bf9440e4-ae7b-d177-d54d-0e6cee5fa4f4",
+  "name" : "always_show_switcher",
+  "display_width" : null,
+  "label" : "Always show language switcher",
+  "inline_help_text" : "Set this option to true if you want the language switcher to be always visible.",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : false
+} ]

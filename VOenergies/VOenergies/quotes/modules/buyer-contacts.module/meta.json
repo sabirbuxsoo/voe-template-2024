@@ -1,0 +1,10 @@
+{
+  "global" : false,
+  "content_types" : [ "QUOTE_TEMPLATE" ],
+  "master_language" : "en",
+  "icon" : "user",
+  "host_template_types" : [ "QUOTE" ],
+  "module_id" : 141566204431,
+  "label" : "Buyer contacts",
+  "is_available_for_new_content" : true
+}

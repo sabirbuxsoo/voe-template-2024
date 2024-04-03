@@ -1,0 +1,82 @@
+[ {
+  "id" : "5760823c-2fc6-b99d-1b6e-f6936d268c56",
+  "name" : "multistep_data",
+  "display_width" : null,
+  "label" : "Multistep data",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable",
+  "default" : 14464130
+}, {
+  "id" : "e0a7a9ea-6208-d36e-9e2f-2f8b2bc5cbbf",
+  "name" : "step_one_title",
+  "display_width" : null,
+  "label" : "Step one title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Pour quel produit ou service souhaitez-vous des informations ?"
+}, {
+  "id" : "414adf29-91e5-71c5-3f0e-0c62e4da3a26",
+  "name" : "step_one_subtitle",
+  "display_width" : null,
+  "label" : "Step one subtitle",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Quel produit/service ?"
+}, {
+  "id" : "ca49a3f1-59bf-2f0f-69b9-3179baa4286e",
+  "name" : "step_two_title",
+  "display_width" : null,
+  "label" : "Step two title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Quel est votre besoin ?"
+}, {
+  "id" : "193ee707-3c15-4f0f-4422-29c8bffedb21",
+  "name" : "step_two_subtitle",
+  "display_width" : null,
+  "label" : "Step two subtitle",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Quel besoin ?"
+}, {
+  "id" : "d2d93e73-b55b-8f6b-806d-69db7e5bd6fe",
+  "name" : "step_three_title",
+  "display_width" : null,
+  "label" : "Step three title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Prise de contact et d'information"
+}, {
+  "id" : "978e08d7-dc9f-8df5-e79e-d3832156054d",
+  "name" : "step_three_subtitle",
+  "display_width" : null,
+  "label" : "Step three subtitle",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Contact/informations"
+} ]

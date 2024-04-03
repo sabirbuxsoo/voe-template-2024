@@ -1,0 +1,52 @@
+{% import '../../../assets/macros/_style.html' %}
+{% import '../../../assets/macros/_buttons.html' %}
+
+{% if module.key_number|length > 0 %}
+<div class="key-numbers dnd-section {{ generateModuleClasses(module.style) }}{% if module.style.animate_module %} animation{% endif %}{% if module.extra_classes %} {{ module.extra_classes }}{% endif %}{% if module.style.background_color != 'no' %} {{ module.style.background_color ~ '-bg' }}{% endif %}"
+     {{ getModuleAnimations(module.style) }}>
+  {% if module.text %}
+  <div class="row-fluid d-flex flex-flow-row-wrap justify-content-xs-center text-align-center pv-6">
+    <div class="custom-rich-text">
+      {{ getModuleTextDisplay(module.style, module.text) }}
+    </div>
+  </div> 
+  {% endif %}
+  <div class="row-fluid d-flex flex-flow-row-wrap justify-content-xs-center">
+    {% for key_number in module.key_number %}
+    <div class="span{{ (12 / module.key_numbers_per_row)|round }} columns">
+      <div class="key-number d-flex flex-flow-column">
+        <div class="key-number__number-container display-xs-h1 {{ module.style.numbers_color|replace("_", "-") ~ '-color' }}">
+          <b class="d-flex justify-content-xs-center">{{ key_number.symbol_before ~ '&nbsp;' if key_number.symbol_before }}<span class="key-number__number" data-number="{{ key_number.number }}" data-duration="{{ key_number.animation_duration }}">0</span>{{ '&nbsp;' ~ key_number.symbol_after if key_number.symbol_after }}</b>
+        </div>
+        <div class="description {{ module.style.text_alignment }} {{ module.style.text_color|replace("_", "-") ~ '-color' }}">
+          {% rich_text field="description" value="{{ key_number.description }}" %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% if module.add_button %}
+  <div class="row-fluid d-flex flex-flow-row-wrap justify-content-xs-center text-align-center pv-6">
+    <div class="buttons d-flex flex-flow-column flex-flow-md-row-wrap">
+      {% if module.button.type == "cta" %}
+      {% cta guid="{{ module.button.cta_field }}" %}
+      {% endif %}
+
+      {% if module.button.type == "button" %}
+      {% set style = {
+          'color': module.button.color|replace("_", "-"),
+          'hover_color': module.button.hover_color|replace("_", "-"),
+          'background_color': module.button.background_color|replace("_", "-"),
+          'hover_background_color': module.button.hover_background_color|replace("_", "-"),
+          'border_color': module.button.border_color|replace("_", "-"),
+          'hover_border_color': module.button.hover_border_color|replace("_", "-"),
+          'make_button_small': module.button.make_button_small
+        } %}
+
+      {{ createButtonHTML(module.button, style) }}
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endif %}

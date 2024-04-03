@@ -1,0 +1,10 @@
+{
+  "global" : false,
+  "content_types" : [ "QUOTE_TEMPLATE" ],
+  "master_language" : "en",
+  "icon" : "pen-square",
+  "host_template_types" : [ "QUOTE" ],
+  "module_id" : 141575527520,
+  "label" : "Quote infos",
+  "is_available_for_new_content" : true
+}

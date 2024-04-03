@@ -1,0 +1,8 @@
+@media (max-width: {{ (theme.layout.md.breakpoint - 1) ~ "px" }}) {
+  .landing-page .custom-form {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

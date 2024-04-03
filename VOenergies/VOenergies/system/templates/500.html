@@ -1,0 +1,85 @@
+<!--
+templateType: error_page
+isAvailableForNewContent: true
+screenshotPath: ../../assets/images/covers/cover-500-error.jpg
+label: 500
+-->
+
+{% extends "../../assets/layouts/base.html" %}
+
+{% block body %}
+{% set contentSettings = widget_data.system_settings.error_500 %}
+{% set styleSettings = widget_data.system_settings.style.error_500 %}
+
+<div class="container-fluid system-page">
+  <div class="row-fluid-wrapper">
+    <div class="row-fluid">
+      <div class="widget-span">
+        <div class="dnd-section row-depth-1{% if contentSettings.background_color != "no" %} {{ contentSettings.background_color|replace("_", "-") ~ "-bg" }}{% endif %} flex-grow d-flex flex-flow-column justify-content-xs-center align-items-xs-center error-page {{ contentSettings.text_alignment }}" data-error="500">
+          <div class="row-fluid align-items-xs-center flex-flow-column{% if contentSettings.text_block_size > 6 && contentSettings.visual_block_size > 6 %} flex-flow-md-column{% else %} flex-flow-md-row-wrap{% endif %}">
+            <div class="span{{ contentSettings.text_block_size }} columns dnd-column">
+              <div class="dnd-row">
+                <div class="row-fluid">
+                  <div class="span12 columns">
+                    {% module "content" path='../../modules/custom-rich-text', 
+                    html={{ contentSettings.content }}
+                    style={
+                      'xs': {
+                        'top_spacing': 0,
+                        'bottom_spacing': 0,
+                        'left_spacing': 0,
+                        'right_spacing': 0,
+                        'text_alignment': 'center'
+                      },
+                      'md': {
+                        'top_spacing': 150,
+                        'bottom_spacing': 0,
+                        'left_spacing': 0,
+                        'right_spacing': 0,
+                        'text_alignment': 'left'
+                      },
+                      'xl': {
+                        'top_spacing': 0,
+                        'bottom_spacing': 50,
+                        'left_spacing': 0,
+                        'right_spacing': 0,
+                        'text_alignment': 'left'
+                      }
+                    }
+                  %}
+                  </div>
+                </div>
+              </div>
+              <div class="dnd-row">
+                <div class="row-fluid">
+                  <div class="span12 columns">
+                    {% module "buttons" 
+                      path='../../modules/buttons' 
+                      button={{ contentSettings.buttons.button }}
+                      style={{ styleSettings.buttons.style }}
+                    %}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="span{{ contentSettings.visual_block_size }} columns dnd-column">
+              <div class="dnd-row">
+                <div class="row-fluid">
+                  <div class="span12 columns">
+                    {% module 'custom-image' 
+                        label="Custom image" 
+                        path='../../modules/custom-image'          
+                        image_field={'src': (contentSettings.image_field.src ? contentSettings.image_field.src : get_asset_url('../../assets/images/visuals/placeholder.jpg')) },
+                        style={{ styleSettings }}
+                    %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock body %}

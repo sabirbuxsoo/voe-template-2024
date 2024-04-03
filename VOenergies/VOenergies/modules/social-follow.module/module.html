@@ -1,0 +1,9 @@
+{% import '../../assets/macros/_socials.html' %}
+{% import '../../assets/macros/_style.html' %}
+
+<div class="social-follow d-flex flex-flow-row-wrap{{ module.social|length > 1 ? " align-items-xs-center" : ""}} {{ generateModuleClasses(module.style) }}{% if module.style.animate_module %} animation{% endif %}"
+     {{ getModuleAnimations(module.style) }}>
+  {% for item in module.social %}
+  {{ createSocialHTML( item, 'mt-2 mb-2' ~ (loop.first ? '' : ' ms-2') ) }}
+  {% endfor %}
+</div>

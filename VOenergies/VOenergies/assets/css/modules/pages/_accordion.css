@@ -1,0 +1,21 @@
+.accordion .accordion-title {
+  cursor: pointer;
+}
+
+.accordion .accordion-item .accordion-content {
+  max-height: 0;
+  opacity: 0;
+  transition: 
+    opacity 0.25s ease-in-out,
+    max-height 0.25s ease-in-out;
+}
+
+.accordion .accordion-item.active .accordion-content {
+  opacity: 0.75;
+  max-height: 10000vh;
+  max-width: 100%;
+}
+
+.accordion .accordion-title .accordion_title__inner {
+  margin-bottom: 0;
+}

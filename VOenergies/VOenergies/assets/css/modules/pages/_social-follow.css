@@ -1,0 +1,18 @@
+.social-follow .social-follow__icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  transition: 
+    fill 0.25s ease-in-out,
+    color 0.25s ease-in-out,
+    border-color 0.25s ease-in-out,
+    background-color 0.25s ease-in-out;
+}
+
+.social-follow .social-follow__icon svg {
+  max-width: 24px;
+  max-height: 24px;
+}

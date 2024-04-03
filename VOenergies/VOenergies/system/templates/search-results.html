@@ -1,0 +1,121 @@
+<!--
+templateType: search_results_page
+isAvailableForNewContent: true
+screenshotPath: ../../assets/images/covers/cover-search-results.jpg
+label: Search results
+-->
+
+{% extends "../../assets/layouts/base.html" %}
+
+{% block body %}
+{% import '../../assets/macros/_buttons.html' %}
+{% set contentSettings = widget_data.system_settings.search_results %}
+{% set styleSettings = widget_data.system_settings.style.search_results %}
+
+
+<div class="container-fluid system-page" data-error="{{ contentSettings.error_text|urlencode }}">
+  <div class="row-fluid-wrapper">
+    <div class="row-fluid">
+      <div class="widget-span">
+        <div class="dnd-section row-depth-1{% if contentSettings.background_color != "no" %} {{ contentSettings.background_color|replace("_", "-") ~ "-bg" }}{% endif %} flex-grow d-flex flex-flow-column justify-content-xs-center align-items-xs-center error-page {{ contentSettings.text_alignment }}" data-error="500">
+          <div class="row-fluid align-items-xs-center flex-flow-column{% if contentSettings.text_block_size > 6 && contentSettings.visual_block_size > 6 %} flex-flow-md-column{% else %} flex-flow-md-row-wrap{% endif %}">
+            <div class="span{{ contentSettings.text_block_size }} columns dnd-column">
+              <div class="dnd-row">
+                <div class="row-fluid">
+                  <div class="span12 columns">
+                    {% module "content" path='../../modules/custom-rich-text', 
+                    html={{ contentSettings.content|replace("[SearchTerm]", request.query_dict.term|escape) }}
+                    style={
+                      'xs': {
+                        'top_spacing': 0,
+                        'bottom_spacing': 0,
+                        'left_spacing': 0,
+                        'right_spacing': 0,
+                        'text_alignment': 'center'
+                      },
+                      'md': {
+                        'top_spacing': 150,
+                        'bottom_spacing': 0,
+                        'left_spacing': 0,
+                        'right_spacing': 0,
+                        'text_alignment': 'left'
+                      },
+                      'xl': {
+                        'top_spacing': 0,
+                        'bottom_spacing': 50,
+                        'left_spacing': 0,
+                        'right_spacing': 0,
+                        'text_alignment': 'left'
+                      }
+                    }
+                  %}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="span{{ contentSettings.visual_block_size }} columns dnd-column">
+              <div class="dnd-row">
+                <div class="row-fluid">
+                  <div class="span12 columns">
+                    {% module 'custom-image' 
+                        label="Custom image" 
+                        path='../../modules/custom-image'          
+                        image_field={'src': (contentSettings.image_field.src ? contentSettings.image_field.src : get_asset_url('../../assets/images/visuals/placeholder.jpg')) },
+                        style={{ styleSettings }}
+                    %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dnd-section flex-grow d-flex flex-flow-column justify-content-xs-center">
+          <div class="row-fluid">
+            <div class="span12 columns dnd-column">
+              <div class="hs-search-results" data-fallback="{{ widget_data.search_input.results_fallback_image.src }}">
+                <template class="hs-search-results__template">
+                  <li>
+                    <div class="hs-search-results__link row-fluid d-flex flex-flow-column flex-flow-md-row-wrap align-items-xs-center justify-content-xs-center pt-8 pb-8 ps-1 pe-1 ps-md-4 pe-md-4 rounded-large box-shadow mb-8">
+                      {% if contentSettings.display_featured_images %}
+                      <div class="span4 columns">
+                        <div class="hs-search-results__featured-image image-container p-relative square o-hidden rounded-medium mb-4 mb-md-0">
+                          <img class="object-fit-cover t-0 s-0 fh fw p-absolute" src="">
+                        </div>
+                      </div>
+                      {% endif %}
+                      <div class="span8 columns">
+                        <div class="hs-search-results__content ps-md-8">
+                          <div class="hs-search-results__title display-h3 black-color">Content Title</div>
+                          <p class="hs-search-results__description">Description</p>
+                          {{ createButtonHTML(contentSettings.button) }}
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </template>
+                <ul id="hsresults" class="hs-search-results__listing"></ul>
+                <div class="hs-search-results__pagination d-flex flex-flow-row-wrap align-items-xs-center justify-content-space-between" data-search-path="{{ site_settings.content_search_results_page_path }}">
+                  <a href="" class="hs-search-results__prev-page">
+                    {% icon
+                      name="chevron-left"
+                      style="SOLID"
+                      no_wrapper=True
+                    %}
+                  </a>
+                  <a href="" class="hs-search-results__next-page ms-auto">
+                    {% icon
+                      name="chevron-right"
+                      style="SOLID"
+                      no_wrapper=True
+                    %}
+                  </a>
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock body %}

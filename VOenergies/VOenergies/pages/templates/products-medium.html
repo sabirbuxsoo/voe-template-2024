@@ -1,0 +1,439 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Products - Medium gallery
+-->
+
+{% extends "../../assets/layouts/base.html" %}
+
+{% set widget_data = {
+  "page_settings": {
+      'transparent_header': False,
+      'use_lead_capture_header': False,
+      'use_lead_capture_footer': False,
+      'force_full_height': True,
+  }
+} %}
+
+{% block body %}
+
+{% dnd_area "products-medium" label="Products - Medium gallery" class="products-medium" %}
+
+<!-- Begin hero section -->
+{% include_dnd_partial 
+  path='../sections/text-carousel-section.html' 
+  context={
+    'text_block_width': 5,
+    'text_block_offset': 6,
+    'text': {
+      'content': '<h1>our artists</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>',
+      'style': {
+        'animate_module': True,
+        'animation_settings': {
+          'bind_animation_to_scroll': False,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        }
+      }
+    },
+    'carousel': {
+      'style': {
+        'animate_module': True,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'images_format': 'three-four',
+          'images_border_radius': 'rounded-large',
+          'number_of_visible_items': 1,
+        },
+        'md': {
+          'images_format': 'three-four',
+          'images_border_radius': 'rounded-large',
+          'number_of_visible_items': 1,
+        },
+        'xl': {
+          'images_format': 'three-four',
+          'images_border_radius': 'rounded-large',
+          'number_of_visible_items': 1,
+        },
+        'show_arrows': False,
+        'show_dots': True,
+        'enable_fade_transition': True,
+      },
+      "show_item_texts": False,
+      'item': [
+        { 
+          'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+        },
+        { 
+          'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+        },
+        { 
+          'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+        }
+      ]
+    }
+  }
+%}
+<!-- End hero section -->
+
+<!-- Begin gallery section -->
+{% include_dnd_partial 
+  path='../sections/gallery-section.html'
+  context={
+    'text': {
+      'content': '<h2>here to stay</h2>',
+      'style': {
+        'animate_module': True,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        }
+      }
+    },
+    'gallery': {
+      'items_per_row': 3,
+      'item': [
+        {
+          'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+          'title': "pouriya kafei",
+          'category': "Photographer"
+        },
+        { 
+          'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+          'title': "vince fleming",
+          'category': "Photographer"
+        },
+        { 
+          'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+          'title': "muhammad rahim ali",
+          'category': "Photographer"
+        }
+      ],
+      'style': {
+        'animate_module': True,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+      }
+    }
+  }
+%}
+<!-- End gallery section -->
+
+<!-- Begin artworks section -->
+{% include_dnd_partial 
+  path='../sections/text-image-section.html'
+  context={
+    'text_block_width': 5,
+    'text_block_offset': 6,
+    'text': {
+      'content': '<h2>cautiously curated artworks</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>True',
+      'style': {
+        'animate_module': True,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        }
+      }
+    },
+    'image': {
+      'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+      'style': {
+        'animate_module': True,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+      }
+    }
+  }
+
+%}
+<!-- End artworks section -->
+
+<!-- Begin event section -->
+{% include_dnd_partial 
+  path='../sections/carousel-section.html'
+  context={
+    'text': {
+      'content': '<h2>upcoming events</h2>',
+      'style': {
+        'animate_module': True,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        }
+      }
+    },
+    'carousel': {
+      'style': {
+          'animate_module': True,
+          'animation_settings': {
+            'bind_animation_to_scroll': True,
+            'animation_properties': ['opacity', 'translate-y'],
+            'animation_easing': 'easeInOutSine',
+            'animation_duration': 500,
+            'animation_delta': 500,
+            'opacity_settings': {'start_value': 0, 'end_value': 1 },
+            'translatey_settings': {'start_value': 100, 'end_value': 0 },
+          },
+          'xs': {
+            'images_format': 'three-four',
+            'images_border_radius': 'rounded-large',
+            'number_of_visible_items': 1,
+          },
+          'md': {
+            'images_format': 'three-four',
+            'images_border_radius': 'rounded-large',
+            'number_of_visible_items': 3,
+          },
+          'xl': {
+            'images_format': 'three-four',
+            'images_border_radius': 'rounded-large',
+            'number_of_visible_items': 3,
+          },
+          'show_arrows': True,
+          'show_dots': True,
+          'center_slides': True,
+          'enable_autoplay': True,
+          'autoplay_duration': 5,
+          'animation_duration': 300,
+      },
+      'show_item_texts': True,
+      'item': [
+        { 
+          'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+          'title': "floral explosion",
+          'category': "Exhibit, March 3rd to March 10th"
+        },
+        { 
+          'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+          'title': "silk effect",
+          'category': "Exhibit, June 3rd to July 10th"
+        },
+        { 
+          'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+          'title': "modern abstraction",
+          'category': "Exhibit, August 3rd to Septembre 10th"
+        }
+      ]
+    }
+  }
+%}
+<!-- End event section -->
+
+<!-- Begin CTA section -->
+{% include_dnd_partial 
+  path='../sections/cta-section.html'
+  context={
+    'text': {
+      'content': '<h2>want a sneak peak?</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.</p>',
+      'style': {
+        'animate_module': True,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        }
+      }
+    },
+    'buttons': {
+      "button": [
+        {
+          'type': 'button',
+          'text': 'contact us',
+          'color': 'default',
+          'hover_color': 'default',
+          'background_color': 'first',
+          'hover_background_color': 'black',
+          'border_color': 'first',
+          'hover_border_color': 'black'
+        }
+      ],
+      'style': {
+        'animate_module': True,
+        'animation_settings': {
+          'bind_animation_to_scroll': True,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        }
+      }
+    }
+  }
+%}
+<!-- End CTA section -->
+{% end_dnd_area %}
+
+{% endblock body %}

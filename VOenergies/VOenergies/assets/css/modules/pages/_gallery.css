@@ -1,0 +1,269 @@
+.gallery .gallery__infos {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  z-index: 3;
+  color: {{ theme.colors.white.color }};
+}
+
+.gallery .gallery__item:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 100%);
+  z-index: 1;
+}
+
+.gallery.gallery--lightbox .gallery__item > .image-container > img {
+  transform: scale(1);
+  transition: transform 750ms ease-in-out;
+}
+
+.gallery.gallery--lightbox .gallery__item:hover > .image-container > img {
+  transform: scale(1.1);
+}
+
+.gallery.gallery--lightbox .gallery__popup {
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 250ms ease-in-out;
+  background-color: rgba({{ theme.colors.black.color|convert_rgb }}, 0.97);
+  height: 100vh;
+  overflow: hidden;
+}
+
+body.popup-open .gallery.gallery--lightbox .image-container {
+  z-index: 1;
+}
+
+.gallery.gallery--lightbox .gallery__item.open .gallery__popup {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.gallery.gallery--lightbox .gallery__item .gallery__popup-toggle {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms ease-in-out;
+  cursor: pointer;
+}
+
+.gallery.gallery--lightbox .gallery__item:hover .image-container > .gallery__popup-toggle {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.gallery.gallery--lightbox .gallery__item .gallery__popup-toggle-icon,
+.gallery.gallery--lightbox .carousel-container .swiper-pagination .swiper-pagination-bullet {
+  width: {{ theme.layout.spacing_base * 20 ~ 'px' }};
+  height: {{ theme.layout.spacing_base * 20 ~ 'px' }};
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.gallery.gallery--lightbox .gallery__item .carousel-container .swiper-pagination .swiper-pagination-bullet {
+  border-radius: {{ theme.layout.spacing_base * 1 ~ 'px' }};
+  overflow: hidden;
+  padding: 0;
+  transform: initial;
+  transition: padding 250ms ease-in-out;
+  margin: {{ theme.layout.spacing_base ~ 'px' }};
+}
+
+.gallery.gallery--lightbox .gallery__item .carousel-container .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  padding: {{ theme.layout.spacing_base * 1 ~ 'px' }};
+  margin: {{ theme.layout.spacing_base ~ 'px' }};
+}
+
+.gallery.gallery--lightbox .gallery__item .carousel-container {
+  overflow: hidden;
+  flex: 1 1 auto;
+  z-index: 5;
+}
+
+.gallery.gallery--lightbox .gallery__item .carousel-container .carousel {
+  padding-bottom : {{ theme.spacing.xs.vertical_spacing * 2 ~ 'px' }};
+}
+
+.gallery.gallery--lightbox .gallery__item .carousel-container .swiper-slide:before {
+  display: none;
+}
+
+.gallery.gallery--lightbox .gallery__item .carousel-container .swiper-slide {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery.gallery--lightbox .gallery__item .carousel-container .swiper-slide img {
+  max-height: 100%;
+}
+
+.gallery.gallery--lightbox .carousel-container .carousel-container__infos {
+  position: static;
+  top: initial;
+  left: initial;
+  width: 100%;
+  height: initial;
+  justify-content: center;
+}
+
+.gallery.gallery--lightbox .gallery__item .carousel-container .swiper-navigation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% - {{ theme.layout.xs.columns_gap ~ 'px' }});
+  bottom: initial;
+  right: initial;
+  justify-content: space-between;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.gallery.gallery--lightbox .gallery__item .carousel-container .swiper-pagination {
+  position: absolute;
+  height: auto;
+  padding-top: {{ theme.layout.spacing_base * 4 ~ 'px' }};
+  margin-top: {{ theme.layout.spacing_base * 4 ~ 'px' }};
+  max-height: initial;
+  transform: initial;
+  bottom: 0;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;  
+  width: 100%;
+}
+
+.gallery.gallery--lightbox .gallery__item .carousel-container .swiper-pagination img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+}
+
+.gallery.gallery--lightbox .gallery__item .gallery__popup .gallery__popup-toggle {
+  opacity: 1;
+}
+
+.gallery.gallery--lightbox .gallery__item.open .gallery__popup .gallery__popup-toggle {
+  pointer-events: initial;
+}
+
+.gallery.gallery--lightbox .gallery__item .gallery__popup .gallery__popup-toggle-icon {
+  position: fixed;
+  top: {{ theme.layout.spacing_base * 4 ~ 'px' }};
+  right: {{ theme.layout.spacing_base * 4 ~ 'px' }};
+  width: {{ theme.layout.spacing_base * 10 ~ 'px' }};
+  height: {{ theme.layout.spacing_base * 10 ~ 'px' }};
+}
+
+.gallery.gallery--lightbox .gallery__item .gallery__popup .gallery__popup-toggle .gallery__popup-toggle-icon__inner:before, 
+.gallery.gallery--lightbox .gallery__item .gallery__popup .gallery__popup-toggle .gallery__popup-toggle-icon__inner:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: {{ theme.layout.spacing_base * 1 ~ 'px' }};
+  background-color: currentColor;
+  transform: translate(-50%, -50%);
+  border-radius: {{ theme.layout.spacing_base * 10 ~ 'px' }};
+}
+
+.gallery.gallery--lightbox .gallery__item .gallery__popup .gallery__popup-toggle .gallery__popup-toggle-icon__inner:after {
+  height: 50%;
+  width: {{ theme.layout.spacing_base * 1 ~ 'px' }};
+}
+
+.gallery.gallery--lightbox .gallery__item .gallery__popup .gallery__popup-toggle .gallery__popup-toggle-icon__inner {
+  transform: rotate(45deg);
+}
+
+.gallery .gallery__container > .dnd-row > .row-fluid {
+  margin-top: -{{ theme.layout.xs.columns_gap ~ 'px' }};
+  margin-bottom: -{{ theme.layout.xs.columns_gap ~ 'px' }};
+}
+
+.gallery .gallery__container > .dnd-row > .row-fluid > [class*="span"] {
+  margin-top: {{ theme.layout.xs.columns_gap ~ 'px' }};
+  margin-bottom: {{ theme.layout.xs.columns_gap ~ 'px' }};
+}
+
+@media (min-width: {{ theme.layout.md.breakpoint ~ 'px' }}) {
+  .gallery.gallery--lightbox .gallery__item .carousel-container .swiper-navigation {
+    width: calc(100% - {{ theme.layout.xs.columns_gap / 2 ~ 'px' }});
+  }
+
+  .gallery .gallery__container > .dnd-row > .row-fluid {
+    margin-top: -{{ theme.layout.md.columns_gap ~ 'px' }};
+    margin-bottom: -{{ theme.layout.md.columns_gap ~ 'px' }};
+  }
+
+  .gallery .gallery__container > .dnd-row > .row-fluid > [class*="span"] {
+    margin-top: {{ theme.layout.md.columns_gap ~ 'px' }};
+    margin-bottom: {{ theme.layout.md.columns_gap ~ 'px' }};
+  }
+}
+
+@media (min-width: {{ theme.layout.xl.breakpoint ~ 'px' }}) {
+  .gallery .gallery__container > .dnd-row > .row-fluid {
+    margin-top: -{{ theme.layout.xl.columns_gap ~ 'px' }};
+    margin-bottom: -{{ theme.layout.xl.columns_gap ~ 'px' }};
+  }
+
+  .gallery .gallery__container > .dnd-row > .row-fluid > [class*="span"] {
+    margin-top: {{ theme.layout.xl.columns_gap ~ 'px' }};
+    margin-bottom: {{ theme.layout.xl.columns_gap ~ 'px' }};
+  }
+}
+
+@media (max-width: {{ theme.layout.md.breakpoint - 1 ~ 'px' }}) {
+  main .dnd-section .gallery__container > .dnd-row > .row-fluid > [class*="span"], 
+  main .dnd-section .gallery__container > .dnd-row > .row-fluid >  [class*="span"].order-last, 
+  main .dnd-section .gallery__container > .dnd-row > .row-fluid >  [class*="span"]:not(:first-child) {
+    max-width: 50%;
+    flex: 0 0 50%;
+  }
+
+  .gallery.gallery--lightbox .gallery__item .gallery__popup-toggle {
+    opacity: 1;
+    pointer-events: initial;
+    transition: opacity 250ms ease-in-out;
+    cursor: pointer;
+  }
+
+  .gallery.gallery--lightbox .gallery__item .gallery__popup-toggle-icon,
+  .gallery.gallery--lightbox .carousel-container .swiper-pagination .swiper-pagination-bullet {
+    width: {{ theme.layout.spacing_base * 10 ~ 'px' }};
+    height: {{ theme.layout.spacing_base * 10 ~ 'px' }};
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+@media (max-width: {{ theme.layout.xs.breakpoint ~ 'px' }}) {
+  main .dnd-section .gallery__container > .dnd-row > .row-fluid {    
+    padding-right: 15%;
+  }
+
+  .gallery.gallery--lightbox .gallery__item .carousel-container .swiper-navigation {
+    display: none;
+  }
+
+  main .dnd-section .gallery__container > .dnd-row > .row-fluid > [class*="span"], 
+  main .dnd-section .gallery__container > .dnd-row > .row-fluid >  [class*="span"].order-last, 
+  main .dnd-section .gallery__container > .dnd-row > .row-fluid >  [class*="span"]:not(:first-child) {
+    max-width: 85%;
+    flex: 0 0 85%;
+    padding-right: 0;
+  }
+}
+

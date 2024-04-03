@@ -1,0 +1,22 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "inline_help_text" : "Use this module to showcase some texts in an accordion display (Useful for FAQs for example).",
+  "js_render_options" : {
+    "position" : "footer",
+    "async" : true
+  },
+  "css_render_options" : {
+    "async" : true
+  },
+  "icon" : "fontawesome-5.14.0:Alternate%20List",
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 81803655888,
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../assets/js/functions/initAccordion.js",
+    "name" : "initAccordions.js"
+  } ],
+  "label" : "Accordion",
+  "is_available_for_new_content" : true
+}

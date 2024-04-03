@@ -1,0 +1,100 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Réalisations
+  -->
+
+{% extends "../../assets/layouts/base.html" %}
+
+{% set widget_data = {
+    "page_settings": {
+        'transparent_header': false,
+        'use_lead_capture_header': false,
+        'use_lead_capture_footer': false,
+        'force_full_height': false,
+    }
+  } %}
+
+{% block body %}
+{% if dynamic_page_hubdb_row %}      
+
+{% else %}
+{% dnd_area "realisations-listing" label="Réalisations listing" class="realisations-listing" %}
+<!-- Begin hero section -->
+{% include_dnd_partial 
+  path='../sections/hero-section.html'
+  context={
+    'section': {
+      'class': 'splashscreen-md splashscreen-lg splashscreen-xl',
+      'background_image': {
+        'backgroundSize': 'COVER',
+        'backgroundPosition': 'MIDDLE_CENTER',
+        'imageUrl': get_asset_url('../../assets/images/visuals/hero-realisations.jpg')
+      },
+    },
+    'text': {
+      'content': '<p style="color: {{ theme.colors.white.color }};">Les projets VOé<br><span style="color: {{ theme.colors.third.color }};"> dans le Nord Vaudois</span></p>',
+      'style': {
+        'animate_module': False,
+        'animation_settings': {
+          'bind_animation_to_scroll': false,
+          'trigger_animation_by_character': true,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 250,
+          'animation_delay': 25,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': -50, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center',
+          'body_display': 'title-hero-2'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center',
+          'body_display': 'title-hero-2'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center',
+          'body_display': 'title-hero-2'
+        }
+      }
+    },
+  }
+%}
+<!-- End hero section -->
+
+{% include_dnd_partial 
+  path='../sections/realisations-listing-text-section.html'
+%}
+
+{% include_dnd_partial 
+  path='../sections/logos-section.html'
+%}
+
+{% include_dnd_partial 
+  path='../sections/realisations-listing-section.html'
+  context={
+    "hubdb_listing": {
+      "hubdb_posts_offset": 4
+    }
+  }
+%}
+
+{% end_dnd_area %}
+
+{% global_partial path="../../partials/newsletter.html" no_wrapper=True %}
+{% endif %}
+{% endblock body %}

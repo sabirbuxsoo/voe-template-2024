@@ -1,0 +1,11 @@
+{
+  "global" : true,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "smart_type" : "NOT_SMART",
+  "inline_help_text" : "This module let you showcase recent blog posts (filtered by the current blog post if you choose to).",
+  "icon" : "fontawesome-5.14.0:Alternate%20List",
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 141566204422,
+  "label" : "Blog related posts",
+  "is_available_for_new_content" : true
+}

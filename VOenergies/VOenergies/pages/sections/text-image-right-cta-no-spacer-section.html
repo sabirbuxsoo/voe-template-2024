@@ -1,0 +1,154 @@
+<!--
+templateType: section
+isAvailableForNewContent: true
+label: Text/cta and image at right without spacers section
+description: A section displaying a text/cta and an image at right.
+-->
+
+{% dnd_section
+  vertical_alignment="MIDDLE"
+  background_color={{ context.section.background_color }}
+  background_linear_gradient={{ context.section.background_linear_gradient }}
+  background_image={{ context.section.background_image }}
+  padding={{ context.section.padding }}
+  class={{ context.section.class }}
+%}
+{% dnd_column width="12" %}
+{% dnd_row %}
+{% dnd_module 
+  path='../../modules/background-items' 
+  background_item={{ context.background_items.background_item }}
+  style={{ context.background_item.style ? 
+    context.background_item.style : {
+      'animate_module': False,
+      'module_animation': {
+        'animate_module_scale': False,
+        'animate_module_vertical_translation': False,
+        'animate_module_skew': True,
+        'animate_module_opacity': True
+      }
+    }
+  }}
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% dnd_row vertical_alignment="MIDDLE" %}
+{% dnd_column width={{ context.text_block_width ? context.text_block_width : 6 }} offset={{ context.text_block_offset ? context.text_block_offset : 0 }} %}
+{% dnd_row %}
+{% dnd_module 
+  path='../../modules/custom-rich-text' 
+  style={{ context.text.style ? context.text.style : {
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        }
+      }
+    }}
+%}
+{% module_attribute "html" %}
+{{ context.text.content ? context.text.content : '<h1>Something powerful</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>' }}
+{% end_module_attribute %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% dnd_row %}
+{% dnd_module 
+  path='../../modules/buttons' 
+  button={{ context.buttons.button ? 
+    context.buttons.button : [
+      {
+        "text": "Contact us", 
+        "color": "first",
+        "hover_color": "first",
+        "background_color": "first",
+        "hover_background_color": "first",
+        "border_color": "first",
+        "hover_border_color": "first",
+      }
+    ]
+  }},
+  style={{ context.buttons.style ? 
+    context.buttons.style : {
+      'xs': {
+        'spacing': {
+          'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+          'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+        },
+        'text_alignment': 'center',
+        'horizontal_alignment': 'justify-content-xs-center'        
+      },
+      'md': {
+        'spacing': {
+          'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+          'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+        },
+        'text_alignment': 'center',
+        'horizontal_alignment': 'justify-content-md-flex-start'        
+      },
+      'xl': {
+        'spacing': {
+          'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+          'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+        },
+        'text_alignment': 'center',
+        'horizontal_alignment': 'justify-content-xl-flex-start'
+      }
+    }
+  }}
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% dnd_column
+  width={{ context.second_spacer_block_width ? context.second_spacer_block_width : 1 }}
+  offset={{ context.second_spacer_block_offset ? context.second_spacer_block_offset : 6 }}
+%}
+{% dnd_row %}
+{% dnd_module 
+    path='@hubspot/horizontal_spacer' %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% dnd_column width={{ context.image_block_width ? context.image_block_width : 5 }} offset={{ context.image_block_offset ? context.image_block_offset : 7 }} %}
+{% dnd_row %}
+{% dnd_module 
+    path='../../modules/custom-image' 
+    make_image_first_on_mobile={{ context.image.make_image_first_on_mobile }}
+    image_column_width={{ context.image.image_column_width }}
+    shape_column_width={{ context.image.shape_column_width }}
+    add_legend={{ context.image.add_legend }}
+    legend={{ context.image.legend }}    
+    add_background_shape={{ context.image.add_background_shape }}
+    background_shape={{ context.image.background_shape }}
+    make_image_take_full_height_of_its_container={{ context.image.make_image_take_full_height_of_its_container }}
+    image_field={{ context.image.image_field ?
+      context.image.image_field : { 
+        'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg')
+      }
+    }}
+    srcset={{ context.image.srcset }}
+    style={{ context.image.style }}
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}
+

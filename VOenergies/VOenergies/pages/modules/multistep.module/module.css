@@ -1,0 +1,3 @@
+.multistep .multistep__prev-container-inner:not(.button):not([class*="caius"]) {
+	font-weight: 300;
+}

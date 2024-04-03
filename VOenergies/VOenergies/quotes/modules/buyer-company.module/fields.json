@@ -1,0 +1,69 @@
+[ {
+  "id" : "show_company_name",
+  "name" : "show_company_name",
+  "display_width" : null,
+  "label" : "Buyer company name",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "show_company_address",
+  "name" : "show_company_address",
+  "display_width" : null,
+  "label" : "Buyer company main address",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "show_company_city_state_zip",
+  "name" : "show_company_city_state_zip",
+  "display_width" : null,
+  "label" : "Buyer company city, state, and zip",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "184929ad-d348-2311-4a68-e46da2b67740",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "d8beb38e-1904-5b50-ec51-1eabf6fbead5",
+    "name" : "text_color",
+    "display_width" : null,
+    "label" : "Text color",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "no", "None" ], [ "first", "First color" ], [ "second", "Second color" ], [ "third", "Third color" ], [ "fourth", "Fourth color" ], [ "fifth", "Fifth color" ], [ "default", "Body (default) color" ], [ "black", "Black" ], [ "gray", "Gray" ], [ "white", "White" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "white"
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "text_color" : "white"
+  }
+}, {
+  "id" : "show_company_country",
+  "name" : "show_company_country",
+  "display_width" : null,
+  "label" : "Buyer company country",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+} ]

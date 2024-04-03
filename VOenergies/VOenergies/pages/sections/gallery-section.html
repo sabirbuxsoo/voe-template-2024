@@ -1,0 +1,51 @@
+<!--
+templateType: section
+isAvailableForNewContent: true
+label: Cards gallery section
+description: A section displaying a gallery with a text.
+-->
+
+{% dnd_section
+  vertical_alignment="MIDDLE"
+  background_color={{ context.section.background_color }}
+  background_linear_gradient={{ context.section.background_linear_gradient }}
+  background_image={{ context.section.background_image }}
+  padding={{ context.section.padding }}
+  class={{ context.section.class }}
+%}
+{% dnd_column width="12" %}
+{% dnd_row %}
+{% dnd_module 
+  path='../modules/gallery'
+  items_per_row={{ context.gallery.items_per_row ? context.gallery.items_per_row : 3 }}
+  show_item_texts={{ context.gallery.show_item_texts ? context.gallery.show_item_texts : True }}
+  show_item_pictures_popup={{ context.gallery.show_item_pictures_popup ? context.gallery.show_item_pictures_popup : True }}
+  gallery_item={{ context.gallery.item ?
+    context.gallery.item : [
+        {
+          'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+          'text': 'Stars',
+          
+        },
+        {
+          'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+          'text': 'Stars',
+          
+        },
+        {
+          'image_field': { 'src' : get_asset_url('../../assets/images/visuals/placeholder.jpg') },
+          'text': 'Stars',
+          
+        }
+      ]
+    }}
+    style={{ context.gallery.style ? 
+      context.gallery.style : {
+        'animate_module': True,
+      }
+    }}
+  %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}

@@ -1,0 +1,36 @@
+{% import '../../assets/macros/_menus.html' %}
+
+<div class="menu dnd-section pv-xs-5 pv-md-0">
+	<div class="row-fluid fh">
+		<div class="d-flex flex-flow-column flex-flow-md-row-wrap align-items-md-center fh fw">
+			{% if module.show_menu %}
+			<div class="menu__menu{{ ' menu__small' if module.small_menu }}">
+				{% set menu = module.id || module.menu || "default" %}
+				{{ createMenuItems(menu) }}
+			</div>
+			{% endif %}
+			{% if module.show_icon_links %}
+			<div class="menu__icons">
+				<div class="hs-menu-wrapper hs-menu-flow-horizontal">
+					<ul role="menu" class="d-flex flex-flow-row-wrap align-items-center justify-content-center justify-content-md-flex-end">
+						{% for item in module.icon_link %}
+						{% set href = item.social_link.url.href %}
+						{% if item.social_link.url.type is equalto "EMAIL_ADDRESS" %}
+						{% set href = "mailto:" + href %}
+						{% endif %}
+						{% if item.social_link.url.type is equalto "PHONE_NUMBER" %}
+						{% set href = "tel:" + href %}
+						{% endif %}
+						<li class="hs-menu-item">
+							<a href="{{ href }}" class="hs-menu-item-link{{ " hs-menu-item-link--alternate" if item.use_secondary_color }} d-flex"{% if item.social_link.open_in_new_tab %} target="_blank"{% endif %}{% if item.social_link.rel %} rel="{{ item.social_link.rel }}"{% endif %}>
+								{% icon name="{{ item.social_icon.name }}" style="{{ item.social_icon.type }}" unicode="{{ item.social_icon.unicode }}" icon_set="{{ item.social_icon.icon_set }}" no_wrapper=True %}
+							</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</div>

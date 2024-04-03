@@ -1,0 +1,124 @@
+<!--
+templateType: section
+isAvailableForNewContent: true
+label: Timeline section
+description: A section displaying a timeline of events and their descriptions.
+-->
+
+{% dnd_section
+  vertical_alignment="MIDDLE"
+  background_color={{ context.section.background_color }}
+  background_linear_gradient={{ context.section.background_linear_gradient }}
+  background_image={{ context.section.background_image }}
+  padding={{ context.section.padding }}
+  class={{ context.section.class }}
+%}
+{% dnd_column width="12" %}
+{% dnd_row %}
+{% dnd_module 
+  path='../../modules/custom-rich-text' 
+  style={{ context.text.style ? context.text.style : {
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        }
+      }
+    }}
+%}
+{% module_attribute "html" %}
+{{ context.text.content ? context.text.content : '<h2 style="color: {{ theme.colors.first.color}};">La planification</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>' }}
+{% end_module_attribute %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% dnd_row %}
+
+
+{% dnd_module 
+  path='../modules/cards-timeline'
+  timeline_item={{ context.timeline.item ? context.timeline.item : [
+        { 
+          'image_field': { 'src' : get_asset_url('../../assets/images/visuals/projet-1.jpg') },
+          'date': 'avril 2023',
+          'title': 'création des plans d’implantation',
+          'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'
+        },
+        { 
+          'date': 'juin 2023',
+          'title': 'création des plans d’implantation',
+          'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate'
+        },
+        { 
+          'image_field': { 'src' : get_asset_url('../../assets/images/visuals/besoins-3.jpg') },
+          'date': 'octobre 2023',
+          'title': 'création des plans d’implantation',
+          'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'
+        },
+        { 
+          'image_field': { 'src' : get_asset_url('../../assets/images/visuals/projet-1.jpg') },
+          'date': 'novembre 2023',
+          'title': 'création des plans d’implantation',
+          'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'
+        },
+        { 
+          'date': 'janvier 2024',
+          'title': 'création des plans d’implantation',
+          'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate'
+        },
+        { 
+          'image_field': { 'src' : get_asset_url('../../assets/images/visuals/besoins-3.jpg') },
+          'date': 'février 2024',
+          'title': 'création des plans d’implantation',
+          'description': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'
+        }
+      ]
+  }}
+  show_item_texts={{ context.timeline.show_item_texts }}
+  style={{ context.timeline.style ?
+    context.timeline.style :
+    {
+      'animate_module': True,
+      'xs': {
+        "images_format": "four-three",
+        'images_border_radius': 'none',
+        'number_of_visible_items': 1,
+        'h3_display': 'h2'
+      },
+      'md': {
+        "images_format": "four-three",
+        'images_border_radius': 'none',
+        'number_of_visible_items': 3,
+        'h3_display': 'h2'
+      },
+      'xl': {
+        "images_format": "four-three",
+        'images_border_radius': 'none',
+        'number_of_visible_items': 3,
+        'h3_display': 'h2'
+      },
+      'show_arrows': True,
+      'show_dots': False,
+      'center_slides': False,
+    }
+  }}
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}

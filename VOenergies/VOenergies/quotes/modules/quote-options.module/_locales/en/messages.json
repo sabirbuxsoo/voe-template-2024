@@ -1,0 +1,97 @@
+{
+  "download_error.default" : {
+    "message" : "There was a problem downloading the quote. Please try again.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "download_error.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "download_error.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "download_error.label" : {
+    "message" : "Error message shown when download fails",
+    "description" : "",
+    "placeholders" : null
+  },
+  "download_error.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "download_error.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "download_text.default" : {
+    "message" : "Download",
+    "description" : "",
+    "placeholders" : null
+  },
+  "download_text.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "download_text.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "download_text.label" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "download_text.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "download_text.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "quote-options",
+    "description" : "",
+    "placeholders" : null
+  },
+  "print_text.default" : {
+    "message" : "Print",
+    "description" : "",
+    "placeholders" : null
+  },
+  "print_text.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "print_text.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "print_text.label" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "print_text.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "print_text.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  }
+}

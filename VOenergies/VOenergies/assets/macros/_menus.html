@@ -1,0 +1,235 @@
+<!--
+templateType: page
+isAvailableForNewContent: false
+-->
+
+{% macro createMenuItems(menu, index) %}
+{% set currentIndex = index ? index : 1 %}
+{% set menuLoop = ((menu|int) is number) && (currentIndex == 1) ? menu(menu) : menu %}
+
+{%- if menu == "default" -%}
+{%- set menuLoop = {
+    "children": [
+      { "label": "Groupe VOé", 'url': 'https://www.example.com' },
+      { "label": "Carrière", 'url': 'https://www.example.com' }, 
+      { "label": "Contact", 'url': 'https://www.example.com' }
+    ]
+  } -%}
+{% else %}
+{% set menuLoop = currentIndex == 1 ? menu(menu) : menu %}
+{%- endif -%}
+
+{% if currentIndex == 1 %}
+<div class="hs-menu-wrapper hs-menu-flow-horizontal">
+	{% endif %}
+	<ul role="menu"{% if currentIndex > 1 %} class="hs-menu-children-wrapper"{% endif %}>
+		{% for child in menuLoop.children %}
+		<li class="hs-menu-item hs-menu-depth-{{ currentIndex }}{% if child.children %} hs-item-has-children{% endif %}">
+			{% if child.url %}
+			<a class="hs-menu-item-link" href="{{ child.url }}">
+				{% else %}
+				<span class="hs-menu-item-link">
+					{% endif %}
+					{{ child.label }}
+					{% if child.children %}
+					<div class="hs-menu-children-toggle"></div>
+					{% endif %}
+					{% if not child.url %}
+				</span>
+				{% else %}
+			</a>
+			{% endif %}
+			{% if child.children %}
+			{{ createMenuItems(child, currentIndex + 1) }}
+			{% endif %}
+		</li>
+		{% endfor %}
+	</ul>
+	{% if currentIndex == 1 %}
+</div>
+{% endif %}
+{% endmacro %}
+
+{% macro createMegaMenuItems(menu_items, submenu, index = 1, parent, is_mega_menu) %}
+{% if submenu %}
+{% if index == 2 %}
+{% if is_mega_menu %}
+<ul role="menu" class="megamenu-tabs hs-menu-children-wrapper hs-menu-children-wrapper--fixed dnd-section fw iw-md">
+	<div class="row-fluid d-flex flex-flow-row-wrap align-items-flex-start justify-content-center">
+		<div class="span12 columns">
+			<div class="megamenus-tabs__panel dnd-row rounded-large">
+				<div class="row-fluid">
+					<div class="span3 columns megamenu-links">
+						<div class="fw fh d-flex flex-flow-column border-md-solid border-md-end-thin">
+							{% for menu_item in menu_items %}
+							<li id="{{ menu_item.level_item_name|lower|replace(' ','-') }}" class="megamenu-link hs-menu-item hs-menu-depth-{{ index }}{% if menu_item.has_submenu && menu_item.third_level_items|length > 0 %} hs-item-has-children{% endif %} fw">
+								{% if menu_item.level_item_has_link && menu_item.level_item_url.href %}
+								<a href="{{ menu_item.level_item_url.href }}" class="hs-menu-item-link d-inline-flex fw align-items-center border-solid border-xs-bottom-none border-xs-end-none border-md-bottom-thin{% if loop.first %} active{% endif %}">
+									<b>{{ menu_item.level_item_name }}</b>
+									<div class="hs-menu-children-toggle d-md-none"></div>
+									<svg class="ms-auto gray-stroke first-hover-stroke d-xs-none d-md-block" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.50555 0.970703L16.0001 7.9707M16.0001 7.9707L8.50555 14.9707M16.0001 7.9707H0.0742188" stroke="currentColor" stroke-width="2"></path></svg>
+								</a>
+								{% else %}
+								<div class="hs-menu-item-link d-inline-flex fw align-items-center border-solid border-xs-bottom-none border-xs-end-none border-md-bottom-thin{% if loop.first %} active{% endif %}">
+									<b>{{ menu_item.level_item_name }}</b>
+									<div class="hs-menu-children-toggle d-md-none"></div>
+									<svg class="ms-auto gray-stroke first-hover-stroke d-xs-none d-md-block" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.50555 0.970703L16.0001 7.9707M16.0001 7.9707L8.50555 14.9707M16.0001 7.9707H0.0742188" stroke="currentColor" stroke-width="2"></path></svg>
+								</div>
+								{% endif %}
+							</li>
+							{% endfor %}
+						</div>
+					</div>
+					{% set subitems_data = [] %}
+					{% for menu_item in menu_items %}
+					{% if menu_item.has_submenu && menu_item.third_level_items|length > 0 %}
+					{% do subitems_data.append(loop.index) %}
+					{% endif %}
+					{% endfor %}
+
+					{% if subitems_data|length > 0 || menu_item.has_featured_resource %}
+					<div class="span9 columns megamenu-sublinks">
+						<div class="p-5 fw fh">
+							{% for menu_item in menu_items %}
+							{% if menu_item.has_submenu && menu_item.third_level_items|length > 0 %}
+							<ul id="{{ menu_item.level_item_name|lower|replace(' ','-') }}-content" class="megamenu-tabs__content hs-menu-children-wrapper p-relative t-0 dnd-row d-xs-none d-md-block{% if loop.first %} active{% endif %}">
+								<div class="row-fluid justify-content-flex-start flex-flow-md-row-wrap">
+									{{ createMegaMenuItems(menu_item.third_level_items, true, index + 1) }}
+									{% if menu_item.has_featured_resource %}
+									<div class="span4 columns">
+										<li class="hs-menu-item hs-menu-item--resource hs-menu-depth-2">             
+											{% if menu_item.featured_resource.featured_resource_has_link && menu_item.featured_resource.featured_resource_link.url.href %}
+											<a class="hs-menu-item-link" href="{{ menu_item.featured_resource.featured_resource_link.url.href }}">
+												{% else %}
+												<span class="hs-menu-item-link">
+													{% endif %}
+													<div class="hs-menu-item--resource__inner d-flex flex-flow-column align-items-flex-start justify-content-flex-start gray-bg rounded-large o-hidden fw">
+														{% if menu_item.featured_resource.featured_resource_image.src %}
+														<div class="image-container sixteen-nine o-hidden p-relative rounded-large fw">
+															<img class="lazy p-absolute t-0 s-0 fw fh object-fit-cover" 
+																	 data-src="{{ menu_item.featured_resource.featured_resource_image.src }}"
+																	 alt="{{ menu_item.featured_resource.featured_resource_image.alt }}">
+														</div>
+														{% endif %}
+														<div class="button small button--small ms-8">{{ menu_item.featured_resource.featured_resource_category }}</div>
+														<div class="hs-menu-item--resource__infos ps-8 pb-8 pe-8">
+															<div class="display-xs-h5 display-sm-h5 display-md-h5 display-lg-h5 display-xl-h5">{{ menu_item.featured_resource.featured_resource_title }}</div>
+															{{ menu_item.featured_resource.featured_resource_description }}
+														</div>
+													</div>
+													{% if not menu_item.featured_resource.featured_resource_has_link && not menu_item.featured_resource.featured_resource_link.url.href %}
+												</span>
+												{% else %}
+											</a>
+											{% endif %}
+										</li> 
+									</div>
+									{% endif %}
+								</div>
+							</ul>
+							{% endif %}
+							{% endfor %}
+						</div>
+					</div> 
+					{% endif %}
+				</div>
+			</div> 
+		</div>
+	</div>
+</ul>
+{% else %}
+<ul role="menu" class="hs-menu-children-wrapper">
+	{% for menu_item in menu_items %}
+	<li id="{{ menu_item.level_item_name|lower|replace(' ','-') }}" class="hs-menu-item hs-menu-depth-{{ index }}{% if menu_item.has_submenu && menu_item.third_level_items|length > 0 %} hs-item-has-children{% endif %}">
+		{% if menu_item.level_item_has_link && menu_item.level_item_url.href %}
+		<a href="{{ menu_item.level_item_url.href }}" class="hs-menu-item-link d-inline-flex fw align-items-center">
+			<b>{{ menu_item.level_item_name }}</b>
+		</a>
+		{% else %}
+		<div class="hs-menu-item-link d-inline-flex fw align-items-center">
+			<b>{{ menu_item.level_item_name }}</b>
+		</div>
+		{% endif %}
+		{{ createMegaMenuItems(menu_item.third_level_items, true, index + 1, menu_item, is_mega_menu) }}
+	</li>
+	{% endfor %}
+</ul>
+{% endif %}
+{% else if index == 3 %}
+
+{% if is_mega_menu %}
+{% for menu_item in menu_items %}
+<div class="span4 columns">
+	<li class="hs-menu-item hs-menu-depth-{{ index }}{% if menu_item.has_submenu && menu_item.fourth_level_items|length > 0 %} hs-item-has-children{% endif %}">
+		{% if menu_item.level_item_has_link && menu_item.level_item_url.href %}
+		<a href="{{ menu_item.level_item_url.href }}">{{ menu_item.level_item_name }}</a>
+		{% else %}
+		<span class="hs-menu-item-link">{{ menu_item.level_item_name }}</span>
+		{% endif %}
+	</li>
+	{% if menu_item.has_submenu && menu_item.fourth_level_items|length > 0 %}
+	<ul id="{{ menu_item.level_item_name|lower|replace(' ','-') }}-last-items" role="menu" class="megamenu-tabs__last-items hs-menu-children-wrapper">
+		{% for submenu_item in menu_item.fourth_level_items %}
+		<li class="hs-menu-item hs-menu-depth-{{ index }}">
+			{% if submenu_item.level_item_has_link && submenu_item.level_item_url.href %}
+			<a href="{{ submenu_item.level_item_url.href }}">{{ submenu_item.level_item_name }}</a>
+			{% else %}
+			<span class="hs-menu-item-link">{{ submenu_item.level_item_name }}</span>
+			{% endif %}
+		</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+</div>
+{% endfor %}
+{% else %}
+<ul role="menu" class="hs-menu-children-wrapper">
+	{% for menu_item in menu_items %}
+	<li id="{{ menu_item.level_item_name|lower|replace(' ','-') }}" class="megamenu-link hs-menu-item hs-menu-depth-{{ index }}{% if menu_item.has_submenu && menu_item.third_level_items|length > 0 %} hs-item-has-children{% endif %} fw">
+		{% if menu_item.level_item_has_link && menu_item.level_item_url.href %}
+		<a href="{{ menu_item.level_item_url.href }}" class="hs-menu-item-link d-inline-flex fw align-items-center border-solid border-xs-bottom-none border-xs-end-none border-md-bottom-thin{% if loop.first %} active{% endif %}">
+			<b>{{ menu_item.level_item_name }}</b>
+			<svg class="ms-auto gray-stroke first-hover-stroke d-xs-none d-md-block" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.50555 0.970703L16.0001 7.9707M16.0001 7.9707L8.50555 14.9707M16.0001 7.9707H0.0742188" stroke="currentColor" stroke-width="2"></path></svg>
+		</a>
+		{% else %}
+		<div class="hs-menu-item-link d-inline-flex fw align-items-center border-solid border-xs-bottom-none border-xs-end-none border-md-bottom-thin{% if loop.first %} active{% endif %}">
+			<b>{{ menu_item.level_item_name }}</b>
+			<svg class="ms-auto gray-stroke first-hover-stroke d-xs-none d-md-block" width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.50555 0.970703L16.0001 7.9707M16.0001 7.9707L8.50555 14.9707M16.0001 7.9707H0.0742188" stroke="currentColor" stroke-width="2"></path></svg>
+		</div>
+		{% endif %}
+	</li>
+	{% endfor %}
+</ul>
+{% endif %}
+{% endif %}
+{% else %}
+<ul role="menu">
+	{% for menu_item in menu_items %}
+	<li class="hs-menu-item hs-menu-depth-{{ index }}{% if menu_item.has_submenu && menu_item.second_level_items|length > 0 %} hs-item-has-children megamenu-parent-item{% endif %}">
+		{% if menu_item.level_item_has_link && menu_item.level_item_url.href %}
+		{% if menu_item.has_submenu && menu_item.second_level_items|length > 0 %}
+		<div class="d-flex fw align-items-center">
+			<a class="hs-menu-item-link d-inline-flex flex-flow-row align-items-center justify-content-flex-start megamenu-parent-toggle" href="{{ menu_item.level_item_url.href }}">{{ menu_item.level_item_name }}</a>
+			<div class="hs-menu-children-toggle"></div>
+		</div>
+		{% else %}
+		<a class="hs-menu-item-link d-inline-flex flex-flow-row align-items-center justify-content-flex-start megamenu-parent-toggle" href="{{ menu_item.level_item_url.href }}">{{ menu_item.level_item_name }}</a>
+		{% endif %}
+		{% else %}
+		{% if menu_item.has_submenu && menu_item.second_level_items|length > 0 %}
+		<span class="hs-menu-item-link d-inline-flex flex-flow-row align-items-center justify-content-space-between megamenu-parent-toggle">
+			<span>{{ menu_item.level_item_name }}</span>
+			<div class="hs-menu-children-toggle"></div>
+		</span>
+		{% else %}
+		<span class="hs-menu-item-link d-inline-flex flex-flow-row align-items-center justify-content-flex-start megamenu-parent-toggle">{{ menu_item.level_item_name }}</span>
+		{% endif %}
+		{% endif %}
+		{% if menu_item.has_submenu && menu_item.second_level_items|length > 0 %}
+		{{ createMegaMenuItems(menu_item.second_level_items, true, index + 1, menu_item, menu_item.is_mega_menu) }}
+		{% endif %}
+	</li>
+	{% endfor %}
+</ul>
+{% endif %}
+{% endmacro %}

@@ -1,0 +1,77 @@
+.multistep .multistep__step:not(.multistep__step--last),
+.multistep .multistep__timeline-item.multistep__timeline-item--prev {
+	cursor: pointer;
+}
+
+.multistep .multistep__step:not(.multistep__step--last) *,
+.multistep .multistep__timeline-item * {
+	pointer-events: none;
+}
+
+.multistep .multistep__step img {
+	transform: translate(-50%, -50%) scale(1);
+	transform-origin: center center;
+	transition: transform 250ms ease-in-out;
+}
+
+.multistep .multistep__step:hover img {
+	transform: translate(-50%, -50%) scale(1.25);
+}
+
+.multistep .multistep__timeline .multistep__timeline-item > .multistep__timeline-bubble {
+	box-shadow: 0 0 0 5px {{ theme.colors.white.color }};
+}
+
+.multistep .multistep__timeline .row-fluid > .multistep__timeline-item:first-child:before {
+	width: 50%;
+	left: 50%;
+	transform: translateY(-50%);
+}
+
+.multistep .multistep__timeline .row-fluid > .multistep__timeline-item:last-child:before {
+	width: 50%;
+	left: 0%;
+	transform: translateY(-50%);
+}
+
+.multistep .multistep__timeline-item:before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	height: 3px;
+	background-color: {{ theme.colors.gray.color }};
+	z-index: -1;
+}
+
+.multistep .multistep__timeline-item.multistep__timeline-item--prev > .multistep__timeline-bubble {
+	background-color: {{ theme.colors.first.color }};
+	border-color: {{ theme.colors.first.color }};
+	color: {{ theme.colors.white.color }};
+}
+
+.multistep .multistep__timeline-item.multistep__timeline-item--prev > .multistep__timeline-bubble-title {
+	color: {{ theme.colors.first.color }};
+}
+
+.multistep__timeline-item[data-property="step_one"].active > .multistep__timeline-bubble {
+	background-color: {{ theme.colors.fourth.color }};
+	border-color: {{ theme.colors.fourth.color }};
+	color: {{ theme.colors.white.color }};
+}
+
+.multistep .multistep__timeline-item[data-property="step_one"].active > .multistep__timeline-bubble-title {
+	color: {{ theme.colors.fourth.color }};
+}
+
+.multistep__timeline-item[data-property="step_two"].active > .multistep__timeline-bubble {
+	background-color: {{ theme.colors.first.color }};
+	border-color: {{ theme.colors.first.color }};
+	color: {{ theme.colors.white.color }};
+}
+
+.multistep .multistep__timeline-item[data-property="step_two"].active > .multistep__timeline-bubble-title {
+	color: {{ theme.colors.first.color }};
+}

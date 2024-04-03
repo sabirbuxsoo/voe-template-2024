@@ -1,0 +1,107 @@
+{% import '../../../assets/macros/_blog.html' %}
+{% import '../../../assets/macros/_buttons.html' %}
+{% import '../../../assets/macros/_style.html' %}
+{% import '../sample_blog_data.html' %}
+
+{% if ((request.path is containing "preview/template") && (!content.post_body)) || (request.postDict.preview_theme == true && !request.postDict.inpageEditorUI) %}
+{% set contents = blog_posts %}
+{% set total_page_count = 12 %}
+{% else %}
+{% set total_page_count = contents.total_page_count %}
+{% endif %}
+
+{% if tag || author %}
+<div id="{{ name }}-{{ loop.index }}" class="blog-listing dnd-section white-bg pb-8">
+	<div class="row-fluid">
+		<div class="span12 columns dnd-column">
+			<div class="dnd-row">
+				<div class="row-fluid">
+					<div class="span12 dnd-column">
+						<div class="dnd-row fw fh">
+							<div class="row-fluid fw fh justify-content-flex-start row-gap-6">
+								{% for content in contents %}
+								{{ createBlogPost(content, module) }}
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% if total_page_count > 1 %}
+	<div class="blog-pagination mt-8">
+		<nav aria-label="Pagination" role="navigation" class="d-flex flex-flow-row-wrap align-items-xs-center justify-content-xs-center">
+			{% set page_list = [-3, -2, -1, 0, 1, 2, 3] %}
+			{% if total_page_count - current_page_num == 1 %}{% set offset = -1 %}
+			{% elif total_page_count - current_page_num == 0 %}{% set offset = -2 %}
+			{% elif current_page_num == 2 %}{% set offset = 1 %}
+			{% elif current_page_num == 1 %}{% set offset = 2 %}
+			{% else %}{% set offset = 0 %}{% endif %}
+
+			<a class="mt-1 mb-1 ms-1 me-1 pt-1 pb-1 ps-1 pe-1 blog-pagination__link blog-pagination__prev-link {{ 'blog-pagination__prev-link--disabled' if !last_page_num }}"{% if last_page_num %} href="{{ group.absolute_url }}" rel="first"{% else %} aria-disabled="true" disabled {% endif %} role="button" aria-label="{{ module.accessibility_options.first_button_text }}">‹‹</a>
+			<a class="mt-1 mb-1 ms-1 me-1 pt-1 pb-1 ps-1 pe-1 blog-pagination__link blog-pagination__prev-link {{ 'blog-pagination__prev-link--disabled' if !last_page_num }}"{% if last_page_num %} href="{% if current_page_num == 2 %}{{ group.absolute_url }} {% else %}{{ blog_page_link(last_page_num) }}{% endif %}" rel="prev"{% else %} aria-disabled="true" disabled {% endif %} role="button" aria-label="{{ module.accessibility_options.prev_button_text }}">‹</a>
+			{% for page in page_list %}
+			{% set this_page = current_page_num + page + offset %}
+			{% if this_page > 0 and this_page <= total_page_count %}
+			<a class="mt-1 mb-1 ms-1 me-1 pt-1 pb-1 ps-1 pe-1 d-flex flex-flow-column align-items-xs-center justify-content-xs-center blog-pagination__link blog-pagination__number-link {{ 'blog-pagination__link--active' if this_page == current_page_num }}" aria-label="Go to Page {{ this_page }}" {% if this_page == current_page_num %}aria-current="true"{% endif %} href="{% if this_page == 1 %}{{ group.absolute_url }}{% else %}{{ blog_page_link(this_page) }}{% endif %}">{{ this_page }}</a>
+			{% endif %}
+			{% endfor %}
+			<a class="mt-1 mb-1 ms-1 me-1 pt-1 pb-1 ps-1 pe-1 blog-pagination__link blog-pagination__next-link {{ 'blog-pagination__next-link--disabled' if !next_page_num }}"{% if next_page_num %} href="{{ blog_page_link(current_page_num + 1) }}" rel="next" {% else %} aria-disabled="true" disabled {% endif %} role="button" aria-label="{{ module.accessibility_options.next_button_text }}">›</a>
+			<a class="mt-1 mb-1 ms-1 me-1 pt-1 pb-1 ps-1 pe-1 blog-pagination__link blog-pagination__next-link {{ 'blog-pagination__next-link--disabled' if !next_page_num }}"{% if next_page_num %} href="{{ blog_page_link(total_page_count) }}" rel="last" {% else %} aria-disabled="true" disabled {% endif %} role="button" aria-label="{{ module.accessibility_options.last_button_text }}">››</a>
+		</nav>
+	</div>
+	{% endif %}
+</div>
+{% else if module.filter_by_tag_name %}
+{% for tag_filter in module.tag_filter %}
+{% if tag_filter.tag_field.slug && module.filter_by_tag_name %}
+{% set contents = blog_recent_tag_posts(module.blog_field, tag_filter.tag_field.slug, 2) %}
+{% endif %}
+
+<div id="{{ name }}-{{ loop.index }}" class="blog-listing dnd-section{% if loop.index is odd %} white-bg{% endif %} pv-8">
+	<div class="row-fluid">
+		<div class="span12 columns dnd-column">
+			<div class="dnd-row">
+				<div class="row-fluid">
+					<div class="span12 dnd-column">
+						<div class="dnd-row fw fh">
+							<div class="row-fluid fw fh">
+								<div class="span4 dnd-column columns">
+									<h2 class="first-color">{{ tag_filter.section_title }}</h2>
+									{{ tag_filter.section_description }}
+									<div class="d-flex justify-content-flex-end">
+										{% set style = {
+                        'color': module.button.color|replace("_", "-"),
+                        'hover_color':  module.button.hover_color|replace("_", "-"),
+                        'background_color':  module.button.background_color|replace("_", "-"),
+                        'hover_background_color':  module.button.hover_background_color|replace("_", "-"),
+                        'border_color':  module.button.border_color|replace("_", "-"),
+                        'hover_border_color':  module.button.hover_border_color|replace("_", "-"),
+                        'make_button_small':  module.button.make_button_small
+                      } %}
+
+										{{ createButtonHTML(module.button, style, '', group.absolute_url ~ '/tag/' ~ tag_filter.tag_field.slug) }}
+									</div>
+								</div>
+								<div class="span8 columns d-flex">
+									<div class="dnd-row posts__content fw">
+										<div class="row-fluid d-flex flex-flow-xs-column o-auto no-scrollbar flex-flow-md-row-wrap justify-content-flex-start">
+											{% for content in contents %}
+											{% if loop.index <= module.posts_to_show %}
+											{{ createBlogPost(content, module) }}
+											{% endif %}
+											{% endfor %}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endfor %}
+{% endif %}

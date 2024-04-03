@@ -1,0 +1,222 @@
+[ {
+  "id" : "9fb46873-06be-ecd1-1dc7-a023324316cb",
+  "name" : "anchors",
+  "display_width" : null,
+  "label" : "Anchors",
+  "inline_help_text" : "Set as many anchors as needed.",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "e980456a-4c12-1b61-a51d-a798badd56a9",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "e980456a-4c12-1b61-a51d-a798badd56a9",
+    "name" : "section_to_reach",
+    "display_width" : null,
+    "label" : "Section ID",
+    "inline_help_text" : "Set the ID of the section you want to reach for each link you create.",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "452da896-74fd-dd33-debc-f41b59ae01e7",
+    "name" : "anchor_text",
+    "display_width" : null,
+    "label" : "Anchor text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Anchor"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ ]
+}, {
+  "id" : "style",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "style.large_desktop_display",
+    "name" : "xs",
+    "display_width" : null,
+    "label" : "Mobile display",
+    "inline_help_text" : "Use this group to change the custom rich text display only on large desktop devices.",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "485585e7-62eb-e549-fa65-fb02b7b52991",
+      "name" : "horizontal_alignment",
+      "display_width" : null,
+      "label" : "Module horizontal alignment",
+      "inline_help_text" : "Set the horizontal alignment for mobile devices here.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "justify-content-xs-flex-start", "Left" ], [ "justify-content-xs-center", "Center" ], [ "justify-content-xs-flex-end", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "justify-content-xs-center"
+    }, {
+      "id" : "6e99123c-62f9-c969-55b3-d25bf8d7504a",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : {
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "horizontal_alignment" : "justify-content-xs-center",
+      "spacing" : {
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    }
+  }, {
+    "id" : "57f107f1-0b8c-131f-d04f-0d92182b1d88",
+    "name" : "md",
+    "display_width" : null,
+    "label" : "Large tablet display",
+    "inline_help_text" : "Use this group to change the custom rich text display only on large desktop devices.",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "94372e8c-2ec7-fa9c-45a0-e980844b7fd2",
+      "name" : "horizontal_alignment",
+      "display_width" : null,
+      "label" : "Module horizontal alignment",
+      "inline_help_text" : "Set the horizontal alignment for large tablet devices here.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "justify-content-md-flex-start", "Left" ], [ "justify-content-md-center", "Center" ], [ "justify-content-md-flex-end", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "justify-content-md-flex-start"
+    }, {
+      "id" : "943aeeb9-60c3-4637-f49a-2ddf4e6fa562",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "horizontal_alignment" : "justify-content-md-flex-start",
+      "spacing" : { }
+    }
+  }, {
+    "id" : "63781660-cb64-8084-1e01-af9da5392ec2",
+    "name" : "xl",
+    "display_width" : null,
+    "label" : "Large desktop display",
+    "inline_help_text" : "Use this group to change the custom rich text display only on large desktop devices.",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "ca55a24d-5bdd-6c3f-eb6b-7a1419893341",
+      "name" : "horizontal_alignment",
+      "display_width" : null,
+      "label" : "Module horizontal alignment",
+      "inline_help_text" : "Set the horizontal alignment for large desktop devices here.",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "justify-content-xl-flex-start", "Left" ], [ "justify-content-xl-center", "Center" ], [ "justify-content-xl-flex-end", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "justify-content-xl-flex-start"
+    }, {
+      "id" : "28e38c86-0c3f-91f3-197e-a0b12e82f866",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "horizontal_alignment" : "justify-content-xl-flex-start",
+      "spacing" : { }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "xs" : {
+      "horizontal_alignment" : "justify-content-xs-center",
+      "spacing" : {
+        "margin" : {
+          "top" : {
+            "value" : null,
+            "units" : null
+          },
+          "bottom" : {
+            "value" : null,
+            "units" : null
+          }
+        }
+      }
+    },
+    "md" : {
+      "horizontal_alignment" : "justify-content-md-flex-start",
+      "spacing" : { }
+    },
+    "xl" : {
+      "horizontal_alignment" : "justify-content-xl-flex-start",
+      "spacing" : { }
+    }
+  }
+} ]

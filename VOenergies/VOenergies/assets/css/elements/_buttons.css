@@ -1,0 +1,113 @@
+button, 
+.button,
+form input[type="submit"],
+form .hs-button {
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  {{ theme.buttons.font.css is containing "decoration" ? theme.buttons.font.css : "text-decoration: none; " ~ theme.buttons.font.css }}
+  text-transform: {{ theme.buttons.text_transform }};
+  color: {{ theme.buttons.color }};
+  background-color: {{ theme.buttons.background_color }};
+  border-color: {{ theme.buttons.border_color }}; 
+  border-width: {{ theme.buttons.border_width ~ 'px' }};
+  border-style: solid;
+  {{ theme.buttons.spacing.css }}
+  {{ transitions.getTransitionsForElement(theme.buttons) }}
+}
+
+button, 
+.button:not(.blog-tags__button),
+form input[type="submit"],
+form .hs-button {
+  border-radius: {{ theme.buttons.border_radius ~ 'px' }};
+}
+
+button.button--small:not([class*='pt-']), .button.button--small:not([class*='pt-']),
+form input[type="submit"].button--small:not([class*='pt-']), form .hs-button.button--small:not([class*='pt-']) {
+  padding-top: {{ theme.buttons.spacing.padding.top.value / 2 ~ "px" }};
+}
+
+button.button--small:not([class*='pb-']), .button.button--small:not([class*='pb-']),
+form input[type="submit"].button--small:not([class*='pb-']), form .hs-button.button--small:not([class*='pb-']) {
+  padding-bottom: {{ theme.buttons.spacing.padding.bottom.value / 2 ~ "px" }};
+}
+
+button.button--small:not([class*='ps-']), .button.button--small:not([class*='ps-']),
+form input[type="submit"].button--small:not([class*='ps-']), form .hs-button.button--small:not([class*='ps-']) {
+  padding-left: {{ theme.buttons.spacing.padding.left.value / 2 ~ "px" }};
+}
+
+button.button--small:not([class*='pe-']), .button.button--small:not([class*='pe-']),
+form input[type="submit"].button--small:not([class*='pe-']), form .hs-button.button--small:not([class*='pe-']) {
+  padding-right: {{ theme.buttons.spacing.padding.right.value / 2 ~ "px" }};
+}
+
+button:not([class*="-fill"]) svg path, 
+.button:not([class*="-fill"]) svg path,
+form input[type="submit"]:not([class*="-fill"]) svg path,
+form .hs-button:not([class*="-fill"]) svg path {
+  fill: {{ theme.buttons.color }};
+}
+
+button:not([class*="-hover-color"]):hover, 
+.button:not([class*="-hover-color"]):hover,
+form input[type="submit"]:not([class*="-hover-color"]):hover,
+form .hs-button:not([class*="-hover-color"]):hover {
+  color: {{ theme.buttons.hover_color }};
+}
+
+button:not([class*="-hover-bg"]):hover, 
+.button:not([class*="-hover-bg"]):hover,
+form input[type="submit"]:not([class*="-hover-bg"]):hover,
+form .hs-button:not([class*="-hover-bg"]):hover {
+  background-color: {{ theme.buttons.hover_background_color }};
+}
+
+button:not([class*="-hover-border-color"]):hover, 
+.button:not([class*="-hover-border-color"]):hover,
+form input[type="submit"]:not([class*="-hover-border-color"]):hover,
+form .hs-button:not([class*="-hover-border-color"]):hover {
+  border-color: {{ theme.buttons.hover_border_color }};
+}
+
+button:not([class*='pt-']), .button:not([class*='pt-']),
+form input[type="submit"]:not([class*='pt-']), form .hs-button:not([class*='pt-']) {
+  {%- for element, rule in theme.buttons.items() -%}
+  {%- if element is containing "spacing" -%}
+  padding-top: {{ rule.padding.top.value ~ 'px' }};
+  {%- endif -%}
+  {%- endfor -%}
+}
+
+button:not([class*='pb-']), .button:not([class*='pb-']),
+form input[type="submit"]:not([class*='pb-']), form .hs-button:not([class*='pb-']){
+  {%- for element, rule in theme.buttons.items() -%}
+  {%- if element is containing "spacing" -%}
+  padding-bottom: {{ rule.padding.bottom.value ~ 'px' }};
+  {%- endif -%}
+  {%- endfor -%}
+}
+
+button:not([class*='ps-']), .button:not([class*='ps-']),
+form input[type="submit"]:not([class*='ps-']), form .hs-button:not([class*='ps-']){
+  {%- for element, rule in theme.buttons.items() -%}
+  {%- if element is containing "spacing" -%}
+  padding-left: {{ rule.padding.left.value ~ 'px' }};
+  {%- endif -%}
+  {%- endfor -%}
+}
+
+button:not([class*='pe-']), .button:not([class*='pe-']),
+form input[type="submit"]:not([class*='pe-']), form .hs-button:not([class*='pe-']) {
+  {%- for element, rule in theme.buttons.items() -%}
+  {%- if element is containing "spacing" -%}
+  padding-right: {{ rule.padding.right.value ~ 'px' }};
+  {%- endif -%}
+  {%- endfor -%}
+}
+
+button:hover svg,
+a.button:hover svg {
+  transform: scale(1.2)
+}

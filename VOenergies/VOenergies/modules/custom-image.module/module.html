@@ -1,0 +1,60 @@
+{% import '../../assets/macros/_style.html' %}
+
+<div class="dnd-row">
+	<div class="row-fluid">
+		{% if module.image_field.src %}
+		<div id="{{ name }}" class="image{% if module.add_background_shape && module.background_shape.src %} image--shape-container{% endif %} span{{ module.image_column_width }} p-relative{{ " fw fh" if module.make_image_take_full_height_of_its_container }} {{ generateModuleClasses(module.style) }}{% if module.style.animate_module %} animation{% endif %}"
+				 {{ getModuleAnimations(module.style) }}>
+			<div class="image__container{{ ' mt-10' if module.add_background_shape && module.background_shape.src }}{{ " fw fh" if module.make_image_take_full_height_of_its_container }}">
+				{% if module.add_legend %}
+				<figure>
+					{% endif %}
+					<div class="d-flex p-relative">
+						{% set href = module.link_field.url.href %}
+						{% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+						{% set href = "mailto:" + href %}
+						{% endif %}
+						{% if href %}
+						<a href="{{ href }}" 
+							 class="p-absolute t-0 s-0 fw fh"
+							 {%- if module.link_field.open_in_new_tab %} target="_blank"{% endif %}
+							 {%- if module.link_field.rel %} rel="{{ module.link_field.rel }}"{% endif %}>
+							{% endif %}
+							<picture class="image-container o-hidden d-flex p-relative {{ " image-container--full-height fw fh" if module.make_image_take_full_height_of_its_container }}{{ " image-container--visual" if module.make_image_first_on_mobile }} {{ module.style.xs.image_format }} {{ module.style.md.image_format ~ '-md' }} {{ module.style.xl.image_format ~ '-xl' }} {{ module.style.xs.image_border_radius }} {{ module.style.md.image_border_radius ~ '-md' }} {{ module.style.xl.image_border_radius ~ '-xl' }}">
+								{% if module.srcset|length > 0 %}
+								{% for srcset in module.srcset %}
+								<source media="(min-width: {{ "{{ theme.layout." ~ srcset.resolution ~ ".breakpoint ~ 'px' }}" }})" {% if not request.postDict.preview_theme == true && not request.postDict.inpageEditorUI && not request.postDict.hsPreviewerApp == "module" %}data-{% endif %}srcset="{{ srcset.image_field.src }}">
+								{% endfor %}
+								{% endif %}
+								<img class="lazy d-flex p-absolute t-0 s-0 fw fh object-fit-{{ module.style.image_fit }}"
+										 {% if not request.postDict.preview_theme == true && not request.postDict.inpageEditorUI && not request.postDict.hsPreviewerApp == "module" %}data-{% endif %}src="{{ module.image_field.src }}" 
+										 alt="{{ module.image_field.alt }}">
+							</picture>
+							{% if module.add_background_shape && module.background_shape.src %}
+							<div class="span{{ module.shape_column_width }} columns image__shape p-absolute {{ module.style.xs.background_shape_position }} {{ module.style.md.background_shape_position }} {{ module.style.xl.background_shape_position }} {{ module.style.xs.background_shape_translation }} {{ module.style.md.background_shape_translation }} {{ module.style.xl.background_shape_translation }} {% if module.push_background_shape_behind %}z-n{% endif %}">
+								<div class="image image--shape p-relative{% if module.style.background_shape.animate_module %} animation animation--background{% endif %}" {{ getModuleAnimations(module.style.background_shape) }}>
+									<div class="image__container">
+										<picture class="image-container d-flex p-relative o-hidden square">  
+											<img class="lazy p-absolute t-0 s-0 fw fh object-fit-contain"
+													 {% if not request.postDict.preview_theme == true && not request.postDict.inpageEditorUI && not request.postDict.hsPreviewerApp == "module" %}data-{% endif %}src="{{ module.background_shape.src }}" 
+													 alt="{{ module.background_shape.alt }}">
+										</picture>
+									</div>
+								</div>
+							</div>
+							{% endif %}
+							{% if href %}
+						</a>
+						{% endif %}
+					</div>
+					{% if module.add_legend %}
+					{% if module.legend %}
+					<figcaption class="text-align-center mt-2">{% if module.legend_arrow %}<svg class="me-2" width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5625 7.63748L6 1.83748M6 1.83748L11.4375 7.63748M6 1.83748L6 14.1625" stroke="#1C1F2A" stroke-width="1.5"/></svg>{% endif %}{{ module.legend }}</figcaption>
+					{% endif %}
+				</figure>
+				{% endif %}
+			</div>
+		</div>
+		{% endif %}
+	</div>
+</div>

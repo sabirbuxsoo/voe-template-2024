@@ -1,0 +1,86 @@
+<!--
+templateType: page
+isAvailableForNewContent: false
+-->
+
+{% import './_buttons.html' %}
+{% import './_links.html' %}
+{% import './_style.html' %}
+
+{% macro createHubDBPost(post, settings, extraClasses) %}
+{% if post.columns %}{% set post = post.columns %}{% endif %}
+<div class="span{{(12 / settings.hubdb_posts_per_row)|round }} columns hubdb-listing__hubdb-post {{ extraClasses }}">
+	<article class="{{ settings.style.add_posts_box_shadow == true ? ' box-shadow' : '' }} {{ settings.style.posts_border_radius }} {{ settings.style.posts_background_color|replace("_", "-") ~ '-bg' }} {{ settings.style.posts_border_color != 'none' ? settings.style.posts_border_color|replace("_", "-") ~ '-border-color' ~ ' border-solid border-thin' : '' }} o-hidden pt-{{ (settings.style.posts_spacing / 5)|round }} pb-{{ (settings.style.posts_spacing / 5)|round }} ps-{{ (settings.style.posts_spacing / 5)|round }} pe-{{ (settings.style.posts_spacing / 5)|round }} fh">
+		<div class="hubdb-listing__hubdb-post-link p-relative d-flex flex-flow-column align-items-flex-start justify-content-flex-start fh">
+
+			<a class="p-absolute t-0 s-0 fw fh z-sm" href="{{ post.hs_path ? request.path|cut("/" ~ dynamic_page_hubdb_row.hs_path) ~ "/" ~ post.hs_path : post.link }}"></a>
+			{% if post.image %}
+			<div class="image-container p-relative d-flex {{ settings.style.posts_image_format }} {{ settings.style.posts_image_border_radius }} o-hidden mb-{{ (settings.style.posts_image_bottom_spacing / 5)|round }} {{ settings.style.image_background_color }}-bg">
+				<img class="lazy object-fit-cover t-0 s-0 fw fh p-absolute" {% if not request.postDict.preview_theme == true && not request.postDict.inpageEditorUI && not request.postDict.hsPreviewerApp == "module" %}data-{% endif %}src="{% if post.image %}{{ post.image.url }}{% else %}{{ settings.fallback_image.src }}{% endif %}" alt="{% if post.image %}{{ post.image.altText }}{% else %}{{ settings.fallback_image.alt }}{% endif %}">
+			</div>
+			{% endif %}
+			<div class="d-flex flex-flow-column align-items-flex-start justify-content-flex-start flex-grow pt-{{ (settings.style.posts_text_spacing / 5)|round }} pb-{{ (settings.style.posts_text_spacing / 5)|round }} ps-{{ (settings.style.posts_text_spacing / 5)|round }} pe-{{ (settings.style.posts_text_spacing / 5)|round }}">
+				<div class="post-infos mb-4 d-flex flex-flow-row-wrap align-items-center gap-2 fw">
+					{% if post.type %}
+					<span class="post-infos__types text-transform-uppercase second-color d-inline-flex align-items-center justify-content-flex-start fw gap-2">
+						{% if post.icon_type %}
+						<div class="image-container p-relative d-flex square o-hidden w-8 h-8">
+							<img class="lazy object-fit-contain t-0 s-0 fw fh p-absolute" {% if not request.postDict.preview_theme == true && not request.postDict.inpageEditorUI && not request.postDict.hsPreviewerApp == "module" %}data-{% endif %}src="{{ post.icon_type.url }}" alt="{{ post.icon_type.altText }}">
+						</div>
+						{% endif %}
+						<span class="post-infos__type"><b>{{ post.type.label }}</b></span>
+					</span>
+					{% endif %}
+				</div>
+				<div class="display-xs-h5 display-md-h3 hubdb-listing__hubdb-post-title {{ settings.style.posts_title_color|replace("_", "-") ~ '-color' }} mb-2"><b>{{ post.title }}</b></div>
+				<div class="hubdb-listing__hubdb-post-description mb-4">
+					{{ post.description }}
+				</div>
+			</div>
+		</div>
+	</article>
+</div>
+{% endmacro %}
+
+{% macro createHubDBRealisationPost(tableContents, settings, extraClasses) %}
+<div class="dnd-row">
+	<div class="row-fluid carousel-container carousel-container--realisations fh">
+		<div class="span12 columns carousel carousel-blog d-flex flex-flow-column align-items-xs-center justify-content-space-between lazy carousel--arrows swiper"
+				 data-items-xl="4"
+				 data-items-md="3"
+				 data-items-xs="1"
+				 data-centered-slides="false"
+				 data-transition="slide"
+				 data-dots="false"
+				 data-arrows="true"
+				 data-slides="{{ settings.posts_to_show }}">
+			<div class="swiper-navigation z-xl">
+				<div class="swiper-button-next first-fill second-hover-fill white-stroke white-hover-stroke justify-content-flex-end me-2">
+					<svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle cx="26" cy="26" r="26"/>
+						<path d="M22 17L32.3529 26.5L22 36" stroke-width="3"/>
+					</svg>
+				</div>
+			</div>
+			<div class="swiper-wrapper">
+				{% for content in tableContents %}
+				{% if loop.index <= settings.posts_to_show %}
+				<div class="swiper-slide">
+					<div class="dnd-row fw fh">
+						<picture class="image-container d-flex fw p-relative three-four o-hidden">
+							<a href="{{ content.url }}" class="p-absolute t-0 s-0 fw fh">
+								<img class="loaded d-flex p-absolute t-0 s-0 fw fh object-fit-cover" src="{{ content.image.url }}" alt="{{ content.image.altText }}">
+								<div class="fw fh p-absolute t-0 s-0 p-8 filter-default-bg filter-default-hover-bg">
+									<div class="white-color text-align-left">{{ content.name }}</div>
+								</div>
+							</a>
+						</picture>
+					</div>
+				</div>
+				{% endif %}
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endmacro %}

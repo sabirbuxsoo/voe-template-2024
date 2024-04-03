@@ -1,0 +1,54 @@
+<!--
+templateType: section
+isAvailableForNewContent: true
+label: Recent blog posts section
+description: A section displaying recent blog posts.
+-->
+
+{% dnd_section
+  vertical_alignment="MIDDLE"
+  background_color={{ context.section.background_color }}
+  background_linear_gradient={{ context.section.background_linear_gradient }}
+  background_image={{ context.section.background_image }}
+  padding={{ context.section.padding }}
+  class={{ context.section.class }}
+%}
+{% dnd_column
+  width={{ context.text_block_width ? context.text_block_width : 12 }}
+  offset={{ context.text_block_offset ? context.text_block_offset : 0 }}
+%}
+{% dnd_row %}
+{% dnd_module 
+  path='../modules/recent-blog-posts' 
+  style={{ context.recent_blog_posts.style ?
+    context.recent_blog_posts.style : {
+      'xs': {
+        'text_alignment': 'center',
+      },
+      'md': {
+        'text_alignment': 'left',
+      },
+      'xl': {
+        'text_alignment': 'left',
+      },
+      'animate_module': false,
+      'animation_settings': {
+        'loop_animation': false,
+        'bind_animation_to_scroll': true,
+        'trigger_animation_by_character': true,
+        'animation_properties': ['opacity', 'translatey'],
+        'animation_easing': 'easeInOutSine',
+        'animation_direction': 'alternate',
+        'animation_duration': 500,
+        'animation_delta': 1,
+        'animation_delay': 20,
+        'opacity_settings': {'start_value': 0, 'end_value': 1 },
+        'translatey_settings': {'start_value': 100, 'end_value': 1 },
+      }
+    }
+  }}
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}

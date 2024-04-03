@@ -1,0 +1,119 @@
+<!--
+templateType: page
+isAvailableForNewContent: false
+-->
+
+{% import './_links.html' %}
+{% import './_style.html' %}
+{% import './_buttons.html' %}
+
+
+{% macro createBlogPost(content, settings, extraClasses) %}
+<div class="span{{(12 / settings.blog_posts_per_row)|round }} {{ getModuleAnimations(settings.style) }} columns">
+	<article class="blog-listing__blog-post fh {{ settings.style.add_posts_box_shadow == true ? ' box-shadow' : '' }} {{ settings.style.posts_border_radius }} {{ settings.style.posts_background_color|replace("_", "-") ~ '-bg' }} {{ settings.style.posts_border_color != 'none' ? settings.style.posts_border_color|replace("_", "-") ~ '-border-color' ~ ' border-solid border-thin' : '' }} o-hidden pt-{{ (settings.style.posts_spacing / 5)|round }} pb-{{ (settings.style.posts_spacing / 5)|round }} ps-{{ (settings.style.posts_spacing / 5)|round }} pe-{{ (settings.style.posts_spacing / 5)|round }}">
+		<div class="blog-listing__blog-post-link p-relative d-flex flex-flow-column align-items-flex-start justify-content-flex-start fw fh">
+			<a class="p-absolute t-0 s-0 fw fh z-xl" href="{{ content.absolute_url }}"></a>
+			{% if group.use_featured_image_in_summary || content.featured_image || settings.fallback_image.src %}
+			<div class="image-container p-relative {{ settings.style.posts_image_format }} {{ settings.style.posts_image_border_radius }} o-hidden {{ settings.style.image_background_color }}-bg">
+				<img class="lazy object-fit-cover t-0 s-0 fw fh p-absolute" {% if not request.postDict.preview_theme == true && not request.postDict.inpageEditorUI && not request.postDict.hsPreviewerApp == "module" %}data-{% endif %}src="{% if content.featured_image %}{{ content.featured_image }}{% else %}{{ settings.fallback_image.src }}{% endif %}" alt="{% if content.featured_image %}{{ content.featured_image.alt_text }}{% else %}{{ settings.fallback_image.alt }}{% endif %}">
+			</div>
+			{% endif %}
+			<div class="blog-listing__blog-post-description p-md-absolute b-0 s-0 fw d-flex flex-flow-column align-items-flex-start justify-content-xs-center flex-grow p-7 {{ settings.style.posts_background_color|replace("_", "-") ~ '-bg' }} z-md">
+				<div class="display-xs-default {{ settings.style.posts_title_color|replace("_", "-") ~ '-color' }}"><b class="font-black">{{ content.name }}</b></div>
+				{% if content.post_summary|striptags|truncate(215, False, "...")|length > 0 %}
+				<div class="post-summary small">
+					<div class="mt-2">
+						{{ content.post_summary|striptags|truncate(215, False, "...")  }}
+					</div>
+				</div>
+				{% endif %}
+
+				{% if settings.display_posts_date == true || settings.display_posts_author == true %}
+				<div class="post-infos mt-2 small gray-color">
+					{% if settings.display_posts_author == true %}
+					{{ settings.author_text }} {{ content.blog_post_author.display_name }}
+					{% endif %}
+					{% if settings.display_posts_date == true && settings.display_posts_author == true %} • {% endif %}
+					{% if settings.display_posts_date == true %}
+					{{ content.publish_date_localized }}{% for tag in content.tag_list %} • {{ tag }} {% endfor %}
+					{% endif %}
+				</div>
+				{% endif %}
+			</div>
+		</div>
+	</article>
+</div>
+{% endmacro %}
+
+{% macro createFeaturedBlogPost(content) %}
+<div class="dnd-row">
+	<div class="row-fluid carousel-container carousel-container--blog fh">
+		<div class="span12 columns carousel carousel-blog d-flex flex-flow-column align-items-xs-center justify-content-space-between lazy carousel--dots swiper"
+				 data-items-xl="1"
+				 data-items-md="1"
+				 data-items-xs="1"
+				 data-centered-slides="true"
+				 data-transition="slide"
+				 data-dots="true"
+				 data-arrows="false"
+				 data-slides="3"        
+				 data-loop="true"
+				 data-infinite="true">
+			<div class="swiper-wrapper ">
+				{% for post in content %}
+				{% if loop.index <= 3 %}
+				<div class="swiper-slide ">
+					<div class="dnd-row fw fh">
+						<div class="gray-border-color second-hover-border-color border-thin border-solid row-fluid fw fh">
+							<div class="span6">
+								<div class="fw fh p-11">
+									<div class="featured-title">
+										<h3 class="first-color">
+											{{ post.name }}
+										</h3>
+									</div>
+									<div class="featured-infos mb-4 small gray-color">
+										{{ post.publish_date_localized }}{% for tag in post.tag_list %} • {{ tag }} {% endfor %}
+									</div>
+									<div class="featured-description">
+										{{ post.post_summary }}
+										{% set style = {
+                      'color': 'first',
+                      'hover_color':  'first',
+                      'background_color':  'no',
+                      'hover_background_color':  'no',
+                      'border_color':  'no',
+                      'hover_border_color':  'no',
+                      'make_button_small':  false
+                    } %}
+										{% set button = {
+                      'type': 'link',
+                      'text': 'Voir la suite',
+                      'show_arrow': true, 
+                    } %}
+
+										<div class="d-flex justify-content-flex-end">
+											{{ createButtonHTML(button, style, '', post.absolute_url) }}
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="span6">
+								{% if post.featured_image %}
+								<div class="image-container p-relative d-flex sixteen-nine-xl square-md sixteen-nine-xs  no-rounded o-hidden fw fh">
+									<img class="lazy object-fit-cover t-0 s-0 fw fh p-absolute" {% if not request.postDict.preview_theme == true && not request.postDict.inpageEditorUI && not request.postDict.hsPreviewerApp == "module" %}data-{% endif %}src="{{ post.featured_image }}" alt="{{ post.featured_image.alt_text }}">
+								</div>
+								{% endif %}
+							</div> 
+						</div>
+
+					</div>
+				</div>
+				{% endif %}
+				{% endfor %}
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+	</div>
+</div>
+{% endmacro %}

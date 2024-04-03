@@ -1,0 +1,18 @@
+{
+  "global" : true,
+  "content_types" : [ "BLOG_POST" ],
+  "smart_type" : "NOT_SMART",
+  "inline_help_text" : "This module allows you to showcase the blog post comments with a title (Don't forget to set the commenting option to true in the blog settings first).",
+  "js_render_options" : {
+    "position" : "footer",
+    "async" : true
+  },
+  "css_render_options" : {
+    "async" : true
+  },
+  "icon" : "fontawesome-5.14.0:Comment%20Dots:SOLID",
+  "host_template_types" : [ "BLOG_POST" ],
+  "module_id" : 141566864451,
+  "label" : "Blog comments",
+  "is_available_for_new_content" : true
+}

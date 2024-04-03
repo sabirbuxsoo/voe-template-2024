@@ -1,0 +1,46 @@
+<!--
+templateType: email_subscription_preferences_page
+isAvailableForNewContent: true
+screenshotPath: ../../assets/images/covers/cover-subscription-preferences.jpg
+label: Email subscription preferences
+-->
+
+{% extends "../../assets/layouts/base.html" %}
+
+{% block body %}
+{% set contentSettings = widget_data.system_settings.subscription_preferences %}
+{% set styleSettings = widget_data.system_settings.style.subscription_preferences %}
+
+<div class="container-fluid system-page">
+  <div class="row-fluid-wrapper">
+    <div class="row-fluid">
+      <div class="widget-span">
+        <div class="dnd-section row-depth-1 white-bg flex-grow d-flex flex-flow-column justify-content-xs-center align-items-xs-center error-page {{ contentSettings.text_alignment }}">
+          <div class="row-fluid align-items-xs-center flex-flow-column{% if contentSettings.text_block_size > 6 && contentSettings.visual_block_size > 6 %} flex-flow-md-column{% else %} flex-flow-md-row-wrap{% endif %}">
+            <div class="span{{ contentSettings.text_block_size }} columns dnd-column">
+              <div class="dnd-row">
+                <div class="row-fluid">
+                  <div class="span12 columns">
+                    {% module
+                        "subscription_preferences"
+                        resubscribe_button_text="{{ contentSettings.resubscribe_button_text }}",
+                        unsubscribe_single_text="{{ contentSettings.unsubscribe_single_text }}",
+                        subheader_text="{{ contentSettings.subheader_text }}",
+                        unsubscribe_all_unsubbed_text="{{ contentSettings.unsubscribe_all_unsubbed_text }}",
+                        button_text="{{ contentSettings.button_text }}",
+                        header="{{ contentSettings.header }}",
+                        unsubscribe_all_option="{{ contentSettings.unsubscribe_all_option }}",
+                        unsubscribe_all_text="{{ contentSettings.unsubscribe_all_text }}"
+                        path="@hubspot/email_subscriptions"
+                    %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock body %}

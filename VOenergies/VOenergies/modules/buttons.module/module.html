@@ -1,0 +1,30 @@
+{% import '../../assets/macros/_buttons.html' %}
+{% import '../../assets/macros/_style.html' %}
+
+<div class="buttons d-flex flex-flow-column flex-flow-md-row-wrap{{ module.button|length > 1 ? " align-items-xs-center" : ""}} {{ generateModuleClasses(module.style) }}{% if module.style.animate_module %} animation{% endif %}"
+     {{ getModuleAnimations(module.style) }}>
+  {% for item in module.button %}
+  {% if item.type == "cta" %}
+  {% cta guid="{{ item.cta_field }}" %}
+  {% endif %}
+
+  {% if item.type == "button" %}
+  {% set style = {
+    'color': item.color|replace("_", "-"),
+    'hover_color': item.hover_color|replace("_", "-"),
+    'background_color': item.background_color|replace("_", "-"),
+    'hover_background_color': item.hover_background_color|replace("_", "-"),
+    'border_color': item.border_color|replace("_", "-"),
+    'hover_border_color': item.hover_border_color|replace("_", "-"),
+    'make_button_small': item.make_button_small
+  } %}
+	
+		{% if item.is_anchor %}  	  
+	    {{ createButtonAnchorHTML(item, style) }}	
+	  {% else %}
+	    {{ createButtonHTML(item, style) }}   
+	  {% endif %}
+  {% endif %}
+	
+  {% endfor %}
+</div>

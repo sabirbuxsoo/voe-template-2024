@@ -1,0 +1,42 @@
+{% set topics = blog_tags(module.blog_field, 250) %}
+
+{% if topics|length > 0 %}
+<div class="blog-tags dnd-row first-bg">
+  <div class="row-fluid">
+    <div class="span12 columns">
+      <div class="buttons-container blog-tags__container d-flex flex-flow-row-wrap align-items-center justify-content-flex-start gap-4">
+        <div class="blog-tags__title white-color">
+          <b class="font-black">{{ module.title }}</b>
+        </div>
+        {% for topic in topics %}
+        <div class="blog-tags__topic-container{% if loop.index <= module.number_of_topics_to_show_when_not_open %} active{% endif %}" {% if loop.index <= module.number_of_topics_to_show_when_not_open %}data-showDefault="true" {% endif %}>
+          <a class="button button--small blog-tags__button d-inline-flex gray-color first-hover-color no-bg white-hover-bg gray-border-color white-hover-border-color rounded-medium" href="{{ group.absolute_url }}/tag/{{ topic.slug }}">
+            {{ topic.name }}
+          </a>
+        </div>
+        {% endfor %}
+        <div class="icon-container d-flex flex-flow-column align-items-xs-center justify-content-xs-center second-bg second-hover-bg first-fill rounded-full w-7 h-7 p-1">
+          {% icon
+            name='{{ module.icon.name }}'
+            purpose='{{ module.accessibility_options.purpose }}'
+            style='{{ module.icon.type }}'
+            title='{{ module.accessibility_options.title }}'
+            unicode='{{ module.icon.unicode }}'
+            no_wrapper=True
+          %}
+        </div>
+        <div class="icon-container icon-container-active d-none flex-flow-column align-items-xs-center justify-content-xs-center second-bg second-hover-bg first-fill rounded-full w-7 h-7 p-1">
+          {% icon
+            name='{{ module.icon_active.name }}'
+            purpose='{{ module.accessibility_options.purpose }}'
+            style='{{ module.icon_active.type }}'
+            title='{{ module.accessibility_options.title }}'
+            unicode='{{ module.icon_active.unicode }}'
+            no_wrapper=True
+            %}
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+{% endif %}

@@ -1,0 +1,267 @@
+<!--
+templateType: global_partial
+label: Website header
+-->
+{% dnd_area "header-section" label="Header section" class="header-section" %}
+{% dnd_section %}
+{% dnd_column width="4" %}
+{% dnd_row %}
+{% dnd_module 
+        path='../modules/website-logo'
+        use_transparent_logo=True,
+        img={
+          'override_inherited_src': True,
+          'src': get_asset_url('../assets/images/branding/logo-VOé.svg'),
+          'width': 174,
+          'height': 77
+        },
+        transparent_logo={
+          'override_inherited_src': True,
+          'src': get_asset_url('../assets/images/branding/logo.png'),
+          'width': 174,
+          'height': 77
+        }
+      %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% dnd_column width="8", offset=4 %}
+{% dnd_row %}
+{% dnd_module 
+  path='../modules/menu' 
+  small_menu=true%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% dnd_row %}
+{% dnd_column width="10", offset=0 %}
+{% dnd_row %}
+{% dnd_module
+      path='../modules/mega-menu'
+      first_level_items=[
+        {
+          "level_item_name": "Vos besoins",
+          "level_item_has_link": false,
+          "has_submenu": true,
+          "display_as_mega_menu": true,
+          "has_featured_resource": false,
+          "second_level_items": [
+            {
+              "level_item_name": "énergie",
+              "level_item_has_link": false,
+              "has_submenu": true,
+              "third_level_items": [
+                {
+                  "level_item_name": "électricité",
+                  "level_item_has_link": true,
+                  "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } },
+                  "has_submenu": true,
+                  "fourth_level_items": [
+                    {
+                      "level_item_name": "produits & provenance",
+                      "level_item_has_link": true,
+                      "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+                    },
+                    {
+                      "level_item_name": "nos tarifs",
+                      "level_item_has_link": true,
+                      "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+                    },
+                    {
+                      "level_item_name": "infos pratiques",
+                      "level_item_has_link": true,
+                      "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level_item_name": "multimédia",
+              "level_item_has_link": false,
+              "has_submenu": true,
+              "third_level_items": [
+                {
+                  "level_item_name": "électricité",
+                  "level_item_has_link": false,
+                  "has_submenu": true,
+                  "fourth_level_items": [
+                    {
+                      "level_item_name": "produits & provenance",
+                      "level_item_has_link": true,
+                      "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+                    },
+                    {
+                      "level_item_name": "nos tarifs",
+                      "level_item_has_link": true,
+                      "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+                    },
+                    {
+                      "level_item_name": "infos pratiques",
+                      "level_item_has_link": true,
+                      "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+                    }
+                  ]
+                },
+                {
+                  "level_item_name": "gaz",
+                  "level_item_has_link": false,
+                  "has_submenu": true,
+                  "fourth_level_items": [
+                    {
+                      "level_item_name": "produits & provenance",
+                      "level_item_has_link": true,
+                      "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+                    },
+                    {
+                      "level_item_name": "nos tarifs",
+                      "level_item_has_link": true,
+                      "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+                    },
+                    {
+                      "level_item_name": "infos pratiques",
+                      "level_item_has_link": true,
+                      "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "level_item_name": "installations",
+              "level_item_has_link": false,
+              "has_submenu": true,
+              "third_level_items": [
+                {
+                  "level_item_name": "électricité",
+                  "level_item_has_link": false,
+                  "has_submenu": true,
+                  "fourth_level_items": [
+                    {
+                      "level_item_name": "produits & provenance",
+                      "level_item_has_link": true,
+                      "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+                    },
+                    {
+                      "level_item_name": "nos tarifs",
+                      "level_item_has_link": true,
+                      "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+                    },
+                    {
+                      "level_item_name": "infos pratiques",
+                      "level_item_has_link": true,
+                      "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+                    }
+                  ]
+                },
+                {
+                  "level_item_name": "gaz",
+                  "level_item_has_link": false,
+                  "has_submenu": true,
+                  "fourth_level_items": [
+                    {
+                      "level_item_name": "produits & provenance",
+                      "level_item_has_link": true,
+                      "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+                    },
+                    {
+                      "level_item_name": "nos tarifs",
+                      "level_item_has_link": true,
+                      "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+                    },
+                    {
+                      "level_item_name": "infos pratiques",
+                      "level_item_has_link": true,
+                      "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+                    }
+                  ]
+                },
+                {
+                  "level_item_name": "eau",
+                  "level_item_has_link": false,
+                  "has_submenu": true,
+                  "fourth_level_items": [
+                    {
+                      "level_item_name": "produits & provenance",
+                      "level_item_has_link": true,
+                      "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+                    },
+                    {
+                      "level_item_name": "nos tarifs",
+                      "level_item_has_link": true,
+                      "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+                    },
+                    {
+                      "level_item_name": "infos pratiques",
+                      "level_item_has_link": true,
+                      "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level_item_name": "Blog",
+          "level_item_has_link": true,
+          "has_submenu": false,
+          "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+        },
+        {
+          "level_item_name": "Informations",
+          "level_item_has_link": true,
+          "has_submenu": false,
+          "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+        },
+        {
+          "level_item_name": "État des réseaux",
+          "level_item_has_link": true,
+          "has_submenu": false,
+          "level_item_link": { "url": { "href": "https://www.voenergies.ch/" } }
+        }
+      ]
+      style={
+        'xs': {
+              'spacing': {
+                'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                'padding': { 'top': { 'value': 20, 'units': 'px' }, 'bottom': { 'value': 20, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+              },
+              'text_alignment': 'center',
+              'horizontal_alignment': 'justify-content-xs-flex-start'
+            },
+            'md': {
+              'spacing': {
+                'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+              },
+              'text_alignment': 'center',
+              'horizontal_alignment': 'justify-content-md-center'
+            },
+            'xl': {
+              'spacing': {
+                'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+                'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+              },
+              'text_alignment': 'center',
+              'horizontal_alignment': 'justify-content-xl-center'
+            }
+      },
+      menu={ "menu": 84761877204 }
+    %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% dnd_column width="2", offset=10 %}
+{% dnd_row %}
+{% dnd_module 
+path='../modules/search-input'
+search_input_placeholder={{ context.search.search_input_placeholder ? context.search.search_input_placeholder : ''}}
+
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}
+{% end_dnd_area %}

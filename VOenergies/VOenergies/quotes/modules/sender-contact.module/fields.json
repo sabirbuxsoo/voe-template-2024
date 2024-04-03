@@ -1,0 +1,11 @@
+[ {
+  "id" : "include_hubspot_avatar",
+  "name" : "include_hubspot_avatar",
+  "display_width" : null,
+  "label" : "Include sender's HubSpot avatar",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+} ]

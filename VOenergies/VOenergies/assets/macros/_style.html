@@ -1,0 +1,72 @@
+<!--
+templateType: page
+isAvailableForNewContent: false
+-->
+{% macro getModuleTextAlignmentStyling(style) %}
+{%- if style.xs.text_alignment != "none" -%}{{- " text-align-xs-" ~ style.xs.text_alignment -}}{%- endif -%}
+{%- if style.md.text_alignment != "none" -%}{{- " text-align-md-" ~ style.md.text_alignment -}}{%- endif -%}
+{%- if style.xl.text_alignment != "none" -%}{{- " text-align-xl-" ~ style.xl.text_alignment -}}{%- endif -%}
+{% endmacro %}
+
+{% macro getModuleHorizontalAlignmentStyling(style) %}
+{%- if style.xs.horizontal_alignment %} {{- style.xs.horizontal_alignment -}}{%- endif -%}
+{%- if style.md.horizontal_alignment %} {{- style.md.horizontal_alignment -}}{%- endif -%}
+{%- if style.xl.horizontal_alignment %} {{- style.xl.horizontal_alignment -}}{%- endif -%}
+{% endmacro %}
+
+{% macro getModuleSpacingStyling(style) %}
+{% if style.xs.spacing.margin.top.value %}{{- "mt-" ~ (style.xs.spacing.margin.top.value < 0 ? "n" : '' ) ~ (style.xs.spacing.margin.top.value / theme.layout.spacing_base)|round -}}{% endif %}
+{% if style.md.spacing.margin.top.value %}{{- "mt-md-" ~ (style.md.spacing.margin.top.value < 0 ? "n" : '' ) ~ style.md.spacing.margin.top.value / theme.layout.spacing_base|round -}}{% endif %}
+{% if style.xl.spacing.margin.top.value %}{{- "mt-xl-" ~ (style.xl.spacing.margin.top.value < 0 ? "n" : '' ) ~ style.xl.spacing.margin.top.value / theme.layout.spacing_base|round -}}{% endif %}
+{% if style.xs.spacing.margin.bottom.value %}{{- "mb-" ~ (style.xs.spacing.margin.bottom.value < 0 ? "n" : '' ) ~ style.xs.spacing.margin.bottom.value / theme.layout.spacing_base|round -}}{% endif %}
+{% if style.md.spacing.margin.bottom.value %}{{- "mb-md-" ~ (style.md.spacing.margin.bottom.value < 0 ? "n" : '' ) ~ style.md.spacing.margin.bottom.value / theme.layout.spacing_base|round -}}{% endif %}
+{% if style.xl.spacing.margin.bottom.value %}{{- "mb-xl-" ~ (style.xl.spacing.margin.bottom.value < 0 ? "n" : '' ) ~ style.xl.spacing.margin.bottom.value / theme.layout.spacing_base|round -}}{% endif %}
+{{- "pt-" ~ (style.xs.spacing.padding.top.value ? (style.xs.spacing.padding.top.value / theme.layout.spacing_base)|round : 0) -}}
+{{- "pt-md-" ~ (style.md.spacing.padding.top.value ? (style.md.spacing.padding.top.value / theme.layout.spacing_base)|round : 0) -}}
+{{- "pt-xl-" ~ (style.xl.spacing.padding.top.value ? (style.xl.spacing.padding.top.value / theme.layout.spacing_base)|round : 0) -}}
+{{- "pb-" ~ (style.xs.spacing.padding.bottom.value ? (style.xs.spacing.padding.bottom.value / theme.layout.spacing_base)|round : 0) -}}
+{{- "pb-md-" ~ (style.md.spacing.padding.bottom.value ? (style.md.spacing.padding.bottom.value / theme.layout.spacing_base)|round : 0) -}}
+{{- "pb-xl-" ~ (style.xl.spacing.padding.bottom.value ? (style.xl.spacing.padding.bottom.value / theme.layout.spacing_base)|round : 0) -}}
+{{- "ps-" ~ (style.xs.spacing.padding.left.value ? (style.xs.spacing.padding.left.value / theme.layout.spacing_base)|round : 0) -}}
+{{- "ps-md-" ~ (style.md.spacing.padding.left.value ? (style.md.spacing.padding.left.value / theme.layout.spacing_base)|round : 0) -}}
+{{- "ps-xl-" ~ (style.xl.spacing.padding.left.value ? (style.xl.spacing.padding.left.value / theme.layout.spacing_base)|round : 0) -}}
+{{- "pe-" ~ (style.xs.spacing.padding.right.value ? (style.xs.spacing.padding.right.value / theme.layout.spacing_base)|round : 0) -}}
+{{- "pe-md-" ~ (style.md.spacing.padding.right.value ? (style.md.spacing.padding.right.value / theme.layout.spacing_base)|round : 0) -}}
+{{- "pe-xl-" ~ (style.xl.spacing.padding.right.value ? (style.xl.spacing.padding.right.value / theme.layout.spacing_base)|round : 0) -}}
+{% endmacro %}
+
+{% macro getModuleTextDisplay(style, html) %}
+{%- set h1_classes = (style.xs.h1_display != "default" ? "display-xs-" ~ style.xs.h1_display : '')  ~ (style.md.h1_display != "default" ? " display-md-" ~ style.md.h1_display : '') ~ (style.xl.h1_display != "default" ? " display-xl-" ~ style.xl.h1_display : '') -%}
+{%- set h2_classes = (style.xs.h2_display != "default" ? "display-xs-" ~ style.xs.h2_display : '') ~ (style.md.h2_display != "default" ? " display-md-" ~ style.md.h2_display : '') ~ (style.xl.h2_display != "default" ? " display-xl-" ~ style.xl.h2_display : '') -%}
+{%- set h3_classes = (style.xs.h3_display != "default" ? "display-xs-" ~ style.xs.h3_display : '') ~ (style.md.h3_display != "default" ? " display-md-" ~ style.md.h3_display : '') ~ (style.xl.h3_display != "default" ? " display-xl-" ~ style.xl.h3_display : '') -%}
+{%- set h4_classes = (style.xs.h4_display != "default" ? "display-xs-" ~ style.xs.h4_display : '') ~ (style.md.h4_display != "default" ? " display-md-" ~ style.md.h4_display : '') ~ (style.xl.h4_display != "default" ? " display-xl-" ~ style.xl.h4_display : '') -%}
+{%- set h5_classes = (style.xs.h5_display != "default" ? "display-xs-" ~ style.xs.h5_display : '') ~ (style.md.h5_display != "default" ? " display-md-" ~ style.md.h5_display : '') ~ (style.xl.h5_display != "default" ? " display-xl-" ~ style.xl.h5_display : '') -%}
+{%- set h6_classes = (style.xs.h6_display != "default" ? "display-xs-" ~ style.xs.h6_display : '') ~ (style.md.h6_display != "default" ? " display-md-" ~ style.md.h6_display : '') ~ (style.xl.h6_display != "default" ? " display-xl-" ~ style.xl.h6_display : '') -%}
+{%- set body_classes = (style.xs.body_classes != "default" ? "display-xs-" ~ style.xs.body_display : '') ~ (style.md.body_display != "default" ? " display-md-" ~ style.md.body_display : '') ~ (style.xl.body_display != "default" ? " display-xl-" ~ style.xl.body_display : '') -%}
+
+{%
+    set html = html
+    |replace('<h1', h1_classes ? '<h1 class="' ~ h1_classes ~ '"' : '<h1')
+    |replace('<h2', h2_classes ? '<h2 class="' ~ h2_classes ~ '"' : '<h2')
+    |replace('<h3', h3_classes ? '<h3 class="' ~ h3_classes ~ '"' : '<h3')
+    |replace('<h4', h4_classes ? '<h4 class="' ~ h4_classes ~ '"' : '<h4')
+    |replace('<h5', h5_classes ? '<h5 class="' ~ h5_classes ~ '"' : '<h5')
+    |replace('<h6', h6_classes ? '<h6 class="' ~ h6_classes ~ '"' : '<h6')
+    |replace('<p', body_classes ? '<p class="' ~ body_classes ~ '"' : '<p')
+    |replace('<ul', body_classes ? '<ul class="' ~ body_classes ~ '"' : '<ul')
+    |replace('<blockquote', body_classes ? '<blockquote class="' ~ body_classes ~ '"' : '<blockquote')
+    |replace('<pre', body_classes ? '<pre class="' ~ body_classes ~ '"' : '<pre')
+  %}
+
+{% rich_text field="html" value="{{ html }}" %}
+{% endmacro %}
+
+{% macro getModuleAnimations(style) %}
+{%- if style.animate_module %} data-loop="{{ style.animation_settings.loop_animation }}" data-direction="{{ style.animation_settings.animation_direction }}" data-easing="{{ style.animation_settings.animation_easing }}" data-duration="{{ style.animation_settings.animation_duration }}" data-delay="{{ style.animation_settings.animation_delay }}" delta="{{ style.animation_settings.animation_delta }}" bind="{{ style.animation_settings.bind_animation_to_scroll }}" divide="{{ style.animation_settings.trigger_animation_by_character }}"
+{%- for animation_property in style.animation_settings.animation_properties %} data-{{ animation_property }}="[{{ "{{ style.animation_settings." ~ animation_property|render|replace("-", "") ~ "_settings.start_value }}" }}, {{ "{{ style.animation_settings." ~ animation_property|render|replace("-", "") ~ "_settings.end_value }}" }}]"{% endfor -%}
+{%- endif -%}
+{% endmacro %}
+
+{% macro generateModuleClasses(style) %}
+{{- getModuleTextAlignmentStyling(style)|render|replace("\n", " ") -}}{{- getModuleSpacingStyling(style)|render|replace("\n", " ") -}}{{ getModuleHorizontalAlignmentStyling(style)|render|replace("\n", " ") }}
+{% endmacro %}

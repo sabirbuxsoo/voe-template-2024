@@ -1,0 +1,153 @@
+.search-input .hs-search-field .hs-search-field__bar {
+  background-color: transparent;
+  box-sizing: border-box;
+  border-width: {{ theme.forms.fields.top_border_width ~ "px" }} {{ theme.forms.fields.right_border_width ~ "px" }} {{ theme.forms.fields.bottom_border_width ~ "px" }} {{ theme.forms.fields.left_border_width ~ "px" }};
+  border-style: solid;
+  border-color: {{ theme.colors.first.color }};
+  border-radius: {{ theme.layout.spacing_base * 6 ~ "px" }};
+  overflow: hidden;
+}
+
+.search-input .hs-search-field .hs-search-field__bar form input {
+  background-color: transparent;
+}
+
+.search-input .hs-search-field .hs-search-field__bar:focus {
+  border-color: {{ theme.forms.fields.focus_border_color }};
+}
+
+.search-input .search-input__search-toggle {
+  display: none;
+}
+
+.search-input .search-input__search-toggle--close {
+  transform: rotate(45deg);
+}
+
+.search-input .search-input__search-toggle svg,
+.search-input .hs-search-field .hs-search-field__bar button svg,
+.search-input .hs-search-field .hs-search-field__bar .button svg {
+  width: {{ theme.layout.spacing_base * 6 ~ "px" }};
+  height: {{ theme.layout.spacing_base * 6 ~ "px" }};
+}
+
+.search-input .hs-search-field .hs-search-field__bar button, 
+.search-input .hs-search-field .hs-search-field__bar button:hover {
+  border:none; 
+  border-radius: 0%;
+  background-color: transparent;
+}
+
+.search-input .hs-search-field .hs-search-field__bar button:hover svg, .search-input .hs-search-field .hs-search-field__bar button:hover svg g, .search-input .hs-search-field .hs-search-field__bar button:hover svg g path {
+    color: {{ theme.colors.second.color }};
+    fill: {{ theme.colors.second.color }};
+    stroke: {{ theme.colors.second.color }};
+}
+
+.search-input .hs-search-field .hs-search-field__bar button svg {
+  max-width: {{ theme.layout.spacing_base * 4 ~ 'px' }};
+}
+
+.search-input .hs-search-field .hs-search-field__bar form {
+  margin: 0;
+}
+
+.search-input form .hs-form-field,
+.search-input form .hs-submit {
+  padding: 0;
+}
+
+.search-input form .hs-form-field {
+  max-width: calc(100% - {{ theme.layout.spacing_base * 14 ~ 'px' }});
+}
+
+
+
+.search-input form button.button {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  padding: {{ theme.layout.spacing_base * 2 ~ "px" }};
+  cursor: pointer;
+}
+
+.search-input form .hs-form-field,
+.search-input form .hs-form-field input {
+  width: auto;
+  min-width: fit-content;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  min-height: {{ theme.layout.spacing_base * 6 ~ 'px' }};
+  border: none;
+}
+
+.search-input form .hs-submit,
+.search-input form button.button {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-width: {{ theme.layout.spacing_base * 14 ~ 'px' }};
+  min-height: {{ theme.layout.spacing_base * 6 ~ 'px' }};
+}
+
+@media (min-width: {{ theme.layout.md.breakpoint ~ "px" }}) {
+  .search-input .search-input__search-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .search-input .hs-search-field:not(.hs-search-field--visible) {
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
+    margin-right: {{ theme.layout.spacing_base * 4 ~ "px" }};
+  }
+
+  .search-input.search-input--open .hs-search-field {
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
+  }
+} 
+
+@media (max-width: {{ (theme.layout.md.breakpoint - 1) ~ "px" }}) {
+  .search-input__search.hs-search-field {
+    width: 100%;
+  }
+
+  .search-input form .hs-form-field input {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+}
+
+.header-section .search-input .hs-search-field .hs-search-field__bar {
+  border-color: transparent;
+}
+
+.header-section .search-input .hs-search-field .hs-search-field__bar:hover{
+  border-color: {{ theme.colors.black.color }};
+}
+
+
+.header-section .search-input .hs-search-field .hs-search-field__bar form .button:not([class*=-fill]) svg path,
+.header-section .search-input .hs-search-field .hs-search-field__bar form button:not([class*=-fill]) svg path,
+.header-section .search-input .hs-search-field .hs-search-field__bar form .button:not([class*=-fill]):hover svg path ,
+.header-section .search-input .hs-search-field .hs-search-field__bar form button:not([class*=-fill]):hover svg path {
+    color: {{ theme.colors.black.color }};
+    fill: {{ theme.colors.black.color }};
+    stroke: {{ theme.colors.black.color }};
+}
+
+.header-section .hs-mobile-menu .search-input .hs-search-field .hs-search-field__bar,
+.header-section .hs-mobile-menu .search-input .hs-search-field .hs-search-field__bar form input {
+  background-color: {{ theme.colors.gray.color }};
+}

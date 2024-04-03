@@ -1,0 +1,11 @@
+{
+  "global" : true,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "smart_type" : "NOT_SMART",
+  "inline_help_text" : "Use this module to set system templates options such as page title, background colors and so on.",
+  "icon" : "fontawesome-5.14.0:cogs:SOLID",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 81803773149,
+  "label" : "System settings",
+  "is_available_for_new_content" : true
+}

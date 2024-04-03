@@ -1,0 +1,4 @@
+main > .container-fluid > .row-fluid-wrapper > .row-fluid > .widget-span > .dnd-section.custom-form-container {
+  z-index: 2;
+  overflow: initial;
+}

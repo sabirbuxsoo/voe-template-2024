@@ -1,0 +1,17 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "inline_help_text" : "This module is used on the blog listing page to showcase your blog posts. You can set the blog posts display and how they will be organized on the page through this module.",
+  "js_render_options" : {
+    "position" : "footer",
+    "async" : true
+  },
+  "css_render_options" : {
+    "async" : true
+  },
+  "icon" : "fontawesome-5.14.0:Alternate%20List:SOLID",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 82911143138,
+  "label" : "Realisations Listing (HUBDB)",
+  "is_available_for_new_content" : true
+}

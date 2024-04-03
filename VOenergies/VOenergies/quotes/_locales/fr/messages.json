@@ -1,0 +1,77 @@
+{
+  "billing_frequency": {
+    "message": "Fréquence de facturation",
+    "description": "",
+    "placeholders": null
+  },
+  "comments": {
+    "message": "Commentaires",
+    "description": "",
+    "placeholders": null
+  },
+  "comments_from": {
+    "message": "Commentaires de",
+    "description": "",
+    "placeholders": null
+  },
+  "item_and_description": {
+    "message": "Produits et Descriptions",
+    "description": "",
+    "placeholders": null
+  },
+  "other_fees": {
+    "message": "Autres taxes",
+    "description": "",
+    "placeholders": null
+  },
+  "prepared_by": {
+    "message": "Préparé par:",
+    "description": "",
+    "placeholders": null
+  },
+  "price": {
+    "message": "Prix",
+    "description": "",
+    "placeholders": null
+  },
+  "products_and_services": {
+    "message": "Produits & Services",
+    "description": "",
+    "placeholders": null
+  },
+  "purchase_terms": {
+    "message": "Conditions d'achat",
+    "description": "",
+    "placeholders": null
+  },
+  "quantity": {
+    "message": "Quantité",
+    "description": "",
+    "placeholders": null
+  },
+  "quote_created_by": {
+    "message": "Devis créé par :",
+    "description": "",
+    "placeholders": null
+  },
+  "sku": {
+    "message": "SKU",
+    "description": "",
+    "placeholders": null
+  },
+  "subtotals": {
+    "message": "Sous-totaux",
+    "description": "",
+    "placeholders": null
+  },
+  "total": {
+    "message": "Total",
+    "description": "",
+    "placeholders": null
+  },
+  "unit_price": {
+    "message": "Prix unitaire",
+    "description": "",
+    "placeholders": null
+  }
+}

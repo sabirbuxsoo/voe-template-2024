@@ -1,0 +1,253 @@
+{%- for breakpoint in breakpoints|sort(False, False, 'value') -%}
+{%- for resolution, style in theme.layout.items() -%}
+{%- if resolution == breakpoint.name -%}
+{% if breakpoint.name != "xs" %}
+@media (min-width: {{ '{{ theme.layout.' ~ breakpoint.name ~  '.breakpoint ~ "px" }}' }}) {
+	{% endif %}
+
+	main > .container-fluid > .row-fluid-wrapper > .row-fluid > .widget-span > .dnd-section {
+		overflow-x: hidden;
+	}
+
+	main > .container-fluid > .row-fluid-wrapper > .row-fluid > .widget-span > .dnd-section:not([class*=" pt-"]):not([class*=" pv-"]),
+	main > [data-global-resource-path] > .container-fluid > .row-fluid-wrapper > .row-fluid > .widget-span > .dnd-section:not([class*=" pt-"]):not([class*=" pv-"]) {
+		padding-top: {{ style.spacing.padding.top.value ~ style.spacing.padding.top.units }}
+	}
+
+	main > .container-fluid > .row-fluid-wrapper > .row-fluid > .widget-span > .dnd-section:not([class*=" pb-"]):not([class*=" pv-"]),
+	main > [data-global-resource-path] > .container-fluid > .row-fluid-wrapper > .row-fluid > .widget-span > .dnd-section:not([class*=" pb-"]):not([class*=" pv-"]) {
+		padding-bottom: {{ style.spacing.padding.bottom.value ~ style.spacing.padding.bottom.units }}
+	}
+
+	main > .container-fluid > .row-fluid-wrapper > .row-fluid > .widget-span > .dnd-section:not([class*=" ps-"]):not([class*=" ph-"]),
+	main > [data-global-resource-path] > .container-fluid > .row-fluid-wrapper > .row-fluid > .widget-span > .dnd-section:not([class*=" ps-"]):not([class*=" ph-"]) {
+		padding-left: {{ style.spacing.padding.left.value ~ style.spacing.padding.left.units }}
+	}
+
+	main > .container-fluid > .row-fluid-wrapper > .row-fluid > .widget-span > .dnd-section:not([class*=" pe-"]):not([class*=" ph-"]),
+	main > [data-global-resource-path] > .container-fluid > .row-fluid-wrapper > .row-fluid > .widget-span > .dnd-section:not([class*=" pe-"]):not([class*=" ph-"]) {
+		padding-right: {{ style.spacing.padding.right.value ~ style.spacing.padding.right.units }}
+	}
+
+	.dnd-section > .row-fluid {
+		max-width: {{ style.max_width ~ 'px' }};
+	}
+
+	.dnd-section .dnd-row > .row-fluid {
+		margin-left: -{{ style.columns_gap ~ 'px' }};
+		margin-right: -{{ style.columns_gap ~ 'px' }};
+	}
+
+	.dnd-section .row-fluid > [class*="span"] {
+		padding-left: {{ style.columns_gap ~ 'px' }};
+		padding-right: {{ style.columns_gap ~ 'px' }};
+	}
+
+	.dnd-section > .row-fluid .dnd-column > .dnd-row:not(:first-child) {
+		margin-top: {{ style.rows_gap ~ 'px' }};
+	}
+
+	.dnd-section > .row-fluid .dnd-column > .dnd-row.dnd-row--background + .dnd-row {
+		margin-top: 0;
+	}
+
+	.dnd-row--background + .dnd-row {
+		z-index: 1;
+		position: relative;
+	}
+
+	{% if breakpoint.name == "xs" %}
+	main .dnd-section:not(.mobile-reverse) .row-fluid > [class*="span"]:not([class*="mt-"]):not(:first-child),
+	main .dnd-section.mobile-reverse .row-fluid > [class*="span"]:not([class*="mt-"]):not(:last-child), 
+	footer .dnd-section:not(.mobile-reverse) .row-fluid > [class*="span"]:not([class*="mt-"]):not(:first-child),
+	footer .dnd-section.mobile-reverse .row-fluid > [class*="span"]:not([class*="mt-"]):not(:last-child) {
+		margin-top: {{ style.rows_gap ~ 'px' }};
+	}
+	{% endif %}
+
+	{% if breakpoint.name == "xs" %}
+	main {
+		z-index: 1;
+	}
+
+	img {
+		max-width: 100%;
+	}
+
+	.dnd-section > .row-fluid {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.dnd-section .dnd-row > .row-fluid:not([class*="flex-start"]):not([class*="flex-end"]) > [class*="span"]:only-child,
+	.dnd-section > .row-fluid:not([class*="flex-start"]):not([class*="flex-end"]) > [class*=span]:only-child {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.dnd-section .row-fluid {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+	}
+
+	[class*="span"] {
+		width: 100%;
+		flex: 0 0 100%;
+	}
+
+	.image__shape[class*="span"] {
+		width: 50%;
+		flex: 0 0 50%;
+	}
+
+	{% endif %}
+
+	{%- if breakpoint.name == 'md' -%}
+	main .dnd-section:not(.mobile-reverse) .row-fluid > [class*="span"]:not([class*="mt-"]):not(:first-child),
+	main .dnd-section.mobile-reverse .row-fluid > [class*="span"]:not([class*="mt-"]):not(:last-child), 
+	footer .dnd-section:not(.mobile-reverse) .row-fluid > [class*="span"]:not([class*="mt-"]):not(:first-child),
+	footer .dnd-section.mobile-reverse .row-fluid > [class*="span"]:not([class*="mt-"]):not(:last-child) {
+		margin-top: 0;
+	}
+
+	{%- for number in range(0,13) %}
+	[class*="span"].span{{ number }} {
+		width: {{ 100 / 12 * number }}%;
+		flex: 0 0 {{ 100 / 12 * number }}%;
+	}
+	{% endfor -%}
+
+	.dnd-section.splashscreen-{{ breakpoint.name }} {
+		min-height: 50vh;
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+	}
+
+	.dnd-column.dnd-column--full-height {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.dnd-column.dnd-column--full-height > .dnd-row,
+	.dnd-column.dnd-column--full-height > .dnd-row > .row-fluid,
+	.dnd-column.dnd-column--full-height > .dnd-row > .row-fluid > .dnd-module, 
+	.dnd-column.dnd-column--full-height > .dnd-row > .row-fluid > .dnd-module > .hs_cos_wrapper {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+	}
+	{%- endif -%}
+	{%- if breakpoint.name != "xs" %}
+}
+{% endif -%}
+{%- endif -%}
+{%- endfor -%}
+{%- endfor -%}
+
+.body-wrapper.body-wrapper--full-height {
+	min-height: 100vh;
+}
+
+.body-wrapper.body-wrapper--full-height,
+.body-wrapper.body-wrapper--full-height .body-container-wrapper,
+.body-wrapper.body-wrapper--full-height .body-container-wrapper > .container-fluid,
+.body-wrapper.body-wrapper--full-height .body-container-wrapper > .container-fluid > .row-fluid-wrapper,
+.body-wrapper.body-wrapper--full-height .body-container-wrapper > .container-fluid > .row-fluid-wrapper > .row-fluid,
+.body-wrapper.body-wrapper--full-height .body-container-wrapper > .container-fluid > .row-fluid-wrapper > .row-fluid > .widget-span,
+.body-wrapper.body-wrapper--full-height .body-container-wrapper > .container-fluid > .row-fluid-wrapper > .row-fluid > .widget-span > .dnd-section:first-child {
+	flex: 1 1 auto;
+	display: flex;
+	flex-flow: column;
+	width: 100%;
+}
+
+.body-wrapper.body-wrapper--full-height .body-container-wrapper > .container-fluid > .row-fluid-wrapper > .row-fluid > .widget-span > .dnd-section:first-child {
+	justify-content: center;
+}
+
+@media (max-width: {{ (theme.layout.md.breakpoint - 1) ~ 'px' }}) {
+
+	.dnd-section > .row-fluid .dnd-column > .dnd-row.dnd-row--background + .dnd-row {
+		margin-top: 0;
+	}
+}
+
+.dnd-section[class*="force-full-width"] > .row-fluid > [class*="span"] {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+@media (max-width: {{ (theme.layout.md.breakpoint - 1) ~ "px" }}) {
+	.dnd-row.dnd-row--swipe {
+		width: 100vw;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.dnd-row.dnd-row--swipe > .row-fluid {
+		width: calc(100vw - {{ theme.layout.sm.columns_gap ~ "px" }});
+		max-width: 100%;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		padding-left: calc((100vw - {{ theme.layout.sm.max_width ~ "px" }}) / 2);
+		padding-right: calc((100vw - {{ theme.layout.sm.max_width ~ "px" }}) / 2);
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.dnd-row.dnd-row--swipe > .row-fluid > [class*="span"] {
+		max-width: 45%;
+		flex: 0 0 45%;
+	}
+
+	.dnd-column.dnd-column--image {
+		order: -1;
+	}
+}
+
+@media (max-width: {{ (theme.layout.xs.breakpoint - 1) ~ "px" }}) {
+	.dnd-row.dnd-row--swipe > .row-fluid {
+		width: calc(100vw - {{ theme.layout.xs.columns_gap ~ "px" }});
+		padding-left: calc((100vw - {{ theme.layout.xs.max_width ~ "px" }}) / 2);
+		padding-right: calc((100vw - {{ theme.layout.xs.max_width ~ "px" }}) / 2);
+	}
+
+	.dnd-row.dnd-row--swipe:not(.gallery) > .row-fluid > [class*="span"] {
+		max-width: 66%;
+		flex: 0 0 66%;
+	}
+
+	.dnd-row.dnd-row--swipe.gallery > .row-fluid > [class*="span"] {
+		max-width: 39%;
+		flex: 0 0 39%;
+	}
+}
+
+.dnd-section[class*="background-image"] { 
+	position: relative;
+}
+
+.dnd-section[class*="background-image"] > div {
+	position: relative;
+	z-index: 2;
+}
+
+.dnd-section[class*="background-image"]:before {
+	content: '';
+	background-color: rgba({{ theme.colors.first.color|convert_rgb }}, .5);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}

@@ -1,0 +1,41 @@
+{% import '../../../assets/macros/_socials.html' %}
+{% import '../../../assets/macros/_style.html' %}
+
+{% if module.social|length > 0 %}
+<div class="blog-social-sharing blog-sidebar--sticky fh {{ getModuleAnimations(module.style) }}{% if module.style.animate_module %} animation{% endif %}"
+     {{ getModuleAnimations(module.style) }}>
+  <div class="p-sticky t-0 mt-n-30 pt-30">
+    {% if module.description %}
+    <div class="dnd-row">
+      <div class="row-fluid">
+        <div class="title span12 columns">
+          {% set html = module.description|replace('<h1', '<h1 class="display-xs-body"')|replace('<h2', '<h2 class="display-xs-body"')|replace('<h3', '<h3 class="display-xs-body"')|replace('<h4', '<h4 class="display-xs-body"') %}
+          {% rich_text field="description" value="{{ html }}" %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    <div class="dnd-row">
+      <div class="row-fluid">
+        <div class="span12 columns">
+          <div class="d-flex flex-flow-row-wrap mt-n-2 mb-n-2 ms-n-2 me-n-2 {{ module.style.display_mode }}{{ module.social|length > 1 ? " align-items-xs-center" : "" }} {{- getModuleTextAlignmentStyling(style)|render|replace("\n", " ") -}}{{- getModuleSpacingStyling(style)|render|replace("\n", " ") -}}{{ getModuleHorizontalAlignmentStyling(style)|render|replace("\n", " ") }}">
+            {%- for item in module.social -%}
+            {%- set itemLink = content.absolute_url -%}
+            {%- if item.social_media == "facebook" -%}
+            {%- set itemLink = "https://www.facebook.com/sharer/sharer.php?u=" ~ content.absolute_url -%}
+            {%- endif %}
+            {%- if item.social_media == "twitter" -%}
+            {%- set itemLink = "https://twitter.com/intent/tweet?url=" ~ content.absolute_url ~ "&text=" ~ content.name|striptags|safe -%}
+            {%- endif %}
+            {%- if item.social_media == "linkedin" -%}
+            {%- set itemLink = "https://www.linkedin.com/shareArticle?mini=true&url=" ~ content.absolute_url -%}
+            {%- endif %}
+            {{ createSocialHTML( item, 'blog-social-sharing__icon mt-2 mb-2 ms-2 me-2', itemLink, true) }}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{%- endif %}

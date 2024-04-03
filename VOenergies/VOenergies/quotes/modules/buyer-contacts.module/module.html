@@ -1,0 +1,12 @@
+{% import '../../imports/quote_variables.html' %}
+
+<div class="buyer-contacts {{ module.style.text_color|replace("_", "-") ~ '-color' }}">
+  {% for recipient in RECIPIENT_CONTACTS %}
+  {% if (module.show_only_first_contact && loop.first) || not module.show_only_first_contact %}
+  <div class="mb-2"><b>{{ recipient.firstname }} {{ recipient.lastname }}</b></div>
+  <div>{{ recipient.jobtitle }}</div>
+  <div>{{ recipient.email }}</div>
+  <div>{{ recipient.phone }}</div>
+  {% endif %}
+  {% endfor %}
+</div>

@@ -1,0 +1,47 @@
+{% unless (module.link is string_startingwith "http") or (module.link is string_startingwith "/") or (module.link is string_startingwith "mailto") or (module.link is string_startingwith "#") or !module.link %}
+{% set link = "//" ~ module.link %}
+{% else %}
+{% set link = module.link ? module.link : site_settings.company_domain ? site_settings.company_domain : brandSettings.primaryLogo.link ? brandSettings.primaryLogo.link : '' %}
+{% endunless %}
+
+<a id="{{ name }}" {% if module.add_link %}href="{{ link }}"{% endif %} class="website-logo{{ " website-logo--transparent" if module.use_transparent_logo }} fw d-flex justify-content-xs-flex-start">
+	{% if module.img.override_inherited_src && module.img.src %}
+	<img 
+			 {% if not request.postDict.preview_theme == true && not request.postDict.inpageEditorUI && not request.postDict.hsPreviewerApp == "module" %} class="lazy" data-{% endif %}src="{{ module.img.src }}" 
+			 alt="{{ module.img.alt }}" 
+			 width="{{ module.img.width }}" 
+			 height="{{ module.img.height }}" 
+			 style="max-width: 100%; height: auto;">
+	{% else %}
+	<img 
+			 {% if not request.postDict.preview_theme == true && not request.postDict.inpageEditorUI && not request.postDict.hsPreviewerApp == "module" %} class="lazy" data-{% endif %}src="{{ brandSettings.primaryLogo.src ? brandSettings.primaryLogo.src : site_settings.logo_src }}" 
+			 alt="{{ brandSettings.primaryLogo.alt ? brandSettings.primaryLogo.alt : site_settings.logo_alt }}" 
+			 width="{{ brandSettings.primaryLogo.width ? brandSettings.primaryLogo.width : site_settings.logo_width }}" 
+			 height="{{ brandSettings.primaryLogo.height ? brandSettings.primaryLogo.height : site_settings.logo_height }}" 
+			 style="max-width: 100%; height: auto;">
+	{% endif %}
+</a>
+
+
+{% require_css %}
+<style>
+	{% if module.use_transparent_logo && module.transparent_logo.src %}
+	.header.header--transparent #{{ name }}:before {
+		content: '';
+		display: block;
+		background-image: url({{ module.transparent_logo.src }});
+		width: {{ module.transparent_logo.width }}px;
+		height: {{ module.transparent_logo.height }}px;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: 50%;
+	}
+
+	.header.header--transparent.scrolled #{{ name }}:before, 
+	.header.header--transparent .hs-menu-open #{{ name }}:before, 
+	.header.header--transparent:not(.scrolled) .dnd-section > .row-fluid:not(.hs-menu-open) #{{ name }} img {
+		display: none;
+	}
+	{% endif %}
+</style>
+{% end_require_css %}

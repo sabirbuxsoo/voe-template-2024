@@ -1,0 +1,35 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "inline_help_text" : "Use this module to showcase a carousel with shapes around it.",
+  "js_render_options" : {
+    "position" : "footer",
+    "async" : true
+  },
+  "css_render_options" : {
+    "async" : true
+  },
+  "icon" : "fontawesome-5.14.0:Images",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 88613645257,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../../assets/css/libraries/_swiper.css",
+    "name" : "_swiper.css"
+  }, {
+    "autoload" : true,
+    "path" : "../../../assets/css/modules/pages/_informations-carousel.css",
+    "name" : "_informations-carousel.css"
+  } ],
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../../assets/js/libraries/swiper.js",
+    "name" : "swiper.js"
+  }, {
+    "autoload" : true,
+    "path" : "../../../assets/js/functions/initInformationsCarousels.js",
+    "name" : "initInformationsCarousels.js"
+  } ],
+  "label" : "Informations carousel",
+  "is_available_for_new_content" : true
+}

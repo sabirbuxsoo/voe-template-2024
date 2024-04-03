@@ -1,0 +1,133 @@
+<!--
+templateType: section
+isAvailableForNewContent: true
+label: Text and services section
+description: A section displaying a variable text with services.
+-->
+
+{% dnd_section
+  vertical_alignment="MIDDLE"
+  background_color={{ context.section.background_color }}
+  background_linear_gradient={{ context.section.background_linear_gradient }}
+  background_image={{ context.section.background_image }}
+  padding={{ context.section.padding }}
+  class={{ context.section.class }}
+%}
+{% dnd_column
+  width={{ context.text_block_width ? context.text_block_width : 12 }}
+  offset={{ context.text_block_offset ? context.text_block_offset : 0 }}
+%}
+{% dnd_row %}
+{% dnd_module 
+  path='../../modules/custom-rich-text' 
+  style={{ context.text.style ? context.text.style : {
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        }
+      }
+    }}
+%} 
+{% module_attribute "html" %}
+{{ context.text.content ? context.text.content : '<h1>Something powerful</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>' }}
+{% end_module_attribute %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% dnd_row %}
+{% dnd_module 
+  path='../modules/services'
+  services_per_row={{ context.services.services_per_row ? context.services.services_per_row : 3 }}
+  service={{ context.services.service ? context.services.service : [
+      {
+        'visual_type' : 'image',
+        'background_color': 'first',
+        'hover_background_color': 'first',
+        'image_field': { 'src' : get_asset_url('../../assets/images/visuals/home-services-1.jpg') },
+        'service_title': 'énergies',
+        'service_description': 'Lorem ipsum',
+        'add_shape': True, 
+        'shape': { 'src' : get_asset_url('../../assets/images/visuals/home-services-shape-1.png') },
+        'link_field': {
+          "url": { "href": "https://voenergies.com" }
+        }      
+      },
+      {
+        'visual_type' : 'image',
+        'image_field': { 'src' : get_asset_url('../../assets/images/visuals/home-services-2.jpg') },
+        'service_title': 'multimédia',
+        'service_description': 'Lorem ipsum',
+        'hover_background_color': 'first',
+        'add_shape': True, 
+        'shape': { 'src' : get_asset_url('../../assets/images/visuals/home-services-shape-2.png') },
+      },
+      {
+        'visual_type' : 'image',
+        'image_field': { 'src' : get_asset_url('../../assets/images/visuals/home-services-3.jpg') },
+        'service_title': 'installations',
+        'service_description': 'Lorem ipsum',
+        'hover_background_color': 'first',
+        'add_shape': True, 
+        'shape': { 'src' : get_asset_url('../../assets/images/visuals/home-services-shape-3.png') },
+      }
+    ]
+  }}
+  style={{ context.services.style ? 
+    context.services.style : {
+        'animate_module': True,
+        'animation_settings': {
+          'bind_animation_to_scroll': False,
+          'animation_properties': ['opacity', 'translate-y'],
+          'animation_easing': 'easeInOutSine',
+          'animation_duration': 500,
+          'animation_delta': 500,
+          'opacity_settings': {'start_value': 0, 'end_value': 1 },
+          'translatey_settings': {'start_value': 100, 'end_value': 0 },
+        },
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment': 'justify-content-xs-flex-start'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment': 'justify-content-md-flex-start'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left',
+          'horizontal_alignment': 'justify-content-xl-flex-start'
+        }
+    }
+  }}
+  %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}

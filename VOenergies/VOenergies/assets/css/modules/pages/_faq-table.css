@@ -1,0 +1,12 @@
+ul li.first-faq-hover-bg:hover {
+  background-color: #E6E6F5;
+}
+
+@media (max-width: {{ (theme.layout.md.breakpoint - 1) ~ "px" }}) {
+  .faq-table {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

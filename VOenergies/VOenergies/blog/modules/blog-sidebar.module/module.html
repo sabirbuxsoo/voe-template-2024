@@ -1,0 +1,122 @@
+{% import '../sample_blog_data.html' as blog_data %}
+{% import '../../../assets/macros/_buttons.html' %}
+{% import '../../../assets/macros/_style.html' %}
+
+<div class="blog-social-sharing blog-sidebar--sticky {% if module.style.animate_module %} animation{% endif %}"
+     {{ getModuleAnimations(module.style) }}>
+  <div class="p-sticky">
+    <div class="{{ module.style.background_color|replace("_", "-") ~ "-bg" }} {{ module.style.border_radius }}">
+      {% for widget in module.widgets %}
+      <div class="{{ widget.widget_type }}{% if not loop.first %} mt-10 }}{% endif %}">
+        <div class="{{ widget.widget_type }}__description">
+          {{ widget.description }}
+        </div>
+        <div class="{{ widget.widget_type }}__content">
+          {% if widget.widget_type == "blog-posts" %}
+          {% if content_group_id %}
+          {% set contents = blog_recent_posts(content_group_id, (widget.blog_posts.posts_to_show + 2) ) %}
+          {% if widget.blog_posts.filter_by_blog_post_tag == true %}
+          {% set contents = blog_recent_posts(content_group_id, content.tag_list, (widget.blog_posts.posts_to_show + 2) ) %}
+          {% endif %}
+          {% endif %}
+          {% if request.path is containing "preview/template" || request.postDict.preview_theme == true %}
+          {% set contents = blog_data.blog_posts %}
+          {% endif %}
+          {% if contents|length > 1 %}
+          {% set i = 0 %}
+          {% for post in contents %}
+          {% if post.absolute_url != content.absolute_url || request.path is containing "preview/template" || request.postDict.preview_theme == true %}
+          {% if i < widget.blog_posts.posts_to_show %}
+          <div class="related-blog-post pv-4 border-bottom-thin border-solid gray-border-color{% if loop.first %} border-top-thin{% endif %}">
+            <a href="{{ post.absolute_url }}">
+              <div class="dnd-row">
+                <div class="row-fluid flex-flow-column flex-flow-md-row-wrap justify-content-xs-center align-items-flex-start align-items-md-center">
+                  <div class="span3 columns">
+                    <div class="image-container p-relative four-three rounded o-hidden {{ widget.blog_posts.posts_image_background_color|replace("_", "-") ~ '-bg' }}">
+                      <img class="lazy object-fit-cover t-0 s-0 fh fw p-absolute" {% if not request.postDict.preview_theme == true && not request.postDict.inpageEditorUI && not request.postDict.hsPreviewerApp == "module" %}data-{% endif %}src="{{ post.featured_image }}" alt="{{ post.name }}"/>
+                    </div>
+                  </div>
+                  <div class="span9 columns post-infos">
+                    <div class="{{ widget.blog_posts.posts_title_display }} mb-{{ (widget.blog_posts.title_bottom_spacing / 5)|replace('.0', '') }} black-color">
+                      {{ post.name }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          {% set i = i + 1 %}
+          {% endif %}
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+          {% endif %}
+
+          {% if widget.widget_type == "cta" %}
+          {% cta guid="{{ widget.cta.cta_field }}" %}
+          {% endif %}
+
+          {% if widget.widget_type == "resource" %}
+          {% set href = widget.resource.resource_link.url.href %}
+          {% if widget.resource.resource_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <div class="{{ widget.widget_type }}__resource-link d-flex flex-flow-column {{ widget.resource.border_radius }} o-hidden {{ widget.resource.background_color|replace("_", "-") ~ '-bg' }} pt-{{ (widget.resource.spacing / 5)|replace('.0', '') }} pb-{{ (widget.resource.spacing / 5)|replace('.0', '') }} ps-{{ (widget.resource.spacing / 5)|replace('.0', '') }} pe-{{ (widget.resource.spacing / 5)|replace('.0', '') }}">
+            <a href="{{ href }}" 
+               class="image-container o-hidden p-relative {{ widget.resource.image_format }}"
+               {%- if widget.resource.resource_link.open_in_new_tab %}target="_blank"{% endif %}
+               {%- if widget.resource.resource_link.rel %}rel="{{ widget.resource.resource_link.rel }}"{% endif %}>
+              <img class="lazy p-absolute t-0 s-0 fw fh object-fit-cover {{ widget.resource.image_border_radius }} mb-{{ (widget.resource.image_bottom_spacing / 5)|replace('.0', '') }}" {% if not request.postDict.preview_theme == true && not request.postDict.inpageEditorUI %}data-{% endif %}src="{{ widget.resource.resource_image.src }}" alt="{{ widget.resource.resource_image.alt }}"/>
+            </a>
+            <div class="{{ widget.widget_type }}__resource-infos pt-{{ (widget.resource.text_spacing / 5)|replace('.0', '') }} pb-{{ (widget.resource.text_spacing / 5)|replace('.0', '') }} ps-{{ (widget.resource.text_spacing / 5)|replace('.0', '') }} pe-{{ (widget.resource.text_spacing / 5)|replace('.0', '') }}">
+              <a href="{{ href }}"
+                 {%- if widget.resource.resource_link.open_in_new_tab %}target="_blank"{% endif %}
+                 {%- if widget.resource.resource_link.rel %}rel="{{ widget.resource.resource_link.rel }}"{% endif %}>
+                <div class="{{ widget.widget_type }}__resource-description small mb-4">
+                  {{ widget.resource.resource_description }}
+                </div>
+              </a>
+
+              {% set style = {
+            'color': widget.resource.button.color|replace("_", "-") ~ '-color',
+            'hover_color': widget.resource.button.hover_color|replace("_", "-") ~ '-hover-color',
+            'background_color': widget.resource.button.background_color|replace("_", "-") ~ '-bg',
+            'hover_background_color': widget.resource.button.hover_background_color|replace("_", "-") ~ '-hover-bg',
+            'border_color': widget.resource.button.border_color|replace("_", "-") ~ '-border-color',
+            'hover_border_color': widget.resource.button.hover_border_color|replace("_", "-") ~ '-hover-border-color',
+            'make_button_small': widget.resource.button.make_button_small
+          } %}
+              {{ createButtonHTML(widget.resource.button, style, '', href) }}
+            </div>
+          </div>
+          {% endif %}
+
+          {% if widget.widget_type == "blog-tags" %}
+          <div class="{{ widget.widget_type }}__tags-list d-flex flex-flow-row-wrap">
+            {% set blog_tag_list = blog_topics(module.blog_field, 999) %}
+            {% for item in blog_tag_list %}
+            <a href="{{ blog_tag_url(group.id, item.slug) }}" class="button button--small small mt-1 ms-1 {{ widget.tags.color|replace("_", "-") ~ '-color' }} {{ widget.tags.hover_color|replace("_", "-") ~ '-hover-color' }} {{ widget.tags.background_color|replace("_", "-") ~ '-bg' }} {{ widget.tags.hover_background_color|replace("_", "-") ~ '-hover-bg' }} {{ widget.tags.border_color|replace("_", "-") ~ '-border-color' }} {{ widget.tags.hover_border_color|replace("_", "-") ~ '-hover-border-color' }}">{{ item }}</a>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          {% if widget.widget_type == "blog-newsletter" %}
+          <div class='custom-form'>
+            <div class='form-inner-container'>
+              <div class="form-container-inner{{ ' p-8' if widget.newsletter.background_color != 'no' }} {{ widget.newsletter.background_color|replace("_", "-") ~ '-bg' }}">
+                {% if widget.newsletter.add_form_title_and_description %}
+                <div class='form-description text-align-flex-start'>
+                  {{ widget.newsletter.form_title_description }}
+                </div>
+                {% endif %}
+                {% if widget.newsletter.form.form_id %} {% form form_key='{{ widget.widget_type }}', form_to_use='{{ widget.newsletter.form.form_id }}', no_title=true, follow_up_type_simple='{{ widget.newsletter.follow_up_type_simple }}', simple_email_for_live_id='{{ widget.newsletter.simple_email_for_live_id }}', follow_up_type_automation='{{ widget.newsletter.follow_up_type_automation }}', form_follow_ups_workflow_id='{{ module.form_follow_ups_workflow_id }}', response_response_type='{{ widget.newsletter.form.response_type }}', response_redirect_id='{{ widget.newsletter.form.redirect_id }}', response_redirect_url='{{ widget.newsletter.form.redirect_url }}', response_message='{{ widget.newsletter.form.message }}', notifications_are_overridden='{{ module.notifications_are_overridden }}', notifications_override_email_addresses='{{ widget.newsletter.notifications_override_email_addresses }}' gotowebinar_webinar_key='{{ widget.newsletter.form.gotowebinar_webinar_key }}' sfdc_campaign='{{ widget.newsletter.sfdc_campaign }}' %} {% else %} {% form title='{{ widget.newsletter.title }}', no_title=true %} {% endif %} 
+              </div>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

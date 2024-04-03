@@ -1,0 +1,115 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.4rem;
+  overflow-wrap: break-word;
+  {% if theme.tables.cells.border_radius == 0 %}
+  border-width: {{ theme.tables.cells.top_border_width ~ "px" }} {{ theme.tables.cells.right_border_width ~ "px" }} {{ theme.tables.cells.bottom_border_width ~ "px" }} {{ theme.tables.cells.left_border_width ~ "px" }};
+  {% else %}
+  box-shadow: inset 0 0 0 {{ theme.tables.cells.top_border_width ~ "px" }} {{ theme.tables.cells.border_color }};
+  {% endif %}
+  border-style: solid;
+  border-color: {{ theme.tables.cells.border_color }};
+  border-radius: {{ theme.tables.cells.border_radius ~ "px" }};
+  background-color: {{ theme.tables.table_body.background_color }} {{ theme.tables.table_body.background_color }};
+  overflow: hidden;
+}
+
+td,
+th {
+  vertical-align: top;
+  border-width: {{ theme.tables.cells.top_border_width ~ "px" }} {{ theme.tables.cells.right_border_width ~ "px" }} {{ theme.tables.cells.bottom_border_width ~ "px" }} {{ theme.tables.cells.left_border_width ~ "px" }};
+  border-style: solid;
+  border-color: {{ theme.tables.cells.border_color }};
+  {{ theme.tables.cells.spacing.css }}
+  color: {{ theme.tables.table_body.color }};;
+}
+
+thead th {
+  vertical-align: bottom;
+  background-color: {{ theme.tables.header.background_color }};
+  color: {{ theme.tables.header.color }};
+}
+
+thead > tr:first-child > th:first-child {
+  border-top-left-radius: {{ theme.tables.cells.border_radius ~ "px" }};
+}
+
+thead > tr:first-child > th:last-child {
+  border-top-right-radius: {{ theme.tables.cells.border_radius ~ "px" }};
+}
+
+tfoot td {
+  background-color: {{ theme.tables.footer.background_color }};
+  color: {{ theme.tables.footer.color }};
+}
+
+tfoot > tr:last-child > td:first-child {
+  border-bottom-left-radius: {{ theme.tables.cells.border_radius ~ "px" }};
+}
+
+tfoot > tr:last-child > td:last-child {
+  border-bottom-right-radius: {{ theme.tables.cells.border_radius ~ "px" }};
+}
+
+table.line-items__table {
+  box-shadow: inset 0 -2px 0 0px  {{ theme.colors.gray.color }};
+  border-radius: 0;
+  margin-bottom: 0;
+  border: none;
+}
+
+table.line-items__table tr, 
+table.line-items__table tr td, 
+table.line-items__table thead tr th {
+  border-top: none;
+  box-shadow: none;
+  border-left: none;
+  border-right: none;
+  background-color: transparent;
+}
+
+table.line-items__table thead th,
+table.line-items__table tr td {
+  text-align: left;
+}
+
+table.line-items__table thead > tr > th,
+table.line-items__table tr > td {
+  text-align: center;
+  vertical-align: top;
+  width: 20%;
+}
+
+table.line-items__table thead > tr > th:last-child,
+table.line-items__table tr > td:last-child {
+  text-align: right;
+  padding-right: 0;
+}
+
+table.line-items__table thead > tr > th:first-child,
+table.line-items__table tr > td:first-child {
+  text-align: left;
+  min-width: 120px;
+  padding-left: 0;
+}
+
+table.line-items__table thead > tr:first-child > th:first-child {
+  border-bottom-left-radius: {{ theme.tables.cells.border_radius ~ "px" }};
+}
+
+table.line-items__table thead > tr:first-child > th:last-child {
+  border-bottom-right-radius: {{ theme.tables.cells.border_radius ~ "px" }};
+}
+
+.line-items__totals .totals__row .dotted__row {
+  flex-shrink: 1;
+  border-bottom: 1px dotted  {{ theme.colors.gray.color }};
+  width: 100%;
+  height: 100%;
+  margin: 13px 12px 7px;
+}
+
+.line-items__totals .totals__row div {
+  white-space: nowrap;
+}

@@ -1,0 +1,11 @@
+{
+  "global" : true,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "smart_type" : "NOT_SMART",
+  "inline_help_text" : "Use this module to showcase a sidebar on the blog.",
+  "icon" : "fontawesome-5.14.0:Newspaper:SOLID",
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 70239258860,
+  "label" : "Blog sidebar",
+  "is_available_for_new_content" : true
+}

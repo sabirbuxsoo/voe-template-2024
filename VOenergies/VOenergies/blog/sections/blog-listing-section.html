@@ -1,0 +1,50 @@
+<!--
+templateType: section
+isAvailableForNewContent: true
+label: Blog listing section
+description: A section listing the blog posts (Only works on the blog listing page).
+-->
+
+{% dnd_section
+  vertical_alignment="MIDDLE"
+  background_color={{ context.section.background_color }}
+  background_linear_gradient={{ context.section.background_linear_gradient }}
+  background_image={{ context.section.background_image }}
+  padding={{ context.section.padding }}
+  class={{ context.section.class }}
+  full_width={{ context.section.full_width }}
+%}
+{% dnd_column width=12 %}
+{% dnd_row %}
+{% dnd_module
+  path='../modules/blog-listing-body'
+	filter_by_tag_name={{ context.filter_by_tag_name ? context.filter_by_tag_name : True }},
+	tag_filter={{ context.tag_filter ? context.tag_filter : [{ "name": "Services", "slug": 'services' }] }},
+	section_title={{ context.section_title ? context.section_title : "Spen quam nisi, luctus (services)" }},
+  display_posts_date={{ context.display_posts_date ? context.display_posts_date : false }}, 
+  date_text={{ context.date_text ? context.date_text : 'on' }}, 
+  display_posts_author={{ context.display_posts_author ? context.display_posts_author : false }},
+  author_text={{ context.author_text ? context.author_text : 'By' }},
+  blog_posts_per_row={{ context.blog_posts_per_row ? context.blog_posts_per_row : 2 }},
+  posts_to_show={{ context.posts_to_show ? context.posts_to_show : 2 }},
+  add_posts_box_shadow={{ context.add_posts_box_shadow ? context.add_posts_box_shadow : '' }},
+  fallback_image={{ context.fallback_image ? context.fallback_image : "{ 'src': get_asset_url('../../assets/images/visuals/placeholder.jpg') }" }},
+  button={{ context.button ? context.button : '{ "text": "Read more", "show_arrow": true }' }},
+  truncate_blog_posts_summaries={{ context.truncate_blog_posts_summaries ? context.truncate_blog_posts_summaries : 120 }}
+  style={
+    "posts_border_color": context.style.posts_border_color ? context.style.posts_border_color : 'no',
+    "posts_title_color": context.style.posts_title_color ? context.style.posts_title_color : 'black',
+    "posts_background_color": context.style.posts_background_color ? context.style.posts_background_color : 'white',
+    "posts_border_radius": context.style.posts_border_radius ? context.style.posts_border_radius : 'rounded-large',
+    "posts_image_format": context.style.posts_image_format ? context.style.posts_image_format : 'sixteen-nine',
+    "posts_image_border_radius": context.style.posts_image_border_radius ? context.style.posts_image_border_radius : 'rounded-large',
+    "image_background_color": context.style.image_background_color ? context.style.image_background_color : 'no',
+    "posts_spacing": context.style.posts_spacing ? context.style.posts_spacing : 0,
+    "posts_text_spacing": context.style.posts_text_spacing ? context.style.posts_text_spacing : 0,
+    "posts_image_bottom_spacing": context.style.posts_image_bottom_spacing ? context.style.posts_image_bottom_spacing : 20
+  }
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}

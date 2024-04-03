@@ -1,0 +1,150 @@
+<!--
+templateType: global_partial
+label: Newsletter
+description: A section displaying a text/form for newsletter.
+-->
+{% dnd_area "newsletter-section" label="Newsletter section" class="newsletter-section" %}
+{% dnd_section
+  vertical_alignment="MIDDLE"
+  background_color={{ context.section.background_color ? context.section.background_color : '#D0D0CE40' }}
+  background_linear_gradient={{ context.section.background_linear_gradient }}
+  background_image={{ context.section.background_image }}
+  padding={{ context.section.padding }}
+  class={{ context.section.class }}
+%}
+{% dnd_column width="12" %}
+{% dnd_row %}
+{% dnd_module 
+  path='../modules/background-items' 
+  background_item={{ context.background_items.background_item ? 
+    context.background_items.background_item : [
+      {
+        'image_field': { "src": get_asset_url('../assets/images/visuals/bg-items/corporate-animation-2.svg') },
+        "background_item_position": [
+          {
+            "resolution": "xs",
+            "width": 0,
+            "width_unit": "%",
+            "height": 0,
+            "height_unit": "%",
+            "vertical_position": 50,
+            "set_vertical_position_from_bottom": False,
+            "horizontal_position": 50,
+            "object_fit": "contain",
+            "object_position": "top_center",
+            "horizontal_translation": 0,
+            "vertical_translation": 0
+          },
+          {
+            "resolution": "md",
+            "width": 28,
+            "width_unit": "%",
+            "height": 100,
+            "height_unit": "%",
+            "vertical_position": 50,
+            "set_vertical_position_from_bottom": False,
+            "horizontal_position": 0,
+            "object_fit": "contain",
+            "object_position": "top_center",
+            "horizontal_translation": 0,
+            "vertical_translation": 0
+          }
+        ]
+      }
+    ]
+  }}
+  style={{ context.background_item.style ? 
+    context.background_item.style : {
+      'animate_module': False,
+      'module_animation': {
+        'animate_module_scale': False,
+        'animate_module_vertical_translation': False,
+        'animate_module_skew': True,
+        'animate_module_opacity': True
+      }
+    }
+  }}
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% dnd_row vertical_alignment="TOP" %}
+{% dnd_column width="4" %}
+{% dnd_row %}
+{% dnd_module 
+  path='../modules/custom-rich-text' 
+  style={{ context.text.style ? context.text.style : {
+        'xs': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'center'
+        },
+        'md': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        },
+        'xl': {
+          'spacing': {
+            'margin': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' } },
+            'padding': { 'top': { 'value': 0, 'units': 'px' }, 'bottom': { 'value': 0, 'units': 'px' }, 'left': { 'value': 0,  'units': 'px' }, 'right': { 'value': 0, 'units': 'px' } }
+          },
+          'text_alignment': 'left'
+        }
+      }
+    }}
+%}
+{% module_attribute "html" %}
+{{ context.text.content ? context.text.content : '<h2 style="color: {{ theme.colors.first.color }};">Tous les mois, recevez notre newsletter</h2><p>Recevez nos actus, conseils et bons plans chaque mois dans votre boîte email.<br>Vous pouvez vous désabonner de ces communications à tout moment.</p>' }}
+{% end_module_attribute %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% dnd_column width="1" offset="4" %}
+{% dnd_row %}
+{% dnd_module 
+    path='@hubspot/horizontal_spacer' %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% dnd_column width="7" offset="5" %}
+{% dnd_row %}
+{% dnd_module 
+    path='../pages/modules/custom-form'
+    form={{ context.form.form ? context.form.form : {
+      'form_id': '0cd8325e-6573-4a74-a119-84372f2183b8'
+      }
+    }}
+    make_multistep_form = {{ context.form.make_multistep_form ? context.form.make_multistep_form : False }}
+    add_timeline_step = {{ context.form.add_timeline_step ? context.form.add_timeline_step : False }}
+    step={{ context.form.step ? context.form.step : [
+        {
+          'add_step_title': True,
+          'step_title' : 'À propos de vous',
+          'number_of_fields_in_this_step': 3
+        },
+        {
+          'add_step_title': True,
+          'step_title' : 'À propos de votre entreprise',
+          'number_of_fields_in_this_step': 4
+        },
+        {
+          'add_step_title': True,
+          'step_title' : 'Et pour finir',
+          'number_of_fields_in_this_step': 2
+        }
+      ]
+    }}
+    style={{ context.form.style }}
+
+%}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}
+{% end_dnd_area %}
