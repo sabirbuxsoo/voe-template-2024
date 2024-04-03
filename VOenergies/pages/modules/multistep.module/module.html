@@ -84,3 +84,90 @@
 	</div>
 </div>
 {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+{% if step_one_values|length > 0 %}
+<!-- TESTING -->
+<div class="multistep dnd-row"
+		 data-tid="{{ module.multistep_data }}"
+		 data-pid="{{ portal_id }}"
+		 data-step-one="{{ module.step_one_title|urlencode }}"
+		 data-step-two="{{ module.step_two_title|urlencode }}"
+		 data-step-three="{{ module.step_three_title|urlencode }}"
+		 data-shapes-url="{{ get_asset_url("../../../assets/images/shapes/shape-1.svg")|cut("shape-1.svg") }}">
+	<div class="multistep__timeline row-fluid row-gap-6 justify-content-center mb-8 p-relative z-sm">
+		<div class="span6 columns dnd-column">
+			<div class="dnd-row">
+				<div class="row-fluid mb-6">
+					<div class="multistep__timeline-item p-relative span4 columns dnd-column d-flex flex-flow-column align-items-center active" data-next-step="0">
+						<div class="multistep__timeline-bubble w-8 h-8 second-bg border-solid border-thin second-border-color white-color d-flex flex-flow-column align-items-center justify-content-center rounded-full">
+							<b>1</b>
+						</div>
+						<div class="multistep__timeline-bubble-title second-color p-absolute t-100 s-50 translate-t-c fw text-align-center mt-4">
+							{{ module.step_one_subtitle }}
+						</div>
+					</div>
+					<div class="multistep__timeline-item p-relative span4 columns dnd-column d-flex flex-flow-column align-items-center" data-property="step_one" data-next-step="1">
+						<div class="multistep__timeline-bubble w-8 h-8 white-bg border-solid border-thin gray-border-color gray-color d-flex flex-flow-column align-items-center justify-content-center rounded-full">
+							<b>2</b>
+						</div>
+						<div class="multistep__timeline-bubble-title gray-color p-absolute t-100 s-50 translate-t-c fw text-align-center mt-4">
+							{{ module.step_two_subtitle }}
+						</div>
+					</div>
+					<div class="multistep__timeline-item p-relative span4 columns dnd-column d-flex flex-flow-column align-items-center" data-property="step_two" data-next-step="2">
+						<div class="multistep__timeline-bubble w-8 h-8 white-bg border-solid border-thin gray-border-color gray-color d-flex flex-flow-column align-items-center justify-content-center rounded-full">
+							<b>3</b>
+						</div>
+						<div class="multistep__timeline-bubble-title gray-color p-absolute t-100 s-50 translate-t-c fw text-align-center mt-4">
+							{{ module.step_three_subtitle }}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="multistep__title row-fluid row-gap-6 justify-content-center mb-8">
+		<div class="span6 columns dnd-column">
+			<h2 class="text-align-center">{{ module.step_one_title }}</h2>
+		</div>
+	</div>
+	<div class="multistep__container row-fluid row-gap-6 justify-content-center mb-8">
+		{% for step in step_one_values %}
+		{% set shape_value = shape_value + 1 %}
+		{% if shape_value == 7 %}{% set shape_value = 1 %}{% endif %}
+		<div class="multistep__step span3 columns dnd-column" data-property="step_one" data-value="{{ step|urlencode }}" data-next-step="1">
+			<div class="image-container square second-bg d-flex flex-flow-column align-items-center p-relative o-hidden">
+				<div class="p-absolute t-50 s-50 translate-c-c fw fh p-14">
+					<div class="p-relative fw fh d-flex flex-flow-column align-items-center justify-content-center">
+						<img loading="lazy" class="p-absolute t-50 s-50 translate-c-c fw fh" src="{{ get_asset_url("../../../assets/images/shapes/shape-" ~ shape_value ~ ".svg") }}">
+					</div>
+					<div class="p-absolute t-50 s-50 translate-c-c fw fh p-8 d-flex flex-flow-column align-items-center justify-content-center text-align-center">
+						<h3 class="white-color mb-0 p-relative z-sm">{{ step }}</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+	<div class="multistep__form-container row-fluid row-gap-6 justify-content-center">
+		<div class="span12 columns dnd-column multistep__form-container-inner">
+		</div>
+	</div>
+	<div class="multistep__prev-container mt-8">
+		<div class="span12 columns dnd-column">
+			<a href="javascript:;" class="multistep__prev-container-inner d-inline-flex flex-flow-row-wrap align-items-center justify-content-flex-start gray-color gap-2"></a> 
+		</div>
+	</div>
+</div>
+{% endif %}
